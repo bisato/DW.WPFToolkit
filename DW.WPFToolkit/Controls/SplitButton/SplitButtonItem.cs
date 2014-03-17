@@ -1,0 +1,64 @@
+﻿using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+
+namespace DW.WPFToolkit.Controls
+{
+    public class SplitButtonItem : ComboBoxItem
+    {
+        static SplitButtonItem()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitButtonItem), new FrameworkPropertyMetadata(typeof(SplitButtonItem)));
+        }
+
+        public SplitButtonItem()
+        {
+            PreviewMouseLeftButtonUp += SplitButtonItem_PreviewMouseLeftButtonUp;
+        }
+
+        private void SplitButtonItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            CallClickEvent();
+            CallCommand();
+        }
+
+        public ICommand Command
+        {
+            get { return (ICommand)GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty CommandProperty =
+            DependencyProperty.Register("Command", typeof(ICommand), typeof(SplitButtonItem), new UIPropertyMetadata(null));
+
+        public object CommandParameter
+        {
+            get { return (object)GetValue(CommandParameterProperty); }
+            set { SetValue(CommandParameterProperty, value); }
+        }
+
+        public static readonly DependencyProperty CommandParameterProperty =
+            DependencyProperty.Register("CommandParameter", typeof(object), typeof(SplitButtonItem), new UIPropertyMetadata(null));
+
+        public event RoutedEventHandler Click
+        {
+            add { AddHandler(ClickEvent, value); }
+            remove { RemoveHandler(ClickEvent, value); }
+        }
+
+        public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(SplitButtonItem));
+
+        private void CallClickEvent()
+        {
+            var newEventArgs = new RoutedEventArgs(SplitButtonItem.ClickEvent);
+            RaiseEvent(newEventArgs);
+        }
+
+        private void CallCommand()
+        {
+            if (Command != null &&
+                Command.CanExecute(CommandParameter))
+                Command.Execute(CommandParameter);
+        }
+    }
+}

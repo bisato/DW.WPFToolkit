@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{182CFF2D-0D0C-42E7-B775-D47425B69C70}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DW.WPFToolkit</RootNamespace>
+    <AssemblyName>DW.WPFToolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ArcPanel\ArcPanel.cs" />
+    <Compile Include="Controls\ContextMenuItem\ContextMenuItem.cs" />
+    <Compile Include="Controls\DynamicTabControl\DynamicTabControl.cs" />
+    <Compile Include="Controls\DynamicTabControl\DynamicTabItem.cs" />
+    <Compile Include="Controls\DynamicTabControl\TabItemAddButton.cs" />
+    <Compile Include="Controls\DynamicTabControl\TabItemCloseButton.cs" />
+    <Compile Include="Controls\EllipsedProgressBar\EllipsedProgressBar.cs" />
+    <Compile Include="Controls\EllipsedProgressBar\EllipsedProgressBarKind.cs" />
+    <Compile Include="Controls\EllipsedProgressBar\EllipseItemsFactory.cs" />
+    <Compile Include="Controls\EllipsedProgressBar\GappedOverlay.cs" />
+    <Compile Include="Controls\EllipsedProgressBar\IItemsFactory.cs" />
+    <Compile Include="Controls\EllipsedProgressBar\LineItemsFactory.cs" />
+    <Compile Include="Controls\EllipsedProgressBar\MultiplyConverter.cs" />
+    <Compile Include="Controls\EllipsePanel\ElementsRotateDirection.cs" />
+    <Compile Include="Controls\EllipsePanel\ElementStartPosition.cs" />
+    <Compile Include="Controls\EllipsePanel\EllipsePanel.cs" />
+    <Compile Include="Controls\EnhancedComboBox\EnhancedComboBox.cs" />
+    <Compile Include="Controls\EnhancedListView\EnhancedGridViewColumn.cs" />
+    <Compile Include="Controls\EnhancedListView\EnhancedListView.cs" />
+    <Compile Include="Controls\EnhancedTextBox\BrowseTextBox.cs" />
+    <Compile Include="Controls\EnhancedTextBox\CancelButton.cs" />
+    <Compile Include="Controls\EnhancedTextBox\DroppableTypes.cs" />
+    <Compile Include="Controls\EnhancedTextBox\EnhancedPasswordBox.cs" />
+    <Compile Include="Controls\EnhancedTextBox\EnhancedTextBox.cs" />
+    <Compile Include="Controls\EnhancedTextBox\InfoAppearance.cs" />
+    <Compile Include="Controls\EnhancedTextBox\SearchButton.cs" />
+    <Compile Include="Controls\EnhancedTextBox\SearchTextBox.cs" />
+    <Compile Include="Controls\EnhancedTreeView\EnhancedTreeView.cs" />
+    <Compile Include="Controls\EnhancedTreeView\EnhancedTreeViewItem.cs" />
+    <Compile Include="Controls\ImageButton\ImageButton.cs" />
+    <Compile Include="Controls\NumberBox\NumberBox.cs" />
+    <Compile Include="Controls\NumberBox\NumberTypes.cs" />
+    <Compile Include="Controls\NumericUpDown\NumericUpDown.cs" />
+    <Compile Include="Controls\NumericUpDown\NumericUpDownButton.cs" />
+    <Compile Include="Controls\NumericUpDown\UpDownDirections.cs" />
+    <Compile Include="Controls\Resizer\CornerResizer.cs" />
+    <Compile Include="Controls\Resizer\CornerResizerDirections.cs" />
+    <Compile Include="Controls\Resizer\CornerResizerPositions.cs" />
+    <Compile Include="Controls\Resizer\FrameResizer.cs" />
+    <Compile Include="Controls\Resizer\FrameResizerDirections.cs" />
+    <Compile Include="Controls\Resizer\FrameResizerPositions.cs" />
+    <Compile Include="Controls\Resizer\Resizer.cs" />
+    <Compile Include="Controls\SplitButton\SplitButton.cs" />
+    <Compile Include="Controls\SplitButton\SplitButtonItem.cs" />
+    <Compile Include="Controls\SplitButton\SplitToggleButton.cs" />
+    <Compile Include="Controls\TimeBox\TimeBox.cs" />
+    <Compile Include="Controls\TimeBox\TimeFormat.cs" />
+    <Compile Include="Controls\TitledItemsControl\TitledItem.cs" />
+    <Compile Include="Controls\TitledItemsControl\TitledItemsControl.cs" />
+    <Compile Include="Controls\TreeComboBox\TreeComboBox.cs" />
+    <Compile Include="Controls\TreeListView\TreeListView.cs" />
+    <Compile Include="Controls\TreeListView\TreeListViewConverter.cs" />
+    <Compile Include="Controls\TreeListView\TreeListViewExpander.cs" />
+    <Compile Include="Controls\TreeListView\TreeListViewItem.cs" />
+    <Compile Include="Controls\UniformWrapPanel\UniformWrapPanel.cs" />
+    <Compile Include="Converters\BooleanToVisibilityInvertedConverter.cs" />
+    <Compile Include="Converters\InverseBooleanConverter.cs" />
+    <Compile Include="Helpers\ControlFocus.cs" />
+    <Compile Include="Helpers\PopupHandler.cs" />
+    <Compile Include="Helpers\VisualTreeAssist.cs" />
+    <Compile Include="Helpers\WindowBehavior.cs" />
+    <Compile Include="Helpers\WindowClosingArgs.cs" />
+    <Compile Include="Interactivity\ColumnResizeKind.cs" />
+    <Compile Include="Interactivity\ColumnSortBehavior.cs" />
+    <Compile Include="Interactivity\ColumnVisibilityBehavior.cs" />
+    <Compile Include="Interactivity\ColumnWidthBehavior.cs" />
+    <Compile Include="Interactivity\DoubleClickBehavior.cs" />
+    <Compile Include="Interactivity\FocusBehavior.cs" />
+    <Compile Include="Interactivity\ScrollBehavior.cs" />
+    <Compile Include="Interactivity\TextBoxBehavior.cs" />
+    <Compile Include="Interactivity\WindowBehavior.cs" />
+    <Compile Include="Interactivity\WindowClosingArgs.cs" />
+    <Compile Include="Interactivity\WindowTitleBarBehavior.cs" />
+    <Compile Include="Internal\PathCalculator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Controls\DynamicTabControl\Themes\DynamicTabControlStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EllipsedProgressBar\Themes\EllipsedProgressBarStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EnhancedComboBox\Themes\EnhancedComboBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EnhancedTextBox\Themes\EnhancedPasswordBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EnhancedTextBox\Themes\EnhancedTextBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ImageButton\Themes\ImageButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\NumericUpDown\Themes\NumericUpDownStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Resizer\Themes\ResizerStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SplitButton\Themes\SplitButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TimeBox\Themes\TimeBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TitledItemsControl\Themes\TitledItemsControlStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TreeComboBox\Themes\TreeComboBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TreeListView\Themes\TreeListViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
