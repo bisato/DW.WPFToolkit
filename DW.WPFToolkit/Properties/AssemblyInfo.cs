@@ -5,7 +5,7 @@ using System.Windows;
 [assembly: AssemblyTitle("DW.WPFToolkit")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DW.Software")]
+[assembly: AssemblyCompany("my-libraries")]
 [assembly: AssemblyProduct("DW.WPFToolkit")]
 [assembly: AssemblyCopyright("Copyright © David Wendland 2009-2014")]
 [assembly: AssemblyTrademark("")]
