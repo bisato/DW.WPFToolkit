@@ -11,7 +11,7 @@ namespace DW.WPFToolkit.Controls
     [TemplatePart(Name = "PART_Pointer", Type = typeof(Path))]
     [TemplatePart(Name = "PART_Pie", Type = typeof(Ellipse))]
     [TemplatePart(Name = "PART_PercentLabel", Type = typeof(Label))]
-    [TemplatePart(Name = "PART_Items", Type = typeof(EllipsePanel.EllipsePanel))]
+    [TemplatePart(Name = "PART_Items", Type = typeof(EllipsePanel))]
     public class EllipsedProgressBar : ProgressBar
     {
         static EllipsedProgressBar()
@@ -25,10 +25,10 @@ namespace DW.WPFToolkit.Controls
             _innerEllipse = new EllipseGeometry();
 
             Loaded += (sender, e) =>
-                          {
-                              CalculateValues();
-                              OnIsIndeterminateChanged();
-                          };
+            {
+                CalculateValues();
+                OnIsIndeterminateChanged();
+            };
         }
 
         public double OutherRadius
@@ -355,7 +355,7 @@ namespace DW.WPFToolkit.Controls
             _pointerPath = GetTemplateChild("PART_Pointer") as Path;
             _pieEllipse = GetTemplateChild("PART_Pie") as Ellipse;
             _percentLabel = GetTemplateChild("PART_PercentLabel") as Label;
-            _itemsPanel = GetTemplateChild("PART_Items") as EllipsePanel.EllipsePanel;
+            _itemsPanel = GetTemplateChild("PART_Items") as EllipsePanel;
 
             TryTakeItems();
         }
@@ -373,7 +373,7 @@ namespace DW.WPFToolkit.Controls
 
         private Path _pointerPath;
         private Ellipse _pieEllipse;
-        private EllipsePanel.EllipsePanel _itemsPanel;
+        private EllipsePanel _itemsPanel;
 
         private readonly EllipseGeometry _outherEllipse;
         private readonly EllipseGeometry _innerEllipse;

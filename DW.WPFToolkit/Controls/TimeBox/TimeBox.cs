@@ -5,9 +5,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
 {
-    [TemplatePart(Name = "PART_HourBox", Type = typeof(NumberBox.NumberBox))]
-    [TemplatePart(Name = "PART_MinuteBox", Type = typeof(NumberBox.NumberBox))]
-    [TemplatePart(Name = "PART_SecondBox", Type = typeof(NumberBox.NumberBox))]
+    [TemplatePart(Name = "PART_HourBox", Type = typeof(NumberBox))]
+    [TemplatePart(Name = "PART_MinuteBox", Type = typeof(NumberBox))]
+    [TemplatePart(Name = "PART_SecondBox", Type = typeof(NumberBox))]
     [TemplatePart(Name = "PART_UpButton", Type = typeof(NumericUpDownButton))]
     [TemplatePart(Name = "PART_DownButton", Type = typeof(NumericUpDownButton))]
     public class TimeBox : Control
@@ -44,10 +44,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty HasUpDownButtonsProperty =
             DependencyProperty.Register("HasUpDownButtons", typeof(bool), typeof(TimeBox), new UIPropertyMetadata(true));
 
-        private NumberBox.NumberBox _focusedBox;
-        private NumberBox.NumberBox _hourBox;
-        private NumberBox.NumberBox _minuteBox;
-        private NumberBox.NumberBox _secondBox;
+        private NumberBox _focusedBox;
+        private NumberBox _hourBox;
+        private NumberBox _minuteBox;
+        private NumberBox _secondBox;
         private bool _selfChange;
 
         private static void OnTimeChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
@@ -82,9 +82,9 @@ namespace DW.WPFToolkit.Controls
             _selfChange = false;
         }
 
-        private NumberBox.NumberBox CatchBox(string name)
+        private NumberBox CatchBox(string name)
         {
-            var numberBox = GetTemplateChild(name) as NumberBox.NumberBox;
+            var numberBox = GetTemplateChild(name) as NumberBox;
             if (numberBox != null)
             {
                 numberBox.TextChanged += new TextChangedEventHandler(NumberBox_TextChanged);
@@ -104,12 +104,12 @@ namespace DW.WPFToolkit.Controls
 
         private void NumberBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            _focusedBox = (NumberBox.NumberBox)sender;
+            _focusedBox = (NumberBox)sender;
         }
 
         private void NumberBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            var box = (NumberBox.NumberBox)sender;
+            var box = (NumberBox)sender;
             switch (e.Key)
             {
                 case Key.Up:
@@ -130,7 +130,7 @@ namespace DW.WPFToolkit.Controls
 
         private void NumberBox_KeyUp(object sender, KeyEventArgs e)
         {
-            var box = (NumberBox.NumberBox)sender;
+            var box = (NumberBox)sender;
             if (IsNumeric(e.Key) &&
                 box.Text.Length == 2)
             {
@@ -144,19 +144,19 @@ namespace DW.WPFToolkit.Controls
                    (key >= Key.NumPad0 && key <= Key.NumPad9);
         }
 
-        private void MoveCarretLeft(NumberBox.NumberBox numberBox)
+        private void MoveCarretLeft(NumberBox numberBox)
         {
             if (numberBox.SelectionStart == 0)
                 MoveCarret(numberBox, FocusNavigationDirection.Left);
         }
 
-        private void MoveCarretRight(NumberBox.NumberBox numberBox)
+        private void MoveCarretRight(NumberBox numberBox)
         {
             if (numberBox.Text.Length == numberBox.SelectionStart)
                 MoveCarret(numberBox, FocusNavigationDirection.Right);
         }
 
-        private void MoveCarret(NumberBox.NumberBox numberBox, FocusNavigationDirection direction)
+        private void MoveCarret(NumberBox numberBox, FocusNavigationDirection direction)
         {
             if (numberBox.SelectionLength == 0)
                 numberBox.MoveFocus(new TraversalRequest(direction));
@@ -174,7 +174,7 @@ namespace DW.WPFToolkit.Controls
                 ChangeValue(_focusedBox, -1);
         }
 
-        private void ChangeValue(NumberBox.NumberBox box, int step)
+        private void ChangeValue(NumberBox box, int step)
         {
             int value = box.AsInt + step;
             if (value >= 60)

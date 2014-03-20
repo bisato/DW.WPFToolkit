@@ -8,10 +8,10 @@ namespace DW.WPFToolkit.Controls
 {
     [TemplatePart(Name = "PART_UpButton", Type = typeof(RepeatButton))]
     [TemplatePart(Name = "PART_DownButton", Type = typeof(RepeatButton))]
-    [TemplatePart(Name = "PART_NumberBox", Type = typeof(NumberBox.NumberBox))]
+    [TemplatePart(Name = "PART_NumberBox", Type = typeof(NumberBox))]
     public class NumericUpDown : Control
     {
-        private NumberBox.NumberBox _box;
+        private NumberBox _box;
 
         static NumericUpDown()
         {
@@ -24,7 +24,7 @@ namespace DW.WPFToolkit.Controls
 
             var upButton = GetTemplateChild("PART_UpButton") as RepeatButton;
             var downButton = GetTemplateChild("PART_DownButton") as RepeatButton;
-            _box = GetTemplateChild("PART_NumberBox") as NumberBox.NumberBox;
+            _box = GetTemplateChild("PART_NumberBox") as NumberBox;
 
             if (upButton != null)
                 upButton.Click += HandleUpButtonClick;
@@ -144,7 +144,7 @@ namespace DW.WPFToolkit.Controls
         
         public int GetInteger()
         {
-            var box = GetTemplateChild("PART_NumberBox") as NumberBox.NumberBox;
+            var box = GetTemplateChild("PART_NumberBox") as NumberBox;
             if (box != null)
                 return box.GetInteger();
             return 0;
@@ -152,7 +152,7 @@ namespace DW.WPFToolkit.Controls
 
         public double GetDouble()
         {
-            var box = GetTemplateChild("PART_NumberBox") as NumberBox.NumberBox;
+            var box = GetTemplateChild("PART_NumberBox") as NumberBox;
             if (box != null)
                 return box.GetDouble();
             return 0;
