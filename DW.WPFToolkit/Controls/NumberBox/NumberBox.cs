@@ -11,6 +11,9 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class NumberBox : TextBox
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.NumberBox" /> class.
+        /// </summary>
         public NumberBox()
         {
             CommandBindings.Add(new CommandBinding(ApplicationCommands.Paste, null, CanPasteCommand));

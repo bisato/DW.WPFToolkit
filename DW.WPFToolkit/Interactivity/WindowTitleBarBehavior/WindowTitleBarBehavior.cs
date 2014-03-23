@@ -5,6 +5,9 @@ using System.Windows.Interop;
 
 namespace DW.WPFToolkit.Interactivity
 {
+    /// <summary>
+    /// Brings the feature to the <see cref="System.Windows.Window" /> to disable or hide elements in the title bar.
+    /// </summary>
     public class WindowTitleBarBehavior : FrameworkElement
     {
         public static bool GetRemoveTitleItems(DependencyObject obj)

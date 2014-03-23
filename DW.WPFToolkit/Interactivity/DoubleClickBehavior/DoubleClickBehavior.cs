@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Interactivity
 {
+    /// <summary>
+    /// Brings the feature to be able to double click any UI element.
+    /// </summary>
     public class DoubleClickBehavior :  DependencyObject
     {
         public static ICommand GetCommand(DependencyObject obj)

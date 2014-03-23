@@ -22,6 +22,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Resizer), new FrameworkPropertyMetadata(typeof(Resizer)));
         }
 
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();

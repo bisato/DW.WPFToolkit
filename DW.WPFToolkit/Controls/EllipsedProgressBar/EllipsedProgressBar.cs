@@ -414,6 +414,9 @@ namespace DW.WPFToolkit.Controls
             _innerEllipse.RadiusY = InnerRadius;
         }
 
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();

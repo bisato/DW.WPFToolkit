@@ -32,6 +32,9 @@ namespace DW.WPFToolkit.Controls
         private PasswordBox _innerPasswordBox;
         private TextBlock _infoText;
 
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();

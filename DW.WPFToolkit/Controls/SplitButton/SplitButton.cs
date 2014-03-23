@@ -15,6 +15,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitButton), new FrameworkPropertyMetadata(typeof(SplitButton)));
         }
 
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -87,11 +90,20 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ContentProperty =
             DependencyProperty.Register("Content", typeof(object), typeof(SplitButton), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Generates a new child item container to hold in the <see cref="DW.WPFToolkit.Controls.SplitButton" />.
+        /// </summary>
+        /// <returns>The generated child item container</returns>
         protected override DependencyObject GetContainerForItemOverride()
         {
             return new SplitButtonItem();
         }
 
+        /// <summary>
+        /// Checks if the item is already the correct item container. If not the <see cref="DW.WPFToolkit.Controls.SplitButton.GetContainerForItemOverride" /> will be used to generate the right container.
+        /// </summary>
+        /// <param name="item">The item to shown in the <see cref="DW.WPFToolkit.Controls.SplitButton" />.</param>
+        /// <returns>True if the item is the correct item container already.</returns>
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
             return item is SplitButtonItem;

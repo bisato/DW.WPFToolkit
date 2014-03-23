@@ -9,6 +9,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Interactivity
 {
+    /// <summary>
+    /// Brings the feature to a <see cref="System.Windows.Window" /> to bind loading and closing action or easy close with dialog result.
+    /// </summary>
     public class WindowBehavior : DependencyObject
     {
         public static bool? GetDialogResult(DependencyObject obj)

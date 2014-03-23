@@ -5,6 +5,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Interactivity
 {
+    /// <summary>
+    /// Brings the feature to modify the scroll position of an items control.
+    /// </summary>
     public class ScrollBehavior : DependencyObject
     {
         public static object GetScrollToItem(DependencyObject obj)

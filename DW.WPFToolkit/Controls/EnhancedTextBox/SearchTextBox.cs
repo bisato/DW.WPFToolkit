@@ -141,7 +141,7 @@ namespace DW.WPFToolkit.Controls
         }
 
         /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Controls.." /> dependency property.
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.IsSearching" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsSearchingProperty =
             DependencyProperty.Register("IsSearching", typeof(bool), typeof(SearchTextBox), new UIPropertyMetadata(false));

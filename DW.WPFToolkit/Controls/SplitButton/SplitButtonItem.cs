@@ -14,6 +14,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitButtonItem), new FrameworkPropertyMetadata(typeof(SplitButtonItem)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.SplitButtonItem" /> class.
+        /// </summary>
         public SplitButtonItem()
         {
             PreviewMouseLeftButtonUp += SplitButtonItem_PreviewMouseLeftButtonUp;

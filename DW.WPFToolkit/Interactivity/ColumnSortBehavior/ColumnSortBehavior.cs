@@ -7,6 +7,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Interactivity
 {
+    /// <summary>
+    /// Brings the feature to UI elements with a <see cref="System.Windows.Controls.GridViewColumnHeader" /> to have a sorting by clicking the corresponding header.
+    /// </summary>
     public class ColumnSortBehavior : DependencyObject
     {
         public static DataTemplate GetNeutralHeaderTemplate(DependencyObject obj)
@@ -76,7 +79,7 @@ namespace DW.WPFToolkit.Interactivity
         private static void OnAllowColumnSortingsChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             var element = (FrameworkElement)sender;
-            element.Loaded += new RoutedEventHandler(Eement_Loaded);
+            element.Loaded += Eement_Loaded;
         }
 
         public static bool GetIsDefaultSortColumn(DependencyObject obj)

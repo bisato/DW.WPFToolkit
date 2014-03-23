@@ -4,6 +4,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Interactivity
 {
+    /// <summary>
+    /// Brings the feature to set the focus to a specific element or on window launch.
+    /// </summary>
     public class FocusBehavior : DependencyObject
     {
         public static UIElement GetStartFocusedControl(DependencyObject obj)

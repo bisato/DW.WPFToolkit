@@ -72,6 +72,9 @@ namespace DW.WPFToolkit.Controls
             }
         }
 
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();

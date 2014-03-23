@@ -22,6 +22,9 @@ namespace DW.WPFToolkit.Controls
 
         public double Thickness { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.LineItemsFactory" /> class.
+        /// </summary>
         public LineItemsFactory()
         {
             Caps = PenLineCap.Round;

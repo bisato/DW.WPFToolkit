@@ -15,6 +15,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GappedOverlay), new FrameworkPropertyMetadata(typeof(GappedOverlay)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.GappedOverlay" /> class.
+        /// </summary>
         public GappedOverlay()
         {
             _outherEllipse = new EllipseGeometry();
@@ -235,6 +238,9 @@ namespace DW.WPFToolkit.Controls
             CalculateGaps();
         }
 
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();

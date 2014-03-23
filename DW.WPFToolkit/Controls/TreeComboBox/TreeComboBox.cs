@@ -14,6 +14,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TreeComboBox), new FrameworkPropertyMetadata(typeof(TreeComboBox)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.TreeComboBox" /> class.
+        /// </summary>
         public TreeComboBox()
         {
             var box = new ComboBox();
@@ -23,6 +26,9 @@ namespace DW.WPFToolkit.Controls
             SelectionBoxItem = "";
         }
 
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             new PopupHandler().AutoClose(this, ClosePopup);

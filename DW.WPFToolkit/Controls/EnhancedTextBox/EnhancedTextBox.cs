@@ -16,6 +16,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EnhancedTextBox), new FrameworkPropertyMetadata(typeof(EnhancedTextBox)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox" /> class.
+        /// </summary>
         public EnhancedTextBox()
         {
             Loaded += InfoTextBox_Loaded;
@@ -30,6 +33,9 @@ namespace DW.WPFToolkit.Controls
 
         private TextBlock _infoText;
 
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();

@@ -7,6 +7,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Interactivity
 {
+    /// <summary>
+    /// Brings the feature to controls with a <see cref="System.Windows.Controls.GridViewColumnHeader" /> to have columns with a dynamic width.
+    /// </summary>
     public class ColumnWidthBehavior : DependencyObject
     {
         public static ColumnResizeKind GetAutoSize(DependencyObject obj)

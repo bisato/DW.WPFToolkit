@@ -7,6 +7,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Interactivity
 {
+    /// <summary>
+    /// Brings the feature to controls with a <see cref="System.Windows.Controls.GridViewColumnHeader" /> to show or hide columns dynamically.
+    /// </summary>
     public class ColumnVisibilityBehavior : DependencyObject
     {
         private ColumnVisibilityBehavior()
@@ -33,7 +36,7 @@ namespace DW.WPFToolkit.Interactivity
         private static void OnVisibleColumnsChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             var element = (FrameworkElement)sender;
-            element.Loaded += new RoutedEventHandler(Eement_Loaded);
+            element.Loaded += Eement_Loaded;
         }
 
         public static object GetName(DependencyObject obj)
@@ -126,7 +129,7 @@ namespace DW.WPFToolkit.Interactivity
         private void NumerizeColumns()
         {
             for (int i = 0; i < _columns.Count; ++i)
-                SetPosition((DependencyObject)_columns[i], i);
+                SetPosition(_columns[i], i);
         }
 
         private DependencyObject _owner;

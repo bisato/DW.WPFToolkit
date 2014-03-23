@@ -6,6 +6,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Interactivity
 {
+    /// <summary>
+    /// Brings the features to text boxes to define its selection or bound the selection part.
+    /// </summary>
     public class TextBoxBehavior : DependencyObject
     {
         public static string GetSelectedText(DependencyObject obj)
