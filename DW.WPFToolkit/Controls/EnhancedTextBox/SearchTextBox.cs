@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Adds search and cancel buttons to the EnhancedTextBox to represent a search box shown like in the Windows explorer.
+    /// </summary>
     public class SearchTextBox : EnhancedTextBox
     {
         static SearchTextBox()

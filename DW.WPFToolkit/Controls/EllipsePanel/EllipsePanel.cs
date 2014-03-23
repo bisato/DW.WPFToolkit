@@ -8,6 +8,9 @@ using DW.WPFToolkit.Internal;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Arranges child elements in a configurable ellipse form.
+    /// </summary>
     public class EllipsePanel : Panel
     {
         private readonly EllipseGeometry _ellipse = new EllipseGeometry();

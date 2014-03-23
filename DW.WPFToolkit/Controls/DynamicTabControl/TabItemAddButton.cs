@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the add new tab Button shown in the <see cref="DW.WPFToolkit.Controls.DynamicTabControl" />.
+    /// </summary>
     public class TabItemAddButton : Button
     {
         static TabItemAddButton()

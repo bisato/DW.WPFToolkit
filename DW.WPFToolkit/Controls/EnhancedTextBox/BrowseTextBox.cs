@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Adds a browse button to the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox" />.
+    /// </summary>
     public class BrowseTextBox : EnhancedTextBox
     {
         static BrowseTextBox()

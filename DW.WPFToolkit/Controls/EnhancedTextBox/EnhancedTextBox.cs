@@ -5,6 +5,9 @@ using System.Windows.Media;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.TextBox" /> by the possibilities to show background text, drop files and folders and place additional controls in.
+    /// </summary>
     [TemplatePart(Name = "PART_InfoText", Type = typeof(TextBlock))]
     public class EnhancedTextBox : TextBox
     {

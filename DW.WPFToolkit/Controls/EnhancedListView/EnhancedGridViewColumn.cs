@@ -4,6 +4,9 @@ using DW.WPFToolkit.Interactivity;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.GridViewColumn" /> by sort information and name.
+    /// </summary>
     public class EnhancedGridViewColumn : GridViewColumn
     {
         public string Name

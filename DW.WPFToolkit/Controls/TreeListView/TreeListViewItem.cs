@@ -3,6 +3,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Sepresents a single entry in the <see cref="DW.WPFToolkit.Controls.TreeListView" />.
+    /// </summary>
     public class TreeListViewItem : EnhancedTreeViewItem
     {
         static TreeListViewItem()

@@ -4,6 +4,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a ComboBox which shows a tree view in the drop down.
+    /// </summary>
     public class TreeComboBox : TreeView
     {
         static TreeComboBox()

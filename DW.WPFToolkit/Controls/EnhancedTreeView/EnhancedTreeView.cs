@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.TreeView" /> with a multi select possibility and stretching of its child items over the whole width.
+    /// </summary>
     public class EnhancedTreeView : TreeView
     {
         public EnhancedTreeView()

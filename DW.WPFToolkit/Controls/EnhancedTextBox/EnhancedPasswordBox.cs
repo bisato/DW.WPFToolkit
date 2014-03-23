@@ -4,6 +4,9 @@ using System.Windows.Media;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Hosts and enhances the <see cref="System.Windows.Controls.PasswordBox"/> to be able to bind the pasword value and show info text in the background.
+    /// </summary>
     [TemplatePart(Name = "PART_InfoText", Type = typeof(TextBlock))]
     [TemplatePart(Name = "PART_PasswordBox", Type = typeof(PasswordBox))]
     public class EnhancedPasswordBox : Control

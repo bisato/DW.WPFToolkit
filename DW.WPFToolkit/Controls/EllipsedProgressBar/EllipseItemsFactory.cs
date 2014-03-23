@@ -5,6 +5,9 @@ using System.Windows.Shapes;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Implements the <see cref="DW.WPFToolkit.Controls.IItemsFactory" /> and provides ellipse items to the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" />
+    /// </summary>
     public class EllipseItemsFactory : IItemsFactory
     {
         public Brush Color { get; set; }

@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// The button which calls the search command in the <see cref="DW.WPFToolkit.Controls.SearchTextBox" />.
+    /// </summary>
     public class SearchButton : Button
     {
         static SearchButton()

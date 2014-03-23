@@ -6,6 +6,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.TextBox" /> to accept numeric values only, so the text can be bound to a numeric property direclty without converting.
+    /// </summary>
     public class NumberBox : TextBox
     {
         public NumberBox()

@@ -3,6 +3,9 @@ using System.Windows.Controls.Primitives;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the button on the side of the <see cref="DW.WPFToolkit.Controls.SplitButton" /> to expand or collapse the child items.
+    /// </summary>
     public class SplitToggleButton : ToggleButton
     {
         static SplitToggleButton()

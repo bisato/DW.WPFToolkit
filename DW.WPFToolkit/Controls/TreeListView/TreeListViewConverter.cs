@@ -5,6 +5,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Adds an intending level of the items shown in the tree of the <see cref="DW.WPFToolkit.Controls.TreeListView" />.
+    /// </summary>
     public class TreeListViewConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

@@ -3,6 +3,9 @@ using System.Windows.Controls.Primitives;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a single line to drag in a specific direction. This is used in the <see cref="DW.WPFToolkit.Controls.Resizer" />.
+    /// </summary>
     public class FrameResizer : Thumb
     {
         static FrameResizer()

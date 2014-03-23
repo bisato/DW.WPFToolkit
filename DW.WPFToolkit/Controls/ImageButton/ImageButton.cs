@@ -5,6 +5,9 @@ using System.Windows.Media.Imaging;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.Button" /> to show an disabled image. The bound image will be shown monochrome if the button is disabled.
+    /// </summary>
     public class ImageButton : Button
     {
         static ImageButton()

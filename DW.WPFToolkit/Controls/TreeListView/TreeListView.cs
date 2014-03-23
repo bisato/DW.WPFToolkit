@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Shows the <see cref="DW.WPFToolkit.Controls.EnhancedTreeView" /> with the possibity to expand or collapse child elements shown in a GridView. The expander can be placed in every column cell template.
+    /// </summary>
     public class TreeListView : EnhancedTreeView
     {
         static TreeListView()

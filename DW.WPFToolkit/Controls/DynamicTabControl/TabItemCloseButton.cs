@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the close Button shown in the <see cref="DW.WPFToolkit.Controls.DynamicTabControl" />.
+    /// </summary>
     public class TabItemCloseButton : Button
     {
         static TabItemCloseButton()

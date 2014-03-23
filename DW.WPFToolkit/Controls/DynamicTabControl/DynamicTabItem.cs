@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the shown tab in the <see cref="DW.WPFToolkit.Controls.DynamicTabControl" />.
+    /// </summary>
     public class DynamicTabItem : TabItem
     {
         static DynamicTabItem()

@@ -8,6 +8,9 @@ using System.Windows.Shapes;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Implements the ProgressBar in an ellipsed form.
+    /// </summary>
     [TemplatePart(Name = "PART_Pointer", Type = typeof(Path))]
     [TemplatePart(Name = "PART_Pie", Type = typeof(Ellipse))]
     [TemplatePart(Name = "PART_PercentLabel", Type = typeof(Label))]

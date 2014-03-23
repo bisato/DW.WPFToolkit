@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Shows textboxes to let the user input a time.
+    /// </summary>
     [TemplatePart(Name = "PART_HourBox", Type = typeof(NumberBox))]
     [TemplatePart(Name = "PART_MinuteBox", Type = typeof(NumberBox))]
     [TemplatePart(Name = "PART_SecondBox", Type = typeof(NumberBox))]

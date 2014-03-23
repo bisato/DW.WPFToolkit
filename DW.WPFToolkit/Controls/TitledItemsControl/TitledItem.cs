@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a single element with content and title in the <see cref="DW.WPFToolkit.Controls.TitledItemsControl" />.
+    /// </summary>
     public class TitledItem : ContentControl
     {
         static TitledItem()

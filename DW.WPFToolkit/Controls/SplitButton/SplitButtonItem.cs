@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a single entry in the drop down of the <see cref="DW.WPFToolkit.Controls.SplitButton" />.
+    /// </summary>
     public class SplitButtonItem : ComboBoxItem
     {
         static SplitButtonItem()

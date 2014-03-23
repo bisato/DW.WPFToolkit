@@ -4,6 +4,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.WrapPanel" /> by the feature that all items will have the same size.
+    /// </summary>
     public class UniformWrapPanel : WrapPanel
     {
         public bool IsAutoUniform

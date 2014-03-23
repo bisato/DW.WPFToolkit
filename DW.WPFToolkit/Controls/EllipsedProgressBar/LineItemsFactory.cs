@@ -5,6 +5,9 @@ using System.Windows.Shapes;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Implements the <see cref="DW.WPFToolkit.Controls.IItemsFactory" /> and provides line items to the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" />
+    /// </summary>
     public class LineItemsFactory : IItemsFactory
     {
         public PenLineCap Caps { get; set; }

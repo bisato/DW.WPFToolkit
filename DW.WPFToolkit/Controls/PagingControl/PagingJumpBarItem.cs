@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a button to jump directly to a page shown in the <see cref="DW.WPFToolkit.Controls.PagingControl" />.
+    /// </summary>
     public class PagingJumpBarItem : ListBoxItem
     {
         static PagingJumpBarItem()

@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.TreeViewItem" /> to be able to let is stretch over the whole width of the parent control.
+    /// </summary>
     public class EnhancedTreeViewItem : TreeViewItem
     {
         protected override System.Windows.DependencyObject GetContainerForItemOverride()

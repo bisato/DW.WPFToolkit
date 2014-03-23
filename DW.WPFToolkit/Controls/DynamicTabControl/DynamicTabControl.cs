@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.TabControl" /> with buttons for add new tab item and close buttons of existing tab items.
+    /// </summary>
     public class DynamicTabControl : TabControl
     {
         static DynamicTabControl()

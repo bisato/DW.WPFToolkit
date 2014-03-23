@@ -6,6 +6,9 @@ using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Contains and enhances the <see cref="DW.WPFToolkit.Controls.NumberBox" /> by up and down buttons for changing the written numeric value.
+    /// </summary>
     [TemplatePart(Name = "PART_UpButton", Type = typeof(RepeatButton))]
     [TemplatePart(Name = "PART_DownButton", Type = typeof(RepeatButton))]
     [TemplatePart(Name = "PART_NumberBox", Type = typeof(NumberBox))]

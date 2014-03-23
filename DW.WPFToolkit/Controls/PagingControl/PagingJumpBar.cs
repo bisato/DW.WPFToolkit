@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Holds all created <see cref="DW.WPFToolkit.Controls.PagingJumpBarItem" /> shown in the <see cref="DW.WPFToolkit.Controls.PagingControl" />.
+    /// </summary>
     public class PagingJumpBar : ListBox
     {
         static PagingJumpBar()

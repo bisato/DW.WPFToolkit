@@ -3,6 +3,9 @@ using System.Windows.Controls.Primitives;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a element in the corners of the <see cref="DW.WPFToolkit.Controls.Resizer" /> to hold and drag in a specific direction.
+    /// </summary>
     public class CornerResizer : Thumb
     {
         static CornerResizer()

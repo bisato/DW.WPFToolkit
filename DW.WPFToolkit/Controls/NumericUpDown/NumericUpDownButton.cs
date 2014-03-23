@@ -3,6 +3,9 @@ using System.Windows.Controls.Primitives;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a up or down button shown in the <see cref="DW.WPFToolkit.Controls.NumericUpDown" /> control.
+    /// </summary>
     public class NumericUpDownButton : RepeatButton
     {
         static NumericUpDownButton()

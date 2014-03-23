@@ -4,6 +4,9 @@ using System.Windows.Data;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Multiplies the given value by the parameter value.
+    /// </summary>
     public class MultiplyConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

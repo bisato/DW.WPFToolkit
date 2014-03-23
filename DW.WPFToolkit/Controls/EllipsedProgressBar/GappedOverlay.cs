@@ -5,6 +5,9 @@ using System.Windows.Shapes;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a overlay surface to be placed in front of the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" />.
+    /// </summary>
     public class GappedOverlay : Control
     {
         static GappedOverlay()

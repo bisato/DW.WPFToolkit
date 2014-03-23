@@ -5,6 +5,9 @@ using DW.WPFToolkit.Interactivity;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.ListView" /> with additional features like column sorting, dynamic column width and dynamic shown column.
+    /// </summary>
     public class EnhancedListView : ListView
     {
         public ColumnResizeKind AutoSize

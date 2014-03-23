@@ -6,6 +6,9 @@ using System.Windows.Media;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Brings an easy to use MenuItem to be used in the ContextMenu no matter if its in an own VisualTree or not.
+    /// </summary>
     public class ContextMenuItem : MenuItem
     {
         protected override void OnInitialized(EventArgs e)

@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Holds a specific page in the <see cref="DW.WPFToolkit.Controls.PagingControl" />.
+    /// </summary>
     public class PagingItem : HeaderedContentControl
     {
         static PagingItem()

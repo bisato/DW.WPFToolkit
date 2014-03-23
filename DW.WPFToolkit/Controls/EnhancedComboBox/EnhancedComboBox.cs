@@ -4,6 +4,9 @@ using System.Windows.Media;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Enhances the <see cref="System.Windows.Controls.ComboBox" /> with a background info text.
+    /// </summary>
     public class EnhancedComboBox : ComboBox
     {
         static EnhancedComboBox()

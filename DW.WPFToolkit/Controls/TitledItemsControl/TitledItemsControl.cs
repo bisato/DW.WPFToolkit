@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Shows items with its title allined to each other. This can be used for every kind of input masks.
+    /// </summary>
     public class TitledItemsControl : ItemsControl
     {
         static TitledItemsControl()

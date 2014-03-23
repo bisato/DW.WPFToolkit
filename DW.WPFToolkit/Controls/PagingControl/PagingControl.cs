@@ -12,6 +12,9 @@ using System.Windows.Shapes;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Brings the possibility to show several pages one by one. This is possible by slide through the pages using navigation buttons or jump to a page directly.
+    /// </summary>
     [TemplatePart(Name = "PART_Previous", Type = typeof(Button))]
     [TemplatePart(Name = "PART_Next", Type = typeof(Button))]
     [TemplatePart(Name = "PART_ContentPresenter", Type = typeof(ContentControl))]
