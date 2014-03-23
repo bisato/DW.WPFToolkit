@@ -5,7 +5,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using DW.WPFToolkit.Internal;
 
 namespace DW.WPFToolkit.Controls
 {
@@ -83,6 +82,11 @@ namespace DW.WPFToolkit.Controls
             control.InvalidateArrange();
         }
 
+        /// <summary>
+        /// Lets each child calculating is needed size.
+        /// </summary>
+        /// <param name="availableSize">The available space by the parent control.</param>
+        /// <returns>The calculated size needed for the control.</returns>
         protected override Size MeasureOverride(Size availableSize)
         {
             foreach (UIElement child in InternalChildren)
@@ -90,78 +94,82 @@ namespace DW.WPFToolkit.Controls
             return base.MeasureOverride(availableSize);
         }
 
+        /// <summary>
+        /// Positionates each child in an ellipse form depending on the amount of child controls.
+        /// </summary>
+        /// <param name="finalSize">The maximum possible space given by the parent control.</param>
+        /// <returns>The calculated needed space in sum of all available child controls.</returns>
         protected override Size ArrangeOverride(Size finalSize)
         {
             if (finalSize.Height <= 0 ||
                 finalSize.Width <= 0)
                 return finalSize;
 
-            if (InternalChildren.Count > 0)
+            if (InternalChildren.Count <= 0)
+                return base.ArrangeOverride(finalSize);
+
+            ResetEllipse(finalSize);
+
+            var figure = _ellipse.GetOutlinedPathGeometry().Figures[0];
+            var pathGeometry = new PathGeometry(new[] { figure });
+
+            var points = new List<Point>();
+            var tangents = new List<Point>();
+            var distance = (double)1 / (double)InternalChildren.Count;
+            var position = GetElementStartPositionValue();
+            foreach (var child in InternalChildren)
             {
-                ResetEllipse(finalSize);
+                Point point, tangent;
+                pathGeometry.GetPointAtFractionLength(position, out point, out tangent);
+                points.Add(point);
+                tangents.Add(tangent);
+                position += distance;
+                if (position > 1)
+                    position -= 1;
+            }
 
-                var figure = _ellipse.GetOutlinedPathGeometry().Figures[0];
-                var pathLength = PathCalculator.GetPathFigureLength(figure);
-                var pathGeometry = new PathGeometry(new PathFigure[] { figure });
+            if (EllipseRotateDirection == SweepDirection.Counterclockwise)
+            {
+                points.Reverse();
+                tangents.Reverse();
+                var point = points.Last();
+                points.Remove(point);
+                points.Insert(0, point);
 
-                var points = new List<Point>();
-                var tangents = new List<Point>();
-                var distance = (double)1 / (double)InternalChildren.Count;
-                var position = GetElementStartPositionValue();
-                foreach (var child in InternalChildren)
+                var tangent = tangents.Last();
+                tangents.Remove(tangent);
+                tangents.Insert(0, tangent);
+            }
+
+            int pos = 0;
+            foreach (UIElement child in InternalChildren)
+            {
+                var childSize = child.DesiredSize;
+                var elementPos = points[pos];
+                elementPos.X -= childSize.Width / 2;
+                elementPos.Y -= childSize.Height / 2;
+                child.SnapsToDevicePixels = true;
+                child.Arrange(new Rect(elementPos, childSize));
+                if (RotateElements)
                 {
-                    Point point, tangent;
-                    pathGeometry.GetPointAtFractionLength(position, out point, out tangent);
-                    points.Add(point);
-                    tangents.Add(tangent);
-                    position += distance;
-                    if (position > 1)
-                        position -= 1;
+                    var elementCenter = new Size(childSize.Width / 2, childSize.Height / 2);
+                    var transforms = new TransformGroup();
+
+                    var centerPoint = new Point(finalSize.Width / 2, finalSize.Height / 2);
+                    var angle = CalculatePileToPlayerAngle(elementPos, centerPoint);
+                    transforms.Children.Add(new RotateTransform(angle, elementCenter.Width, elementCenter.Height));
+
+                    //transforms.Children.Add(new RotateTransform((Math.Atan2(tangents[pos].Y, tangents[pos].X)
+                    //                                                * 180
+                    //                                                / Math.PI)
+                    //                                                + GetElementsRotateDirectionValue(),
+                    //                                            elementCenter.Width,
+                    //                                            elementCenter.Height));
+                    child.RenderTransform = transforms;
                 }
-
-                if (EllipseRotateDirection == SweepDirection.Counterclockwise)
-                {
-                    points.Reverse();
-                    tangents.Reverse();
-                    var point = points.Last();
-                    points.Remove(point);
-                    points.Insert(0, point);
-
-                    var tangent = tangents.Last();
-                    tangents.Remove(tangent);
-                    tangents.Insert(0, tangent);
-                }
-
-                int pos = 0;
-                foreach (UIElement child in InternalChildren)
-                {
-                    var childSize = child.DesiredSize;
-                    var elementPos = points[pos];
-                    elementPos.X -= childSize.Width / 2;
-                    elementPos.Y -= childSize.Height / 2;
-                    child.SnapsToDevicePixels = true;
-                    child.Arrange(new Rect(elementPos, childSize));
-                    if (RotateElements)
-                    {
-                        var elementCenter = new Size(childSize.Width / 2, childSize.Height / 2);
-                        var transforms = new TransformGroup();
-
-                        var centerPoint = new Point(finalSize.Width / 2, finalSize.Height / 2);
-                        var angle = CalculatePileToPlayerAngle(elementPos, centerPoint);
-                        transforms.Children.Add(new RotateTransform(angle, elementCenter.Width, elementCenter.Height));
-
-                        //transforms.Children.Add(new RotateTransform((Math.Atan2(tangents[pos].Y, tangents[pos].X)
-                        //                                                * 180
-                        //                                                / Math.PI)
-                        //                                                + GetElementsRotateDirectionValue(),
-                        //                                            elementCenter.Width,
-                        //                                            elementCenter.Height));
-                        child.RenderTransform = transforms;
-                    }
-                    else
-                        child.RenderTransform = null;
-                    ++pos;
-                }
+                else
+                    child.RenderTransform = null;
+                ++pos;
             }
             return base.ArrangeOverride(finalSize);
         }

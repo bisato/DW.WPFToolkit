@@ -67,6 +67,10 @@ namespace DW.WPFToolkit.Controls
                 ((TreeViewItem)clickedItem).IsSelected = true;
         }
 
+        /// <summary>
+        /// Handles the selection chaning depending on the <see cref="DW.WPFToolkit.Controls.EnhancedTreeView.SelectionMode" />.
+        /// </summary>
+        /// <param name="e">The data passed by the caller.</param>
         protected override void OnSelectedItemChanged(RoutedPropertyChangedEventArgs<object> e)
         {
             base.OnSelectedItemChanged(e);
@@ -209,6 +213,9 @@ namespace DW.WPFToolkit.Controls
             _isSelectionChangeActiveProperty.SetValue((TreeView)this, false, null);
         }
 
+        /// <summary>
+        /// Gets all selected items in the tree view. If nothing is selected an empty list is returned.
+        /// </summary>
         public ObservableCollection<object> SelectedItems
         {
             get
@@ -221,6 +228,9 @@ namespace DW.WPFToolkit.Controls
             }
         }
 
+        /// <summary>
+        /// Gets the selected tree view item container.
+        /// </summary>
         public ObservableCollection<TreeViewItem> SelectedTreeViewItems { get; private set; }
 
         /// <summary>

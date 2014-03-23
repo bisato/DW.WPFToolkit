@@ -17,6 +17,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EnhancedPasswordBox), new FrameworkPropertyMetadata(typeof(EnhancedPasswordBox)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox" /> class.
+        /// </summary>
         public EnhancedPasswordBox()
         {
             Loaded += new RoutedEventHandler(InfoTextBox_Loaded);
@@ -87,6 +90,10 @@ namespace DW.WPFToolkit.Controls
             }
         }
 
+        /// <summary>
+        /// Moves the focus into the inner password box if the control got the focus.
+        /// </summary>
+        /// <param name="e">The parameter passed by the caller.</param>
         protected override void OnGotFocus(RoutedEventArgs e)
         {
             if (_innerPasswordBox != null)

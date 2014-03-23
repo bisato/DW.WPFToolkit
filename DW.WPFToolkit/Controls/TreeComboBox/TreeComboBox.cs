@@ -115,6 +115,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty IsDropDownOpenProperty =
             DependencyProperty.Register("IsDropDownOpen", typeof(bool), typeof(TreeComboBox));
 
+        /// <summary>
+        /// Sets the current selected item of the selection in the tree has been changed and closed the drop down.
+        /// </summary>
+        /// <param name="e">The parameter passed by the owner.</param>
         protected override void OnSelectedItemChanged(RoutedPropertyChangedEventArgs<object> e)
         {
             var item = e.NewValue as TreeViewItem;

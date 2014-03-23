@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 using DW.WPFToolkit.Helpers;
@@ -10,7 +11,15 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class TreeListViewConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        /// <summary>
+        /// Checks if the tree view item is a child item and can be collapsed and calculates the intending by the level.
+        /// </summary>
+        /// <param name="value">The tree view item container.</param>
+        /// <param name="targetType">This parameter is not used.</param>
+        /// <param name="parameter">This parameter is not used.</param>
+        /// <param name="culture">This parameter is not used.</param>
+        /// <returns></returns>
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null)
             {
@@ -21,7 +30,16 @@ namespace DW.WPFToolkit.Controls
             return null;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        /// <summary>
+        /// Not implemented.
+        /// </summary>
+        /// <param name="value">This parameter is not used.</param>
+        /// <param name="targetType">This parameter is not used.</param>
+        /// <param name="parameter">This parameter is not used.</param>
+        /// <param name="culture">This parameter is not used.</param>
+        /// <returns>nothing</returns>
+        /// <exception cref="System.NotImplementedException">The convert back is not intended to be used.</exception>
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }

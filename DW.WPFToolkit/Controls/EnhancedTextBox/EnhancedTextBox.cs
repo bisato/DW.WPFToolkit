@@ -44,6 +44,10 @@ namespace DW.WPFToolkit.Controls
             RefreshInfoAppearance();
         }
 
+        /// <summary>
+        /// Takes care about hiding the info text in the background depending on the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoAppearance" /> property.
+        /// </summary>
+        /// <param name="e">The parameter passed by the caller.</param>
         protected override void OnGotFocus(RoutedEventArgs e)
         {
             base.OnGotFocus(e);
@@ -55,6 +59,10 @@ namespace DW.WPFToolkit.Controls
             }
         }
 
+        /// <summary>
+        /// Takes care about display the info text in the background depending on the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoAppearance" /> property.
+        /// </summary>
+        /// <param name="e">The parameter passed by the caller.</param>
         protected override void OnLostFocus(RoutedEventArgs e)
         {
             base.OnLostFocus(e);
@@ -67,6 +75,10 @@ namespace DW.WPFToolkit.Controls
             }
         }
 
+        /// <summary>
+        /// Takes care about display or hide the info text in the background depending on the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoAppearance" /> property.
+        /// </summary>
+        /// <param name="e">The parameter passed by the caller.</param>
         protected override void OnTextChanged(TextChangedEventArgs e)
         {
             base.OnTextChanged(e);

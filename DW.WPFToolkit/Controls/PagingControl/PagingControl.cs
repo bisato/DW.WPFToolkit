@@ -213,6 +213,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty LoopItemsProperty =
             DependencyProperty.Register("LoopItems", typeof(bool), typeof(PagingControl), new UIPropertyMetadata(true));
 
+        /// <summary>
+        /// Recreates the jump bar items hold in the <see cref="DW.WPFToolkit.Controls.PagingControl.ButtonItems" /> property as soon the items collection changes.
+        /// </summary>
+        /// <param name="e">The parameter passed by the caller.</param>
         protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)
         {
             base.OnItemsChanged(e);
@@ -295,6 +299,10 @@ namespace DW.WPFToolkit.Controls
             }
         }
 
+        /// <summary>
+        /// Switches the current displayed page. If <see cref="DW.WPFToolkit.Controls.PagingControl.HasSlideAnimation" /> is set to true the animation starts.
+        /// </summary>
+        /// <param name="e">The parameter passed by the owner.</param>
         protected override void OnSelectionChanged(SelectionChangedEventArgs e)
         {
             base.OnSelectionChanged(e);

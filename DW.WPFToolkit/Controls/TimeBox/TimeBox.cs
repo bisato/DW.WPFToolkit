@@ -203,7 +203,7 @@ namespace DW.WPFToolkit.Controls
 
         private void ChangeValue(NumberBox box, int step)
         {
-            int value = box.AsInt + step;
+            int value = box.GetInteger() + step;
             if (value >= 60)
                 value -= 60;
             else if (value <= -1)
@@ -216,9 +216,9 @@ namespace DW.WPFToolkit.Controls
             if (!_selfChange)
             {
                 _selfChange = true;
-                Time = new TimeSpan(_hourBox.AsInt,
-                                    _minuteBox.AsInt,
-                                    TimeFormat == TimeFormat.Long ? _secondBox.AsInt : 0);
+                Time = new TimeSpan(_hourBox.GetInteger(),
+                                    _minuteBox.GetInteger(),
+                                    TimeFormat == TimeFormat.Long ? _secondBox.GetInteger() : 0);
                 _selfChange = false;
             }
         }

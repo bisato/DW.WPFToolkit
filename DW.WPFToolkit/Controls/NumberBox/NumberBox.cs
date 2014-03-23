@@ -86,30 +86,6 @@ namespace DW.WPFToolkit.Controls
             return double.MaxValue;
         }
 
-        internal int AsInt
-        {
-            get
-            {
-                int value = 0;
-                if (int.TryParse(Text, System.Globalization.NumberStyles.Integer, CultureInfo.CurrentUICulture, out value) &&
-                    IsValidRange(value))
-                    return value;
-                return 0;
-            }
-        }
-
-        private double AsDouble
-        {
-            get
-            {
-                double value = 0;
-                if (double.TryParse(Text, System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value) &&
-                    IsValidRange(value))
-                    return value;
-                return 0;
-            }
-        }
-
         private bool Parse(TextBox box, string insertText)
         {
             string input = box.Text;
@@ -159,12 +135,20 @@ namespace DW.WPFToolkit.Controls
             return false;
         }
 
+        /// <summary>
+        /// Handles key down in the text box.
+        /// </summary>
+        /// <param name="e">The parameter called by the owner.</param>
         protected override void OnPreviewKeyDown(KeyEventArgs e)
         {
             if (e.Key == Key.Space)
                 e.Handled = true;
         }
 
+        /// <summary>
+        /// Handles user input in the text box.
+        /// </summary>
+        /// <param name="e">The parameter called by the owner.</param>
         protected override void OnPreviewTextInput(TextCompositionEventArgs e)
         {
             if (Parse(this, e.Text))
@@ -173,14 +157,28 @@ namespace DW.WPFToolkit.Controls
                 e.Handled = true;
         }
 
+        /// <summary>
+        /// Returns the written value as integer if possible; otherwise 0.
+        /// </summary>
+        /// <returns>The written value as integer if possible; otherwise 0.</returns>
         public int GetInteger()
         {
-            return AsInt;
+            int value;
+            if (int.TryParse(Text, System.Globalization.NumberStyles.Integer, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
+                return value;
+            return 0;
         }
 
+        /// <summary>
+        /// Returns the written value as double if possible; otherwise 0.0
+        /// </summary>
+        /// <returns>The written value as double if possible; otherwise 0.0</returns>
         public double GetDouble()
         {
-            return AsDouble;
+            double value;
+            if (double.TryParse(Text, System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
+                return value;
+            return 0;
         }
     }
 }
