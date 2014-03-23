@@ -9,11 +9,21 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class DoubleClickBehavior :  DependencyObject
     {
+        /// <summary>
+        /// Gets the command to be called when the element gets double clicked.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.DoubleClickBehavior.Command property value for the element.</returns>
         public static ICommand GetCommand(DependencyObject obj)
         {
             return (ICommand)obj.GetValue(CommandProperty);
         }
 
+        /// <summary>
+        /// Attaches the command to be called when the element gets double clicked.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.DoubleClickBehavior.Command value.</param>
         public static void SetCommand(DependencyObject obj, ICommand value)
         {
             obj.SetValue(CommandProperty, value);
@@ -25,11 +35,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty CommandProperty =
             DependencyProperty.RegisterAttached("Command", typeof(ICommand), typeof(DoubleClickBehavior), new UIPropertyMetadata(OnCommandChanged));
 
+        /// <summary>
+        /// Gets the command parameter to be passed when the called when DW.WPFToolkit.Interactivity.DoubleClickBehavior.Command gets called.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.DoubleClickBehavior.CommandParameter property value for the element.</returns>
         public static object GetCommandParameter(DependencyObject obj)
         {
             return (object)obj.GetValue(CommandParameterProperty);
         }
 
+        /// <summary>
+        /// Attaches the command parameter to be passed when the called when DW.WPFToolkit.Interactivity.DoubleClickBehavior.Command gets called.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.DoubleClickBehavior.CommandParameter value.</param>
         public static void SetCommandParameter(DependencyObject obj, object value)
         {
             obj.SetValue(CommandParameterProperty, value);

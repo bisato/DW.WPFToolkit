@@ -17,11 +17,21 @@ namespace DW.WPFToolkit.Interactivity
             _filteredColumns = new List<GridViewColumn>();
         }
 
+        /// <summary>
+        /// Gets a list of visible columns by their name.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.VisibleColumns property value for the element.</returns>
         public static IList GetVisibleColumns(DependencyObject obj)
         {
             return (IList)obj.GetValue(VisibleColumnsProperty);
         }
 
+        /// <summary>
+        /// Attaches a list of visible columns by their name.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.VisibleColumns value.</param>
         public static void SetVisibleColumns(DependencyObject obj, IList value)
         {
             obj.SetValue(VisibleColumnsProperty, value);
@@ -39,11 +49,21 @@ namespace DW.WPFToolkit.Interactivity
             element.Loaded += Eement_Loaded;
         }
 
+        /// <summary>
+        /// Gets the name of the element.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.Name property value for the element.</returns>
         public static object GetName(DependencyObject obj)
         {
             return (object)obj.GetValue(NameProperty);
         }
 
+        /// <summary>
+        /// Attaches the name.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.Name value.</param>
         public static void SetName(DependencyObject obj, object value)
         {
             obj.SetValue(NameProperty, value);
@@ -65,9 +85,6 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(ColumnVisibilityBehaviorProperty, value);
         }
 
-        /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.GetColumnVisibilityBehavior(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.SetColumnVisibilityBehavior(DependencyObject, ColumnVisibilityBehavior)" /> attached property.
-        /// </summary>
         private static readonly DependencyProperty ColumnVisibilityBehaviorProperty =
             DependencyProperty.RegisterAttached("ColumnVisibilityBehavior", typeof(ColumnVisibilityBehavior), typeof(ColumnVisibilityBehavior), new UIPropertyMetadata(null));
 
@@ -120,8 +137,9 @@ namespace DW.WPFToolkit.Interactivity
             NumerizeColumns();
 
             var visibleColumns = GetVisibleColumns(sender);
-            if (visibleColumns is INotifyCollectionChanged)
-                ((INotifyCollectionChanged)visibleColumns).CollectionChanged += (a, b) => { Refresh(); };
+            var notifyCollectionChanged = visibleColumns as INotifyCollectionChanged;
+            if (notifyCollectionChanged != null)
+                notifyCollectionChanged.CollectionChanged += (a, b) => Refresh();
 
             Refresh();
         }
@@ -134,7 +152,7 @@ namespace DW.WPFToolkit.Interactivity
 
         private DependencyObject _owner;
         private GridViewColumnCollection _columns;
-        private List<GridViewColumn> _filteredColumns;
+        private readonly List<GridViewColumn> _filteredColumns;
 
         private void Refresh()
         {
@@ -166,12 +184,12 @@ namespace DW.WPFToolkit.Interactivity
             var visibleColumns = GetVisibleColumns(_owner);
             for (int i = 0; i < _columns.Count; ++i)
             {
-                var name = GetName((DependencyObject)_columns[i]);
+                var name = GetName(_columns[i]);
                 if (name != null)
                 {
                     if (!visibleColumns.Contains(name))
                     {
-                        _filteredColumns.Add((GridViewColumn)_columns[i]);
+                        _filteredColumns.Add(_columns[i]);
                         _columns.RemoveAt(i);
                         --i;
                     }

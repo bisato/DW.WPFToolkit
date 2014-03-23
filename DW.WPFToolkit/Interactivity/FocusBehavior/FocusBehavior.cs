@@ -9,11 +9,21 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class FocusBehavior : DependencyObject
     {
+        /// <summary>
+        /// Gets the control which has to get the focus when its loaded.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.FocusBehavior.StartFocusedControl property value for the element.</returns>
         public static UIElement GetStartFocusedControl(DependencyObject obj)
         {
             return (UIElement)obj.GetValue(StartFocusedControlProperty);
         }
 
+        /// <summary>
+        /// Attaches the control which has to get the focus when its loaded.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.FocusBehavior.StartFocusedControl value.</param>
         public static void SetStartFocusedControl(DependencyObject obj, UIElement value)
         {
             obj.SetValue(StartFocusedControlProperty, value);
@@ -25,11 +35,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty StartFocusedControlProperty =
             DependencyProperty.RegisterAttached("StartFocusedControl", typeof(UIElement), typeof(FocusBehavior), new UIPropertyMetadata(OnStartFocusedControlChanged));
 
+        /// <summary>
+        /// Gets a value that indicates the state if the element has the focus or not.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.FocusBehavior.HasFocus property value for the element.</returns>
         public static bool GetHasFocus(DependencyObject obj)
         {
             return (bool)obj.GetValue(HasFocusProperty);
         }
 
+        /// <summary>
+        /// Attaches a value that indicates the state if the element has the focus or not.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.FocusBehavior.HasFocus value.</param>
         public static void SetHasFocus(DependencyObject obj, bool value)
         {
             obj.SetValue(HasFocusProperty, value);
@@ -47,7 +67,7 @@ namespace DW.WPFToolkit.Interactivity
             if (element == null)
                 throw new InvalidOperationException("The FocusBehavior.StartFocusedControl only can be attached to an FrameworkElement");
 
-            element.Loaded += new RoutedEventHandler(Element_Loaded);
+            element.Loaded += Element_Loaded;
         }
 
         private static void Element_Loaded(object sender, RoutedEventArgs e)

@@ -12,11 +12,21 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class ColumnWidthBehavior : DependencyObject
     {
+        /// <summary>
+        /// Gets resize kind for a column.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnWidthBehavior.AutoSize property value for the element.</returns>
         public static ColumnResizeKind GetAutoSize(DependencyObject obj)
         {
             return (ColumnResizeKind)obj.GetValue(AutoSizeProperty);
         }
 
+        /// <summary>
+        /// Attaches the resize kind for a column.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnWidthBehavior.AutoSize value.</param>
         public static void SetAutoSize(DependencyObject obj, ColumnResizeKind value)
         {
             obj.SetValue(AutoSizeProperty, value);
@@ -36,11 +46,21 @@ namespace DW.WPFToolkit.Interactivity
             element.Loaded += behavior.Element_Loaded;
         }
 
+        /// <summary>
+        /// Gets proportional size in percent for a column.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnWidthBehavior.ProportionalWidth property value for the element.</returns>
         public static double GetProportionalWidth(DependencyObject obj)
         {
             return (double)obj.GetValue(ProportionalWidthProperty);
         }
 
+        /// <summary>
+        /// Attaches the proportional size in percent for a column.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnWidthBehavior.ProportionalWidth value.</param>
         public static void SetProportionalWidth(DependencyObject obj, double value)
         {
             obj.SetValue(ProportionalWidthProperty, value);
@@ -52,11 +72,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty ProportionalWidthProperty =
             DependencyProperty.RegisterAttached("ProportionalWidth", typeof(double), typeof(ColumnWidthBehavior), new UIPropertyMetadata(double.NaN));
 
+        /// <summary>
+        /// Gets additional space left from a column by calculating the width.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnWidthBehavior.TemplatePaddingWidthFix property value for the element.</returns>
         public static double GetTemplatePaddingWidthFix(DependencyObject obj)
         {
             return (double)obj.GetValue(TemplatePaddingWidthFixProperty);
         }
 
+        /// <summary>
+        /// Attaches the additional space left from a column by calculating the width.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnWidthBehavior.TemplatePaddingWidthFix value.</param>
         public static void SetTemplatePaddingWidthFix(DependencyObject obj, double value)
         {
             obj.SetValue(TemplatePaddingWidthFixProperty, value);
@@ -78,9 +108,6 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(OriginalWidthIsRememberedProperty, value);
         }
 
-        /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnWidthBehavior.GetOriginalWidthIsRemembered(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnWidthBehavior.SetOriginalWidthIsRemembered(DependencyObject, bool)" /> attached property.
-        /// </summary>
         private static readonly DependencyProperty OriginalWidthIsRememberedProperty =
             DependencyProperty.RegisterAttached("OriginalWidthIsRemembered", typeof(bool), typeof(ColumnWidthBehavior), new UIPropertyMetadata(false));
 
@@ -94,9 +121,6 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(OriginalWidthProperty, value);
         }
 
-        /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnWidthBehavior.GetOriginalWidth(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnWidthBehavior.SetOriginalWidth(DependencyObject, double)" /> attached property.
-        /// </summary>
         private static readonly DependencyProperty OriginalWidthProperty =
             DependencyProperty.RegisterAttached("OriginalWidth", typeof(double), typeof(ColumnWidthBehavior), new UIPropertyMetadata(0.0));
 
@@ -110,9 +134,6 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(ColumnWidthBehaviorProperty, value);
         }
 
-        /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnWidthBehavior.GetColumnWidthBehavior(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnWidthBehavior.SetColumnWidthBehavior(DependencyObject, ColumnWidthBehavior)" /> attached property.
-        /// </summary>
         private static readonly DependencyProperty ColumnWidthBehaviorProperty =
             DependencyProperty.RegisterAttached("ColumnWidthBehavior", typeof(ColumnWidthBehavior), typeof(ColumnWidthBehavior), new UIPropertyMetadata(null));
 

@@ -10,11 +10,21 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class WindowTitleBarBehavior : FrameworkElement
     {
+        /// <summary>
+        /// Gets a value the indicates of the window has to show title bar items or not.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.RemoveTitleItems property value for the element.</returns>
         public static bool GetRemoveTitleItems(DependencyObject obj)
         {
             return (bool)obj.GetValue(RemoveTitleItemsProperty);
         }
 
+        /// <summary>
+        /// Attaches a value the indicates of the window has to show title bar items or not.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.RemoveTitleItems value.</param>
         public static void SetRemoveTitleItems(DependencyObject obj, bool value)
         {
             obj.SetValue(RemoveTitleItemsProperty, value);
@@ -26,11 +36,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty RemoveTitleItemsProperty =
             DependencyProperty.RegisterAttached("RemoveTitleItems", typeof(bool), typeof(WindowTitleBarBehavior), new UIPropertyMetadata(false, OnRemoveTitleItemsChanged));
 
+        /// <summary>
+        /// Gets a value the indicates of the window has a enabled minimize button or not.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.DisableMinimizeButton property value for the element.</returns>
         public static bool GetDisableMinimizeButton(DependencyObject obj)
         {
             return (bool)obj.GetValue(DisableMinimizeButtonProperty);
         }
 
+        /// <summary>
+        /// Attaches a value the indicates of the window has a enabled minimize button or not.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.DisableMinimizeButton value.</param>
         public static void SetDisableMinimizeButton(DependencyObject obj, bool value)
         {
             obj.SetValue(DisableMinimizeButtonProperty, value);
@@ -42,11 +62,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty DisableMinimizeButtonProperty =
             DependencyProperty.RegisterAttached("DisableMinimizeButton", typeof(bool), typeof(WindowTitleBarBehavior), new UIPropertyMetadata(false, OnDisableMinimizeButtonChanged));
 
+        /// <summary>
+        /// Gets a value the indicates of the window has a enabled maximize button or not.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.DisableMaximizeButton property value for the element.</returns>
         public static bool GetDisableMaximizeButton(DependencyObject obj)
         {
             return (bool)obj.GetValue(DisableMaximizeButtonProperty);
         }
 
+        /// <summary>
+        /// Attaches a value the indicates of the window has a enabled maximize button or not.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.DisableMaximizeButton value.</param>
         public static void SetDisableMaximizeButton(DependencyObject obj, bool value)
         {
             obj.SetValue(DisableMaximizeButtonProperty, value);
@@ -107,21 +137,21 @@ namespace DW.WPFToolkit.Interactivity
         }
 
         [DllImport("user32.dll")]
-        static extern int GetWindowLong(IntPtr hwnd, int index);
+        private static extern int GetWindowLong(IntPtr hwnd, int index);
 
         [DllImport("user32.dll")]
-        static extern int SetWindowLong(IntPtr hwnd, int index, int newStyle);
+        private static extern int SetWindowLong(IntPtr hwnd, int index, int newStyle);
 
         [DllImport("user32.dll")]
-        static extern bool SetWindowPos(IntPtr hwnd, IntPtr hwndInsertAfter, int x, int y, int width, int height, uint flags);
+        private static extern bool SetWindowPos(IntPtr hwnd, IntPtr hwndInsertAfter, int x, int y, int width, int height, uint flags);
 
         [DllImport("user32.dll")]
-        static extern IntPtr SendMessage(IntPtr hwnd, uint msg, IntPtr wParam, IntPtr lParam);
+        private static extern IntPtr SendMessage(IntPtr hwnd, uint msg, IntPtr wParam, IntPtr lParam);
 
-        const int GWL_STYLE = -16;
-        const int WS_CAPTION = 0xC00000;
-        const int WS_MAXIMIZEBOX = 0x10000;
-        const int WS_MINIMIZEBOX = 0x20000;
-        const int WS_SYSMENU = 0x80000;
+        private const int GWL_STYLE = -16;
+        private const int WS_CAPTION = 0xC00000;
+        private const int WS_MAXIMIZEBOX = 0x10000;
+        private const int WS_MINIMIZEBOX = 0x20000;
+        private const int WS_SYSMENU = 0x80000;
     }
 }

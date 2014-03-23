@@ -10,11 +10,21 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class ScrollBehavior : DependencyObject
     {
+        /// <summary>
+        /// Gets the item to which it has to scroll in a list.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ScrollBehavior.ScrollToItem property value for the element.</returns>
         public static object GetScrollToItem(DependencyObject obj)
         {
             return (object)obj.GetValue(ScrollToItemProperty);
         }
 
+        /// <summary>
+        /// Attaches the item to which it has to scroll in a list.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ScrollBehavior.ScrollToItem value.</param>
         public static void SetScrollToItem(DependencyObject obj, object value)
         {
             obj.SetValue(ScrollToItemProperty, value);
@@ -26,11 +36,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty ScrollToItemProperty =
             DependencyProperty.RegisterAttached("ScrollToItem", typeof(object), typeof(ScrollBehavior), new UIPropertyMetadata(OnScrollChanged));
 
+        /// <summary>
+        /// Gets a value that indicates if a list automaticaly have to scroll to the last item if the item collection changes.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ScrollBehavior.AutoScrollToLast property value for the element.</returns>
         public static bool GetAutoScrollToLast(DependencyObject obj)
         {
             return (bool)obj.GetValue(AutoScrollToLastProperty);
         }
 
+        /// <summary>
+        /// Attaches a value that indicates if a list automaticaly have to scroll to the last item if the item collection changes.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ScrollBehavior.AutoScrollToLast value.</param>
         public static void SetAutoScrollToLast(DependencyObject obj, bool value)
         {
             obj.SetValue(AutoScrollToLastProperty, value);
@@ -42,11 +62,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty AutoScrollToLastProperty =
             DependencyProperty.RegisterAttached("AutoScrollToLast", typeof(bool), typeof(ScrollBehavior), new UIPropertyMetadata(OnScrollChanged));
 
+        /// <summary>
+        /// Gets a value that indicates if a list automaticaly have to scroll to the selected item if the selection has been changed.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ScrollBehavior.AutoScrollToSelected property value for the element.</returns>
         public static bool GetAutoScrollToSelected(DependencyObject obj)
         {
             return (bool)obj.GetValue(AutoScrollToSelectedProperty);
         }
 
+        /// <summary>
+        /// Attaches a value that indicates if a list automaticaly have to scroll to the selected item if the selection has been changed.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ScrollBehavior.AutoScrollToSelected value.</param>
         public static void SetAutoScrollToSelected(DependencyObject obj, bool value)
         {
             obj.SetValue(AutoScrollToSelectedProperty, value);

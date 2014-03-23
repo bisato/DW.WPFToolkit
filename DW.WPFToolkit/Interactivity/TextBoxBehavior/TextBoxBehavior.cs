@@ -11,11 +11,21 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class TextBoxBehavior : DependencyObject
     {
+        /// <summary>
+        /// Gets the selected text in a text box.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.TextBoxBehavior.SelectedText property value for the element.</returns>
         public static string GetSelectedText(DependencyObject obj)
         {
             return (string)obj.GetValue(SelectedTextProperty);
         }
 
+        /// <summary>
+        /// Attaches the information which text has to be selected in a text box.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.TextBoxBehavior.SelectedText value.</param>
         public static void SetSelectedText(DependencyObject obj, string value)
         {
             obj.SetValue(SelectedTextProperty, value);
@@ -27,11 +37,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty SelectedTextProperty =
             DependencyProperty.RegisterAttached("SelectedText", typeof(string), typeof(TextBoxBehavior), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnSelectedTextChanged));
 
+        /// <summary>
+        /// Gets a value that indicates if everything has to be selected automatically when the text box got the focus.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.TextBoxBehavior.SelectAllOnFocus property value for the element.</returns>
         public static bool GetSelectAllOnFocus(DependencyObject obj)
         {
             return (bool)obj.GetValue(SelectAllOnFocusProperty);
         }
 
+        /// <summary>
+        /// Attaches a value that indicates if everything has to be selected automatically when the text box got the focus.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.TextBoxBehavior.SelectedText value.</param>
         public static void SetSelectAllOnFocus(DependencyObject obj, bool value)
         {
             obj.SetValue(SelectAllOnFocusProperty, value);
@@ -69,11 +89,21 @@ namespace DW.WPFToolkit.Interactivity
         private static readonly DependencyProperty AllTextBoxBehaviorProperty =
             DependencyProperty.RegisterAttached("AllTextBoxBehavior", typeof(TextBoxBehavior), typeof(TextBoxBehavior), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets a value that indicates on which key the text binding has to be refreshed in a text box.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.TextBoxBehavior.RefreshBindingOnKey property value for the element.</returns>
         public static Key GetRefreshBindingOnKey(DependencyObject obj)
         {
             return (Key)obj.GetValue(RefreshBindingOnKeyProperty);
         }
 
+        /// <summary>
+        /// Attaches a value that indicates on which key the text binding has to be refreshed in a text box.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.TextBoxBehavior.RefreshBindingOnKey value.</param>
         public static void SetRefreshBindingOnKey(DependencyObject obj, Key value)
         {
             obj.SetValue(RefreshBindingOnKeyProperty, value);
@@ -88,7 +118,7 @@ namespace DW.WPFToolkit.Interactivity
         private static void OnRefreshBindingOnKeyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             var textBox = GetTextBox(sender);
-            textBox.KeyUp += new KeyEventHandler(TextBox_KeyUp);
+            textBox.KeyUp += TextBox_KeyUp;
         }
 
         private static void TextBox_KeyUp(object sender, KeyEventArgs e)

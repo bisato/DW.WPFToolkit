@@ -14,11 +14,21 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class WindowBehavior : DependencyObject
     {
+        /// <summary>
+        /// Gets the dialog result from a button to be called on the owner window.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowBehavior.DialogResult property value for the element.</returns>
         public static bool? GetDialogResult(DependencyObject obj)
         {
             return (bool?)obj.GetValue(DialogResultProperty);
         }
 
+        /// <summary>
+        /// Attaches the dialog result to a button to be called on the owner window.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowBehavior.DialogResult value.</param>
         public static void SetDialogResult(DependencyObject obj, bool? value)
         {
             obj.SetValue(DialogResultProperty, value);
@@ -30,11 +40,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty DialogResultProperty =
             DependencyProperty.RegisterAttached("DialogResult", typeof(bool?), typeof(WindowBehavior), new UIPropertyMetadata(OnDialogResultChanged));
 
+        /// <summary>
+        /// Gets the dialog result command from a button to get the dialog result called on the owner window.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowBehavior.DialogResultCommand property value for the element.</returns>
         public static ICommand GetDialogResultCommand(DependencyObject obj)
         {
             return (ICommand)obj.GetValue(DialogResultCommandProperty);
         }
 
+        /// <summary>
+        /// Attaches the dialog result command to a button to get the dialog result called on the owner window.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowBehavior.DialogResultCommand value.</param>
         public static void SetDialogResultCommand(DependencyObject obj, ICommand value)
         {
             obj.SetValue(DialogResultCommandProperty, value);
@@ -46,11 +66,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty DialogResultCommandProperty =
             DependencyProperty.RegisterAttached("DialogResultCommand", typeof(ICommand), typeof(WindowBehavior), new UIPropertyMetadata(OnDialogResultChanged));
 
+        /// <summary>
+        /// Gets the command from a window which get called when the window closes. A WindowClosingArgs is passed as a parameter to change the dialog result and cancel the close.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowBehavior.ClosingCommand property value for the element.</returns>
         public static ICommand GetClosingCommand(DependencyObject obj)
         {
             return (ICommand)obj.GetValue(ClosingCommandProperty);
         }
 
+        /// <summary>
+        /// Attaches the command to a window which get called when the window closes. A WindowClosingArgs is passed as a parameter to change the dialog result and cancel the close.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowBehavior.ClosingCommand value.</param>
         public static void SetClosingCommand(DependencyObject obj, ICommand value)
         {
             obj.SetValue(ClosingCommandProperty, value);
@@ -62,11 +92,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty ClosingCommandProperty =
             DependencyProperty.RegisterAttached("ClosingCommand", typeof(ICommand), typeof(WindowBehavior), new UIPropertyMetadata(OnClosingCommandChanged));
 
+        /// <summary>
+        /// Gets the command from a window which get called when the window has been closed. A WindowClosingArgs is passed as a parameter to change the dialog result and cancel the close.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowBehavior.ClosedCommand property value for the element.</returns>
         public static ICommand GetClosedCommand(DependencyObject obj)
         {
             return (ICommand)obj.GetValue(ClosedCommandProperty);
         }
 
+        /// <summary>
+        /// Attaches the command to a window which get called when the window closes.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowBehavior.ClosingCommand value.</param>
         public static void SetClosedCommand(DependencyObject obj, ICommand value)
         {
             obj.SetValue(ClosedCommandProperty, value);
@@ -78,11 +118,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty ClosedCommandProperty =
             DependencyProperty.RegisterAttached("ClosedCommand", typeof(ICommand), typeof(WindowBehavior), new UIPropertyMetadata(OnClosedCommandChanged));
 
+        /// <summary>
+        /// Gets the command from a window which get called when the window is loaded.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowBehavior.LoadedCommand property value for the element.</returns>
         public static ICommand GetLoadedCommand(DependencyObject obj)
         {
             return (ICommand)obj.GetValue(LoadedCommandProperty);
         }
 
+        /// <summary>
+        /// Attaches the command to a window which get called when the window is loaded.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowBehavior.LoadedCommand value.</param>
         public static void SetLoadedCommand(DependencyObject obj, ICommand value)
         {
             obj.SetValue(LoadedCommandProperty, value);
@@ -94,11 +144,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty LoadedCommandProperty =
             DependencyProperty.RegisterAttached("LoadedCommand", typeof(ICommand), typeof(WindowBehavior), new UIPropertyMetadata(OnLoadedCommandChanged));
 
+        /// <summary>
+        /// Gets the command parameter from a window which is passed by the DW.WPFToolkit.Interactivity.WindowBehavior.LoadedCommand.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowBehavior.LoadedCommandParameter property value for the element.</returns>
         public static object GetLoadedCommandParameter(DependencyObject obj)
         {
             return (object)obj.GetValue(LoadedCommandParameterProperty);
         }
 
+        /// <summary>
+        /// Attaches the command parameter from a window which is passed by the DW.WPFToolkit.Interactivity.WindowBehavior.LoadedCommand.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowBehavior.LoadedCommandParameter value.</param>
         public static void SetLoadedCommandParameter(DependencyObject obj, object value)
         {
             obj.SetValue(LoadedCommandParameterProperty, value);
@@ -110,11 +170,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty LoadedCommandParameterProperty =
             DependencyProperty.RegisterAttached("LoadedCommandParameter", typeof(object), typeof(WindowBehavior), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets a value from a button that indicates that the window have to be closed when the button is pressed without using the dialog result.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowBehavior.IsClose property value for the element.</returns>
         public static bool GetIsClose(DependencyObject obj)
         {
             return (bool)obj.GetValue(IsCloseProperty);
         }
 
+        /// <summary>
+        /// Attaches a value from a button that indicates that the window have to be closed when the button is pressed without using the dialog result.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowBehavior.IsClose value.</param>
         public static void SetIsClose(DependencyObject obj, bool value)
         {
             obj.SetValue(IsCloseProperty, value);
@@ -126,11 +196,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty IsCloseProperty =
             DependencyProperty.RegisterAttached("IsClose", typeof(bool), typeof(WindowBehavior), new UIPropertyMetadata(OnIsCloseChanged));
 
+        /// <summary>
+        /// Gets a list of hex values of a WinAPI messages to listen and forwarded to the DW.WPFToolkit.Interactivity.WindowBehavior.WinApiCommand.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowBehavior.WinApiMessages property value for the element.</returns>
         public static string GetWinApiMessages(DependencyObject obj)
         {
             return (string)obj.GetValue(WinApiMessagesProperty);
         }
 
+        /// <summary>
+        /// Attaches a list of hex values of a WinAPI messages to listen and forwarded to the DW.WPFToolkit.Interactivity.WindowBehavior.WinApiCommand.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowBehavior.WinApiMessages value.</param>
         public static void SetWinApiMessages(DependencyObject obj, string value)
         {
             obj.SetValue(WinApiMessagesProperty, value);
@@ -142,11 +222,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty WinApiMessagesProperty =
             DependencyProperty.RegisterAttached("WinApiMessages", typeof(string), typeof(WindowBehavior), new UIPropertyMetadata(OnWinApiMessagesChanged));
 
+        /// <summary>
+        /// Gets a command which get called if one of the message attached by the DW.WPFToolkit.Interactivity.WindowBehavior.WinApiMessages occurs.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.WindowBehavior.WinApiCommand property value for the element.</returns>
         public static ICommand GetWinApiCommand(DependencyObject obj)
         {
             return (ICommand)obj.GetValue(WinApiCommandProperty);
         }
 
+        /// <summary>
+        /// Attaches a command which get called if one of the message attached by the DW.WPFToolkit.Interactivity.WindowBehavior.WinApiMessages occurs.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.WindowBehavior.WinApiCommand value.</param>
         public static void SetWinApiCommand(DependencyObject obj, ICommand value)
         {
             obj.SetValue(WinApiCommandProperty, value);
@@ -245,7 +335,7 @@ namespace DW.WPFToolkit.Interactivity
         {
             var button = sender as Button;
             if (button != null)
-                button.Click += new RoutedEventHandler(CloseButton_Click);
+                button.Click += CloseButton_Click;
         }
 
         private static void CloseButton_Click(object sender, RoutedEventArgs e)
