@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -37,6 +38,10 @@ namespace DW.WPFToolkit.Controls
             SizeChanged += HandleSizeChanged;
         }
 
+        /// <summary>
+        /// Gets or sets the button items used in the <see cref="DW.WPFToolkit.Controls.PagingJumpBar" />. This is used internally.
+        /// </summary>
+        [DefaultValue(null)]
         public ObservableCollection<int> ButtonItems
         {
             get { return (ObservableCollection<int>)GetValue(ButtonItemsProperty); }
@@ -49,6 +54,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ButtonItemsProperty =
             DependencyProperty.Register("ButtonItems", typeof(ObservableCollection<int>), typeof(PagingControl), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets a value that indicates if the direct jump bar is visible or not.
+        /// </summary>
+        [DefaultValue(true)]
         public bool ShowJumpBar
         {
             get { return (bool)GetValue(ShowJumpBarProperty); }
@@ -61,6 +70,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ShowJumpBarProperty =
             DependencyProperty.Register("ShowJumpBar", typeof(bool), typeof(PagingControl), new UIPropertyMetadata(true));
 
+        /// <summary>
+        /// Gets or sets a value that indicates where the previous page button is placed.
+        /// </summary>
+        [DefaultValue(Dock.Left)]
         public Dock PreviousBarPosition
         {
             get { return (Dock)GetValue(PreviousBarPositionProperty); }
@@ -73,6 +86,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty PreviousBarPositionProperty =
             DependencyProperty.Register("PreviousBarPosition", typeof(Dock), typeof(PagingControl), new UIPropertyMetadata(Dock.Left));
 
+        /// <summary>
+        /// Gets or sets a value that indicates where the next page button is placed.
+        /// </summary>
+        [DefaultValue(Dock.Right)]
         public Dock NextBarPosition
         {
             get { return (Dock)GetValue(NextBarPositionProperty); }
@@ -85,6 +102,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty NextBarPositionProperty =
             DependencyProperty.Register("NextBarPosition", typeof(Dock), typeof(PagingControl), new UIPropertyMetadata(Dock.Right));
 
+        /// <summary>
+        /// Gets or sets a value that indicates where the direct jump bar have to be placed.
+        /// </summary>
+        [DefaultValue(Dock.Top)]
         public Dock JumpBarPosition
         {
             get { return (Dock)GetValue(JumpBarPositionProperty); }
@@ -97,6 +118,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty JumpBarPositionProperty =
             DependencyProperty.Register("JumpBarPosition", typeof(Dock), typeof(PagingControl), new UIPropertyMetadata(Dock.Top));
 
+        /// <summary>
+        /// Gets or sets the horizontal alignment of the previous and next page buttons.
+        /// </summary>
+        [DefaultValue(HorizontalAlignment.Center)]
         public HorizontalAlignment HorizontalNavigationButtonsAlignment
         {
             get { return (HorizontalAlignment)GetValue(HorizontalNavigationButtonsAlignmentProperty); }
@@ -109,6 +134,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty HorizontalNavigationButtonsAlignmentProperty =
             DependencyProperty.Register("HorizontalNavigationButtonsAlignment", typeof(HorizontalAlignment), typeof(PagingControl), new UIPropertyMetadata(HorizontalAlignment.Center));
 
+        /// <summary>
+        /// Gets or sets the vertical alignment of the previous and next page buttons.
+        /// </summary>
+        [DefaultValue(VerticalAlignment.Center)]
         public VerticalAlignment VerticalNavigationButtonsAlignment
         {
             get { return (VerticalAlignment)GetValue(VerticalNavigationButtonsAlignmentProperty); }
@@ -121,6 +150,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty VerticalNavigationButtonsAlignmentProperty =
             DependencyProperty.Register("VerticalNavigationButtonsAlignment", typeof(VerticalAlignment), typeof(PagingControl), new UIPropertyMetadata(VerticalAlignment.Center));
 
+        /// <summary>
+        /// Gets or sets a value that indicates if switching to another page has a slide animation.
+        /// </summary>
+        [DefaultValue(true)]
         public bool HasSlideAnimation
         {
             get { return (bool)GetValue(HasSlideAnimationProperty); }
@@ -133,6 +166,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty HasSlideAnimationProperty =
             DependencyProperty.Register("HasSlideAnimation", typeof(bool), typeof(PagingControl), new UIPropertyMetadata(true));
 
+        /// <summary>
+        /// Gets or sets the slide animation speed to be used if <see cref="DW.WPFToolkit.Controls.PagingControl.HasSlideAnimation" /> is set to true.
+        /// </summary>
         public TimeSpan AnimationSpeed
         {
             get { return (TimeSpan)GetValue(AnimationSpeedProperty); }
@@ -145,6 +181,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty AnimationSpeedProperty =
             DependencyProperty.Register("AnimationSpeed", typeof(TimeSpan), typeof(PagingControl), new UIPropertyMetadata(TimeSpan.FromMilliseconds(200)));
 
+        /// <summary>
+        /// Gets or sets the slide animation direction to be used if <see cref="DW.WPFToolkit.Controls.PagingControl.HasSlideAnimation" /> is set to true.
+        /// </summary>
+        [DefaultValue(Orientation.Horizontal)]
         public Orientation AnimationOrientation
         {
             get { return (Orientation)GetValue(AnimationOrientationProperty); }
@@ -157,6 +197,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty AnimationOrientationProperty =
             DependencyProperty.Register("AnimationOrientation", typeof(Orientation), typeof(PagingControl), new UIPropertyMetadata(Orientation.Horizontal));
 
+        /// <summary>
+        /// Gets or sets a value that indicates if the first page should be shown as the next page of the last and backward.
+        /// </summary>
+        [DefaultValue(true)]
         public bool LoopItems
         {
             get { return (bool)GetValue(LoopItemsProperty); }

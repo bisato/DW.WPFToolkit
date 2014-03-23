@@ -17,7 +17,6 @@ namespace DW.WPFToolkit.Controls
         /// <summary>
         /// Gets or sets a value that defines if the child elements has to be rotated by the arc line.
         /// </summary>
-        /// <returns>true if the child elements are rotated by the arc form; otherwise false. The default is true.</returns>
         [DefaultValue(true)]
         public bool RotateElements
         {
@@ -34,7 +33,6 @@ namespace DW.WPFToolkit.Controls
         /// <summary>
         /// Gets or sets a value that defines how strong the arc line should be bended.
         /// </summary>
-        /// <returns>The value how strong the arc line is bend. The default is 1.0</returns>
         [DefaultValue(1.0)]
         public double Bend
         {

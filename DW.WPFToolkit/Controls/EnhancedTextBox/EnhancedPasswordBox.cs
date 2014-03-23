@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -136,6 +137,10 @@ namespace DW.WPFToolkit.Controls
             return _infoText != null;
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicated when the info text in the background is shown.
+        /// </summary>
+        [DefaultValue(InfoAppearance.OnLostFocus)]
         public InfoAppearance InfoAppearance
         {
             get { return (InfoAppearance)GetValue(InfoAppearanceProperty); }
@@ -153,6 +158,10 @@ namespace DW.WPFToolkit.Controls
             ((EnhancedPasswordBox)sender).RefreshInfoAppearance();
         }
 
+        /// <summary>
+        /// Gets or sets the info text shown in the background.
+        /// </summary>
+        [DefaultValue("")]
         public string InfoText
         {
             get { return (string)GetValue(InfoTextProperty); }
@@ -165,6 +174,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextProperty =
             DependencyProperty.Register("InfoText", typeof(string), typeof(EnhancedPasswordBox), new UIPropertyMetadata(""));
 
+        /// <summary>
+        /// Gets or sets the font style of the info text shown in the background.
+        /// </summary>
         public FontStyle InfoTextFontStyle
         {
             get { return (FontStyle)GetValue(InfoTextFontStyleProperty); }
@@ -177,6 +189,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextFontStyleProperty =
             DependencyProperty.Register("InfoTextFontStyle", typeof(FontStyle), typeof(EnhancedPasswordBox), new UIPropertyMetadata(FontStyles.Italic));
 
+        /// <summary>
+        /// Gets or sets the foreground color of the info text shown in the background.
+        /// </summary>
         public Brush InfoTextForeground
         {
             get { return (Brush)GetValue(InfoTextForegroundProperty); }
@@ -189,6 +204,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextForegroundProperty =
             DependencyProperty.Register("InfoTextForeground", typeof(Brush), typeof(EnhancedPasswordBox), new UIPropertyMetadata(Brushes.Gray));
 
+        /// <summary>
+        /// Gets or sets the horizontal alignment of the info text shown in the background.
+        /// </summary>
+        [DefaultValue(HorizontalAlignment.Left)]
         public HorizontalAlignment InfoTextHorizontalAlignment
         {
             get { return (HorizontalAlignment)GetValue(InfoTextHorizontalAlignmentProperty); }
@@ -201,6 +220,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextHorizontalAlignmentProperty =
             DependencyProperty.Register("InfoTextHorizontalAlignment", typeof(HorizontalAlignment), typeof(EnhancedPasswordBox), new UIPropertyMetadata(HorizontalAlignment.Left));
 
+        /// <summary>
+        /// Gets or sets the vertical alignment of the info text shown in the background
+        /// </summary>
+        [DefaultValue(VerticalAlignment.Center)]
         public VerticalAlignment InfoTextVerticalAlignment
         {
             get { return (VerticalAlignment)GetValue(InfoTextVerticalAlignmentProperty); }
@@ -213,6 +236,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextVerticalAlignmentProperty =
             DependencyProperty.Register("InfoTextVerticalAlignment", typeof(VerticalAlignment), typeof(EnhancedPasswordBox), new UIPropertyMetadata(VerticalAlignment.Center));
 
+        /// <summary>
+        /// Gets or sets the margin of the info text shown in the background.
+        /// </summary>
         public Thickness InfoTextMargin
         {
             get { return (Thickness)GetValue(InfoTextMarginProperty); }
@@ -223,8 +249,12 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.InfoTextMargin" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InfoTextMarginProperty =
-            DependencyProperty.Register("InfoTextMargin", typeof(Thickness), typeof(EnhancedPasswordBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register("InfoTextMargin", typeof(Thickness), typeof(EnhancedPasswordBox));
 
+        /// <summary>
+        /// Gets or sets the style of the info text shown in the background.
+        /// </summary>
+        [DefaultValue(null)]
         public Style InfoTextStyle
         {
             get { return (Style)GetValue(InfoTextStyleProperty); }
@@ -237,6 +267,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextStyleProperty =
             DependencyProperty.Register("InfoTextStyle", typeof(Style), typeof(EnhancedPasswordBox), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the password typed in the text box.
+        /// </summary>
+        [DefaultValue("")]
         public string Password
         {
             get { return (string)GetValue(PasswordProperty); }

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -165,6 +166,10 @@ namespace DW.WPFToolkit.Controls
             return null;
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates when the info text in the background is shown.
+        /// </summary>
+        [DefaultValue(InfoAppearance.OnLostFocus)]
         public InfoAppearance InfoAppearance
         {
             get { return (InfoAppearance)GetValue(InfoAppearanceProperty); }
@@ -182,6 +187,10 @@ namespace DW.WPFToolkit.Controls
             ((EnhancedTextBox)sender).RefreshInfoAppearance();
         }
 
+        /// <summary>
+        /// Gets or sets the info text shown in the background.
+        /// </summary>
+        [DefaultValue("")]
         public string InfoText
         {
             get { return (string)GetValue(InfoTextProperty); }
@@ -194,6 +203,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextProperty =
             DependencyProperty.Register("InfoText", typeof(string), typeof(EnhancedTextBox), new UIPropertyMetadata(""));
 
+        /// <summary>
+        /// Gets or sets the font style of the info text shown in the background.
+        /// </summary>
         public FontStyle InfoTextFontStyle
         {
             get { return (FontStyle)GetValue(InfoTextFontStyleProperty); }
@@ -206,6 +218,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextFontStyleProperty =
             DependencyProperty.Register("InfoTextFontStyle", typeof(FontStyle), typeof(EnhancedTextBox), new UIPropertyMetadata(FontStyles.Italic));
 
+        /// <summary>
+        /// Gets or sets the foreground color of the info text shown in the background
+        /// </summary>
         public Brush InfoTextForeground
         {
             get { return (Brush)GetValue(InfoTextForegroundProperty); }
@@ -218,6 +233,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextForegroundProperty =
             DependencyProperty.Register("InfoTextForeground", typeof(Brush), typeof(EnhancedTextBox), new UIPropertyMetadata(Brushes.Gray));
 
+        /// <summary>
+        /// Gets or sets the horizontal alignment of the info text shown in the background.
+        /// </summary>
+        [DefaultValue(HorizontalAlignment.Left)]
         public HorizontalAlignment InfoTextHorizontalAlignment
         {
             get { return (HorizontalAlignment)GetValue(InfoTextHorizontalAlignmentProperty); }
@@ -230,6 +249,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextHorizontalAlignmentProperty =
             DependencyProperty.Register("InfoTextHorizontalAlignment", typeof(HorizontalAlignment), typeof(EnhancedTextBox), new UIPropertyMetadata(HorizontalAlignment.Left));
 
+        /// <summary>
+        /// Gets or sets the vertical alignment info text shown in the background.
+        /// </summary>
+        [DefaultValue(VerticalAlignment.Center)]
         public VerticalAlignment InfoTextVerticalAlignment
         {
             get { return (VerticalAlignment)GetValue(InfoTextVerticalAlignmentProperty); }
@@ -242,6 +265,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextVerticalAlignmentProperty =
             DependencyProperty.Register("InfoTextVerticalAlignment", typeof(VerticalAlignment), typeof(EnhancedTextBox), new UIPropertyMetadata(VerticalAlignment.Center));
 
+        /// <summary>
+        /// Gets or sets the margin for the info text shown in the background.
+        /// </summary>
         public Thickness InfoTextMargin
         {
             get { return (Thickness)GetValue(InfoTextMarginProperty); }
@@ -252,8 +278,12 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoTextMargin" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InfoTextMarginProperty =
-            DependencyProperty.Register("InfoTextMargin", typeof(Thickness), typeof(EnhancedTextBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register("InfoTextMargin", typeof(Thickness), typeof(EnhancedTextBox));
 
+        /// <summary>
+        /// Gets or sets the style of the info text shown in the background.
+        /// </summary>
+        [DefaultValue(null)]
         public Style InfoTextStyle
         {
             get { return (Style)GetValue(InfoTextStyleProperty); }
@@ -266,6 +296,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InfoTextStyleProperty =
             DependencyProperty.Register("InfoTextStyle", typeof(Style), typeof(EnhancedTextBox), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets an additional control placed inside the text box.
+        /// </summary>
+        [DefaultValue(null)]
         public object FirstControl
         {
             get { return (object)GetValue(FirstControlProperty); }
@@ -278,6 +312,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty FirstControlProperty =
             DependencyProperty.Register("FirstControl", typeof(object), typeof(EnhancedTextBox), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets a value which indicates where the additional <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.FirstControl" /> has to be placed in the text box.
+        /// </summary>
+        [DefaultValue(Dock.Left)]
         public Dock FirstControlPosition
         {
             get { return (Dock)GetValue(FirstControlPositionProperty); }
@@ -290,6 +328,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty FirstControlPositionProperty =
             DependencyProperty.Register("FirstControlPosition", typeof(Dock), typeof(EnhancedTextBox), new UIPropertyMetadata(Dock.Left));
 
+        /// <summary>
+        /// Gets or sets an second additional control placed inside the text box.
+        /// </summary>
+        [DefaultValue(null)]
         public object SecondControl
         {
             get { return (object)GetValue(SecondControlProperty); }
@@ -302,6 +344,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty SecondControlProperty =
             DependencyProperty.Register("SecondControl", typeof(object), typeof(EnhancedTextBox), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets a value which indicates where the additional <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.SecondControl" /> has to be placed in the text box.
+        /// </summary>
+        [DefaultValue(Dock.Right)]
         public Dock SecondControlPosition
         {
             get { return (Dock)GetValue(SecondControlPositionProperty); }
@@ -314,6 +360,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty SecondControlPositionProperty =
             DependencyProperty.Register("SecondControlPosition", typeof(Dock), typeof(EnhancedTextBox), new UIPropertyMetadata(Dock.Right));
 
+        /// <summary>
+        /// Gets or sets a value which indicates what the text box allows to drop in.
+        /// </summary>
+        [DefaultValue(DroppableTypes.File)]
         public DroppableTypes AllowedDropType
         {
             get { return (DroppableTypes)GetValue(AllowedDropTypeProperty); }
@@ -326,6 +376,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty AllowedDropTypeProperty =
             DependencyProperty.Register("AllowedDropType", typeof(DroppableTypes), typeof(EnhancedTextBox), new UIPropertyMetadata(DroppableTypes.File));
 
+        /// <summary>
+        /// Gets or sets a value which will be used as a separator if multiple elements can be dropped to the textbox. See <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.AllowedDropType" />.
+        /// </summary>
+        [DefaultValue("; ")]
         public string Separator
         {
             get { return (string)GetValue(SeparatorProperty); }
@@ -338,6 +392,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty SeparatorProperty =
             DependencyProperty.Register("Separator", typeof(string), typeof(EnhancedTextBox), new UIPropertyMetadata("; "));
 
+        /// <summary>
+        /// Gets or sets the mouse icon when files or folders (See <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.AllowedDropType" />) will be dropped into the text box.
+        /// </summary>
+        [DefaultValue(DragDropEffects.Link)]
         public DragDropEffects DragDropEffect
         {
             get { return (DragDropEffects)GetValue(DragDropEffectProperty); }

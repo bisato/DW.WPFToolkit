@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,6 +16,10 @@ namespace DW.WPFToolkit.Controls
     {
         private readonly EllipseGeometry _ellipse = new EllipseGeometry();
 
+        /// <summary>
+        /// Gets or sets if the child elements has to be rotated.
+        /// </summary>
+        [DefaultValue(false)]
         public bool RotateElements
         {
             get { return (bool)GetValue(RotateElementsProperty); }
@@ -27,6 +32,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty RotateElementsProperty =
             DependencyProperty.Register("RotateElements", typeof(bool), typeof(EllipsePanel), new PropertyMetadata(false, ValueChanged));
 
+        /// <summary>
+        /// Gets or sets the rotating direction of the child elements if <see cref="DW.WPFToolkit.Controls.EllipsePanel.RotateElements" /> is set to true.
+        /// </summary>
         public ElementsRotateDirection ElementsRotateDirection
         {
             get { return (ElementsRotateDirection)GetValue(ElementsRotateDirectionProperty); }
@@ -39,6 +47,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ElementsRotateDirectionProperty =
             DependencyProperty.Register("ElementsRotateDirection", typeof(ElementsRotateDirection), typeof(EllipsePanel), new PropertyMetadata(ValueChanged));
 
+        /// <summary>
+        /// Gets or sets the direction where the child elements in the ellipse should be alligned.
+        /// </summary>
         public SweepDirection EllipseRotateDirection
         {
             get { return (SweepDirection)GetValue(EllipseRotateDirectionProperty); }
@@ -51,6 +62,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty EllipseRotateDirectionProperty =
             DependencyProperty.Register("EllipseRotateDirection", typeof(SweepDirection), typeof(EllipsePanel), new PropertyMetadata(ValueChanged));
 
+        /// <summary>
+        /// Gets or sets where the first child element has to start in the ellipse.
+        /// </summary>
         public ElementStartPosition ElementStartPosition
         {
             get { return (ElementStartPosition)GetValue(ElementStartPositionProperty); }

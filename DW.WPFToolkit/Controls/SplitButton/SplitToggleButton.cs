@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls.Primitives;
 
 namespace DW.WPFToolkit.Controls
@@ -13,6 +14,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitToggleButton), new FrameworkPropertyMetadata(typeof(SplitToggleButton)));
         }
 
+        /// <summary>
+        /// Gets or sets the outher radius of the button in the template.
+        /// </summary>
         public CornerRadius OutherCornerRadius
         {
             get { return (CornerRadius)GetValue(OutherCornerRadiusProperty); }
@@ -23,8 +27,11 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitToggleButton.OutherCornerRadius" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty OutherCornerRadiusProperty =
-            DependencyProperty.Register("OutherCornerRadius", typeof(CornerRadius), typeof(SplitToggleButton), new UIPropertyMetadata(null));
+            DependencyProperty.Register("OutherCornerRadius", typeof(CornerRadius), typeof(SplitToggleButton));
 
+        /// <summary>
+        /// Gets or sets the inner radius of the buttion in the template.
+        /// </summary>
         public CornerRadius InnerCornerRadius
         {
             get { return (CornerRadius)GetValue(InnerCornerRadiusProperty); }
@@ -35,8 +42,11 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitToggleButton.InnerCornerRadius" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InnerCornerRadiusProperty =
-            DependencyProperty.Register("InnerCornerRadius", typeof(CornerRadius), typeof(SplitToggleButton), new UIPropertyMetadata(null));
+            DependencyProperty.Register("InnerCornerRadius", typeof(CornerRadius), typeof(SplitToggleButton));
 
+        /// <summary>
+        /// Gets or sets the thickness of the other border in the template.
+        /// </summary>
         public Thickness OutherBorderThickness
         {
             get { return (Thickness)GetValue(OutherBorderThicknessProperty); }
@@ -47,8 +57,11 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitToggleButton.OutherBorderThickness" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty OutherBorderThicknessProperty =
-            DependencyProperty.Register("OutherBorderThickness", typeof(Thickness), typeof(SplitToggleButton), new UIPropertyMetadata(null));
+            DependencyProperty.Register("OutherBorderThickness", typeof(Thickness), typeof(SplitToggleButton));
 
+        /// <summary>
+        /// Gets or sets the thickness of the inner border in the template.
+        /// </summary>
         public Thickness InnerBorderThickness
         {
             get { return (Thickness)GetValue(InnerBorderThicknessProperty); }
@@ -59,6 +72,6 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitToggleButton.InnerBorderThickness" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty InnerBorderThicknessProperty =
-            DependencyProperty.Register("InnerBorderThickness", typeof(Thickness), typeof(SplitToggleButton), new UIPropertyMetadata(null));
+            DependencyProperty.Register("InnerBorderThickness", typeof(Thickness), typeof(SplitToggleButton));
     }
 }

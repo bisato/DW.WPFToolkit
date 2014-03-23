@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -15,6 +16,10 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ImageButton), new FrameworkPropertyMetadata(typeof(ImageButton)));
         }
 
+        /// <summary>
+        /// Gets or sets the source if the button image.
+        /// </summary>
+        [DefaultValue(null)]
         public BitmapSource ImageSource
         {
             get { return (BitmapSource)GetValue(ImageSourceProperty); }
@@ -40,6 +45,10 @@ namespace DW.WPFToolkit.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the image to be used when the button is disabled. This will set internaly by the <see cref="DW.WPFToolkit.Controls.ImageButton.ImageSource" /> to a monochrome image.
+        /// </summary>
+        [DefaultValue(null)]
         public BitmapSource DisabledImageSource
         {
             get { return (BitmapSource)GetValue(DisabledImageSourceProperty); }
@@ -52,6 +61,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty DisabledImageSourceProperty =
             DependencyProperty.Register("DisabledImageSource", typeof(BitmapSource), typeof(ImageButton), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the width of the image shown in the button.
+        /// </summary>
+        [DefaultValue(16.0)]
         public double ImageWidth
         {
             get { return (double)GetValue(ImageWidthProperty); }
@@ -64,6 +77,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ImageWidthProperty =
             DependencyProperty.Register("ImageWidth", typeof(double), typeof(ImageButton), new UIPropertyMetadata(16.0, OnSizeChanged));
 
+        /// <summary>
+        /// Gets or sets the height of the image shown in the button.
+        /// </summary>
+        [DefaultValue(16.0)]
         public double ImageHeight
         {
             get { return (double)GetValue(ImageHeightProperty); }
@@ -84,6 +101,9 @@ namespace DW.WPFToolkit.Controls
             control._sizeIsSet = true;
         }
 
+        /// <summary>
+        /// Gets or sets the margin of the image shown in the button.
+        /// </summary>
         public Thickness ImageMargin
         {
             get { return (Thickness)GetValue(ImageMarginProperty); }
@@ -96,6 +116,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ImageMarginProperty =
             DependencyProperty.Register("ImageMargin", typeof(Thickness), typeof(ImageButton), new UIPropertyMetadata(new Thickness(0, 0, 2, 0)));
 
+        /// <summary>
+        /// Gets or sets a value that indicates where the image have to be placed in the button.
+        /// </summary>
+        [DefaultValue(Dock.Left)]
         public Dock ImagePosition
         {
             get { return (Dock)GetValue(ImagePositionProperty); }
@@ -108,6 +132,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ImagePositionProperty =
             DependencyProperty.Register("ImagePosition", typeof(Dock), typeof(ImageButton), new UIPropertyMetadata(Dock.Left));
 
+        /// <summary>
+        /// Gets or sets the horizontal alignment of the image shown in the button.
+        /// </summary>
+        [DefaultValue(HorizontalAlignment.Center)]
         public HorizontalAlignment HorizontalImageAlignment
         {
             get { return (HorizontalAlignment)GetValue(HorizontalImageAlignmentProperty); }
@@ -120,6 +148,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty HorizontalImageAlignmentProperty =
             DependencyProperty.Register("HorizontalImageAlignment", typeof(HorizontalAlignment), typeof(ImageButton), new UIPropertyMetadata(HorizontalAlignment.Center));
 
+        /// <summary>
+        /// Gets or sets the vertical alignment of the image shown in the button.
+        /// </summary>
+        [DefaultValue(VerticalAlignment.Center)]
         public VerticalAlignment VerticalImageAlignment
         {
             get { return (VerticalAlignment)GetValue(VerticalImageAlignmentProperty); }
@@ -131,7 +163,11 @@ namespace DW.WPFToolkit.Controls
         /// </summary>
         public static readonly DependencyProperty VerticalImageAlignmentProperty =
             DependencyProperty.Register("VerticalImageAlignment", typeof(VerticalAlignment), typeof(ImageButton), new UIPropertyMetadata(VerticalAlignment.Center));
-        
+
+        /// <summary>
+        /// Gets or sets a value that indicated how the image have to be stretched in the button.
+        /// </summary>
+        [DefaultValue(Stretch.Uniform)]
         public Stretch ImageStretch
         {
             get { return (Stretch)GetValue(ImageStretchProperty); }

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
@@ -32,6 +33,10 @@ namespace DW.WPFToolkit.Controls
             return item is TreeListViewItem;
         }
 
+        /// <summary>
+        /// Gets or sets the <see cref="System.Windows.Controls.GridView"/> shown in the control.
+        /// </summary>
+        [DefaultValue(null)]
         public GridView View
         {
             get { return (GridView)GetValue(ViewProperty); }

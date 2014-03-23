@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -33,6 +34,10 @@ namespace DW.WPFToolkit.Controls
             CallCommand();
         }
 
+        /// <summary>
+        /// Gets or sets the command to be called when the button itself is clicked.
+        /// </summary>
+        [DefaultValue(null)]
         public ICommand Command
         {
             get { return (ICommand)GetValue(CommandProperty); }
@@ -45,6 +50,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty CommandProperty =
             DependencyProperty.Register("Command", typeof(ICommand), typeof(SplitButton), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the parameter to be passed with the <see cref="DW.WPFToolkit.Controls.SplitButton.Command" />.
+        /// </summary>
+        [DefaultValue(null)]
         public object CommandParameter
         {
             get { return (object)GetValue(CommandParameterProperty); }
@@ -78,6 +87,10 @@ namespace DW.WPFToolkit.Controls
                 Command.Execute(CommandParameter);
         }
 
+        /// <summary>
+        /// Gets or sets the main content of the button.
+        /// </summary>
+        [DefaultValue(null)]
         public object Content
         {
             get { return (object)GetValue(ContentProperty); }

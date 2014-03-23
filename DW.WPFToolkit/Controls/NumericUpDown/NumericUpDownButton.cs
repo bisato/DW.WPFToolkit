@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls.Primitives;
 
 namespace DW.WPFToolkit.Controls
@@ -13,6 +14,10 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NumericUpDownButton), new FrameworkPropertyMetadata(typeof(NumericUpDownButton)));
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates in which direction the button is pointing to.
+        /// </summary>
+        [DefaultValue(UpDownDirections.Up)]
         public UpDownDirections Direction
         {
             get { return (UpDownDirections)GetValue(DirectionProperty); }

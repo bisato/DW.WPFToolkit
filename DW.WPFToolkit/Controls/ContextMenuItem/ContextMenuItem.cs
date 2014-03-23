@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,13 +19,16 @@ namespace DW.WPFToolkit.Controls
         protected override void OnInitialized(EventArgs e)
         {
             base.OnInitialized(e);
-            
             var binding = new Binding();
             binding.Path = new PropertyPath("PlacementTarget");
             binding.RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(ContextMenu), 1);
             SetBinding(ElementHolderProperty, binding);
         }
 
+        /// <summary>
+        /// Gets or sets the data as original DataContext for the case the DataContext get changed to the parent object.
+        /// </summary>
+        [DefaultValue(null)]
         public object ItemDataContext
         {
             get { return (object)GetValue(ItemDataContextProperty); }
@@ -37,6 +41,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ItemDataContextProperty =
             DependencyProperty.Register("ItemDataContext", typeof(object), typeof(ContextMenuItem), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets a placeholder for the current item parent from the other visual tree. This is used internally, please do not set it to another value otherwise the ContextMenuItem will not work properly.
+        /// </summary>
         public object ElementHolder
         {
             get { return (object)GetValue(ElementHolderProperty); }
@@ -49,6 +56,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ElementHolderProperty =
             DependencyProperty.Register("ElementHolder", typeof(object), typeof(ContextMenuItem), new UIPropertyMetadata(OnElementHolderChanged));
 
+        /// <summary>
+        /// The DataContext will be the element like original.
+        /// </summary>
+        [DefaultValue(false)]
         public bool IsBindToSelf
         {
             get { return (bool)GetValue(IsBindToSelfProperty); }

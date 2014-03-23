@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -9,6 +10,10 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class UniformWrapPanel : WrapPanel
     {
+        /// <summary>
+        /// Gets or sets a value that defines if the common height or width will be taken by the biggest child element.
+        /// </summary>
+        [DefaultValue(true)]
         public bool IsAutoUniform
         {
             get { return (bool)GetValue(IsAutoUniformProperty); }
@@ -28,6 +33,10 @@ namespace DW.WPFToolkit.Controls
                 panel.InvalidateVisual();
         }
 
+        /// <summary>
+        /// Gets or sets the minimum width of the items.
+        /// </summary>
+        [DefaultValue(0.0)]
         public double MinItemWidth
         {
             get { return (double)GetValue(MinItemWidthProperty); }
@@ -40,17 +49,21 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty MinItemWidthProperty =
             DependencyProperty.Register("MinItemWidth", typeof(double), typeof(UniformWrapPanel), new UIPropertyMetadata(0.0));
 
-        public double MinItenHeight
+        /// <summary>
+        /// Gets or sets the minimum height of the items.
+        /// </summary>
+        [DefaultValue(0.0)]
+        public double MinItemHeight
         {
-            get { return (double)GetValue(MinItenHeightProperty); }
-            set { SetValue(MinItenHeightProperty, value); }
+            get { return (double)GetValue(MinItemHeightProperty); }
+            set { SetValue(MinItemHeightProperty, value); }
         }
 
         /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Controls.UniformWrapPanel.MinItenHeight" /> dependency property.
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.UniformWrapPanel.MinItemHeight" /> dependency property.
         /// </summary>
-        public static readonly DependencyProperty MinItenHeightProperty =
-            DependencyProperty.Register("MinItenHeight", typeof(double), typeof(UniformWrapPanel), new UIPropertyMetadata(0.0));
+        public static readonly DependencyProperty MinItemHeightProperty =
+            DependencyProperty.Register("MinItemHeight", typeof(double), typeof(UniformWrapPanel), new UIPropertyMetadata(0.0));
 
         protected override Size MeasureOverride(Size availableSize)
         {
@@ -61,7 +74,7 @@ namespace DW.WPFToolkit.Controls
                 {
                     el.Measure(availableSize);
                     if (Orientation == Orientation.Vertical)
-                        ItemHeight = MeasureItem(ItemHeight, el.DesiredSize.Height, MinItenHeight);
+                        ItemHeight = MeasureItem(ItemHeight, el.DesiredSize.Height, MinItemHeight);
                     else
                         ItemWidth = MeasureItem(ItemWidth, el.DesiredSize.Width, MinItemWidth);
                 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -20,6 +21,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TimeBox), new FrameworkPropertyMetadata(typeof(TimeBox)));
         }
 
+        /// <summary>
+        /// Gets or sets the time shown in the text box.
+        /// </summary>
         public TimeSpan Time
         {
             get { return (TimeSpan)GetValue(TimeProperty); }
@@ -32,6 +36,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty TimeProperty =
             DependencyProperty.Register("Time", typeof(TimeSpan), typeof(TimeBox), new FrameworkPropertyMetadata(TimeSpan.Zero, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnTimeChanged));
 
+        /// <summary>
+        /// Gets or sets the format of the time the user can edit.
+        /// </summary>
+        [DefaultValue(TimeFormat.Short)]
         public TimeFormat TimeFormat
         {
             get { return (TimeFormat)GetValue(TimeFormatProperty); }
@@ -44,6 +52,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty TimeFormatProperty =
             DependencyProperty.Register("TimeFormat", typeof(TimeFormat), typeof(TimeBox), new UIPropertyMetadata(TimeFormat.Short));
 
+        /// <summary>
+        /// Gets or sets a value that indicates if the time box has up down buttons or not.
+        /// </summary>
+        [DefaultValue(true)]
         public bool HasUpDownButtons
         {
             get { return (bool)GetValue(HasUpDownButtonsProperty); }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -34,6 +35,10 @@ namespace DW.WPFToolkit.Controls
             };
         }
 
+        /// <summary>
+        /// Gets or sets the outher radius of the ellipse.
+        /// </summary>
+        [DefaultValue(0.0)]
         public double OutherRadius
         {
             get { return (double)GetValue(OutherRadiusProperty); }
@@ -52,6 +57,10 @@ namespace DW.WPFToolkit.Controls
             control.OnOutherRadiusChanged();
         }
 
+        /// <summary>
+        /// Gets or sets the inner radius of the ellipse
+        /// </summary>
+        [DefaultValue(0.0)]
         public double InnerRadius
         {
             get { return (double)GetValue(InnerRadiusProperty); }
@@ -70,6 +79,10 @@ namespace DW.WPFToolkit.Controls
             control.OnInnerRadiusChanged();
         }
 
+        /// <summary>
+        /// Gets or sets the stroke thickness of the ellipses.
+        /// </summary>
+        [DefaultValue(0.0)]
         public double StrokeThickness
         {
             get { return (double)GetValue(StrokeThicknessProperty); }
@@ -82,6 +95,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty StrokeThicknessProperty =
             DependencyProperty.Register("StrokeThickness", typeof(double), typeof(EllipsedProgressBar), new UIPropertyMetadata(0.0));
 
+        /// <summary>
+        /// Gets or sets a value which indicates how the progress should be displayed. See <see cref="DW.WPFToolkit.Controls.EllipsedProgressBarKind" />.
+        /// </summary>
+        [DefaultValue(EllipsedProgressBarKind.Pie)]
         public EllipsedProgressBarKind DisplayKind
         {
             get { return (EllipsedProgressBarKind)GetValue(DisplayKindProperty); }
@@ -100,6 +117,10 @@ namespace DW.WPFToolkit.Controls
             control.CalculateValues();
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the progress should be painted as an inversed state.
+        /// </summary>
+        [DefaultValue(false)]
         public bool IsInversed
         {
             get { return (bool)GetValue(IsInversedProperty); }
@@ -118,6 +139,10 @@ namespace DW.WPFToolkit.Controls
             control.CalculateValues();
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates of the outher ellipse is shown or not.
+        /// </summary>
+        [DefaultValue(false)]
         public bool ShowOutherCircle
         {
             get { return (bool)GetValue(ShowOutherCircleProperty); }
@@ -130,6 +155,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ShowOutherCircleProperty =
             DependencyProperty.Register("ShowOutherCircle", typeof(bool), typeof(EllipsedProgressBar), new UIPropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets the color of the outher ellipse.
+        /// </summary>
         public Brush OutherCircleBrush
         {
             get { return (Brush)GetValue(OutherCircleBrushProperty); }
@@ -142,6 +170,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty OutherCircleBrushProperty =
             DependencyProperty.Register("OutherCircleBrush", typeof(Brush), typeof(EllipsedProgressBar));
 
+        /// <summary>
+        /// Gets or sets the color of the inner ellipse
+        /// </summary>
         public Brush InnerCircleBrush
         {
             get { return (Brush)GetValue(InnerCircleBrushProperty); }
@@ -154,6 +185,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InnerCircleBrushProperty =
             DependencyProperty.Register("InnerCircleBrush", typeof(Brush), typeof(EllipsedProgressBar));
 
+        /// <summary>
+        /// Gets or sets the thickness of the outher ellipse.
+        /// </summary>
         public double OutherCircleThickness
         {
             get { return (double)GetValue(OutherCircleThicknessProperty); }
@@ -166,6 +200,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty OutherCircleThicknessProperty =
             DependencyProperty.Register("OutherCircleThickness", typeof(double), typeof(EllipsedProgressBar));
 
+        /// <summary>
+        /// Gets or sets the thickness of the inner ellipse.
+        /// </summary>
         public double InnerCircleThickness
         {
             get { return (double)GetValue(InnerCircleThicknessProperty); }
@@ -178,6 +215,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InnerCircleThicknessProperty =
             DependencyProperty.Register("InnerCircleThickness", typeof(double), typeof(EllipsedProgressBar));
 
+        /// <summary>
+        /// Gets or set a value which indicates of the inner ellipse is shown or not.
+        /// </summary>
+        [DefaultValue(false)]
         public bool ShowInnerCircle
         {
             get { return (bool)GetValue(ShowInnerCircleProperty); }
@@ -190,6 +231,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ShowInnerCircleProperty =
             DependencyProperty.Register("ShowInnerCircle", typeof(bool), typeof(EllipsedProgressBar), new UIPropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets the start position of the progress in the ellipse. 0 is on Top.
+        /// </summary>
+        [DefaultValue(0.0)]
         public double StartAngle
         {
             get { return (double)GetValue(StartAngleProperty); }
@@ -208,6 +253,9 @@ namespace DW.WPFToolkit.Controls
             control.CalculateValues();
         }
 
+        /// <summary>
+        /// Gets or sets the dash array of the outher ellipse.
+        /// </summary>
         public DoubleCollection OutherCircleDashArray
         {
             get { return (DoubleCollection)GetValue(OutherCircleDashArrayProperty); }
@@ -220,6 +268,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty OutherCircleDashArrayProperty =
             DependencyProperty.Register("OutherCircleDashArray", typeof(DoubleCollection), typeof(EllipsedProgressBar));
 
+        /// <summary>
+        /// Gets or sets the dash array of the inner circle.
+        /// </summary>
         public DoubleCollection InnerCircleDashArray
         {
             get { return (DoubleCollection)GetValue(InnerCircleDashArrayProperty); }
@@ -232,6 +283,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty InnerCircleDashArrayProperty =
             DependencyProperty.Register("InnerCircleDashArray", typeof(DoubleCollection), typeof(EllipsedProgressBar));
 
+        /// <summary>
+        /// Gets or sets the style of ther percentage display in center of the EllipsedProgressBar.
+        /// </summary>
         public Style PercentLabelStyle
         {
             get { return (Style)GetValue(PercentLabelStyleProperty); }
@@ -244,6 +298,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty PercentLabelStyleProperty =
             DependencyProperty.Register("PercentLabelStyle", typeof(Style), typeof(EllipsedProgressBar));
 
+        /// <summary>
+        /// Gets or sets a value which indicates if a percentage text is shown in the center of the EllipsedProgressBar or not.
+        /// </summary>
+        [DefaultValue(false)]
         public bool HasPercentLabel
         {
             get { return (bool)GetValue(HasPercentLabelProperty); }
@@ -256,6 +314,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty HasPercentLabelProperty =
             DependencyProperty.Register("HasPercentLabel", typeof(bool), typeof(EllipsedProgressBar), new UIPropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets the <see cref="DW.WPFToolkit.Controls.IItemsFactory" /> to be used when the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.DisplayKind" /> is set to <see cref="DW.WPFToolkit.Controls.EllipsedProgressBarKind.Items" />.
+        /// </summary>
         public IItemsFactory ItemsFactory
         {
             get { return (IItemsFactory)GetValue(ItemsFactoryProperty); }
@@ -274,6 +335,10 @@ namespace DW.WPFToolkit.Controls
             control.TryTakeItems();
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the items created by the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.ItemsFactory" /> should be rotated or not.
+        /// </summary>
+        [DefaultValue(true)]
         public bool RotateItems
         {
             get { return (bool)GetValue(RotateItemsProperty); }
@@ -286,6 +351,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty RotateItemsProperty =
             DependencyProperty.Register("RotateItems", typeof(bool), typeof(EllipsedProgressBar), new UIPropertyMetadata(true));
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the EllipsedProgressBar is indeterminate.
+        /// </summary>
+        [DefaultValue(false)]
         public new bool IsIndeterminate
         {
             get { return (bool)this.GetValue(IsIndeterminateProperty); }
@@ -305,6 +374,10 @@ namespace DW.WPFToolkit.Controls
                 control.OnIsIndeterminateChanged();
         }
 
+        /// <summary>
+        /// Gets or sets the rotating speed to be used when <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.IsIndeterminate" /> is set to true.
+        /// </summary>
+        [DefaultValue(1.5)]
         public double RotateSpeed
         {
             get { return (double)GetValue(RotateSpeedProperty); }
@@ -317,6 +390,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty RotateSpeedProperty =
             DependencyProperty.Register("RotateSpeed", typeof(double), typeof(EllipsedProgressBar), new UIPropertyMetadata(1.5));
 
+        /// <summary>
+        /// Gets or sets the rotate orientation to be used for the items created by the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.ItemsFactory" /> if <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.RotateItems" /> is set to true.
+        /// </summary>
+        [DefaultValue(SweepDirection.Clockwise)]
         public SweepDirection RotateDirection
         {
             get { return (SweepDirection)GetValue(RotateDirectionProperty); }

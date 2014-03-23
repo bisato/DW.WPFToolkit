@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
@@ -144,6 +145,10 @@ namespace DW.WPFToolkit.Controls
             Height = GetFinalHeight(e.VerticalChange);
         }
 
+        /// <summary>
+        /// Gets or sets the width of the left frame resizer.
+        /// </summary>
+        [DefaultValue(4.0)]
         public double LeftWidth
         {
             get { return (double)GetValue(LeftWidthProperty); }
@@ -156,6 +161,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty LeftWidthProperty =
             DependencyProperty.Register("LeftWidth", typeof(double), typeof(Resizer), new UIPropertyMetadata(4.0, OnSizeChanged));
 
+        /// <summary>
+        /// Gets or sets the height of the top frame resizer.
+        /// </summary>
+        [DefaultValue(4.0)]
         public double TopHeight
         {
             get { return (double)GetValue(TopHeightProperty); }
@@ -168,6 +177,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty TopHeightProperty =
             DependencyProperty.Register("TopHeight", typeof(double), typeof(Resizer), new UIPropertyMetadata(4.0, OnSizeChanged));
 
+        /// <summary>
+        /// Gets or sets the width of the right frame resizer.
+        /// </summary>
+        [DefaultValue(4.0)]
         public double RightWidth
         {
             get { return (double)GetValue(RightWidthProperty); }
@@ -180,6 +193,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty RightWidthProperty =
             DependencyProperty.Register("RightWidth", typeof(double), typeof(Resizer), new UIPropertyMetadata(4.0, OnSizeChanged));
 
+        /// <summary>
+        /// Gets or sets the height of the bottom frame resizer.
+        /// </summary>
+        [DefaultValue(4.0)]
         public double BottomHeight
         {
             get { return (double)GetValue(BottomHeightProperty); }
@@ -192,6 +209,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty BottomHeightProperty =
             DependencyProperty.Register("BottomHeight", typeof(double), typeof(Resizer), new UIPropertyMetadata(4.0, OnSizeChanged));
 
+        /// <summary>
+        /// Gets or sets all frame resizer widths and heights. Left,Top,Right,Bottom.
+        /// </summary>
+        [DefaultValue(8)]
         public Thickness FrameSizes
         {
             get { return (Thickness)GetValue(FrameSizesProperty); }
@@ -245,6 +266,10 @@ namespace DW.WPFToolkit.Controls
                 leftBottomThumb.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Gets or sets the width and height of all corner resizers.
+        /// </summary>
+        [DefaultValue(16.0)]
         public double CornerSize
         {
             get { return (double)GetValue(CornerSizeProperty); }

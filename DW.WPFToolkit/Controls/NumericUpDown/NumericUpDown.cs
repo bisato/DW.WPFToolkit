@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.ComponentModel;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -94,6 +95,10 @@ namespace DW.WPFToolkit.Controls
                 Text = value.ToString(CultureInfo.CurrentUICulture);
         }
 
+        /// <summary>
+        /// Gets or sets if the text box is read only and can be modified by the up down buttons only.
+        /// </summary>
+        [DefaultValue(false)]
         public bool IsReadOnly
         {
             get { return (bool)GetValue(IsReadOnlyProperty); }
@@ -106,6 +111,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty IsReadOnlyProperty =
             DependencyProperty.Register("IsReadOnly", typeof(bool), typeof(NumericUpDown), new UIPropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets the minimum value allowed in the text box.
+        /// </summary>
         public object Minimum
         {
             get { return (object)GetValue(MinimumProperty); }
@@ -116,8 +124,11 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDown.Minimum" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty MinimumProperty =
-            DependencyProperty.Register("Minimum", typeof(object), typeof(NumericUpDown), new UIPropertyMetadata(null));
+            DependencyProperty.Register("Minimum", typeof(object), typeof(NumericUpDown));
 
+        /// <summary>
+        /// Gets or sets the maximum value allowed in the text box.
+        /// </summary>
         public object Maximum
         {
             get { return (object)GetValue(MaximumProperty); }
@@ -128,8 +139,12 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDown.Maximum" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty MaximumProperty =
-            DependencyProperty.Register("Maximum", typeof(object), typeof(NumericUpDown), new UIPropertyMetadata(null));
+            DependencyProperty.Register("Maximum", typeof(object), typeof(NumericUpDown));
 
+        /// <summary>
+        /// Gets or sets a value that indicates which type of numbers are allowed to type in the text box.
+        /// </summary>
+        [DefaultValue(NumberTypes.Double)]
         public NumberTypes NumberType
         {
             get { return (NumberTypes)GetValue(NumberTypeProperty); }
@@ -142,6 +157,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty NumberTypeProperty =
             DependencyProperty.Register("NumberType", typeof(NumberTypes), typeof(NumericUpDown), new UIPropertyMetadata(NumberTypes.Double));
 
+        /// <summary>
+        /// Gets or sets the containing number. This property can be bound to a property with the correct type without converting.
+        /// </summary>
+        [DefaultValue("0")]
         public string Text
         {
             get { return (string)GetValue(TextProperty); }
@@ -154,6 +173,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(NumericUpDown), new FrameworkPropertyMetadata("0", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
+        /// <summary>
+        /// Gets or sets the step width to be used by the up or down buttons.
+        /// </summary>
+        [DefaultValue(1.0)]
         public double Step
         {
             get { return (double)GetValue(StepProperty); }
@@ -166,6 +189,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty StepProperty =
             DependencyProperty.Register("Step", typeof(double), typeof(NumericUpDown), new UIPropertyMetadata(1.0));
         
+        /// <summary>
+        /// Gets the written number as integer value.
+        /// </summary>
+        /// <returns>The written number as an integer value. 0 if it is not an integer.</returns>
         public int GetInteger()
         {
             var box = GetTemplateChild("PART_NumberBox") as NumberBox;
@@ -174,6 +201,10 @@ namespace DW.WPFToolkit.Controls
             return 0;
         }
 
+        /// <summary>
+        /// Gets the written number as a double value.
+        /// </summary>
+        /// <returns>The written number as a double value. 0.0 if it is not a double.</returns>
         public double GetDouble()
         {
             var box = GetTemplateChild("PART_NumberBox") as NumberBox;

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using DW.WPFToolkit.Interactivity;
@@ -10,6 +11,10 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EnhancedListView : ListView
     {
+        /// <summary>
+        /// Gets or sets a value which indicates how the columns should be resized. Columns which width is set will not modified.
+        /// </summary>
+        [DefaultValue(ColumnResizeKind.NoResize)]
         public ColumnResizeKind AutoSize
         {
             get { return (ColumnResizeKind)GetValue(AutoSizeProperty); }
@@ -27,6 +32,10 @@ namespace DW.WPFToolkit.Controls
             ColumnWidthBehavior.SetAutoSize(sender, (ColumnResizeKind)e.NewValue);
         }
 
+        /// <summary>
+        /// Gets or sets additional distance on the right for the sum of all column width if the width is calculated.
+        /// </summary>
+        [DefaultValue(10.0)]
         public double TemplatePaddingWidthFix
         {
             get { return (double)GetValue(TemplatePaddingWidthFixProperty); }
@@ -44,6 +53,9 @@ namespace DW.WPFToolkit.Controls
             ColumnWidthBehavior.SetTemplatePaddingWidthFix(sender, (double)e.NewValue);
         }
 
+        /// <summary>
+        /// Gets or sets a collection of columns which should be visible by their name.
+        /// </summary>
         public IList VisibleColumns
         {
             get { return (IList)GetValue(VisibleColumnsProperty); }
@@ -61,6 +73,10 @@ namespace DW.WPFToolkit.Controls
             ColumnVisibilityBehavior.SetVisibleColumns(sender, (IList)e.NewValue);
         }
 
+        /// <summary>
+        /// Gets or sets the header template to be used if <see cref="DW.WPFToolkit.Controls.EnhancedListView.AllowColumnSortings" /> is set to true and the items are not sorted by a column.
+        /// </summary>
+        [DefaultValue(null)]
         public DataTemplate NeutralHeaderTemplate
         {
             get { return (DataTemplate)GetValue(NeutralHeaderTemplateProperty); }
@@ -78,6 +94,10 @@ namespace DW.WPFToolkit.Controls
             ColumnSortBehavior.SetNeutralHeaderTemplate(sender, (DataTemplate)e.NewValue);
         }
 
+        /// <summary>
+        /// Gets or sets the header template to be used if <see cref="DW.WPFToolkit.Controls.EnhancedListView.AllowColumnSortings" /> is set to true and the items are sorted by a column in an ascending order.
+        /// </summary>
+        [DefaultValue(null)]
         public DataTemplate AscendingSortHeaderTemplate
         {
             get { return (DataTemplate)GetValue(AscendingSortHeaderTemplateProperty); }
@@ -95,6 +115,10 @@ namespace DW.WPFToolkit.Controls
             ColumnSortBehavior.SetAscendingSortHeaderTemplate(sender, (DataTemplate)e.NewValue);
         }
 
+        /// <summary>
+        /// Gets or sets the header template to be used if <see cref="DW.WPFToolkit.Controls.EnhancedListView.AllowColumnSortings" /> is set to true and the items are sorted by a column in an descending order.
+        /// </summary>
+        [DefaultValue(null)]
         public DataTemplate DescendingSortHeaderTemplate
         {
             get { return (DataTemplate)GetValue(DescendingSortHeaderTemplateProperty); }
@@ -112,6 +136,10 @@ namespace DW.WPFToolkit.Controls
             ColumnSortBehavior.SetDescendingSortHeaderTemplate(sender, (DataTemplate)e.NewValue);
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates of sorting by clicking on the header is enabled or not. To have this functionality the <see cref="DW.WPFToolkit.Controls.EnhancedGridViewColumn.SortPropertyName" /> has to be set in the columns. For display arrows to indicate the sort direction consider setting header templates.
+        /// </summary>
+        [DefaultValue(false)]
         public bool AllowColumnSortings
         {
             get { return (bool)GetValue(AllowColumnSortingsProperty); }

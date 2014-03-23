@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -28,6 +29,9 @@ namespace DW.WPFToolkit.Controls
             Loaded += (sender, e) => CalculateGaps();
         }
 
+        /// <summary>
+        /// Gets or sets the radius of the outher ellipse of the whole GappedOverlay
+        /// </summary>
         public double OutherRadius
         {
             get { return (double)GetValue(OutherRadiusProperty); }
@@ -46,6 +50,9 @@ namespace DW.WPFToolkit.Controls
             control.OnOutherRadiusChanged();
         }
 
+        /// <summary>
+        /// Gets or sets the radius of the outher ellipse. There the gaps will start.
+        /// </summary>
         public double OutherGapRadius
         {
             get { return (double)GetValue(OutherGapRadiusProperty); }
@@ -64,6 +71,9 @@ namespace DW.WPFToolkit.Controls
             control.OnOutherGapRadiusChanged();
         }
 
+        /// <summary>
+        /// Gets or sets the radius of the inner ellipse. There the gaps will end.
+        /// </summary>
         public double InnerGapRadius
         {
             get { return (double)GetValue(InnerGapRadiusProperty); }
@@ -82,6 +92,9 @@ namespace DW.WPFToolkit.Controls
             control.OnInnerGapRadiusChanged();
         }
 
+        /// <summary>
+        /// Gets or sets the radius of the end point in center of the whole GappedOverlay.
+        /// </summary>
         public double InnerRadius
         {
             get { return (double)GetValue(InnerRadiusProperty); }
@@ -100,6 +113,9 @@ namespace DW.WPFToolkit.Controls
             control.OnInnerRadiusChanged();
         }
 
+        /// <summary>
+        /// Gets or sets the distances between each gap.
+        /// </summary>
         public double GapDistance
         {
             get { return (double)GetValue(GapDistanceProperty); }
@@ -118,6 +134,9 @@ namespace DW.WPFToolkit.Controls
             control.CalculateGaps();
         }
 
+        /// <summary>
+        /// Gets or sets the distance between the gaps and the other ellipse of the GappedOverlay.
+        /// </summary>
         public double OutherDistance
         {
             get { return (double)GetValue(OutherDistanceProperty); }
@@ -136,6 +155,9 @@ namespace DW.WPFToolkit.Controls
             control.CalculateGaps();
         }
 
+        /// <summary>
+        /// Gets or sets the distance between the gaps and the inner ellipse of the center point in the GappedOverlay.
+        /// </summary>
         public double InnerDistance
         {
             get { return (double)GetValue(InnerDistanceProperty); }
@@ -154,6 +176,9 @@ namespace DW.WPFToolkit.Controls
             control.CalculateGaps();
         }
 
+        /// <summary>
+        /// Gets or sets the brush of the outher ellipse of the GappedOverlay.
+        /// </summary>
         public Brush OutherCircleBrush
         {
             get { return (Brush)GetValue(OutherCircleBrushProperty); }
@@ -166,6 +191,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty OutherCircleBrushProperty =
             DependencyProperty.Register("OutherCircleBrush", typeof(Brush), typeof(GappedOverlay));
 
+        /// <summary>
+        /// Gets or sets the thickness of the outher ellipse of the GappedOverlay
+        /// </summary>
         public double OutherCircleThickness
         {
             get { return (double)GetValue(OutherCircleThicknessProperty); }
@@ -178,6 +206,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty OutherCircleThicknessProperty =
             DependencyProperty.Register("OutherCircleThickness", typeof(double), typeof(GappedOverlay));
 
+        /// <summary>
+        /// Gets or sets the rotating angle of the whole GappedOverlay.
+        /// </summary>
         public double RotateAngle
         {
             get { return (double)GetValue(RotateAngleProperty); }

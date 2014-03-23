@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
@@ -13,6 +14,10 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TabItemAddButton), new FrameworkPropertyMetadata(typeof(TabItemAddButton)));
         }
 
+        /// <summary>
+        /// Gets or sets the stroke thickness of the plus icon shown in the template.
+        /// </summary>
+        [DefaultValue(1.5)]
         public double StrokeThickness
         {
             get { return (double)GetValue(StrokeThicknessProperty); }

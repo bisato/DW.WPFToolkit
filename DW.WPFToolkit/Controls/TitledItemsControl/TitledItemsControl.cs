@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
@@ -32,6 +33,10 @@ namespace DW.WPFToolkit.Controls
             return item is TitledItem;
         }
 
+        /// <summary>
+        /// Gets or sets a value that defines the vertical alignment of all titles in the child elements.
+        /// </summary>
+        [DefaultValue(VerticalAlignment.Center)]
         public VerticalAlignment VerticalTitleAlignments
         {
             get { return (VerticalAlignment)GetValue(VerticalTitleAlignmentsProperty); }
@@ -44,6 +49,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty VerticalTitleAlignmentsProperty =
             DependencyProperty.Register("VerticalTitleAlignments", typeof(VerticalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(VerticalAlignment.Center));
 
+        /// <summary>
+        /// Gets or sets a value that defines the horizontal alignment of all titles in the child elements.
+        /// </summary>
+        [DefaultValue(HorizontalAlignment.Left)]
         public HorizontalAlignment HorizontalTitleAlignments
         {
             get { return (HorizontalAlignment)GetValue(HorizontalTitleAlignmentsProperty); }
@@ -54,8 +63,11 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.TitledItemsControl.HorizontalTitleAlignments" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty HorizontalTitleAlignmentsProperty =
-            DependencyProperty.Register("HorizontalTitleAlignments", typeof(HorizontalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(HorizontalAlignment.Right));
+            DependencyProperty.Register("HorizontalTitleAlignments", typeof(HorizontalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(HorizontalAlignment.Left));
 
+        /// <summary>
+        /// Gets or sets a value that defines the margin of all titles in the child elements
+        /// </summary>
         public Thickness TitleMargins
         {
             get { return (Thickness)GetValue(TitleMarginsProperty); }
@@ -68,6 +80,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty TitleMarginsProperty =
             DependencyProperty.Register("TitleMargins", typeof(Thickness), typeof(TitledItemsControl), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
 
+        /// <summary>
+        /// Gets or sets a value that defines the horizontal alignments of all contens in the child elements.
+        /// </summary>
+        [DefaultValue(HorizontalAlignment.Stretch)]
         public HorizontalAlignment HorizontalContentAlignments
         {
             get { return (HorizontalAlignment)GetValue(HorizontalContentAlignmentsProperty); }
@@ -80,6 +96,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty HorizontalContentAlignmentsProperty =
             DependencyProperty.Register("HorizontalContentAlignments", typeof(HorizontalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(HorizontalAlignment.Stretch));
 
+        /// <summary>
+        /// Gets or sets a value that defines the vertical alignments of all contents in the child elements.
+        /// </summary>
+        [DefaultValue(VerticalAlignment.Center)]
         public VerticalAlignment VerticalContentAlignments
         {
             get { return (VerticalAlignment)GetValue(VerticalContentAlignmentsProperty); }
@@ -92,6 +112,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty VerticalContentAlignmentsProperty =
             DependencyProperty.Register("VerticalContentAlignments", typeof(VerticalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(VerticalAlignment.Center));
 
+        /// <summary>
+        /// Gets or sets a value that defines the margins of all contents in the child elements.
+        /// </summary>
         public Thickness ContentMargins
         {
             get { return (Thickness)GetValue(ContentMarginsProperty); }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -222,6 +223,10 @@ namespace DW.WPFToolkit.Controls
 
         public ObservableCollection<TreeViewItem> SelectedTreeViewItems { get; private set; }
 
+        /// <summary>
+        /// Gets or set a value which indicates how items can be selected in the tree view.
+        /// </summary>
+        [DefaultValue(SelectionMode.Extended)]
         public SelectionMode SelectionMode
         {
             get { return (SelectionMode)GetValue(SelectionModeProperty); }
@@ -234,6 +239,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty SelectionModeProperty =
             DependencyProperty.Register("SelectionMode", typeof(SelectionMode), typeof(EnhancedTreeView), new UIPropertyMetadata(SelectionMode.Extended));
 
+        /// <summary>
+        /// Gets or sets a value which indicates of the child tree view items should be stretched over the whole control width or not.
+        /// </summary>
+        [DefaultValue(false)]
         public bool ItemsContentStretching
         {
             get { return (bool)GetValue(ItemsContentStretchingProperty); }

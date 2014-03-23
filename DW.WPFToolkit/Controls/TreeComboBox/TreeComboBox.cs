@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using DW.WPFToolkit.Helpers;
 
@@ -35,6 +36,10 @@ namespace DW.WPFToolkit.Controls
             base.OnApplyTemplate();
         }
 
+        /// <summary>
+        /// Gets or sets the maximum height of the drop down popup. This is taken from the calculated height of the original <see cref="System.Windows.Controls.ComboBox.MaxDropDownHeight" />.
+        /// </summary>
+        [DefaultValue(0.0)]
         public double MaxDropDownHeight
         {
             get { return (double)GetValue(MaxDropDownHeightProperty); }
@@ -47,6 +52,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty MaxDropDownHeightProperty =
             DependencyProperty.Register("MaxDropDownHeight", typeof(double), typeof(TreeComboBox), new UIPropertyMetadata(0.0));
 
+        /// <summary>
+        /// Gets or sets data template of the selected item. This is taken from the original <see cref="System.Windows.Controls.ComboBox.SelectionBoxItemTemplate" />.
+        /// </summary>
+        [DefaultValue(null)]
         public DataTemplate SelectionBoxItemTemplate
         {
             get { return (DataTemplate)GetValue(SelectionBoxItemTemplateProperty); }
@@ -59,6 +68,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty SelectionBoxItemTemplateProperty =
             DependencyProperty.Register("SelectionBoxItemTemplate", typeof(DataTemplate), typeof(TreeComboBox), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the item shown as selected.
+        /// </summary>
+        [DefaultValue(null)]
         public object SelectionBoxItem
         {
             get { return (object)GetValue(SelectionBoxItemProperty); }
@@ -71,6 +84,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty SelectionBoxItemProperty =
             DependencyProperty.Register("SelectionBoxItem", typeof(object), typeof(TreeComboBox), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets string format of the selected item. This is taken from the original <see cref="System.Windows.Controls.ComboBox.SelectionBoxItemStringFormat" />.
+        /// </summary>
+        [DefaultValue(null)]
         public string SelectionBoxItemStringFormat
         {
             get { return (string)GetValue(SelectionBoxItemStringFormatProperty); }
@@ -83,6 +100,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty SelectionBoxItemStringFormatProperty =
             DependencyProperty.Register("SelectionBoxItemStringFormat", typeof(string), typeof(TreeComboBox), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets a value that indicates of the drop down is opened or not.
+        /// </summary>
         public bool IsDropDownOpen
         {
             get { return (bool)GetValue(IsDropDownOpenProperty); }
@@ -93,7 +113,7 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.TreeComboBox.IsDropDownOpen" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsDropDownOpenProperty =
-            DependencyProperty.Register("IsDropDownOpen", typeof(bool), typeof(TreeComboBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register("IsDropDownOpen", typeof(bool), typeof(TreeComboBox));
 
         protected override void OnSelectedItemChanged(RoutedPropertyChangedEventArgs<object> e)
         {

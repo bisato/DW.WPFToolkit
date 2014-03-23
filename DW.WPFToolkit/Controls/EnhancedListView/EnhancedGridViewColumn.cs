@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using DW.WPFToolkit.Interactivity;
 
@@ -9,6 +10,9 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EnhancedGridViewColumn : GridViewColumn
     {
+        /// <summary>
+        /// Gets or sets the name of the current column. This will be used by the <see cref="DW.WPFToolkit.Controls.EnhancedListView.VisibleColumns" /> collection.
+        /// </summary>
         public string Name
         {
             get { return (string)GetValue(NameProperty); }
@@ -26,6 +30,9 @@ namespace DW.WPFToolkit.Controls
             ColumnVisibilityBehavior.SetName(sender, (string)e.NewValue);
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the current column is the default sort when the <see cref="DW.WPFToolkit.Controls.EnhancedListView" /> is loaded.
+        /// </summary>
         public bool IsDefaultSortColumn
         {
             get { return (bool)GetValue(IsDefaultSortColumnProperty); }
@@ -43,6 +50,9 @@ namespace DW.WPFToolkit.Controls
             ColumnSortBehavior.SetIsDefaultSortColumn(sender, (bool)e.NewValue);
         }
 
+        /// <summary>
+        /// Gets or sets the property name which will be used for sorting by the current column.
+        /// </summary>
         public string SortPropertyName
         {
             get { return (string)GetValue(SortPropertyNameProperty); }
@@ -60,6 +70,9 @@ namespace DW.WPFToolkit.Controls
             ColumnSortBehavior.SetSortPropertyName(sender, (string)e.NewValue);
         }
 
+        /// <summary>
+        /// Gets or sets the proportional width in percent to be used for this column if <see cref="DW.WPFToolkit.Controls.EnhancedListView.AutoSize" /> is set to <see cref="DW.WPFToolkit.Interactivity.ColumnResizeKind.Proportional" />. If the width is set this property has no effect.
+        /// </summary>
         public double ProportionalWidth
         {
             get { return (double)GetValue(ProportionalWidthProperty); }

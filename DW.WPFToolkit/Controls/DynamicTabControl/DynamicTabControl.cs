@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -33,6 +34,10 @@ namespace DW.WPFToolkit.Controls
             return item is DynamicTabItem;
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the close buttons are shown on the tab items header.
+        /// </summary>
+        [DefaultValue(true)]
         public bool ShowCloseButtons
         {
             get { return (bool)GetValue(ShowCloseButtonsProperty); }
@@ -45,6 +50,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ShowCloseButtonsProperty =
             DependencyProperty.Register("ShowCloseButtons", typeof(bool), typeof(DynamicTabControl), new UIPropertyMetadata(true));
 
+        /// <summary>
+        /// Gets or sets the value which indicates if the add new tab item button is shown.
+        /// </summary>
+        [DefaultValue(true)]
         public bool ShowAddButton
         {
             get { return (bool)GetValue(ShowAddButtonProperty); }
@@ -57,6 +66,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ShowAddButtonProperty =
             DependencyProperty.Register("ShowAddButton", typeof(bool), typeof(DynamicTabControl), new UIPropertyMetadata(true));
 
+        /// <summary>
+        /// Gets or sets the command which gets called when the close on the tab item header is clicked. The tab DataContext is forwarded as the command parameter.
+        /// </summary>
+        [DefaultValue(null)]
         public ICommand TabItemClosingCommand
         {
             get { return (ICommand)GetValue(TabItemClosingCommandProperty); }
@@ -69,6 +82,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty TabItemClosingCommandProperty =
             DependencyProperty.Register("TabItemClosingCommand", typeof(ICommand), typeof(DynamicTabControl), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the parameter which is passed with the <see cref="DW.WPFToolkit.Controls.DynamicTabControl.TabItemAddingCommand" /> command.
+        /// </summary>
+        [DefaultValue(null)]
         public object TabItemAddingCommandParameter
         {
             get { return (object)GetValue(TabItemAddingCommandParameterProperty); }
@@ -81,6 +98,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty TabItemAddingCommandParameterProperty =
             DependencyProperty.Register("TabItemAddingCommandParameter", typeof(object), typeof(DynamicTabControl), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the command which gets called when the add new tab item button is pressed.
+        /// </summary>
+        [DefaultValue(null)]
         public ICommand TabItemAddingCommand
         {
             get { return (ICommand)GetValue(TabItemAddingCommandProperty); }
@@ -93,6 +114,9 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty TabItemAddingCommandProperty =
             DependencyProperty.Register("TabItemAddingCommand", typeof(ICommand), typeof(DynamicTabControl), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the margin of the add new tab item button.
+        /// </summary>
         public Thickness AddButtonMargin
         {
             get { return (Thickness)GetValue(AddButtonMarginProperty); }
@@ -105,6 +129,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty AddButtonMarginProperty =
             DependencyProperty.Register("AddButtonMargin", typeof(Thickness), typeof(DynamicTabControl), new UIPropertyMetadata(new Thickness(0)));
 
+        /// <summary>
+        /// Gets or sets the width of the add new tab item button.
+        /// </summary>
+        [DefaultValue(14.0)]
         public double AddButtonWidth
         {
             get { return (double)GetValue(AddButtonWidthProperty); }
@@ -117,6 +145,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty AddButtonWidthProperty =
             DependencyProperty.Register("AddButtonWidth", typeof(double), typeof(DynamicTabControl), new UIPropertyMetadata(14.0));
 
+        /// <summary>
+        /// Gets or sets the height of the add new tab item button.
+        /// </summary>
+        [DefaultValue(14.0)]
         public double AddButtonHeight
         {
             get { return (double)GetValue(AddButtonHeightProperty); }
@@ -129,6 +161,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty AddButtonHeightProperty =
             DependencyProperty.Register("AddButtonHeight", typeof(double), typeof(DynamicTabControl), new UIPropertyMetadata(14.0));
 
+        /// <summary>
+        /// Gets or sets the value which indicates where the add new tab item button has to be placed in the header.
+        /// </summary>
+        [DefaultValue(Dock.Right)]
         public Dock AddButtonPosition
         {
             get { return (Dock)GetValue(AddButtonPositionProperty); }

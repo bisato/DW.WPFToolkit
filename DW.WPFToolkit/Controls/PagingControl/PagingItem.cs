@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
@@ -13,6 +14,10 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PagingItem), new FrameworkPropertyMetadata(typeof(PagingItem)));
         }
 
+        /// <summary>
+        /// Gets or sets the footer to show in the page.
+        /// </summary>
+        [DefaultValue(null)]
         public object Footer
         {
             get { return (object)GetValue(FooterProperty); }
@@ -25,6 +30,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty FooterProperty =
             DependencyProperty.Register("Footer", typeof(object), typeof(PagingItem), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the data template to be used for the <see cref="DW.WPFToolkit.Controls.PagingItem.Footer" /> in the page.
+        /// </summary>
+        [DefaultValue(null)]
         public DataTemplate FooterTemplate
         {
             get { return (DataTemplate)GetValue(FooterTemplateProperty); }

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
@@ -27,6 +28,9 @@ namespace DW.WPFToolkit.Controls
             return item is EnhancedTreeViewItem;
         }
 
+        /// <summary>
+        /// Gets or sets a value which is indicating if the current item should be stretched over the whole width of the tree view or not.
+        /// </summary>
         public bool ContentStretching
         {
             get { return (bool)GetValue(ContentStretchingProperty); }

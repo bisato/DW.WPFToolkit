@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -28,6 +29,10 @@ namespace DW.WPFToolkit.Controls
             CallCommand();
         }
 
+        /// <summary>
+        /// Gets or sets the command to be executed when the item get clicked.
+        /// </summary>
+        [DefaultValue(null)]
         public ICommand Command
         {
             get { return (ICommand)GetValue(CommandProperty); }
@@ -40,6 +45,10 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty CommandProperty =
             DependencyProperty.Register("Command", typeof(ICommand), typeof(SplitButtonItem), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the command parameter passed with the <see cref="DW.WPFToolkit.Controls.SplitButtonItem.Command" />.
+        /// </summary>
+        [DefaultValue(null)]
         public object CommandParameter
         {
             get { return (object)GetValue(CommandParameterProperty); }

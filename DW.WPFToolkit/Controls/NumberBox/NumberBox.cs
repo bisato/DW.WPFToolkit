@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +20,9 @@ namespace DW.WPFToolkit.Controls
             CommandBindings.Add(new CommandBinding(ApplicationCommands.Paste, null, CanPasteCommand));
         }
 
+        /// <summary>
+        /// Gets or sets the minimum value allowed in the text box.
+        /// </summary>
         public object Minimum
         {
             get { return (object)GetValue(MinimumProperty); }
@@ -29,8 +33,11 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.Minimum" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty MinimumProperty =
-            DependencyProperty.Register("Minimum", typeof(object), typeof(NumberBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register("Minimum", typeof(object), typeof(NumberBox));
 
+        /// <summary>
+        /// Gets or sets the maximum value allowed in the text box.
+        /// </summary>
         public object Maximum
         {
             get { return (object)GetValue(MaximumProperty); }
@@ -41,8 +48,12 @@ namespace DW.WPFToolkit.Controls
         /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.Maximum" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty MaximumProperty =
-            DependencyProperty.Register("Maximum", typeof(object), typeof(NumberBox), new UIPropertyMetadata(null));
+            DependencyProperty.Register("Maximum", typeof(object), typeof(NumberBox));
 
+        /// <summary>
+        /// Gets or sets a value that indicated which type of numbers are allowed to type in.
+        /// </summary>
+        [DefaultValue(NumberTypes.Integer)]
         public NumberTypes NumberType
         {
             get { return (NumberTypes)GetValue(NumberTypeProperty); }
@@ -87,7 +98,7 @@ namespace DW.WPFToolkit.Controls
             }
         }
 
-        internal double AsDouble
+        private double AsDouble
         {
             get
             {
