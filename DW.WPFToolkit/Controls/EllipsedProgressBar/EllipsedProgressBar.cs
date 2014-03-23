@@ -23,6 +23,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EllipsedProgressBar), new FrameworkPropertyMetadata(typeof(EllipsedProgressBar)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" /> class.
+        /// </summary>
         public EllipsedProgressBar()
         {
             _outherEllipse = new EllipseGeometry();
@@ -406,6 +409,11 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty RotateDirectionProperty =
             DependencyProperty.Register("RotateDirection", typeof(SweepDirection), typeof(EllipsedProgressBar), new UIPropertyMetadata(SweepDirection.Clockwise));
 
+        /// <summary>
+        /// Handles changed minimum value.
+        /// </summary>
+        /// <param name="oldMinimum">The old minimum value.</param>
+        /// <param name="newMinimum">The new minimum value.</param>
         protected override void OnMinimumChanged(double oldMinimum, double newMinimum)
         {
             base.OnMinimumChanged(oldMinimum, newMinimum);
@@ -413,6 +421,11 @@ namespace DW.WPFToolkit.Controls
                 OnIsIndeterminateChanged();
         }
 
+        /// <summary>
+        /// Handles changed maximum value.
+        /// </summary>
+        /// <param name="oldMaximum">The old maximum value.</param>
+        /// <param name="newMaximum">The new maximum value.</param>
         protected override void OnMaximumChanged(double oldMaximum, double newMaximum)
         {
             base.OnMaximumChanged(oldMaximum, newMaximum);
@@ -420,6 +433,11 @@ namespace DW.WPFToolkit.Controls
                 OnIsIndeterminateChanged();
         }
 
+        /// <summary>
+        /// Handles changed progress value.
+        /// </summary>
+        /// <param name="oldValue">The old progress value.</param>
+        /// <param name="newValue">The new progress value.</param>
         protected override void OnValueChanged(double oldValue, double newValue)
         {
             base.OnValueChanged(oldValue, newValue);

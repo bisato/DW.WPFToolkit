@@ -66,12 +66,18 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty CommandParameterProperty =
             DependencyProperty.Register("CommandParameter", typeof(object), typeof(SplitButton), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Occurs when the main button is clicked.
+        /// </summary>
         public event RoutedEventHandler Click
         {
             add { AddHandler(ClickEvent, value); }
             remove { RemoveHandler(ClickEvent, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitButton.Click" /> routed event.
+        /// </summary>
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(SplitButton));
 
         private void CallClickEvent()

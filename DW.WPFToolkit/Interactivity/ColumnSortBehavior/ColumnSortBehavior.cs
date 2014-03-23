@@ -12,11 +12,21 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class ColumnSortBehavior : DependencyObject
     {
+        /// <summary>
+        /// Gets the header template to be used for sorting if the column is not used for sort actually.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnSortBehavior.NeutralHeaderTemplate property value for the element.</returns>
         public static DataTemplate GetNeutralHeaderTemplate(DependencyObject obj)
         {
             return (DataTemplate)obj.GetValue(NeutralHeaderTemplateProperty);
         }
 
+        /// <summary>
+        /// Attaches the header template to be used for sorting if the column is not used for sort actually.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnSortBehavior.NeutralHeaderTemplate value.</param>
         public static void SetNeutralHeaderTemplate(DependencyObject obj, DataTemplate value)
         {
             obj.SetValue(NeutralHeaderTemplateProperty, value);
@@ -28,11 +38,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty NeutralHeaderTemplateProperty =
             DependencyProperty.RegisterAttached("NeutralHeaderTemplate", typeof(DataTemplate), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets the header template to be used for sorting if the column is used for sort ascending actually.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnSortBehavior.AscendingSortHeaderTemplate property value for the element.</returns>
         public static DataTemplate GetAscendingSortHeaderTemplate(DependencyObject obj)
         {
             return (DataTemplate)obj.GetValue(AscendingSortHeaderTemplateProperty);
         }
 
+        /// <summary>
+        /// Attaches the header template to be used for sorting if the column is used for sort ascending actually.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnSortBehavior.AscendingSortHeaderTemplate value.</param>
         public static void SetAscendingSortHeaderTemplate(DependencyObject obj, DataTemplate value)
         {
             obj.SetValue(AscendingSortHeaderTemplateProperty, value);
@@ -44,11 +64,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty AscendingSortHeaderTemplateProperty =
             DependencyProperty.RegisterAttached("AscendingSortHeaderTemplate", typeof(DataTemplate), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets the header template to be used for sorting if the column is used for sort descending actually.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnSortBehavior.DescendingSortHeaderTemplate property value for the element.</returns>
         public static DataTemplate GetDescendingSortHeaderTemplate(DependencyObject obj)
         {
             return (DataTemplate)obj.GetValue(DescendingSortHeaderTemplateProperty);
         }
 
+        /// <summary>
+        /// Attaches the header template to be used for sorting if the column is used for sort descending actually.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnSortBehavior.DescendingSortHeaderTemplate value.</param>
         public static void SetDescendingSortHeaderTemplate(DependencyObject obj, DataTemplate value)
         {
             obj.SetValue(DescendingSortHeaderTemplateProperty, value);
@@ -60,11 +90,21 @@ namespace DW.WPFToolkit.Interactivity
         public static readonly DependencyProperty DescendingSortHeaderTemplateProperty =
             DependencyProperty.RegisterAttached("DescendingSortHeaderTemplate", typeof(DataTemplate), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets the value that indicates if sorting is allowed or not.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnSortBehavior.AllowColumnSortings property value for the element.</returns>
         public static bool GetAllowColumnSortings(DependencyObject obj)
         {
             return (bool)obj.GetValue(AllowColumnSortingsProperty);
         }
 
+        /// <summary>
+        /// Attaches the value if sorting is allowed or not.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnSortBehavior.AllowColumnSortings value.</param>
         public static void SetAllowColumnSortings(DependencyObject obj, bool value)
         {
             obj.SetValue(AllowColumnSortingsProperty, value);
@@ -82,11 +122,21 @@ namespace DW.WPFToolkit.Interactivity
             element.Loaded += Eement_Loaded;
         }
 
+        /// <summary>
+        /// Gets a value that indicates if a column is defined as default sort column or not.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnSortBehavior.IsDefaultSortColumn property value for the element.</returns>
         public static bool GetIsDefaultSortColumn(DependencyObject obj)
         {
             return (bool)obj.GetValue(IsDefaultSortColumnProperty);
         }
 
+        /// <summary>
+        /// Attaches a value that indicates if a column is defined as default sort column or not.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnSortBehavior.IsDefaultSortColumn value.</param>
         public static void SetIsDefaultSortColumn(DependencyObject obj, bool value)
         {
             obj.SetValue(IsDefaultSortColumnProperty, value);
@@ -96,13 +146,23 @@ namespace DW.WPFToolkit.Interactivity
         /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.GetIsDefaultSortColumn(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.SetIsDefaultSortColumn(DependencyObject, bool)" /> attached property.
         /// </summary>
         public static readonly DependencyProperty IsDefaultSortColumnProperty =
-            DependencyProperty.RegisterAttached("IsDefaultSortColumn", typeof(bool), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
+            DependencyProperty.RegisterAttached("IsDefaultSortColumn", typeof(bool), typeof(ColumnSortBehavior));
 
+        /// <summary>
+        /// Gets the property name to be used for sorting.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Interactivity.ColumnSortBehavior.SortPropertyName property value for the element.</returns>
         public static string GetSortPropertyName(DependencyObject obj)
         {
             return (string)obj.GetValue(SortPropertyNameProperty);
         }
 
+        /// <summary>
+        /// Attaches the property name to be used for sorting.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Interactivity.ColumnSortBehavior.SortPropertyName value.</param>
         public static void SetSortPropertyName(DependencyObject obj, string value)
         {
             obj.SetValue(SortPropertyNameProperty, value);

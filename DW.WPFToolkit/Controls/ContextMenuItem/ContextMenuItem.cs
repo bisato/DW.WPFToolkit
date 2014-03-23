@@ -13,9 +13,9 @@ namespace DW.WPFToolkit.Controls
     public class ContextMenuItem : MenuItem
     {
         /// <summary>
-        /// Called when the <see cref="DW.WPFToolkit.Controls.ContextMenuItem.IsInitialized" /> property is set to true and raises an <see cref="DW.WPFToolkit.Controls.ContextMenuItem.Initialized" /> event.
+        /// Called when the <see cref="System.Windows.FrameworkElement.IsInitialized" /> property is set to true.
         /// </summary>
-        /// <param name="e">The event data for the <see cref="DW.WPFToolkit.Controls.ContextMenuItem.Initialized" /> event.</param>
+        /// <param name="e">The event data for the <see cref="System.Windows.FrameworkElement.IsInitialized" /> event.</param>
         protected override void OnInitialized(EventArgs e)
         {
             base.OnInitialized(e);

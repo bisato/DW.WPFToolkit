@@ -65,6 +65,11 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty MinItemHeightProperty =
             DependencyProperty.Register("MinItemHeight", typeof(double), typeof(UniformWrapPanel), new UIPropertyMetadata(0.0));
 
+        /// <summary>
+        /// Lets each child calculating is needed size.
+        /// </summary>
+        /// <param name="availableSize">The available space by the parent control.</param>
+        /// <returns>The calculated size needed for the control.</returns>
         protected override Size MeasureOverride(Size availableSize)
         {
             if (Children.Count > 0 &&

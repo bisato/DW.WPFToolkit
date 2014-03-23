@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -10,14 +11,32 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EllipseItemsFactory : IItemsFactory
     {
+        /// <summary>
+        /// Gets or sets the color for each item returned by the <see cref="DW.WPFToolkit.Controls.EllipseItemsFactory.GenerateItems(bool)" /> method. The default is Colors.Red.
+        /// </summary>
         public Brush Color { get; set; }
 
+        /// <summary>
+        /// Gets or sets the amount of items created by the <see cref="DW.WPFToolkit.Controls.EllipseItemsFactory.GenerateItems(bool)" /> method. The default is 10.
+        /// </summary>
+        [DefaultValue(10)]
         public int ItemsCount { get; set; }
 
+        /// <summary>
+        /// Gets or sets the value the opacity has to be thrinked for the items created by the <see cref="DW.WPFToolkit.Controls.EllipseItemsFactory.GenerateItems(bool)" /> method. This is not used if the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" /> is markes as indeterminate. The default is 0.1.
+        /// </summary>
+        [DefaultValue(0.1)]
         public double OpacityShrinking { get; set; }
 
+        /// <summary>
+        /// Gets or sets the size for the items created by the <see cref="DW.WPFToolkit.Controls.EllipseItemsFactory.GenerateItems(bool)" /> method. The default is 8.
+        /// </summary>
+        [DefaultValue(8)]
         public double Size { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.EllipseItemsFactory" /> class.
+        /// </summary>
         public EllipseItemsFactory()
         {
             Color = new SolidColorBrush(Colors.Red);
@@ -26,6 +45,11 @@ namespace DW.WPFToolkit.Controls
             Size = 8;
         }
 
+        /// <summary>
+        /// Creates the items to shown in the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" />.
+        /// </summary>
+        /// <param name="forIndeterminate">Defines if the items are placed in an <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" /> where <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.IsIndeterminate" /> is set to true.</param>
+        /// <returns>The created items to shown in the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" />.</returns>
         public IEnumerable<UIElement> GenerateItems(bool forIndeterminate)
         {
             var collection = new List<Ellipse>();
@@ -39,6 +63,13 @@ namespace DW.WPFToolkit.Controls
             return collection;
         }
 
+        /// <summary>
+        /// Modifies the items depending on the current progress state called by the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" />.
+        /// </summary>
+        /// <param name="items">The items created by the <see cref="DW.WPFToolkit.Controls.EllipseItemsFactory.GenerateItems(bool)" />.</param>
+        /// <param name="mininum">The minimum value defined in the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" />.</param>
+        /// <param name="maximum">The maximum value defined in the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" /></param>
+        /// <param name="value">The current progress value in the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" />.</param>
         public void EditItemsForValue(IEnumerable<UIElement> items, double mininum, double maximum, double value)
         {
             var ellipses = (List<Ellipse>)items;

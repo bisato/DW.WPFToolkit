@@ -32,6 +32,9 @@ namespace DW.WPFToolkit.Controls
             return item is TreeListViewItem;
         }
 
+        /// <summary>
+        /// Returns the level of the current item in the tree.
+        /// </summary>
         public int Level
         {
             get { return VisualTreeAssist.GetParentsUntilCount<TreeListViewItem, TreeListView>(this); }
