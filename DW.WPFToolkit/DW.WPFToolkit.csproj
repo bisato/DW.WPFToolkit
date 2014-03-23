@@ -123,8 +123,6 @@
     <Compile Include="Helpers\WindowObserver\NotifyEventArgs.cs" />
     <Compile Include="Helpers\PopupHandler\PopupHandler.cs" />
     <Compile Include="Helpers\VisualTreeAssist\VisualTreeAssist.cs" />
-    <Compile Include="Helpers\WindowBehavior\WindowBehavior.cs" />
-    <Compile Include="Helpers\WindowBehavior\WindowClosingArgs.cs" />
     <Compile Include="Helpers\WindowObserver\WindowMessages.cs" />
     <Compile Include="Helpers\WindowObserver\WindowObserver.cs" />
     <Compile Include="Interactivity\ColumnWidthBehavior\ColumnResizeKind.cs" />

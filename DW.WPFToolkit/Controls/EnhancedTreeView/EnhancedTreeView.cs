@@ -213,6 +213,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SelectionModeProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTreeView.SelectionMode" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SelectionModeProperty =
             DependencyProperty.Register("SelectionMode", typeof(SelectionMode), typeof(EnhancedTreeView), new UIPropertyMetadata(SelectionMode.Extended));
 
@@ -222,6 +225,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ItemsContentStretchingProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTreeView.ItemsContentStretching" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ItemsContentStretchingProperty =
             DependencyProperty.Register("ItemsContentStretching", typeof(bool), typeof(EnhancedTreeView), new UIPropertyMetadata(false));
     }

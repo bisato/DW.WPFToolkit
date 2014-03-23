@@ -18,6 +18,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(RotateElementsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsePanel.RotateElements" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty RotateElementsProperty =
             DependencyProperty.Register("RotateElements", typeof(bool), typeof(EllipsePanel), new PropertyMetadata(false, ValueChanged));
 
@@ -27,6 +30,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ElementsRotateDirectionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsePanel.ElementsRotateDirection" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ElementsRotateDirectionProperty =
             DependencyProperty.Register("ElementsRotateDirection", typeof(ElementsRotateDirection), typeof(EllipsePanel), new PropertyMetadata(ValueChanged));
 
@@ -36,6 +42,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(EllipseRotateDirectionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsePanel.EllipseRotateDirection" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty EllipseRotateDirectionProperty =
             DependencyProperty.Register("EllipseRotateDirection", typeof(SweepDirection), typeof(EllipsePanel), new PropertyMetadata(ValueChanged));
 
@@ -45,6 +54,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ElementStartPositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsePanel.ElementStartPosition" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ElementStartPositionProperty =
             DependencyProperty.Register("ElementStartPosition", typeof(ElementStartPosition), typeof(EllipsePanel), new PropertyMetadata(ValueChanged));
 

@@ -12,13 +12,17 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(IsAutoUniformProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.UniformWrapPanel.IsAutoUniform" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsAutoUniformProperty =
             DependencyProperty.Register("IsAutoUniform", typeof(bool), typeof(UniformWrapPanel), new UIPropertyMetadata(true, IsAutoUniformChanged));
 
         private static void IsAutoUniformChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            if (sender is UniformWrapPanel)
-                ((UniformWrapPanel)sender).InvalidateVisual();
+            var panel = sender as UniformWrapPanel;
+            if (panel != null)
+                panel.InvalidateVisual();
         }
 
         public double MinItemWidth
@@ -27,6 +31,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(MinItemWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.UniformWrapPanel.MinItemWidth" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty MinItemWidthProperty =
             DependencyProperty.Register("MinItemWidth", typeof(double), typeof(UniformWrapPanel), new UIPropertyMetadata(0.0));
 
@@ -36,6 +43,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(MinItenHeightProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.UniformWrapPanel.MinItenHeight" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty MinItenHeightProperty =
             DependencyProperty.Register("MinItenHeight", typeof(double), typeof(UniformWrapPanel), new UIPropertyMetadata(0.0));
 

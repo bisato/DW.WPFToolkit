@@ -13,6 +13,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(AutoSizeProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedListView.AutoSize" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty AutoSizeProperty =
             DependencyProperty.Register("AutoSize", typeof(ColumnResizeKind), typeof(EnhancedListView), new UIPropertyMetadata(ColumnResizeKind.NoResize, OnAutoSizeChanged));
 
@@ -27,6 +30,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(TemplatePaddingWidthFixProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedListView.TemplatePaddingWidthFix" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty TemplatePaddingWidthFixProperty =
             DependencyProperty.Register("TemplatePaddingWidthFix", typeof(double), typeof(EnhancedListView), new UIPropertyMetadata(10.0, OnTemplatePaddingWidthFixChanged));
 
@@ -41,6 +47,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(VisibleColumnsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedListView.VisibleColumns" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty VisibleColumnsProperty =
             DependencyProperty.Register("VisibleColumns", typeof(IList), typeof(EnhancedListView), new UIPropertyMetadata(OnVisibleColumnsChanged));
 
@@ -55,6 +64,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(NeutralHeaderTemplateProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedListView.NeutralHeaderTemplate" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty NeutralHeaderTemplateProperty =
             DependencyProperty.Register("NeutralHeaderTemplate", typeof(DataTemplate), typeof(EnhancedListView), new UIPropertyMetadata(null, OnNeutralHeaderTemplateChanged));
 
@@ -69,6 +81,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(AscendingSortHeaderTemplateProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedListView.AscendingSortHeaderTemplate" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty AscendingSortHeaderTemplateProperty =
             DependencyProperty.Register("AscendingSortHeaderTemplate", typeof(DataTemplate), typeof(EnhancedListView), new UIPropertyMetadata(null, OnAscendingSortHeaderTemplateChanged));
 
@@ -83,6 +98,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(DescendingSortHeaderTemplateProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedListView.DescendingSortHeaderTemplate" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty DescendingSortHeaderTemplateProperty =
             DependencyProperty.Register("DescendingSortHeaderTemplate", typeof(DataTemplate), typeof(EnhancedListView), new UIPropertyMetadata(null, OnDescendingSortHeaderTemplateChanged));
 
@@ -97,6 +115,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(AllowColumnSortingsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedListView.AllowColumnSortings" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty AllowColumnSortingsProperty =
             DependencyProperty.Register("AllowColumnSortings", typeof(bool), typeof(EnhancedListView), new UIPropertyMetadata(false, OnAllowColumnSortingsChanged));
 

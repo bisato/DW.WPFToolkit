@@ -23,6 +23,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(TimeProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TimeBox.Time" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty TimeProperty =
             DependencyProperty.Register("Time", typeof(TimeSpan), typeof(TimeBox), new FrameworkPropertyMetadata(TimeSpan.Zero, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnTimeChanged));
 
@@ -32,6 +35,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(TimeFormatProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TimeBox.TimeFormat" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty TimeFormatProperty =
             DependencyProperty.Register("TimeFormat", typeof(TimeFormat), typeof(TimeBox), new UIPropertyMetadata(TimeFormat.Short));
 
@@ -41,6 +47,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(HasUpDownButtonsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TimeBox.HasUpDownButtons" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty HasUpDownButtonsProperty =
             DependencyProperty.Register("HasUpDownButtons", typeof(bool), typeof(TimeBox), new UIPropertyMetadata(true));
 

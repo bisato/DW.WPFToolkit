@@ -18,6 +18,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ImageSourceProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ImageButton.ImageSource" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ImageSourceProperty =
             DependencyProperty.Register("ImageSource", typeof(BitmapSource), typeof(ImageButton), new UIPropertyMetadata(null, OnImageSourceChanged));
 
@@ -40,6 +43,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(DisabledImageSourceProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ImageButton.DisabledImageSource" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty DisabledImageSourceProperty =
             DependencyProperty.Register("DisabledImageSource", typeof(BitmapSource), typeof(ImageButton), new UIPropertyMetadata(null));
 
@@ -49,6 +55,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ImageWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ImageButton.ImageWidth" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ImageWidthProperty =
             DependencyProperty.Register("ImageWidth", typeof(double), typeof(ImageButton), new UIPropertyMetadata(16.0, OnSizeChanged));
 
@@ -58,6 +67,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ImageHeightProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ImageButton.ImageHeight" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ImageHeightProperty =
             DependencyProperty.Register("ImageHeight", typeof(double), typeof(ImageButton), new UIPropertyMetadata(16.0, OnSizeChanged));
 
@@ -75,6 +87,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ImageMarginProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ImageButton.ImageMargin" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ImageMarginProperty =
             DependencyProperty.Register("ImageMargin", typeof(Thickness), typeof(ImageButton), new UIPropertyMetadata(new Thickness(0, 0, 2, 0)));
 
@@ -84,6 +99,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ImagePositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ImageButton.ImagePosition" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ImagePositionProperty =
             DependencyProperty.Register("ImagePosition", typeof(Dock), typeof(ImageButton), new UIPropertyMetadata(Dock.Left));
 
@@ -93,6 +111,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(HorizontalImageAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ImageButton.HorizontalImageAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty HorizontalImageAlignmentProperty =
             DependencyProperty.Register("HorizontalImageAlignment", typeof(HorizontalAlignment), typeof(ImageButton), new UIPropertyMetadata(HorizontalAlignment.Center));
 
@@ -102,6 +123,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(VerticalImageAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ImageButton.VerticalImageAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty VerticalImageAlignmentProperty =
             DependencyProperty.Register("VerticalImageAlignment", typeof(VerticalAlignment), typeof(ImageButton), new UIPropertyMetadata(VerticalAlignment.Center));
         
@@ -111,6 +135,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ImageStretchProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ImageButton.ImageStretch" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ImageStretchProperty =
             DependencyProperty.Register("ImageStretch", typeof(Stretch), typeof(ImageButton), new UIPropertyMetadata(Stretch.Uniform));
     }

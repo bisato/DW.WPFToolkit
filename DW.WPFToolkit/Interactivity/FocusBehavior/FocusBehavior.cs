@@ -16,6 +16,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(StartFocusedControlProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.FocusBehavior.GetStartFocusedControl(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.FocusBehavior.SetStartFocusedControl(DependencyObject, UIElement)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty StartFocusedControlProperty =
             DependencyProperty.RegisterAttached("StartFocusedControl", typeof(UIElement), typeof(FocusBehavior), new UIPropertyMetadata(OnStartFocusedControlChanged));
 
@@ -29,6 +32,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(HasFocusProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.FocusBehavior.GetHasFocus(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.FocusBehavior.SetHasFocus(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty HasFocusProperty =
             DependencyProperty.RegisterAttached("HasFocus", typeof(bool), typeof(FocusBehavior), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnHasFocusChanged));
 

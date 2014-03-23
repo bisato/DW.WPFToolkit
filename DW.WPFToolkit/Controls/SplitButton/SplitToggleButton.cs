@@ -16,6 +16,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherCornerRadiusProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitToggleButton.OutherCornerRadius" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherCornerRadiusProperty =
             DependencyProperty.Register("OutherCornerRadius", typeof(CornerRadius), typeof(SplitToggleButton), new UIPropertyMetadata(null));
 
@@ -25,6 +28,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InnerCornerRadiusProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitToggleButton.InnerCornerRadius" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InnerCornerRadiusProperty =
             DependencyProperty.Register("InnerCornerRadius", typeof(CornerRadius), typeof(SplitToggleButton), new UIPropertyMetadata(null));
 
@@ -34,6 +40,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherBorderThicknessProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitToggleButton.OutherBorderThickness" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherBorderThicknessProperty =
             DependencyProperty.Register("OutherBorderThickness", typeof(Thickness), typeof(SplitToggleButton), new UIPropertyMetadata(null));
 
@@ -43,6 +52,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InnerBorderThicknessProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitToggleButton.InnerBorderThickness" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InnerBorderThicknessProperty =
             DependencyProperty.Register("InnerBorderThickness", typeof(Thickness), typeof(SplitToggleButton), new UIPropertyMetadata(null));
     }

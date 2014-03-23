@@ -16,6 +16,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(DirectionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.FrameResizer.Direction" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty DirectionProperty =
             DependencyProperty.Register("Direction", typeof(FrameResizerDirections), typeof(FrameResizer), new UIPropertyMetadata(FrameResizerDirections.LeftRight));
 
@@ -25,6 +28,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(PositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.FrameResizer.Position" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty PositionProperty =
             DependencyProperty.Register("Position", typeof(FrameResizerPositions), typeof(FrameResizer), new UIPropertyMetadata(FrameResizerPositions.Right));
     }

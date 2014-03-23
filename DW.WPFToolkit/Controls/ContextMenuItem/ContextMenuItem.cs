@@ -24,6 +24,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ItemDataContextProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ContextMenuItem.ItemDataContext" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ItemDataContextProperty =
             DependencyProperty.Register("ItemDataContext", typeof(object), typeof(ContextMenuItem), new UIPropertyMetadata(null));
 
@@ -33,6 +36,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ElementHolderProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ContextMenuItem.ElementHolder" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ElementHolderProperty =
             DependencyProperty.Register("ElementHolder", typeof(object), typeof(ContextMenuItem), new UIPropertyMetadata(OnElementHolderChanged));
 
@@ -42,6 +48,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(IsBindToSelfProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.ContextMenuItem.IsBindToSelf" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsBindToSelfProperty =
             DependencyProperty.Register("IsBindToSelf", typeof(bool), typeof(ContextMenuItem), new UIPropertyMetadata(false));
 

@@ -33,6 +33,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(CommandProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitButton.Command" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty CommandProperty =
             DependencyProperty.Register("Command", typeof(ICommand), typeof(SplitButton), new UIPropertyMetadata(null));
 
@@ -42,6 +45,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(CommandParameterProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitButton.CommandParameter" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty CommandParameterProperty =
             DependencyProperty.Register("CommandParameter", typeof(object), typeof(SplitButton), new UIPropertyMetadata(null));
 
@@ -72,6 +78,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ContentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SplitButton.Content" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ContentProperty =
             DependencyProperty.Register("Content", typeof(object), typeof(SplitButton), new UIPropertyMetadata(null));
 

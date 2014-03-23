@@ -16,6 +16,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(StrokeThicknessProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TabItemCloseButton.StrokeThickness" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty StrokeThicknessProperty =
             DependencyProperty.Register("StrokeThickness", typeof(double), typeof(TabItemCloseButton), new UIPropertyMetadata(1.5));
     }

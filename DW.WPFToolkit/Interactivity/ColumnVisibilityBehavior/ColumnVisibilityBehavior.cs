@@ -24,6 +24,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(VisibleColumnsProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.GetVisibleColumns(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.SetVisibleColumns(DependencyObject, IList)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty VisibleColumnsProperty =
             DependencyProperty.RegisterAttached("VisibleColumns", typeof(IList), typeof(ColumnVisibilityBehavior), new UIPropertyMetadata(OnVisibleColumnsChanged));
 
@@ -43,6 +46,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(NameProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.GetName(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.SetName(DependencyObject, object)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty NameProperty =
             DependencyProperty.RegisterAttached("Name", typeof(object), typeof(ColumnVisibilityBehavior), new UIPropertyMetadata(null));
 
@@ -56,6 +62,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(ColumnVisibilityBehaviorProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.GetColumnVisibilityBehavior(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.SetColumnVisibilityBehavior(DependencyObject, ColumnVisibilityBehavior)" /> attached property.
+        /// </summary>
         private static readonly DependencyProperty ColumnVisibilityBehaviorProperty =
             DependencyProperty.RegisterAttached("ColumnVisibilityBehavior", typeof(ColumnVisibilityBehavior), typeof(ColumnVisibilityBehavior), new UIPropertyMetadata(null));
 
@@ -80,6 +89,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(PositionProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.GetPosition(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnVisibilityBehavior.SetPosition(DependencyObject, int)" /> attached property.
+        /// </summary>
         private static readonly DependencyProperty PositionProperty =
             DependencyProperty.RegisterAttached("Position", typeof(int), typeof(ColumnVisibilityBehavior), new UIPropertyMetadata(0));
 

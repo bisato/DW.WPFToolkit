@@ -32,6 +32,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(MaxDropDownHeightProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TreeComboBox.MaxDropDownHeight" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty MaxDropDownHeightProperty =
             DependencyProperty.Register("MaxDropDownHeight", typeof(double), typeof(TreeComboBox), new UIPropertyMetadata(0.0));
 
@@ -41,6 +44,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SelectionBoxItemTemplateProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TreeComboBox.SelectionBoxItemTemplate" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SelectionBoxItemTemplateProperty =
             DependencyProperty.Register("SelectionBoxItemTemplate", typeof(DataTemplate), typeof(TreeComboBox), new UIPropertyMetadata(null));
 
@@ -50,6 +56,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SelectionBoxItemProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TreeComboBox.SelectionBoxItem" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SelectionBoxItemProperty =
             DependencyProperty.Register("SelectionBoxItem", typeof(object), typeof(TreeComboBox), new UIPropertyMetadata(null));
 
@@ -59,6 +68,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SelectionBoxItemStringFormatProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TreeComboBox.SelectionBoxItemStringFormat" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SelectionBoxItemStringFormatProperty =
             DependencyProperty.Register("SelectionBoxItemStringFormat", typeof(string), typeof(TreeComboBox), new UIPropertyMetadata(null));
 
@@ -68,6 +80,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(IsDropDownOpenProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TreeComboBox.IsDropDownOpen" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsDropDownOpenProperty =
             DependencyProperty.Register("IsDropDownOpen", typeof(bool), typeof(TreeComboBox), new UIPropertyMetadata(null));
 

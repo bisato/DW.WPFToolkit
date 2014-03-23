@@ -94,6 +94,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(IsReadOnlyProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDown.IsReadOnly" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsReadOnlyProperty =
             DependencyProperty.Register("IsReadOnly", typeof(bool), typeof(NumericUpDown), new UIPropertyMetadata(false));
 
@@ -103,6 +106,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(MinimumProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDown.Minimum" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty MinimumProperty =
             DependencyProperty.Register("Minimum", typeof(object), typeof(NumericUpDown), new UIPropertyMetadata(null));
 
@@ -112,6 +118,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(MaximumProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDown.Maximum" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty MaximumProperty =
             DependencyProperty.Register("Maximum", typeof(object), typeof(NumericUpDown), new UIPropertyMetadata(null));
 
@@ -121,6 +130,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(NumberTypeProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDown.NumberType" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty NumberTypeProperty =
             DependencyProperty.Register("NumberType", typeof(NumberTypes), typeof(NumericUpDown), new UIPropertyMetadata(NumberTypes.Double));
 
@@ -130,6 +142,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(TextProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDown.Text" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(NumericUpDown), new FrameworkPropertyMetadata("0", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
@@ -139,6 +154,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(StepProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDown.Step" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty StepProperty =
             DependencyProperty.Register("Step", typeof(double), typeof(NumericUpDown), new UIPropertyMetadata(1.0));
         

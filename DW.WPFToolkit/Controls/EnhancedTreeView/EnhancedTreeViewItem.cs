@@ -21,6 +21,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ContentStretchingProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTreeViewItem.ContentStretching" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ContentStretchingProperty =
             DependencyProperty.Register("ContentStretching", typeof(bool), typeof(EnhancedTreeViewItem), new UIPropertyMetadata(OnContentStretchingChanged));
 

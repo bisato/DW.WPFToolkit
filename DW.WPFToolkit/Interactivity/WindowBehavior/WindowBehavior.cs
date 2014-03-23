@@ -21,6 +21,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(DialogResultProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.GetDialogResult(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.SetDialogResult(DependencyObject, bool?)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty DialogResultProperty =
             DependencyProperty.RegisterAttached("DialogResult", typeof(bool?), typeof(WindowBehavior), new UIPropertyMetadata(OnDialogResultChanged));
 
@@ -34,6 +37,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(DialogResultCommandProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.GetDialogResultCommand(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.SetDialogResultCommand(DependencyObject, ICommand)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty DialogResultCommandProperty =
             DependencyProperty.RegisterAttached("DialogResultCommand", typeof(ICommand), typeof(WindowBehavior), new UIPropertyMetadata(OnDialogResultChanged));
 
@@ -47,6 +53,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(ClosingCommandProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.GetClosingCommand(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.SetClosingCommand(DependencyObject, ICommand)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty ClosingCommandProperty =
             DependencyProperty.RegisterAttached("ClosingCommand", typeof(ICommand), typeof(WindowBehavior), new UIPropertyMetadata(OnClosingCommandChanged));
 
@@ -60,6 +69,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(ClosedCommandProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.GetClosedCommand(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.SetClosedCommand(DependencyObject, ICommand)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty ClosedCommandProperty =
             DependencyProperty.RegisterAttached("ClosedCommand", typeof(ICommand), typeof(WindowBehavior), new UIPropertyMetadata(OnClosedCommandChanged));
 
@@ -73,6 +85,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(LoadedCommandProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.GetLoadedCommand(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.SetLoadedCommand(DependencyObject, ICommand)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty LoadedCommandProperty =
             DependencyProperty.RegisterAttached("LoadedCommand", typeof(ICommand), typeof(WindowBehavior), new UIPropertyMetadata(OnLoadedCommandChanged));
 
@@ -86,6 +101,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(LoadedCommandParameterProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.GetLoadedCommandParameter(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.SetLoadedCommandParameter(DependencyObject, object)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty LoadedCommandParameterProperty =
             DependencyProperty.RegisterAttached("LoadedCommandParameter", typeof(object), typeof(WindowBehavior), new UIPropertyMetadata(null));
 
@@ -99,6 +117,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(IsCloseProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.GetIsClose(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.SetIsClose(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty IsCloseProperty =
             DependencyProperty.RegisterAttached("IsClose", typeof(bool), typeof(WindowBehavior), new UIPropertyMetadata(OnIsCloseChanged));
 
@@ -112,6 +133,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(WinApiMessagesProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.GetWinApiMessages(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.SetWinApiMessages(DependencyObject, string)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty WinApiMessagesProperty =
             DependencyProperty.RegisterAttached("WinApiMessages", typeof(string), typeof(WindowBehavior), new UIPropertyMetadata(OnWinApiMessagesChanged));
 
@@ -125,6 +149,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(WinApiCommandProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.GetWinApiCommand(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowBehavior.SetWinApiCommand(DependencyObject, ICommand)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty WinApiCommandProperty =
             DependencyProperty.RegisterAttached("WinApiCommand", typeof(ICommand), typeof(WindowBehavior), new UIPropertyMetadata(OnWinApiCommandChanged));
 

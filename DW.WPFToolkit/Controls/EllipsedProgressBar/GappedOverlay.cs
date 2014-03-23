@@ -28,6 +28,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherRadiusProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.OutherRadius" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherRadiusProperty =
             DependencyProperty.Register("OutherRadius", typeof(double), typeof(GappedOverlay), new UIPropertyMetadata(OnOutherRadiusChanged));
 
@@ -43,6 +46,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherGapRadiusProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.OutherGapRadius" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherGapRadiusProperty =
             DependencyProperty.Register("OutherGapRadius", typeof(double), typeof(GappedOverlay), new UIPropertyMetadata(OnOutherGapRadiusChanged));
 
@@ -58,6 +64,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InnerGapRadiusProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.InnerGapRadius" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InnerGapRadiusProperty =
             DependencyProperty.Register("InnerGapRadius", typeof(double), typeof(GappedOverlay), new UIPropertyMetadata(OnInnerGapRadiusChanged));
 
@@ -73,6 +82,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InnerRadiusProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.InnerRadius" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InnerRadiusProperty =
             DependencyProperty.Register("InnerRadius", typeof(double), typeof(GappedOverlay), new UIPropertyMetadata(OnInnerRadiusChanged));
 
@@ -88,6 +100,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(GapDistanceProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.GapDistance" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty GapDistanceProperty =
             DependencyProperty.Register("GapDistance", typeof(double), typeof(GappedOverlay), new UIPropertyMetadata(OnGapDistanceChanged));
 
@@ -103,6 +118,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherDistanceProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.OutherDistance" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherDistanceProperty =
             DependencyProperty.Register("OutherDistance", typeof(double), typeof(GappedOverlay), new UIPropertyMetadata(OnOutherDistanceChanged));
 
@@ -118,6 +136,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InnerDistanceProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.InnerDistance" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InnerDistanceProperty =
             DependencyProperty.Register("InnerDistance", typeof(double), typeof(GappedOverlay), new UIPropertyMetadata(OnInnerDistanceChanged));
 
@@ -133,6 +154,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherCircleBrushProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.OutherCircleBrush" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherCircleBrushProperty =
             DependencyProperty.Register("OutherCircleBrush", typeof(Brush), typeof(GappedOverlay));
 
@@ -142,6 +166,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherCircleThicknessProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.OutherCircleThickness" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherCircleThicknessProperty =
             DependencyProperty.Register("OutherCircleThickness", typeof(double), typeof(GappedOverlay));
 
@@ -151,6 +178,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(RotateAngleProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.GappedOverlay.RotateAngle" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty RotateAngleProperty =
             DependencyProperty.Register("RotateAngle", typeof(double), typeof(GappedOverlay), new UIPropertyMetadata(OnRotateAngleChanged));
 

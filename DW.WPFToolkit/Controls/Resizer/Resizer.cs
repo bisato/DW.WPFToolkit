@@ -144,6 +144,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(LeftWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.Resizer.LeftWidth" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty LeftWidthProperty =
             DependencyProperty.Register("LeftWidth", typeof(double), typeof(Resizer), new UIPropertyMetadata(4.0, OnSizeChanged));
 
@@ -153,6 +156,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(TopHeightProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.Resizer.TopHeight" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty TopHeightProperty =
             DependencyProperty.Register("TopHeight", typeof(double), typeof(Resizer), new UIPropertyMetadata(4.0, OnSizeChanged));
 
@@ -162,6 +168,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(RightWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.Resizer.RightWidth" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty RightWidthProperty =
             DependencyProperty.Register("RightWidth", typeof(double), typeof(Resizer), new UIPropertyMetadata(4.0, OnSizeChanged));
 
@@ -171,6 +180,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(BottomHeightProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.Resizer.BottomHeight" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty BottomHeightProperty =
             DependencyProperty.Register("BottomHeight", typeof(double), typeof(Resizer), new UIPropertyMetadata(4.0, OnSizeChanged));
 
@@ -180,6 +192,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(FrameSizesProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.Resizer.FrameSizes" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty FrameSizesProperty =
             DependencyProperty.Register("FrameSizes", typeof(Thickness), typeof(Resizer), new UIPropertyMetadata(new Thickness(8), OnFrameSizesChanged));
 
@@ -230,6 +245,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(CornerSizeProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.Resizer.CornerSize" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty CornerSizeProperty =
             DependencyProperty.Register("CornerSize", typeof(double), typeof(Resizer), new UIPropertyMetadata(16.0));
     }

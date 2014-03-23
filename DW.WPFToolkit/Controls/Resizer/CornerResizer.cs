@@ -16,6 +16,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(DirectionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.CornerResizer.Direction" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty DirectionProperty =
             DependencyProperty.Register("Direction", typeof(CornerResizerDirections), typeof(CornerResizer), new UIPropertyMetadata(CornerResizerDirections.NEtoSW));
 
@@ -25,6 +28,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(PositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.CornerResizer.Position" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty PositionProperty =
             DependencyProperty.Register("Position", typeof(CornerResizerPositions), typeof(CornerResizer), new UIPropertyMetadata(CornerResizerPositions.NW));
     }

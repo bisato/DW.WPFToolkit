@@ -136,6 +136,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoAppearanceProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.InfoAppearance" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoAppearanceProperty =
             DependencyProperty.Register("InfoAppearance", typeof(InfoAppearance), typeof(EnhancedPasswordBox), new UIPropertyMetadata(InfoAppearance.OnLostFocus, OnInfoAppearanceChanged));
 
@@ -150,6 +153,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.InfoText" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextProperty =
             DependencyProperty.Register("InfoText", typeof(string), typeof(EnhancedPasswordBox), new UIPropertyMetadata(""));
 
@@ -159,6 +165,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextFontStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.InfoTextFontStyle" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextFontStyleProperty =
             DependencyProperty.Register("InfoTextFontStyle", typeof(FontStyle), typeof(EnhancedPasswordBox), new UIPropertyMetadata(FontStyles.Italic));
 
@@ -168,6 +177,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextForegroundProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.InfoTextForeground" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextForegroundProperty =
             DependencyProperty.Register("InfoTextForeground", typeof(Brush), typeof(EnhancedPasswordBox), new UIPropertyMetadata(Brushes.Gray));
 
@@ -177,6 +189,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextHorizontalAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.InfoTextHorizontalAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextHorizontalAlignmentProperty =
             DependencyProperty.Register("InfoTextHorizontalAlignment", typeof(HorizontalAlignment), typeof(EnhancedPasswordBox), new UIPropertyMetadata(HorizontalAlignment.Left));
 
@@ -186,6 +201,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextVerticalAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.InfoTextVerticalAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextVerticalAlignmentProperty =
             DependencyProperty.Register("InfoTextVerticalAlignment", typeof(VerticalAlignment), typeof(EnhancedPasswordBox), new UIPropertyMetadata(VerticalAlignment.Center));
 
@@ -195,6 +213,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextMarginProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.InfoTextMargin" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextMarginProperty =
             DependencyProperty.Register("InfoTextMargin", typeof(Thickness), typeof(EnhancedPasswordBox), new UIPropertyMetadata(null));
 
@@ -204,6 +225,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.InfoTextStyle" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextStyleProperty =
             DependencyProperty.Register("InfoTextStyle", typeof(Style), typeof(EnhancedPasswordBox), new UIPropertyMetadata(null));
 
@@ -213,6 +237,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(PasswordProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedPasswordBox.Password" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty PasswordProperty =
             DependencyProperty.Register("Password", typeof(string), typeof(EnhancedPasswordBox), new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnPasswordChanged));
     }

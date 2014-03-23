@@ -16,6 +16,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(DirectionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDownButton.Direction" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty DirectionProperty =
             DependencyProperty.Register("Direction", typeof(UpDownDirections), typeof(NumericUpDownButton), new UIPropertyMetadata(UpDownDirections.Up));
     }

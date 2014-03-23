@@ -12,6 +12,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(NameProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedGridViewColumn.Name" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty NameProperty =
             DependencyProperty.Register("Name", typeof(string), typeof(EnhancedGridViewColumn), new UIPropertyMetadata(OnNameChanged));
 
@@ -26,6 +29,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(IsDefaultSortColumnProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedGridViewColumn.IsDefaultSortColumn" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsDefaultSortColumnProperty =
             DependencyProperty.Register("IsDefaultSortColumn", typeof(bool), typeof(EnhancedGridViewColumn), new UIPropertyMetadata(OnIsDefaultSortColumnChanged));
 
@@ -40,6 +46,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SortPropertyNameProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedGridViewColumn.SortPropertyName" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SortPropertyNameProperty =
             DependencyProperty.Register("SortPropertyName", typeof(string), typeof(EnhancedGridViewColumn), new UIPropertyMetadata(OnSortPropertyNameChanged));
 
@@ -54,6 +63,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ProportionalWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedGridViewColumn.ProportionalWidth" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ProportionalWidthProperty =
             DependencyProperty.Register("ProportionalWidth", typeof(double), typeof(EnhancedGridViewColumn), new UIPropertyMetadata(OnProportionalWidthChanged));
 

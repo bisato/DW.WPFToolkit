@@ -18,6 +18,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(SelectedTextProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.TextBoxBehavior.GetSelectedText(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.TextBoxBehavior.SetSelectedText(DependencyObject, string)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty SelectedTextProperty =
             DependencyProperty.RegisterAttached("SelectedText", typeof(string), typeof(TextBoxBehavior), new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnSelectedTextChanged));
 
@@ -31,6 +34,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(SelectAllOnFocusProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.TextBoxBehavior.GetSelectAllOnFocus(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.TextBoxBehavior.SetSelectAllOnFocus(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty SelectAllOnFocusProperty =
             DependencyProperty.RegisterAttached("SelectAllOnFocus", typeof(bool), typeof(TextBoxBehavior), new UIPropertyMetadata(OnSelectAllOnFocusChanged));
 
@@ -70,6 +76,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(RefreshBindingOnKeyProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.TextBoxBehavior.GetRefreshBindingOnKey(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.TextBoxBehavior.SetRefreshBindingOnKey(DependencyObject, Key)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty RefreshBindingOnKeyProperty =
             DependencyProperty.RegisterAttached("RefreshBindingOnKey", typeof(Key), typeof(TextBoxBehavior), new UIPropertyMetadata(OnRefreshBindingOnKeyChanged));
 

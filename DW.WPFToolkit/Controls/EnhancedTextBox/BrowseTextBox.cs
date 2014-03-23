@@ -17,6 +17,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(BrowseButtonContentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.BrowseTextBox.BrowseButtonContent" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty BrowseButtonContentProperty =
             DependencyProperty.Register("BrowseButtonContent", typeof(object), typeof(BrowseTextBox), new UIPropertyMetadata("..."));
 
@@ -26,6 +29,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(BrowseButtonPositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.BrowseTextBox.BrowseButtonPosition" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty BrowseButtonPositionProperty =
             DependencyProperty.Register("BrowseButtonPosition", typeof(Dock), typeof(BrowseTextBox), new UIPropertyMetadata(Dock.Right));
 
@@ -35,6 +41,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(BrowseButtonPaddingProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.BrowseTextBox.BrowseButtonPadding" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty BrowseButtonPaddingProperty =
             DependencyProperty.Register("BrowseButtonPadding", typeof(Thickness), typeof(BrowseTextBox), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
 
@@ -44,6 +53,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(BrowseButtonMarginProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.BrowseTextBox.BrowseButtonMargin" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty BrowseButtonMarginProperty =
             DependencyProperty.Register("BrowseButtonMargin", typeof(Thickness), typeof(BrowseTextBox), new UIPropertyMetadata(null));
 
@@ -53,6 +65,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ShowBrowseButtonProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.BrowseTextBox.ShowBrowseButton" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowBrowseButtonProperty =
             DependencyProperty.Register("ShowBrowseButton", typeof(bool), typeof(BrowseTextBox), new UIPropertyMetadata(true));
 
@@ -62,6 +77,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(BrowseCommandProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.BrowseTextBox.BrowseCommand" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty BrowseCommandProperty =
             DependencyProperty.Register("BrowseCommand", typeof(ICommand), typeof(BrowseTextBox), new UIPropertyMetadata(null));
 
@@ -71,6 +89,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(BrowseCommandParameterProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.BrowseTextBox.BrowseCommandParameter" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty BrowseCommandParameterProperty =
             DependencyProperty.Register("BrowseCommandParameter", typeof(object), typeof(BrowseTextBox), new UIPropertyMetadata(null));
 
@@ -80,6 +101,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(VerticalBrowseButtonAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.BrowseTextBox.VerticalBrowseButtonAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty VerticalBrowseButtonAlignmentProperty =
             DependencyProperty.Register("VerticalBrowseButtonAlignment", typeof(VerticalAlignment), typeof(BrowseTextBox), new UIPropertyMetadata(VerticalAlignment.Center));
 
@@ -89,6 +113,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(HorizontalBrowseButtonAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.BrowseTextBox.HorizontalBrowseButtonAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty HorizontalBrowseButtonAlignmentProperty =
             DependencyProperty.Register("HorizontalBrowseButtonAlignment", typeof(HorizontalAlignment), typeof(BrowseTextBox), new UIPropertyMetadata(HorizontalAlignment.Center));
     }

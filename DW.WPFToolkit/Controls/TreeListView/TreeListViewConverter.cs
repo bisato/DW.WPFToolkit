@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Data;
 using DW.WPFToolkit.Helpers;
 
@@ -10,7 +11,7 @@ namespace DW.WPFToolkit.Controls
         {
             if (value != null)
             {
-                var container = VisualTreeAssist.FindParent<TreeListViewItem>(value);
+                var container = VisualTreeAssist.FindParent<TreeListViewItem>(value as DependencyObject);
                 if (container != null)
                     return container.Level * 10;
             }

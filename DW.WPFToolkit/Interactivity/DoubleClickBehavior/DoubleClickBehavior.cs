@@ -16,6 +16,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(CommandProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.DoubleClickBehavior.GetCommand(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.DoubleClickBehavior.SetCommand(DependencyObject, ICommand)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty CommandProperty =
             DependencyProperty.RegisterAttached("Command", typeof(ICommand), typeof(DoubleClickBehavior), new UIPropertyMetadata(OnCommandChanged));
 
@@ -29,6 +32,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(CommandParameterProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.DoubleClickBehavior.GetCommandParameter(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.DoubleClickBehavior.SetCommandParameter(DependencyObject, object)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty CommandParameterProperty =
             DependencyProperty.RegisterAttached("CommandParameter", typeof(object), typeof(DoubleClickBehavior), new UIPropertyMetadata(null));
 

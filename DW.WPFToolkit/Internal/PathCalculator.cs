@@ -3,9 +3,9 @@ using System.Windows.Media;
 
 namespace DW.WPFToolkit.Internal
 {
-    public static class PathCalculator
+    internal static class PathCalculator
     {
-        public static double GetPathFigureLength(PathFigure pathFigure)
+        internal static double GetPathFigureLength(PathFigure pathFigure)
         {
             if (pathFigure == null)
                 return 0;

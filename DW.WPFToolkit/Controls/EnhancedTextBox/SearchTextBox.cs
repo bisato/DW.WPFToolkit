@@ -17,6 +17,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SearchButtonPositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.SearchButtonPosition" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SearchButtonPositionProperty =
             DependencyProperty.Register("SearchButtonPosition", typeof(Dock), typeof(SearchTextBox), new UIPropertyMetadata(Dock.Right));
 
@@ -26,6 +29,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SearchButtonMarginProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.SearchButtonMargin" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SearchButtonMarginProperty =
             DependencyProperty.Register("SearchButtonMargin", typeof(Thickness), typeof(SearchTextBox), new UIPropertyMetadata(null));
 
@@ -35,6 +41,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SearchButtonPaddingProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.SearchButtonPadding" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SearchButtonPaddingProperty =
             DependencyProperty.Register("SearchButtonPadding", typeof(Thickness), typeof(SearchTextBox), new UIPropertyMetadata(null));
 
@@ -44,6 +53,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(VerticalSearchButtonAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.VerticalSearchButtonAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty VerticalSearchButtonAlignmentProperty =
             DependencyProperty.Register("VerticalSearchButtonAlignment", typeof(VerticalAlignment), typeof(SearchTextBox), new UIPropertyMetadata(VerticalAlignment.Center));
 
@@ -53,6 +65,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(HorizontalSearchButtonAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.HorizontalSearchButtonAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty HorizontalSearchButtonAlignmentProperty =
             DependencyProperty.Register("HorizontalSearchButtonAlignment", typeof(HorizontalAlignment), typeof(SearchTextBox), new UIPropertyMetadata(HorizontalAlignment.Center));
 
@@ -62,6 +77,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ShowSearchButtonProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.ShowSearchButton" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowSearchButtonProperty =
             DependencyProperty.Register("ShowSearchButton", typeof(bool), typeof(SearchTextBox), new UIPropertyMetadata(true));
 
@@ -71,6 +89,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SearchCommandProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.SearchCommand" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SearchCommandProperty =
             DependencyProperty.Register("SearchCommand", typeof(ICommand), typeof(SearchTextBox), new UIPropertyMetadata(null));
 
@@ -80,6 +101,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SearchCommandParameterProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.SearchCommandParameter" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SearchCommandParameterProperty =
             DependencyProperty.Register("SearchCommandParameter", typeof(object), typeof(SearchTextBox), new UIPropertyMetadata(null));
 
@@ -89,6 +113,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(CancelCommandProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.CancelCommand" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty CancelCommandProperty =
             DependencyProperty.Register("CancelCommand", typeof(ICommand), typeof(SearchTextBox), new PropertyMetadata(null));
 
@@ -98,6 +125,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(CancelCommandParameterProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.SearchTextBox.CancelCommandParameter" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty CancelCommandParameterProperty =
             DependencyProperty.Register("CancelCommandParameter", typeof(object), typeof(SearchTextBox), new PropertyMetadata(null));
 
@@ -107,6 +137,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(IsSearchingProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.." /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsSearchingProperty =
             DependencyProperty.Register("IsSearching", typeof(bool), typeof(SearchTextBox), new UIPropertyMetadata(false));
     }

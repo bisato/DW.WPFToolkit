@@ -26,6 +26,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ViewProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TreeListView.View" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ViewProperty =
             DependencyProperty.Register("View", typeof(GridView), typeof(TreeListView), new UIPropertyMetadata(null));
     }

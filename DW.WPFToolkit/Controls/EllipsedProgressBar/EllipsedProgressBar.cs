@@ -37,6 +37,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherRadiusProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.OutherRadius" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherRadiusProperty =
             DependencyProperty.Register("OutherRadius", typeof(double), typeof(EllipsedProgressBar), new UIPropertyMetadata(0.0, OnOutherRadiusChanged));
 
@@ -52,6 +55,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InnerRadiusProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.InnerRadius" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InnerRadiusProperty =
             DependencyProperty.Register("InnerRadius", typeof(double), typeof(EllipsedProgressBar), new UIPropertyMetadata(0.0, OnInnerRadiusChanged));
 
@@ -67,6 +73,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(StrokeThicknessProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.StrokeThickness" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty StrokeThicknessProperty =
             DependencyProperty.Register("StrokeThickness", typeof(double), typeof(EllipsedProgressBar), new UIPropertyMetadata(0.0));
 
@@ -76,6 +85,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(DisplayKindProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.DisplayKind" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty DisplayKindProperty =
             DependencyProperty.Register("DisplayKind", typeof(EllipsedProgressBarKind), typeof(EllipsedProgressBar), new UIPropertyMetadata(EllipsedProgressBarKind.Pie, OnDisplayKindChanged));
 
@@ -91,6 +103,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(IsInversedProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.IsInversed" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsInversedProperty =
             DependencyProperty.Register("IsInversed", typeof(bool), typeof(EllipsedProgressBar), new UIPropertyMetadata(false, OnIsInversedChanged));
 
@@ -106,6 +121,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ShowOutherCircleProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.ShowOutherCircle" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowOutherCircleProperty =
             DependencyProperty.Register("ShowOutherCircle", typeof(bool), typeof(EllipsedProgressBar), new UIPropertyMetadata(false));
 
@@ -115,6 +133,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherCircleBrushProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.OutherCircleBrush" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherCircleBrushProperty =
             DependencyProperty.Register("OutherCircleBrush", typeof(Brush), typeof(EllipsedProgressBar));
 
@@ -124,6 +145,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InnerCircleBrushProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.InnerCircleBrush" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InnerCircleBrushProperty =
             DependencyProperty.Register("InnerCircleBrush", typeof(Brush), typeof(EllipsedProgressBar));
 
@@ -133,6 +157,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherCircleThicknessProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.OutherCircleThickness" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherCircleThicknessProperty =
             DependencyProperty.Register("OutherCircleThickness", typeof(double), typeof(EllipsedProgressBar));
 
@@ -142,6 +169,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InnerCircleThicknessProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.InnerCircleThickness" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InnerCircleThicknessProperty =
             DependencyProperty.Register("InnerCircleThickness", typeof(double), typeof(EllipsedProgressBar));
 
@@ -151,6 +181,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ShowInnerCircleProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.ShowInnerCircle" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowInnerCircleProperty =
             DependencyProperty.Register("ShowInnerCircle", typeof(bool), typeof(EllipsedProgressBar), new UIPropertyMetadata(false));
 
@@ -160,6 +193,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(StartAngleProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.StartAngle" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty StartAngleProperty =
             DependencyProperty.Register("StartAngle", typeof(double), typeof(EllipsedProgressBar), new UIPropertyMetadata(0.0, OnStartAngleChanged));
 
@@ -175,6 +211,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(OutherCircleDashArrayProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.OutherCircleDashArray" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OutherCircleDashArrayProperty =
             DependencyProperty.Register("OutherCircleDashArray", typeof(DoubleCollection), typeof(EllipsedProgressBar));
 
@@ -184,6 +223,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InnerCircleDashArrayProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.InnerCircleDashArray" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InnerCircleDashArrayProperty =
             DependencyProperty.Register("InnerCircleDashArray", typeof(DoubleCollection), typeof(EllipsedProgressBar));
 
@@ -193,6 +235,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(PercentLabelStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.PercentLabelStyle" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty PercentLabelStyleProperty =
             DependencyProperty.Register("PercentLabelStyle", typeof(Style), typeof(EllipsedProgressBar));
 
@@ -202,6 +247,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(HasPercentLabelProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.HasPercentLabel" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty HasPercentLabelProperty =
             DependencyProperty.Register("HasPercentLabel", typeof(bool), typeof(EllipsedProgressBar), new UIPropertyMetadata(false));
 
@@ -211,6 +259,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ItemsFactoryProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.ItemsFactory" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ItemsFactoryProperty =
             DependencyProperty.Register("ItemsFactory", typeof(IItemsFactory), typeof(EllipsedProgressBar), new UIPropertyMetadata(OnItemsFactoryChanged));
 
@@ -226,6 +277,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(RotateItemsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.RotateItems" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty RotateItemsProperty =
             DependencyProperty.Register("RotateItems", typeof(bool), typeof(EllipsedProgressBar), new UIPropertyMetadata(true));
 
@@ -235,6 +289,9 @@ namespace DW.WPFToolkit.Controls
             set { this.SetValue(IsIndeterminateProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.IsIndeterminate" /> dependency property.
+        /// </summary>
         public static new readonly DependencyProperty IsIndeterminateProperty =
             ProgressBar.IsIndeterminateProperty.AddOwner(typeof(EllipsedProgressBar), new FrameworkPropertyMetadata(false, OnIsIndeterminateChanged));
 
@@ -251,6 +308,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(RotateSpeedProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.RotateSpeed" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty RotateSpeedProperty =
             DependencyProperty.Register("RotateSpeed", typeof(double), typeof(EllipsedProgressBar), new UIPropertyMetadata(1.5));
 
@@ -260,6 +320,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(RotateDirectionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar.RotateDirection" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty RotateDirectionProperty =
             DependencyProperty.Register("RotateDirection", typeof(SweepDirection), typeof(EllipsedProgressBar), new UIPropertyMetadata(SweepDirection.Clockwise));
 

@@ -105,7 +105,7 @@ namespace DW.WPFToolkit.Controls
             var contentText = GetContent(e);
             if (string.IsNullOrEmpty(contentText))
                 return;
-            (sender as TextBox).Text = contentText;
+            ((TextBox)sender).Text = contentText;
             this.Focus();
         }
 
@@ -162,6 +162,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoAppearanceProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoAppearance" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoAppearanceProperty =
             DependencyProperty.Register("InfoAppearance", typeof(InfoAppearance), typeof(EnhancedTextBox), new UIPropertyMetadata(InfoAppearance.OnLostFocus, OnInfoAppearanceChanged));
 
@@ -176,6 +179,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoText" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextProperty =
             DependencyProperty.Register("InfoText", typeof(string), typeof(EnhancedTextBox), new UIPropertyMetadata(""));
 
@@ -185,6 +191,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextFontStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoTextFontStyle" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextFontStyleProperty =
             DependencyProperty.Register("InfoTextFontStyle", typeof(FontStyle), typeof(EnhancedTextBox), new UIPropertyMetadata(FontStyles.Italic));
 
@@ -194,6 +203,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextForegroundProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoTextForeground" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextForegroundProperty =
             DependencyProperty.Register("InfoTextForeground", typeof(Brush), typeof(EnhancedTextBox), new UIPropertyMetadata(Brushes.Gray));
 
@@ -203,6 +215,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextHorizontalAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoTextHorizontalAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextHorizontalAlignmentProperty =
             DependencyProperty.Register("InfoTextHorizontalAlignment", typeof(HorizontalAlignment), typeof(EnhancedTextBox), new UIPropertyMetadata(HorizontalAlignment.Left));
 
@@ -212,6 +227,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextVerticalAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoTextVerticalAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextVerticalAlignmentProperty =
             DependencyProperty.Register("InfoTextVerticalAlignment", typeof(VerticalAlignment), typeof(EnhancedTextBox), new UIPropertyMetadata(VerticalAlignment.Center));
 
@@ -221,6 +239,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextMarginProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoTextMargin" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextMarginProperty =
             DependencyProperty.Register("InfoTextMargin", typeof(Thickness), typeof(EnhancedTextBox), new UIPropertyMetadata(null));
 
@@ -230,6 +251,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(InfoTextStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.InfoTextStyle" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty InfoTextStyleProperty =
             DependencyProperty.Register("InfoTextStyle", typeof(Style), typeof(EnhancedTextBox), new UIPropertyMetadata(null));
 
@@ -239,6 +263,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(FirstControlProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.FirstControl" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty FirstControlProperty =
             DependencyProperty.Register("FirstControl", typeof(object), typeof(EnhancedTextBox), new UIPropertyMetadata(null));
 
@@ -248,6 +275,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(FirstControlPositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.FirstControlPosition" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty FirstControlPositionProperty =
             DependencyProperty.Register("FirstControlPosition", typeof(Dock), typeof(EnhancedTextBox), new UIPropertyMetadata(Dock.Left));
 
@@ -257,6 +287,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SecondControlProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.SecondControl" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SecondControlProperty =
             DependencyProperty.Register("SecondControl", typeof(object), typeof(EnhancedTextBox), new UIPropertyMetadata(null));
 
@@ -266,6 +299,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SecondControlPositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.SecondControlPosition" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SecondControlPositionProperty =
             DependencyProperty.Register("SecondControlPosition", typeof(Dock), typeof(EnhancedTextBox), new UIPropertyMetadata(Dock.Right));
 
@@ -275,6 +311,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(AllowedDropTypeProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.AllowedDropType" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty AllowedDropTypeProperty =
             DependencyProperty.Register("AllowedDropType", typeof(DroppableTypes), typeof(EnhancedTextBox), new UIPropertyMetadata(DroppableTypes.File));
 
@@ -284,6 +323,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(SeparatorProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.Separator" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty SeparatorProperty =
             DependencyProperty.Register("Separator", typeof(string), typeof(EnhancedTextBox), new UIPropertyMetadata("; "));
 
@@ -293,6 +335,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(DragDropEffectProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox.DragDropEffect" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty DragDropEffectProperty =
             DependencyProperty.Register("DragDropEffect", typeof(DragDropEffects), typeof(EnhancedTextBox), new UIPropertyMetadata(DragDropEffects.Link));
     }

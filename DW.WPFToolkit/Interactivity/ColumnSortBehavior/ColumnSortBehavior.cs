@@ -19,6 +19,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(NeutralHeaderTemplateProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.GetNeutralHeaderTemplate(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.SetNeutralHeaderTemplate(DependencyObject, DataTemplate)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty NeutralHeaderTemplateProperty =
             DependencyProperty.RegisterAttached("NeutralHeaderTemplate", typeof(DataTemplate), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
 
@@ -32,6 +35,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(AscendingSortHeaderTemplateProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.GetAscendingSortHeaderTemplate(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.SetAscendingSortHeaderTemplate(DependencyObject, DataTemplate)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty AscendingSortHeaderTemplateProperty =
             DependencyProperty.RegisterAttached("AscendingSortHeaderTemplate", typeof(DataTemplate), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
 
@@ -45,6 +51,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(DescendingSortHeaderTemplateProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.GetDescendingSortHeaderTemplate(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.SetDescendingSortHeaderTemplate(DependencyObject, DataTemplate)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty DescendingSortHeaderTemplateProperty =
             DependencyProperty.RegisterAttached("DescendingSortHeaderTemplate", typeof(DataTemplate), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
 
@@ -58,6 +67,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(AllowColumnSortingsProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.GetAllowColumnSortings(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.SetAllowColumnSortings(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty AllowColumnSortingsProperty =
             DependencyProperty.RegisterAttached("AllowColumnSortings", typeof(bool), typeof(ColumnSortBehavior), new UIPropertyMetadata(OnAllowColumnSortingsChanged));
 
@@ -77,6 +89,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(IsDefaultSortColumnProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.GetIsDefaultSortColumn(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.SetIsDefaultSortColumn(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty IsDefaultSortColumnProperty =
             DependencyProperty.RegisterAttached("IsDefaultSortColumn", typeof(bool), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
 
@@ -90,6 +105,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(SortPropertyNameProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.GetSortPropertyName(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.SetSortPropertyName(DependencyObject, string)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty SortPropertyNameProperty =
             DependencyProperty.RegisterAttached("SortPropertyName", typeof(string), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
 
@@ -103,6 +121,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(ColumnSortingBehaviorProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.GetColumnSortingBehavior(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnSortBehavior.SetColumnSortingBehavior(DependencyObject, ColumnSortBehavior)" /> attached property.
+        /// </summary>
         private static readonly DependencyProperty ColumnSortingBehaviorProperty =
             DependencyProperty.RegisterAttached("ColumnSortingBehavior", typeof(ColumnSortBehavior), typeof(ColumnSortBehavior), new UIPropertyMetadata(null));
 

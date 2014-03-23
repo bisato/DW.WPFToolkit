@@ -17,6 +17,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(RemoveTitleItemsProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.GetRemoveTitleItems(DependencyObject)" />  <see cref="DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.SetRemoveTitleItems(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty RemoveTitleItemsProperty =
             DependencyProperty.RegisterAttached("RemoveTitleItems", typeof(bool), typeof(WindowTitleBarBehavior), new UIPropertyMetadata(false, OnRemoveTitleItemsChanged));
 
@@ -30,6 +33,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(DisableMinimizeButtonProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.GetDisableMinimizeButton(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.SetDisableMinimizeButton(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty DisableMinimizeButtonProperty =
             DependencyProperty.RegisterAttached("DisableMinimizeButton", typeof(bool), typeof(WindowTitleBarBehavior), new UIPropertyMetadata(false, OnDisableMinimizeButtonChanged));
 
@@ -43,6 +49,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(DisableMaximizeButtonProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.GetDisableMaximizeButton(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.WindowTitleBarBehavior.SetDisableMaximizeButton(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty DisableMaximizeButtonProperty =
             DependencyProperty.RegisterAttached("DisableMaximizeButton", typeof(bool), typeof(WindowTitleBarBehavior), new UIPropertyMetadata(false, OnDisableMaximizeButtonChanged));
 

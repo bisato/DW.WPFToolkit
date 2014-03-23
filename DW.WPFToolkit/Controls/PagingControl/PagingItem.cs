@@ -16,6 +16,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(FooterProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingItem.Footer" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty FooterProperty =
             DependencyProperty.Register("Footer", typeof(object), typeof(PagingItem), new UIPropertyMetadata(null));
 
@@ -25,6 +28,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(FooterTemplateProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingItem.FooterTemplate" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty FooterTemplateProperty =
             DependencyProperty.Register("FooterTemplate", typeof(DataTemplate), typeof(PagingItem), new UIPropertyMetadata(null));
     }

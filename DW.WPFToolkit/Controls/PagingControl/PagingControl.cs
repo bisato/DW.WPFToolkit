@@ -37,6 +37,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ButtonItemsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.ButtonItems" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ButtonItemsProperty =
             DependencyProperty.Register("ButtonItems", typeof(ObservableCollection<int>), typeof(PagingControl), new UIPropertyMetadata(null));
 
@@ -46,6 +49,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ShowJumpBarProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.ShowJumpBar" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowJumpBarProperty =
             DependencyProperty.Register("ShowJumpBar", typeof(bool), typeof(PagingControl), new UIPropertyMetadata(true));
 
@@ -55,6 +61,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(PreviousBarPositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.PreviousBarPosition" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty PreviousBarPositionProperty =
             DependencyProperty.Register("PreviousBarPosition", typeof(Dock), typeof(PagingControl), new UIPropertyMetadata(Dock.Left));
 
@@ -64,6 +73,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(NextBarPositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.NextBarPosition" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty NextBarPositionProperty =
             DependencyProperty.Register("NextBarPosition", typeof(Dock), typeof(PagingControl), new UIPropertyMetadata(Dock.Right));
 
@@ -73,6 +85,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(JumpBarPositionProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.JumpBarPosition" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty JumpBarPositionProperty =
             DependencyProperty.Register("JumpBarPosition", typeof(Dock), typeof(PagingControl), new UIPropertyMetadata(Dock.Top));
 
@@ -82,6 +97,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(HorizontalNavigationButtonsAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.HorizontalNavigationButtonsAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty HorizontalNavigationButtonsAlignmentProperty =
             DependencyProperty.Register("HorizontalNavigationButtonsAlignment", typeof(HorizontalAlignment), typeof(PagingControl), new UIPropertyMetadata(HorizontalAlignment.Center));
 
@@ -91,6 +109,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(VerticalNavigationButtonsAlignmentProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.VerticalNavigationButtonsAlignment" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty VerticalNavigationButtonsAlignmentProperty =
             DependencyProperty.Register("VerticalNavigationButtonsAlignment", typeof(VerticalAlignment), typeof(PagingControl), new UIPropertyMetadata(VerticalAlignment.Center));
 
@@ -100,6 +121,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(HasSlideAnimationProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.HasSlideAnimation" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty HasSlideAnimationProperty =
             DependencyProperty.Register("HasSlideAnimation", typeof(bool), typeof(PagingControl), new UIPropertyMetadata(true));
 
@@ -109,6 +133,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(AnimationSpeedProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.AnimationSpeed" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty AnimationSpeedProperty =
             DependencyProperty.Register("AnimationSpeed", typeof(TimeSpan), typeof(PagingControl), new UIPropertyMetadata(TimeSpan.FromMilliseconds(200)));
 
@@ -118,6 +145,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(AnimationOrientationProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.AnimationOrientation" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty AnimationOrientationProperty =
             DependencyProperty.Register("AnimationOrientation", typeof(Orientation), typeof(PagingControl), new UIPropertyMetadata(Orientation.Horizontal));
 
@@ -127,6 +157,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(LoopItemsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.PagingControl.LoopItems" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty LoopItemsProperty =
             DependencyProperty.Register("LoopItems", typeof(bool), typeof(PagingControl), new UIPropertyMetadata(true));
 

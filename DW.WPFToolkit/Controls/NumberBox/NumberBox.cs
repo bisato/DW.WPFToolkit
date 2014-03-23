@@ -19,6 +19,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(MinimumProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.Minimum" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty MinimumProperty =
             DependencyProperty.Register("Minimum", typeof(object), typeof(NumberBox), new UIPropertyMetadata(null));
 
@@ -28,6 +31,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(MaximumProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.Maximum" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty MaximumProperty =
             DependencyProperty.Register("Maximum", typeof(object), typeof(NumberBox), new UIPropertyMetadata(null));
 
@@ -37,6 +43,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(NumberTypeProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.NumberType" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty NumberTypeProperty =
             DependencyProperty.Register("NumberType", typeof(NumberTypes), typeof(NumberBox), new UIPropertyMetadata(NumberTypes.Integer));
 
@@ -47,8 +56,7 @@ namespace DW.WPFToolkit.Controls
             double value = 0;
             if (double.TryParse(Minimum.ToString(), System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value))
                 return value;
-            else
-                return double.MinValue;
+            return double.MinValue;
         }
 
         private double GetMaximum()
@@ -58,8 +66,7 @@ namespace DW.WPFToolkit.Controls
             double value = 0;
             if (double.TryParse(Maximum.ToString(), System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value))
                 return value;
-            else
-                return double.MaxValue;
+            return double.MaxValue;
         }
 
         internal int AsInt
@@ -70,8 +77,7 @@ namespace DW.WPFToolkit.Controls
                 if (int.TryParse(Text, System.Globalization.NumberStyles.Integer, CultureInfo.CurrentUICulture, out value) &&
                     IsValidRange(value))
                     return value;
-                else
-                    return 0;
+                return 0;
             }
         }
 
@@ -83,8 +89,7 @@ namespace DW.WPFToolkit.Controls
                 if (double.TryParse(Text, System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value) &&
                     IsValidRange(value))
                     return value;
-                else
-                    return 0;
+                return 0;
             }
         }
 
@@ -113,8 +118,7 @@ namespace DW.WPFToolkit.Controls
                     if (double.TryParse(input, System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value) &&
                         IsValidRange(value))
                         return true;
-                    else
-                        return false;
+                    return false;
                 }
             }
         }

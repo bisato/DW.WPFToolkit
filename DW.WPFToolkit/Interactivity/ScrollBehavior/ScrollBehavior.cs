@@ -17,6 +17,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(ScrollToItemProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ScrollBehavior.GetScrollToItem(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ScrollBehavior.SetScrollToItem(DependencyObject, object)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty ScrollToItemProperty =
             DependencyProperty.RegisterAttached("ScrollToItem", typeof(object), typeof(ScrollBehavior), new UIPropertyMetadata(OnScrollChanged));
 
@@ -30,6 +33,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(AutoScrollToLastProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ScrollBehavior.GetAutoScrollToLast(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ScrollBehavior.SetAutoScrollToLast(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty AutoScrollToLastProperty =
             DependencyProperty.RegisterAttached("AutoScrollToLast", typeof(bool), typeof(ScrollBehavior), new UIPropertyMetadata(OnScrollChanged));
 
@@ -43,6 +49,9 @@ namespace DW.WPFToolkit.Interactivity
             obj.SetValue(AutoScrollToSelectedProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ScrollBehavior.GetAutoScrollToSelected(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ScrollBehavior.SetAutoScrollToSelected(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty AutoScrollToSelectedProperty =
             DependencyProperty.RegisterAttached("AutoScrollToSelected", typeof(bool), typeof(ScrollBehavior), new UIPropertyMetadata(OnScrollChanged));
 

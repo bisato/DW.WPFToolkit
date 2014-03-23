@@ -26,6 +26,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(VerticalTitleAlignmentsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TitledItemsControl.VerticalTitleAlignments" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty VerticalTitleAlignmentsProperty =
             DependencyProperty.Register("VerticalTitleAlignments", typeof(VerticalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(VerticalAlignment.Center));
 
@@ -35,6 +38,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(HorizontalTitleAlignmentsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TitledItemsControl.HorizontalTitleAlignments" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty HorizontalTitleAlignmentsProperty =
             DependencyProperty.Register("HorizontalTitleAlignments", typeof(HorizontalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(HorizontalAlignment.Right));
 
@@ -44,6 +50,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(TitleMarginsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TitledItemsControl.TitleMargins" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty TitleMarginsProperty =
             DependencyProperty.Register("TitleMargins", typeof(Thickness), typeof(TitledItemsControl), new UIPropertyMetadata(new Thickness(5, 0, 5, 0)));
 
@@ -53,6 +62,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(HorizontalContentAlignmentsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TitledItemsControl.HorizontalContentAlignments" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty HorizontalContentAlignmentsProperty =
             DependencyProperty.Register("HorizontalContentAlignments", typeof(HorizontalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(HorizontalAlignment.Stretch));
 
@@ -62,6 +74,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(VerticalContentAlignmentsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TitledItemsControl.VerticalContentAlignments" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty VerticalContentAlignmentsProperty =
             DependencyProperty.Register("VerticalContentAlignments", typeof(VerticalAlignment), typeof(TitledItemsControl), new UIPropertyMetadata(VerticalAlignment.Center));
 
@@ -71,6 +86,9 @@ namespace DW.WPFToolkit.Controls
             set { SetValue(ContentMarginsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.TitledItemsControl.ContentMargins" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ContentMarginsProperty =
             DependencyProperty.Register("ContentMargins", typeof(Thickness), typeof(TitledItemsControl), new UIPropertyMetadata(new Thickness(0, 2, 0, 2)));
     }
