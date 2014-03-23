@@ -4,6 +4,28 @@
                     xmlns:Converters="clr-namespace:DW.WPFToolkit.Converters"
                     xmlns:Controls="clr-namespace:DW.WPFToolkit.Controls">
 
+    <Style TargetType="{x:Type Controls:EnhancedPasswordBox}">
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
+        <Setter Property="InfoTextMargin" Value="4,0,0,0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:EnhancedPasswordBox}">
+                    <Grid KeyboardNavigation.IsTabStop="False" KeyboardNavigation.ControlTabNavigation="Contained" Background="White">
+                        <TextBlock x:Name="PART_InfoText"
+                                   Text="{TemplateBinding InfoText}"
+                                   FontStyle="{TemplateBinding InfoTextFontStyle}"
+                                   Foreground="{TemplateBinding InfoTextForeground}"
+                                   HorizontalAlignment="{TemplateBinding InfoTextHorizontalAlignment}"
+                                   VerticalAlignment="{TemplateBinding InfoTextVerticalAlignment}"
+                                   Margin="{TemplateBinding InfoTextMargin}"
+                                   Style="{TemplateBinding InfoTextStyle}" />
+                        <PasswordBox x:Name="PART_PasswordBox" Background="Transparent" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
         <GradientStop Color="#ABADB3" Offset="0.05" />
         <GradientStop Color="#E2E3EA" Offset="0.07" />

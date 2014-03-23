@@ -92,6 +92,11 @@
     <Compile Include="Controls\NumericUpDown\NumericUpDown.cs" />
     <Compile Include="Controls\NumericUpDown\NumericUpDownButton.cs" />
     <Compile Include="Controls\NumericUpDown\UpDownDirections.cs" />
+    <Compile Include="Controls\PagingControl\PagingControl.cs" />
+    <Compile Include="Controls\PagingControl\PagingItem.cs" />
+    <Compile Include="Controls\PagingControl\PagingJumpBar.cs" />
+    <Compile Include="Controls\PagingControl\PagingJumpBarItem.cs" />
+    <Compile Include="Controls\PagingControl\PagingNavigateButton.cs" />
     <Compile Include="Controls\Resizer\CornerResizer.cs" />
     <Compile Include="Controls\Resizer\CornerResizerDirections.cs" />
     <Compile Include="Controls\Resizer\CornerResizerPositions.cs" />
@@ -112,82 +117,86 @@
     <Compile Include="Controls\TreeListView\TreeListViewExpander.cs" />
     <Compile Include="Controls\TreeListView\TreeListViewItem.cs" />
     <Compile Include="Controls\UniformWrapPanel\UniformWrapPanel.cs" />
-    <Compile Include="Converters\BooleanToVisibilityInvertedConverter.cs" />
-    <Compile Include="Converters\InverseBooleanConverter.cs" />
-    <Compile Include="Helpers\ControlFocus.cs" />
-    <Compile Include="Helpers\NotifyEventArgs.cs" />
-    <Compile Include="Helpers\PopupHandler.cs" />
-    <Compile Include="Helpers\VisualTreeAssist.cs" />
-    <Compile Include="Helpers\WindowBehavior.cs" />
-    <Compile Include="Helpers\WindowClosingArgs.cs" />
-    <Compile Include="Helpers\WindowMessages.cs" />
-    <Compile Include="Helpers\WindowObserver.cs" />
-    <Compile Include="Interactivity\ColumnResizeKind.cs" />
-    <Compile Include="Interactivity\ColumnSortBehavior.cs" />
-    <Compile Include="Interactivity\ColumnVisibilityBehavior.cs" />
-    <Compile Include="Interactivity\ColumnWidthBehavior.cs" />
-    <Compile Include="Interactivity\DoubleClickBehavior.cs" />
-    <Compile Include="Interactivity\FocusBehavior.cs" />
-    <Compile Include="Interactivity\ScrollBehavior.cs" />
-    <Compile Include="Interactivity\TextBoxBehavior.cs" />
-    <Compile Include="Interactivity\WindowBehavior.cs" />
-    <Compile Include="Interactivity\WindowClosingArgs.cs" />
-    <Compile Include="Interactivity\WindowTitleBarBehavior.cs" />
+    <Compile Include="Converters\BooleanToVisibilityInvertedConverter\BooleanToVisibilityInvertedConverter.cs" />
+    <Compile Include="Converters\InverseBooleanConverter\InverseBooleanConverter.cs" />
+    <Compile Include="Helpers\ControlFocus\ControlFocus.cs" />
+    <Compile Include="Helpers\WindowObserver\NotifyEventArgs.cs" />
+    <Compile Include="Helpers\PopupHandler\PopupHandler.cs" />
+    <Compile Include="Helpers\VisualTreeAssist\VisualTreeAssist.cs" />
+    <Compile Include="Helpers\WindowBehavior\WindowBehavior.cs" />
+    <Compile Include="Helpers\WindowBehavior\WindowClosingArgs.cs" />
+    <Compile Include="Helpers\WindowObserver\WindowMessages.cs" />
+    <Compile Include="Helpers\WindowObserver\WindowObserver.cs" />
+    <Compile Include="Interactivity\ColumnWidthBehavior\ColumnResizeKind.cs" />
+    <Compile Include="Interactivity\ColumnSortBehavior\ColumnSortBehavior.cs" />
+    <Compile Include="Interactivity\ColumnVisibilityBehavior\ColumnVisibilityBehavior.cs" />
+    <Compile Include="Interactivity\ColumnWidthBehavior\ColumnWidthBehavior.cs" />
+    <Compile Include="Interactivity\DoubleClickBehavior\DoubleClickBehavior.cs" />
+    <Compile Include="Interactivity\FocusBehavior\FocusBehavior.cs" />
+    <Compile Include="Interactivity\ScrollBehavior\ScrollBehavior.cs" />
+    <Compile Include="Interactivity\TextBoxBehavior\TextBoxBehavior.cs" />
+    <Compile Include="Interactivity\WindowBehavior\WindowBehavior.cs" />
+    <Compile Include="Interactivity\WindowBehavior\WindowClosingArgs.cs" />
+    <Compile Include="Interactivity\WindowTitleBarBehavior\WindowTitleBarBehavior.cs" />
     <Compile Include="Internal\Callback.cs" />
     <Compile Include="Internal\PathCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Page Include="Controls\DynamicTabControl\Themes\DynamicTabControlStyles.xaml">
+    <Page Include="Controls\DynamicTabControl\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\EllipsedProgressBar\Themes\EllipsedProgressBarStyles.xaml">
+    <Page Include="Controls\EllipsedProgressBar\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\EnhancedComboBox\Themes\EnhancedComboBoxStyles.xaml">
+    <Page Include="Controls\EnhancedComboBox\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\EnhancedTextBox\Themes\EnhancedPasswordBoxStyles.xaml">
+    <Page Include="Controls\EnhancedTextBox\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\EnhancedTextBox\Themes\EnhancedTextBoxStyles.xaml">
+    <Page Include="Controls\ImageButton\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\ImageButton\Themes\ImageButtonStyles.xaml">
+    <Page Include="Controls\NumericUpDown\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\NumericUpDown\Themes\NumericUpDownStyles.xaml">
+    <Page Include="Controls\PagingControl\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\Resizer\Themes\ResizerStyles.xaml">
+    <Page Include="Controls\Resizer\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\SplitButton\Themes\SplitButtonStyles.xaml">
+    <Page Include="Controls\SplitButton\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\TimeBox\Themes\TimeBoxStyles.xaml">
+    <Page Include="Controls\TimeBox\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\TitledItemsControl\Themes\TitledItemsControlStyles.xaml">
+    <Page Include="Controls\TitledItemsControl\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\TreeComboBox\Themes\TreeComboBoxStyles.xaml">
+    <Page Include="Controls\TreeComboBox\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\TreeListView\Themes\TreeListViewStyles.xaml">
+    <Page Include="Controls\TreeListView\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
