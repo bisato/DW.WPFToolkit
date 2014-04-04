@@ -3,6 +3,12 @@
 ==============================
 Release 5.0.0.0
 ==============================
+2014-04-04    Adjust XmlnsDefinitions
+2014-03-23    Add documentations
+2014-03-23    Add PagingControl
+2014-03-22    Adjust documentation to not to show warnings for missing documentations
+2014-03-20    Add some missing objects
+2014-03-17    Take over all objects from 4.0.0.0
 ==============================
 
 Version denotation:
