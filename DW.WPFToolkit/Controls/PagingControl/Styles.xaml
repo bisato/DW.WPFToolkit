@@ -37,23 +37,26 @@
                         <Border BorderBrush="#FFFFFFFF" BorderThickness="1" CornerRadius="2,2,0,0">
                             <DockPanel>
                                 <Grid DockPanel.Dock="{TemplateBinding JumpBarPosition}" Background="#FFE8ECF0">
-                                    <Controls:PagingJumpBar ItemsSource="{Binding ButtonItems, RelativeSource={RelativeSource TemplatedParent}}"
-                                                           SelectedIndex="{Binding SelectedIndex, RelativeSource={RelativeSource TemplatedParent}}"
-                                                           Visibility="{Binding ShowJumpBar, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                           VerticalAlignment="Center"
-                                                           HorizontalAlignment="Center">
+                                    <Controls:PagingJumpBar AutomationProperties.AutomationId="CUI_PagingJumpBar"
+                                                            ItemsSource="{Binding ButtonItems, RelativeSource={RelativeSource TemplatedParent}}"
+                                                            SelectedIndex="{Binding SelectedIndex, RelativeSource={RelativeSource TemplatedParent}}"
+                                                            Visibility="{Binding ShowJumpBar, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                            VerticalAlignment="Center"
+                                                            HorizontalAlignment="Center">
                                     </Controls:PagingJumpBar>
                                 </Grid>
                                 <Grid DockPanel.Dock="{TemplateBinding PreviousBarPosition}" Background="{StaticResource MainPanelBackground}">
-                                    <Controls:PagingNavigateButton VerticalAlignment="{TemplateBinding VerticalNavigationButtonsAlignment}"
-                                                                  HorizontalAlignment="{TemplateBinding HorizontalNavigationButtonsAlignment}"
-                                                                  x:Name="PART_Previous">
+                                    <Controls:PagingNavigateButton AutomationProperties.AutomationId="CUI_PreviousNavigationButton"
+                                                                   VerticalAlignment="{TemplateBinding VerticalNavigationButtonsAlignment}"
+                                                                   HorizontalAlignment="{TemplateBinding HorizontalNavigationButtonsAlignment}"
+                                                                   x:Name="PART_Previous">
                                     </Controls:PagingNavigateButton>
                                 </Grid>
                                 <Grid DockPanel.Dock="{TemplateBinding NextBarPosition}" Background="{StaticResource MainPanelBackground}">
-                                    <Controls:PagingNavigateButton VerticalAlignment="{TemplateBinding VerticalNavigationButtonsAlignment}"
-                                                                  HorizontalAlignment="{TemplateBinding HorizontalNavigationButtonsAlignment}"
-                                                                  x:Name="PART_Next">
+                                    <Controls:PagingNavigateButton AutomationProperties.AutomationId="CUI_NextNavigationButton"
+                                                                   VerticalAlignment="{TemplateBinding VerticalNavigationButtonsAlignment}"
+                                                                   HorizontalAlignment="{TemplateBinding HorizontalNavigationButtonsAlignment}"
+                                                                   x:Name="PART_Next">
                                         <Controls:PagingNavigateButton.LayoutTransform>
                                             <RotateTransform Angle="180" />
                                         </Controls:PagingNavigateButton.LayoutTransform>

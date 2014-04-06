@@ -75,20 +75,21 @@
                 </Microsoft_Windows_Themes:SystemDropShadowChrome>
             </Popup>
             <Microsoft_Windows_Themes:ListBoxChrome x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.ColumnSpan="2" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}"/>
-            <Controls:EnhancedTextBox x:Name="PART_EditableTextBox"
-                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                     IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
-                                     Margin="{TemplateBinding Padding}"
-                                     Style="{StaticResource ComboBoxEditableTextBox}"
-                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                     InfoText="{TemplateBinding InfoText}"
-                                     InfoAppearance="{TemplateBinding InfoAppearance}"
-                                     InfoTextFontStyle="{TemplateBinding InfoTextFontStyle}"
-                                     InfoTextForeground="{TemplateBinding InfoTextForeground}"
-                                     InfoTextHorizontalAlignment="{TemplateBinding InfoTextHorizontalAlignment}"
-                                     InfoTextVerticalAlignment="{TemplateBinding InfoTextVerticalAlignment}"
-                                     InfoTextMargin="{TemplateBinding InfoTextMargin}"
-                                     InfoTextStyle="{TemplateBinding InfoTextStyle}" />
+            <Controls:EnhancedTextBox AutomationProperties.AutomationId="CUI_InputTextBox"
+                                      x:Name="PART_EditableTextBox"
+                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
+                                      Margin="{TemplateBinding Padding}"
+                                      Style="{StaticResource ComboBoxEditableTextBox}"
+                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      InfoText="{TemplateBinding InfoText}"
+                                      InfoAppearance="{TemplateBinding InfoAppearance}"
+                                      InfoTextFontStyle="{TemplateBinding InfoTextFontStyle}"
+                                      InfoTextForeground="{TemplateBinding InfoTextForeground}"
+                                      InfoTextHorizontalAlignment="{TemplateBinding InfoTextHorizontalAlignment}"
+                                      InfoTextVerticalAlignment="{TemplateBinding InfoTextVerticalAlignment}"
+                                      InfoTextMargin="{TemplateBinding InfoTextMargin}"
+                                      InfoTextStyle="{TemplateBinding InfoTextStyle}" />
             <ToggleButton Grid.Column="1" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxToggleButton}"/>
         </Grid>
         <ControlTemplate.Triggers>

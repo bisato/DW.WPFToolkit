@@ -3,6 +3,7 @@
 ==============================
 Release 5.0.0.0
 ==============================
+2014-04-06    Add automation IDs
 2014-04-04    Adjust XmlnsDefinitions
 2014-03-23    Add documentations
 2014-03-23    Add PagingControl

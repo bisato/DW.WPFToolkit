@@ -17,23 +17,25 @@
                             <ColumnDefinition Width="16" />
                         </Grid.ColumnDefinitions>
 
-                        <Controls:SplitToggleButton OutherBorderThickness="1,1,0,1"
-                                                   OutherCornerRadius="3,0,0,3"
-                                                   InnerBorderThickness="1"
-                                                   InnerCornerRadius="2,0,0,2"
-                                                   Content="{TemplateBinding Content}"
-                                                   x:Name="PART_ContentButton"
-                                                   Padding="{TemplateBinding Padding}"
-                                                   HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        <Controls:SplitToggleButton AutomationProperties.AutomationId="CUI_MainButton"
+                                                    OutherBorderThickness="1,1,0,1"
+                                                    OutherCornerRadius="3,0,0,3"
+                                                    InnerBorderThickness="1"
+                                                    InnerCornerRadius="2,0,0,2"
+                                                    Content="{TemplateBinding Content}"
+                                                    x:Name="PART_ContentButton"
+                                                    Padding="{TemplateBinding Padding}"
+                                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
 
-                        <Controls:SplitToggleButton Grid.Column="1"
-                                                   IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                                   OutherBorderThickness="1"
-                                                   OutherCornerRadius="0,3,3,0"
-                                                   InnerBorderThickness="1"
-                                                   InnerCornerRadius="0,2,2,0">
+                        <Controls:SplitToggleButton AutomationProperties.AutomationId="CUI_DropDownToggleButton"
+                                                    Grid.Column="1"
+                                                    IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                    OutherBorderThickness="1"
+                                                    OutherCornerRadius="0,3,3,0"
+                                                    InnerBorderThickness="1"
+                                                    InnerCornerRadius="0,2,2,0">
                             <Path Data="M 0,0 L 7,0 3.5,4 Z" Fill="Black" />
                         </Controls:SplitToggleButton>
 
@@ -53,7 +55,7 @@
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
                                                 <Border BorderThickness="0,0,1,0" BorderBrush="#FFE2E3E3" Background="#FFF1F1F1" />
-                                                <Border Grid.Column="2" BorderThickness="1,0,0,0" BorderBrush="#FFFFFFFF" Background="#FFF5F5F5" />
+                                                <Border Grid.Column="1" BorderThickness="1,0,0,0" BorderBrush="#FFFFFFFF" Background="#FFF5F5F5" />
                                             </Grid>
                                             <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
                                         </Grid>

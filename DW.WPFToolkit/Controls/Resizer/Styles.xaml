@@ -9,16 +9,16 @@
                     <Grid>
                         <ContentPresenter />
                         
-                        <Controls:FrameResizer x:Name="PART_LeftThumb" Width="{TemplateBinding LeftWidth}" Direction="LeftRight" Position="Left" HorizontalAlignment="Left" Cursor="SizeWE" />
-                        <Controls:FrameResizer x:Name="PART_RightThumb" Width="{TemplateBinding RightWidth}" Direction="LeftRight" Position="Right" HorizontalAlignment="Right" Cursor="SizeWE" />
-                        
-                        <Controls:FrameResizer x:Name="PART_TopThumb" Height="{TemplateBinding TopHeight}" Direction="TopBottom" Position="Top" VerticalAlignment="Top" Cursor="SizeNS" />
-                        <Controls:FrameResizer x:Name="PART_BottomThumb" Height="{TemplateBinding BottomHeight}" Direction="TopBottom" Position="Bottom" VerticalAlignment="Bottom" Cursor="SizeNS" />
-                        
-                        <Controls:CornerResizer x:Name="PART_LeftTopThumb" Height="{TemplateBinding CornerSize}" Width="{TemplateBinding CornerSize}" Visibility="Collapsed" Direction="NWtoSE" Position="NW" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNWSE" />
-                        <Controls:CornerResizer x:Name="PART_RightTopThumb" Height="{TemplateBinding CornerSize}" Width="{TemplateBinding CornerSize}" Visibility="Collapsed" Direction="NEtoSW" Position="NE" HorizontalAlignment="Right" VerticalAlignment="Top" Cursor="SizeNESW" />
-                        <Controls:CornerResizer x:Name="PART_RightBottomThumb" Height="{TemplateBinding CornerSize}" Width="{TemplateBinding CornerSize}" Visibility="Collapsed" Direction="NWtoSE" Position="SE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Cursor="SizeNWSE" />
-                        <Controls:CornerResizer x:Name="PART_LeftBottomThumb" Height="{TemplateBinding CornerSize}" Width="{TemplateBinding CornerSize}" Visibility="Collapsed" Direction="NEtoSW" Position="SW" HorizontalAlignment="Left" VerticalAlignment="Bottom" Cursor="SizeNESW" />
+                        <Controls:FrameResizer AutomationProperties.AutomationId="CUI_LeftThump" x:Name="PART_LeftThumb" Width="{TemplateBinding LeftWidth}" Direction="LeftRight" Position="Left" HorizontalAlignment="Left" Cursor="SizeWE" />
+                        <Controls:FrameResizer AutomationProperties.AutomationId="CUI_RightThump" x:Name="PART_RightThumb" Width="{TemplateBinding RightWidth}" Direction="LeftRight" Position="Right" HorizontalAlignment="Right" Cursor="SizeWE" />
+
+                        <Controls:FrameResizer AutomationProperties.AutomationId="CUI_TopThump" x:Name="PART_TopThumb" Height="{TemplateBinding TopHeight}" Direction="TopBottom" Position="Top" VerticalAlignment="Top" Cursor="SizeNS" />
+                        <Controls:FrameResizer AutomationProperties.AutomationId="CUI_BottomThump" x:Name="PART_BottomThumb" Height="{TemplateBinding BottomHeight}" Direction="TopBottom" Position="Bottom" VerticalAlignment="Bottom" Cursor="SizeNS" />
+
+                        <Controls:CornerResizer AutomationProperties.AutomationId="CUI_LeftTopThump" x:Name="PART_LeftTopThumb" Height="{TemplateBinding CornerSize}" Width="{TemplateBinding CornerSize}" Visibility="Collapsed" Direction="NWtoSE" Position="NW" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="SizeNWSE" />
+                        <Controls:CornerResizer AutomationProperties.AutomationId="CUI_RightTopThump" x:Name="PART_RightTopThumb" Height="{TemplateBinding CornerSize}" Width="{TemplateBinding CornerSize}" Visibility="Collapsed" Direction="NEtoSW" Position="NE" HorizontalAlignment="Right" VerticalAlignment="Top" Cursor="SizeNESW" />
+                        <Controls:CornerResizer AutomationProperties.AutomationId="CUI_RightBottomThump" x:Name="PART_RightBottomThumb" Height="{TemplateBinding CornerSize}" Width="{TemplateBinding CornerSize}" Visibility="Collapsed" Direction="NWtoSE" Position="SE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Cursor="SizeNWSE" />
+                        <Controls:CornerResizer AutomationProperties.AutomationId="CUI_LeftBottomThump" x:Name="PART_LeftBottomThumb" Height="{TemplateBinding CornerSize}" Width="{TemplateBinding CornerSize}" Visibility="Collapsed" Direction="NEtoSW" Position="SW" HorizontalAlignment="Left" VerticalAlignment="Bottom" Cursor="SizeNESW" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -29,7 +29,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:FrameResizer}">
-                    <Border x:Name="frame" />
+                    <Border x:Name="frame" AutomationProperties.AutomationId="CUI_Frames" />
                     <ControlTemplate.Triggers>
                         <Trigger Property="Position" Value="Top">
                             <Setter TargetName="frame" Property="Background">

@@ -23,18 +23,19 @@
                     <Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" SnapsToDevicePixels="true">
                         <DockPanel>
                             <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center">
-                                <Controls:NumericUpDownButton Direction="Up" x:Name="PART_UpButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
-                                <Controls:NumericUpDownButton Direction="Down" x:Name="PART_DownButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
+                                <Controls:NumericUpDownButton AutomationProperties.AutomationId="CUI_UpButton" Direction="Up" x:Name="PART_UpButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
+                                <Controls:NumericUpDownButton AutomationProperties.AutomationId="CUI_DownButton" Direction="Down" x:Name="PART_DownButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
                             </StackPanel>
-                            <Controls:NumberBox x:Name="PART_NumberBox"
-                                                 IsReadOnly="{TemplateBinding IsReadOnly}"
-                                                 Minimum="{TemplateBinding Minimum}"
-                                                 Maximum="{TemplateBinding Maximum}"
-                                                 NumberType="{TemplateBinding NumberType}"
-                                                 BorderThickness="0"
-                                                 IsEnabled="{TemplateBinding IsEnabled}"
-                                                 Text="{Binding Text, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:NumericUpDown}}}"
-                                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                            <Controls:NumberBox AutomationProperties.AutomationId="CUI_NumberBox"
+                                                x:Name="PART_NumberBox"
+                                                IsReadOnly="{TemplateBinding IsReadOnly}"
+                                                Minimum="{TemplateBinding Minimum}"
+                                                Maximum="{TemplateBinding Maximum}"
+                                                NumberType="{TemplateBinding NumberType}"
+                                                BorderThickness="0"
+                                                IsEnabled="{TemplateBinding IsEnabled}"
+                                                Text="{Binding Text, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:NumericUpDown}}}"
+                                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
                         </DockPanel>
                     </Microsoft_Windows_Themes:ListBoxChrome>
                     <ControlTemplate.Triggers>

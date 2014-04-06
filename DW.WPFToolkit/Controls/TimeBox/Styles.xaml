@@ -28,34 +28,37 @@
                                                             SnapsToDevicePixels="true">
                         <DockPanel>
                             <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center" Focusable="False" x:Name="upDownButtons">
-                                <Controls:NumericUpDownButton Direction="Up" x:Name="PART_UpButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
-                                <Controls:NumericUpDownButton Direction="Down" x:Name="PART_DownButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
+                                <Controls:NumericUpDownButton AutomationProperties.AutomationId="CUI_UpButton" Direction="Up" x:Name="PART_UpButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
+                                <Controls:NumericUpDownButton AutomationProperties.AutomationId="CUI_DownButton" Direction="Down" x:Name="PART_DownButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Controls:NumberBox Minimum="0"
-                                                   Maximum="24"
-                                                   BorderThickness="0"
-                                                   Interactivity:TextBoxBehavior.SelectAllOnFocus="True"
-                                                   Background="{TemplateBinding Background}"
-                                                   Foreground="{TemplateBinding Foreground}"
-                                                   x:Name="PART_HourBox" />
+                                <Controls:NumberBox AutomationProperties.AutomationId="CUI_HoursTextBox"
+                                                    Minimum="0"
+                                                    Maximum="24"
+                                                    BorderThickness="0"
+                                                    Interactivity:TextBoxBehavior.SelectAllOnFocus="True"
+                                                    Background="{TemplateBinding Background}"
+                                                    Foreground="{TemplateBinding Foreground}"
+                                                    x:Name="PART_HourBox" />
                                 <TextBlock Text=":" />
-                                <Controls:NumberBox Minimum="0"
-                                                   Maximum="59"
-                                                   BorderThickness="0"
-                                                   Interactivity:TextBoxBehavior.SelectAllOnFocus="True"
-                                                   Background="{TemplateBinding Background}"
-                                                   Foreground="{TemplateBinding Foreground}"
-                                                   x:Name="PART_MinuteBox" />
+                                <Controls:NumberBox AutomationProperties.AutomationId="CUI_MinutesTextBox"
+                                                    Minimum="0"
+                                                    Maximum="59"
+                                                    BorderThickness="0"
+                                                    Interactivity:TextBoxBehavior.SelectAllOnFocus="True"
+                                                    Background="{TemplateBinding Background}"
+                                                    Foreground="{TemplateBinding Foreground}"
+                                                    x:Name="PART_MinuteBox" />
                                 <StackPanel Orientation="Horizontal" x:Name="longFormat">
                                     <TextBlock Text=":" />
-                                    <Controls:NumberBox Minimum="0"
-                                                       Maximum="59"
-                                                       BorderThickness="0"
-                                                       Interactivity:TextBoxBehavior.SelectAllOnFocus="True"
-                                                       Background="{TemplateBinding Background}"
-                                                       Foreground="{TemplateBinding Foreground}"
-                                                       x:Name="PART_SecondBox" />
+                                    <Controls:NumberBox AutomationProperties.AutomationId="CUI_SecondsTextBox"
+                                                        Minimum="0"
+                                                        Maximum="59"
+                                                        BorderThickness="0"
+                                                        Interactivity:TextBoxBehavior.SelectAllOnFocus="True"
+                                                        Background="{TemplateBinding Background}"
+                                                        Foreground="{TemplateBinding Foreground}"
+                                                        x:Name="PART_SecondBox" />
                                 </StackPanel>
                             </StackPanel>
                         </DockPanel>

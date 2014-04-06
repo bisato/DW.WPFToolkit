@@ -11,7 +11,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:EnhancedPasswordBox}">
                     <Grid KeyboardNavigation.IsTabStop="False" KeyboardNavigation.ControlTabNavigation="Contained" Background="White">
-                        <TextBlock x:Name="PART_InfoText"
+                        <TextBlock AutomationProperties.AutomationId="CUI_BackgroundTextBlock"
+                                   x:Name="PART_InfoText"
                                    Text="{TemplateBinding InfoText}"
                                    FontStyle="{TemplateBinding InfoTextFontStyle}"
                                    Foreground="{TemplateBinding InfoTextForeground}"
@@ -19,7 +20,7 @@
                                    VerticalAlignment="{TemplateBinding InfoTextVerticalAlignment}"
                                    Margin="{TemplateBinding InfoTextMargin}"
                                    Style="{TemplateBinding InfoTextStyle}" />
-                        <PasswordBox x:Name="PART_PasswordBox" Background="Transparent" />
+                        <PasswordBox AutomationProperties.AutomationId="CUI_PasswordBox" x:Name="PART_PasswordBox" Background="Transparent" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -46,7 +47,6 @@
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
         <Setter Property="InfoTextMargin" Value="2,0,0,0" />
-        <Setter Property="AllowDrop" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:EnhancedTextBox}">
@@ -59,7 +59,8 @@
                                             Focusable="False"
                                             DockPanel.Dock="{TemplateBinding SecondControlPosition}" />
                             <Grid VerticalAlignment="Center">
-                                <TextBlock x:Name="PART_InfoText"
+                                <TextBlock AutomationProperties.AutomationId="CUI_BackgroundTextBlock"
+                                           x:Name="PART_InfoText"
                                            Text="{TemplateBinding InfoText}"
                                            FontStyle="{TemplateBinding InfoTextFontStyle}"
                                            Foreground="{TemplateBinding InfoTextForeground}"
@@ -90,21 +91,23 @@
                 <Grid DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:SearchTextBox}}}"
                       Visibility="{Binding ShowSearchButton, Converter={StaticResource BooleanToVisibilityConverter}}"
                       DockPanel.Dock="{Binding SearchButtonPosition}">
-                    <Controls:SearchButton Margin="{Binding SearchButtonMargin}"
-                                          Padding="{Binding SearchButtonPadding}"
-                                          VerticalAlignment="{Binding VerticalSearchButtonAlignment}"
-                                          HorizontalAlignment="{Binding HorizontalSearchButtonAlignment}"
-                                          Command="{Binding SearchCommand}"
-                                          CommandParameter="{Binding SearchCommandParameter}"
-                                          Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityInvertedConverter}}" />
+                    <Controls:SearchButton AutomationProperties.AutomationId="CUI_SearchButton"
+                                           Margin="{Binding SearchButtonMargin}"
+                                           Padding="{Binding SearchButtonPadding}"
+                                           VerticalAlignment="{Binding VerticalSearchButtonAlignment}"
+                                           HorizontalAlignment="{Binding HorizontalSearchButtonAlignment}"
+                                           Command="{Binding SearchCommand}"
+                                           CommandParameter="{Binding SearchCommandParameter}"
+                                           Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityInvertedConverter}}" />
 
-                    <Controls:CancelButton Margin="{Binding SearchButtonMargin}"
-                                          Padding="{Binding SearchButtonPadding}"
-                                          VerticalAlignment="{Binding VerticalSearchButtonAlignment}"
-                                          HorizontalAlignment="{Binding HorizontalSearchButtonAlignment}"
-                                          Command="{Binding CancelCommand}"
-                                          CommandParameter="{Binding CancelCommandParameter}"
-                                          Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <Controls:CancelButton AutomationProperties.AutomationId="CUI_CancelButton"
+                                           Margin="{Binding SearchButtonMargin}"
+                                           Padding="{Binding SearchButtonPadding}"
+                                           VerticalAlignment="{Binding VerticalSearchButtonAlignment}"
+                                           HorizontalAlignment="{Binding HorizontalSearchButtonAlignment}"
+                                           Command="{Binding CancelCommand}"
+                                           CommandParameter="{Binding CancelCommandParameter}"
+                                           Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityConverter}}" />
                 </Grid>
             </Setter.Value>
         </Setter>
@@ -216,7 +219,8 @@
     <Style TargetType="{x:Type Controls:BrowseTextBox}" BasedOn="{StaticResource {x:Type Controls:EnhancedTextBox}}">
         <Setter Property="SecondControl">
             <Setter.Value>
-                <Button DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:BrowseTextBox}}}"
+                <Button AutomationProperties.AutomationId="CUI_BrowseButton"
+                        DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:BrowseTextBox}}}"
                         Content="{Binding BrowseButtonContent}"
                         Margin="{Binding BrowseButtonMargin}"
                         Padding="{Binding BrowseButtonPadding}"
