@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Markup;
 
-[assembly: AssemblyTitle("DW.WPFToolkit")]
+[assembly: AssemblyTitle("DW.WPFToolkit - A custom controls library")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("my-libraries David Wendland")]
