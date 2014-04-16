@@ -12,6 +12,13 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class ArcPanel : Panel
     {
+#if TRIAL
+        static ArcPanel()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         private readonly PathFigure _figure = new PathFigure();
 
         /// <summary>

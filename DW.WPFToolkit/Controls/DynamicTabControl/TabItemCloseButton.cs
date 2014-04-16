@@ -12,6 +12,9 @@ namespace DW.WPFToolkit.Controls
         static TabItemCloseButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TabItemCloseButton), new FrameworkPropertyMetadata(typeof(TabItemCloseButton)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>

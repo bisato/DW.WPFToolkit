@@ -10,6 +10,13 @@ namespace DW.WPFToolkit.Helpers
     /// </summary>
     public static class ControlFocus
     {
+#if TRIAL
+        static ControlFocus()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Gives the focus to the given UIElement.
         /// </summary>

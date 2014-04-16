@@ -12,6 +12,9 @@ namespace DW.WPFToolkit.Controls
         static TabItemAddButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TabItemAddButton), new FrameworkPropertyMetadata(typeof(TabItemAddButton)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>

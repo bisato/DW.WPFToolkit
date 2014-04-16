@@ -8,6 +8,13 @@ namespace DW.WPFToolkit.Helpers
     /// </summary>
     public sealed class NotifyEventArgs : EventArgs
     {
+#if TRIAL
+        static NotifyEventArgs()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         internal NotifyEventArgs(Window observedWindow, int messageId)
         {
             ObservedWindow = observedWindow;

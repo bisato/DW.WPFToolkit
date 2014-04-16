@@ -12,6 +12,13 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class ColumnVisibilityBehavior : DependencyObject
     {
+#if TRIAL
+        static ColumnVisibilityBehavior()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         private ColumnVisibilityBehavior()
         {
             _filteredColumns = new List<GridViewColumn>();

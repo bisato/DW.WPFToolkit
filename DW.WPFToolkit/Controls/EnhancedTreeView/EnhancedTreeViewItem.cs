@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
@@ -9,6 +8,13 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EnhancedTreeViewItem : TreeViewItem
     {
+#if TRIAL
+        static EnhancedTreeViewItem()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Generates a new child item container to hold in the <see cref="DW.WPFToolkit.Controls.EnhancedTreeViewItem" />.
         /// </summary>

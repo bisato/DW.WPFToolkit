@@ -20,6 +20,9 @@ namespace DW.WPFToolkit.Controls
         static NumericUpDown()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NumericUpDown), new FrameworkPropertyMetadata(typeof(NumericUpDown)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>

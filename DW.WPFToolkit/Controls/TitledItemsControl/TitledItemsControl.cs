@@ -12,6 +12,9 @@ namespace DW.WPFToolkit.Controls
         static TitledItemsControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TitledItemsControl), new FrameworkPropertyMetadata(typeof(TitledItemsControl)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>

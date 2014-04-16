@@ -9,6 +9,13 @@ namespace DW.WPFToolkit.Helpers
     /// </summary>
     public static class VisualTreeAssist
     {
+#if TRIAL
+        static VisualTreeAssist()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Searches for a parent control by its type.
         /// </summary>

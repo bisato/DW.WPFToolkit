@@ -11,6 +11,9 @@ namespace DW.WPFToolkit.Controls
         static TreeListViewItem()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TreeListViewItem), new FrameworkPropertyMetadata(typeof(TreeListViewItem)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>

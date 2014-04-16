@@ -11,6 +11,13 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class TextBoxBehavior : DependencyObject
     {
+#if TRIAL
+        static TextBoxBehavior()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Gets the selected text in a text box.
         /// </summary>

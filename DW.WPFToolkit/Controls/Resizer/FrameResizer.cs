@@ -12,6 +12,9 @@ namespace DW.WPFToolkit.Controls
         static FrameResizer()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(FrameResizer), new FrameworkPropertyMetadata(typeof(FrameResizer)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>

@@ -12,6 +12,13 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class ColumnWidthBehavior : DependencyObject
     {
+#if TRIAL
+        static ColumnWidthBehavior()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Gets resize kind for a column.
         /// </summary>

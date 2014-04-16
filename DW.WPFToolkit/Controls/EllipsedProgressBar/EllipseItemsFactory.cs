@@ -11,6 +11,13 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EllipseItemsFactory : IItemsFactory
     {
+#if TRIAL
+        static EllipseItemsFactory()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Gets or sets the color for each item returned by the <see cref="DW.WPFToolkit.Controls.EllipseItemsFactory.GenerateItems(bool)" /> method. The default is Colors.Red.
         /// </summary>

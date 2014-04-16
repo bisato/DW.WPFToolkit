@@ -11,6 +11,9 @@ namespace DW.WPFToolkit.Controls
         static PagingJumpBar()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PagingJumpBar), new FrameworkPropertyMetadata(typeof(PagingJumpBar)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>

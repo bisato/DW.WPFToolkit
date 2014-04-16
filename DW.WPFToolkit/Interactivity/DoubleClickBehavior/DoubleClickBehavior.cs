@@ -9,6 +9,13 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class DoubleClickBehavior :  DependencyObject
     {
+#if TRIAL
+        static DoubleClickBehavior()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Gets the command to be called when the element gets double clicked.
         /// </summary>

@@ -13,6 +13,9 @@ namespace DW.WPFToolkit.Controls
         static TreeComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TreeComboBox), new FrameworkPropertyMetadata(typeof(TreeComboBox)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>

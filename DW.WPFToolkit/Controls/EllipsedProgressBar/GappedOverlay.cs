@@ -14,6 +14,9 @@ namespace DW.WPFToolkit.Controls
         static GappedOverlay()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GappedOverlay), new FrameworkPropertyMetadata(typeof(GappedOverlay)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>

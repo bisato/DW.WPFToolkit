@@ -11,6 +11,13 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class LineItemsFactory : IItemsFactory
     {
+#if TRIAL
+        static LineItemsFactory()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Gets or sets the line caps for the items created by the <see cref="DW.WPFToolkit.Controls.LineItemsFactory.GenerateItems(bool)" /> method. The default is <see cref="System.Windows.Media.PenLineCap.Round" />.
         /// </summary>

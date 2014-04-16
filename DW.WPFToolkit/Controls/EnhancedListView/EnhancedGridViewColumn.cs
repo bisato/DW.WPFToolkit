@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using DW.WPFToolkit.Interactivity;
 
@@ -10,6 +9,13 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EnhancedGridViewColumn : GridViewColumn
     {
+#if TRIAL
+        static EnhancedGridViewColumn()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Gets or sets the name of the current column. This will be used by the <see cref="DW.WPFToolkit.Controls.EnhancedListView.VisibleColumns" /> collection.
         /// </summary>

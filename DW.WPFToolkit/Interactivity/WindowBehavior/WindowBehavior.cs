@@ -14,6 +14,13 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class WindowBehavior : DependencyObject
     {
+#if TRIAL
+        static WindowBehavior()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Gets the dialog result from a button to be called on the owner window.
         /// </summary>

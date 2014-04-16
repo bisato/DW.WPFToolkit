@@ -11,6 +11,9 @@ namespace DW.WPFToolkit.Controls
         static CancelButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CancelButton), new FrameworkPropertyMetadata(typeof(CancelButton)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
     }
 }

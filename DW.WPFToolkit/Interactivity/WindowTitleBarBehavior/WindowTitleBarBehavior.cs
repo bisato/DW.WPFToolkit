@@ -10,6 +10,13 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class WindowTitleBarBehavior : FrameworkElement
     {
+#if TRIAL
+        static WindowTitleBarBehavior()
+        {
+            License1.LicenseChecker.Validate();
+        }
+#endif
+
         /// <summary>
         /// Gets a value the indicates of the window has to show title bar items or not.
         /// </summary>

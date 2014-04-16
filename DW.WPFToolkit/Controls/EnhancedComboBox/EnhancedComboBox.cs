@@ -13,6 +13,9 @@ namespace DW.WPFToolkit.Controls
         static EnhancedComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EnhancedComboBox), new FrameworkPropertyMetadata(typeof(EnhancedComboBox)));
+#if TRIAL
+            License1.LicenseChecker.Validate();
+#endif
         }
 
         /// <summary>
