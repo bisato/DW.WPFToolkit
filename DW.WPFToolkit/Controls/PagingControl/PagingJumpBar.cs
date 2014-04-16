@@ -12,7 +12,7 @@ namespace DW.WPFToolkit.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PagingJumpBar), new FrameworkPropertyMetadata(typeof(PagingJumpBar)));
 #if TRIAL
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
 #endif
         }
 

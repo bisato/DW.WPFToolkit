@@ -14,7 +14,7 @@ namespace DW.WPFToolkit.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SearchTextBox), new FrameworkPropertyMetadata(typeof(SearchTextBox)));
 #if TRIAL
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
 #endif
         }
 

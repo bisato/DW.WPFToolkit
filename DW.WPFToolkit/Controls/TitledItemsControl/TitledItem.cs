@@ -13,7 +13,7 @@ namespace DW.WPFToolkit.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TitledItem), new FrameworkPropertyMetadata(typeof(TitledItem)));
 #if TRIAL
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
 #endif
         }
 

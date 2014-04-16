@@ -13,7 +13,7 @@ namespace DW.WPFToolkit.Converters
 #if TRIAL
         static BooleanToVisibilityInvertedConverter()
         {
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
         }
 #endif
 

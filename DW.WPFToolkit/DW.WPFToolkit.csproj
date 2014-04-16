@@ -44,9 +44,6 @@
     <AssemblyOriginatorKeyFile>my-libraries.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="License">
-      <HintPath>..\..\License.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -146,6 +143,9 @@
     <Compile Include="Interactivity\WindowBehavior\WindowClosingArgs.cs" />
     <Compile Include="Interactivity\WindowTitleBarBehavior\WindowTitleBarBehavior.cs" />
     <Compile Include="Internal\Callback.cs" />
+    <Compile Include="Internal\License.xaml.cs">
+      <DependentUpon>License.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Internal\PathCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -205,10 +205,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Internal\License.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Internal\Logo.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

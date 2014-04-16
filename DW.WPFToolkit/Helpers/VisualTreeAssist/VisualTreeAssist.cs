@@ -12,7 +12,7 @@ namespace DW.WPFToolkit.Helpers
 #if TRIAL
         static VisualTreeAssist()
         {
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
         }
 #endif
 

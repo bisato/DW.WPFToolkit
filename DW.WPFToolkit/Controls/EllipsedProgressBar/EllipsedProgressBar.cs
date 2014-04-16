@@ -22,7 +22,7 @@ namespace DW.WPFToolkit.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EllipsedProgressBar), new FrameworkPropertyMetadata(typeof(EllipsedProgressBar)));
 #if TRIAL
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
 #endif
         }
 

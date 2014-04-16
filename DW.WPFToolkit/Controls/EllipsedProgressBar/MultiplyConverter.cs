@@ -12,7 +12,7 @@ namespace DW.WPFToolkit.Controls
 #if TRIAL
         static MultiplyConverter()
         {
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
         }
 #endif
 

@@ -17,7 +17,7 @@ namespace DW.WPFToolkit.Controls
 #if TRIAL
         static EnhancedTreeView()
         {
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
         }
 #endif
 

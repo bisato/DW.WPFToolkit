@@ -14,7 +14,7 @@ namespace DW.WPFToolkit.Helpers
 #if TRIAL
         static WindowObserver()
         {
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
         }
 #endif
 

@@ -13,7 +13,7 @@ namespace DW.WPFToolkit.Helpers
 #if TRIAL
         static ControlFocus()
         {
-            License1.LicenseChecker.Validate();
+            License1.License.Display();
         }
 #endif
 
