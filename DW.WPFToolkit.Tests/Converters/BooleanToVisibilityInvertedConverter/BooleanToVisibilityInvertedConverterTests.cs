@@ -1,14 +1,99 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Globalization;
+using System.Windows;
+using DW.WPFToolkit.Converters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DW.WPFToolkit.Tests.Converters.BooleanToVisibilityInvertedConverter
+namespace DW.WPFToolkit.Tests.Converters
 {
     [TestClass]
     public class BooleanToVisibilityInvertedConverterTests
     {
+        private BooleanToVisibilityInvertedConverter _target;
 
+        [TestInitialize]
+        public void Setup()
+        {
+            _target = new BooleanToVisibilityInvertedConverter();
+        }
+
+        [TestMethod]
+        public void Convert_ValueIsNotABoolean_ReturnsVisible()
+        {
+            var result = _target.Convert("hans", typeof(Visibility), null, CultureInfo.InvariantCulture);
+
+            Assert.AreEqual(Visibility.Visible, result);
+        }
+
+        [TestMethod]
+        public void Convert_ValueIsTrue_ReturnsCollapsed()
+        {
+            var result = _target.Convert(true, typeof(Visibility), null, CultureInfo.InvariantCulture);
+
+            Assert.AreEqual(Visibility.Collapsed, result);
+        }
+
+        [TestMethod]
+        public void Convert_ValueIsFalse_ReturnsVisible()
+        {
+            var result = _target.Convert(false, typeof(Visibility), null, CultureInfo.InvariantCulture);
+
+            Assert.AreEqual(Visibility.Visible, result);
+        }
+
+        [TestMethod]
+        public void Convert_ValueIsNullableTrue_ReturnsCollapsed()
+        {
+            var result = _target.Convert(new bool?(true), typeof(Visibility), null, CultureInfo.InvariantCulture);
+
+            Assert.AreEqual(Visibility.Collapsed, result);
+        }
+
+        [TestMethod]
+        public void Convert_ValueIsNullableFalse_ReturnsVisible()
+        {
+            var result = _target.Convert(new bool?(false), typeof(Visibility), null, CultureInfo.InvariantCulture);
+
+            Assert.AreEqual(Visibility.Visible, result);
+        }
+
+        [TestMethod]
+        public void Convert_ValueIsNullableNull_ReturnsVisible()
+        {
+            var result = _target.Convert(new bool?(), typeof(Visibility), null, CultureInfo.InvariantCulture);
+
+            Assert.AreEqual(Visibility.Visible, result);
+        }
+
+        [TestMethod]
+        public void ConvertBack_ValueIsNotVisible_ReturnsFalse()
+        {
+            var result = _target.ConvertBack("hans", typeof(bool), null, CultureInfo.InvariantCulture);
+
+            Assert.IsFalse((bool)result);
+        }
+
+        [TestMethod]
+        public void ConvertBack_ValueIsVisible_ReturnsFalse()
+        {
+            var result = _target.ConvertBack(Visibility.Visible, typeof(bool), null, CultureInfo.InvariantCulture);
+
+            Assert.IsFalse((bool)result);
+        }
+
+        [TestMethod]
+        public void ConvertBack_ValueIsCollapsed_ReturnsTrue()
+        {
+            var result = _target.ConvertBack(Visibility.Collapsed, typeof(bool), null, CultureInfo.InvariantCulture);
+
+            Assert.IsTrue((bool)result);
+        }
+
+        [TestMethod]
+        public void ConvertBack_ValueIsHidden_ReturnsFalse()
+        {
+            var result = _target.ConvertBack(Visibility.Hidden, typeof(bool), null, CultureInfo.InvariantCulture);
+
+            Assert.IsFalse((bool)result);
+        }
     }
 }

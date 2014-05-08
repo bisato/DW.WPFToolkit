@@ -23,13 +23,13 @@ namespace DW.WPFToolkit.Converters
         /// <param name="targetType">This parameter is not used.</param>
         /// <param name="parameter">This parameter is not used.</param>
         /// <param name="culture">This parameter is not used.</param>
-        /// <returns></returns>
+        /// <returns>true if the parameter is false; otherwise false. In case of null its false.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var flag = false;
             if (value is bool)
                 flag = (bool)value;
-            else if (value is bool?) // TODO: Always false?
+            else if (value is bool?)
             {
                 var nullable = (bool?)value;
                 flag = nullable.HasValue ? nullable.Value : false;

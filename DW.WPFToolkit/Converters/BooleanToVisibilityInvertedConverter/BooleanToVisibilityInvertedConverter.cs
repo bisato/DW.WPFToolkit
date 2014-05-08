@@ -30,7 +30,7 @@ namespace DW.WPFToolkit.Converters
             var flag = false;
             if (value is bool)
                 flag = (bool)value;
-            else if (value is bool?) // TODO: Always false?
+            else if (value is bool?)
             {
                 var nullable = (bool?)value;
                 flag = nullable.HasValue ? nullable.Value : false;
