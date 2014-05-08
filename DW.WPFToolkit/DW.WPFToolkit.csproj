@@ -126,6 +126,8 @@
     <Compile Include="Controls\UniformWrapPanel\UniformWrapPanel.cs" />
     <Compile Include="Converters\BooleanToVisibilityInvertedConverter\BooleanToVisibilityInvertedConverter.cs" />
     <Compile Include="Converters\InverseBooleanConverter\InverseBooleanConverter.cs" />
+    <Compile Include="Converters\NullToBooleanConverter\NullToBooleanConverter.cs" />
+    <Compile Include="Converters\NullToBooleanConverter\NullToBooleanDirections.cs" />
     <Compile Include="Helpers\ControlFocus\ControlFocus.cs" />
     <Compile Include="Helpers\WindowObserver\NotifyEventArgs.cs" />
     <Compile Include="Helpers\PopupHandler\PopupHandler.cs" />

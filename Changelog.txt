@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-05-08    Add NullToBooleanConverter
 2014-05-08    Make the InverseBooleanConverter sealed
 2014-05-05    Take care about the Horizontal|VerticalContentAlignment in the EnhancedTextBox
 

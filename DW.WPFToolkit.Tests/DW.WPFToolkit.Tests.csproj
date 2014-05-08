@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Converters\BooleanToVisibilityInvertedConverter\BooleanToVisibilityInvertedConverterTests.cs" />
     <Compile Include="Converters\InverseBooleanConverter\InverseBooleanConverterTests.cs" />
+    <Compile Include="Converters\NullToBooleanConverter\NullToBooleanConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
