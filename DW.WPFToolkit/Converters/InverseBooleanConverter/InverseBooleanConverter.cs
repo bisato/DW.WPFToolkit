@@ -7,7 +7,7 @@ namespace DW.WPFToolkit.Converters
     /// <summary>
     /// Represents the converter that converts Boolean values to its opposite.
     /// </summary>
-    public class InverseBooleanConverter : IValueConverter
+    public sealed class InverseBooleanConverter : IValueConverter
     {
 #if TRIAL
         static InverseBooleanConverter()

@@ -47,6 +47,8 @@
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
         <Setter Property="InfoTextMargin" Value="2,0,0,0" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:EnhancedTextBox}">
@@ -58,7 +60,7 @@
                             <ContentControl Content="{TemplateBinding SecondControl}"
                                             Focusable="False"
                                             DockPanel.Dock="{TemplateBinding SecondControlPosition}" />
-                            <Grid VerticalAlignment="Center">
+                            <Grid VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
                                 <TextBlock AutomationProperties.AutomationId="CUI_BackgroundTextBlock"
                                            x:Name="PART_InfoText"
                                            Text="{TemplateBinding InfoText}"
