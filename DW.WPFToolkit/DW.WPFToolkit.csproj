@@ -127,7 +127,9 @@
     <Compile Include="Converters\BooleanToVisibilityInvertedConverter\BooleanToVisibilityInvertedConverter.cs" />
     <Compile Include="Converters\InverseBooleanConverter\InverseBooleanConverter.cs" />
     <Compile Include="Converters\NullToBooleanConverter\NullToBooleanConverter.cs" />
-    <Compile Include="Converters\NullToBooleanConverter\NullToBooleanDirections.cs" />
+    <Compile Include="Converters\NullToBooleanConverter\NullToBooleanDirection.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter\NullToVisibilityDirection.cs" />
     <Compile Include="Helpers\ControlFocus\ControlFocus.cs" />
     <Compile Include="Helpers\WindowObserver\NotifyEventArgs.cs" />
     <Compile Include="Helpers\PopupHandler\PopupHandler.cs" />

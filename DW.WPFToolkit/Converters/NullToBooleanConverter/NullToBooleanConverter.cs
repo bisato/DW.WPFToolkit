@@ -21,23 +21,23 @@ namespace DW.WPFToolkit.Converters
         /// </summary>
         /// <param name="value">The object to check for null.</param>
         /// <param name="targetType">This parameter is not used.</param>
-        /// <param name="parameter">The <see cref="DW.WPFToolkit.Converters.NullToBooleanDirections" /> which defines what to return.</param>
+        /// <param name="parameter">The <see cref="NullToBooleanDirection" /> which defines what to return.</param>
         /// <param name="culture">This parameter is not used.</param>
-        /// <returns>True if the value is not null; otherwise false. With the <see cref="DW.WPFToolkit.Converters.NullToBooleanDirections.NullIsTrue" /> its opposite.</returns>
-        /// <remarks>The default of the <see cref="DW.WPFToolkit.Converters.NullToBooleanDirections" /> is <see cref="DW.WPFToolkit.Converters.NullToBooleanDirections.NullIsFalse" />.</remarks>
+        /// <returns>True if the value is not null; otherwise false. With the <see cref="NullToBooleanDirection.NullIsTrue" /> its opposite.</returns>
+        /// <remarks>The default of the <see cref="NullToBooleanDirection" /> is <see cref="NullToBooleanDirection.NullIsFalse" />.</remarks>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var direction = NullToBooleanDirections.NullIsFalse;
-            if (parameter is NullToBooleanDirections)
-                direction = (NullToBooleanDirections)parameter;
+            var direction = NullToBooleanDirection.NullIsFalse;
+            if (parameter is NullToBooleanDirection)
+                direction = (NullToBooleanDirection)parameter;
 
             if (value == null)
             {
-                if (direction == NullToBooleanDirections.NullIsFalse)
+                if (direction == NullToBooleanDirection.NullIsFalse)
                     return false;
                 return true;
             }
-            if (direction == NullToBooleanDirections.NullIsFalse)
+            if (direction == NullToBooleanDirection.NullIsFalse)
                 return true;
             return false;
         }

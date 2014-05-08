@@ -19,7 +19,7 @@ namespace DW.WPFToolkit.Tests.Converters
         [TestMethod]
         public void Convert_NullAndNullIsTrue_ReturnsTrue()
         {
-            var result = _target.Convert(null, typeof(bool), NullToBooleanDirections.NullIsTrue, CultureInfo.InvariantCulture);
+            var result = _target.Convert(null, typeof(bool), NullToBooleanDirection.NullIsTrue, CultureInfo.InvariantCulture);
 
             Assert.IsTrue((bool)result);
         }
@@ -27,7 +27,7 @@ namespace DW.WPFToolkit.Tests.Converters
         [TestMethod]
         public void Convert_NullAndNullIsFalse_ReturnsFalse()
         {
-            var result = _target.Convert(null, typeof(bool), NullToBooleanDirections.NullIsFalse, CultureInfo.InvariantCulture);
+            var result = _target.Convert(null, typeof(bool), NullToBooleanDirection.NullIsFalse, CultureInfo.InvariantCulture);
 
             Assert.IsFalse((bool)result);
         }
@@ -51,7 +51,7 @@ namespace DW.WPFToolkit.Tests.Converters
         [TestMethod]
         public void Convert_NotNullAndNullIsTrue_ReturnsFalse()
         {
-            var result = _target.Convert("hans", typeof(bool), NullToBooleanDirections.NullIsTrue, CultureInfo.InvariantCulture);
+            var result = _target.Convert("hans", typeof(bool), NullToBooleanDirection.NullIsTrue, CultureInfo.InvariantCulture);
 
             Assert.IsFalse((bool)result);
         }
@@ -59,7 +59,7 @@ namespace DW.WPFToolkit.Tests.Converters
         [TestMethod]
         public void Convert_NotNullAndNullIsFalse_ReturnsTrue()
         {
-            var result = _target.Convert("hans", typeof(bool), NullToBooleanDirections.NullIsFalse, CultureInfo.InvariantCulture);
+            var result = _target.Convert("hans", typeof(bool), NullToBooleanDirection.NullIsFalse, CultureInfo.InvariantCulture);
 
             Assert.IsTrue((bool)result);
         }
