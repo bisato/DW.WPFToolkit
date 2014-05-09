@@ -28,8 +28,8 @@
                                                             SnapsToDevicePixels="true">
                         <DockPanel>
                             <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center" Focusable="False" x:Name="upDownButtons">
-                                <Controls:NumericUpDownButton AutomationProperties.AutomationId="CUI_UpButton" Direction="Up" x:Name="PART_UpButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
-                                <Controls:NumericUpDownButton AutomationProperties.AutomationId="CUI_DownButton" Direction="Down" x:Name="PART_DownButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
+                                <Controls:UpDownButton AutomationProperties.AutomationId="CUI_UpButton" Direction="Up" x:Name="PART_UpButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
+                                <Controls:UpDownButton AutomationProperties.AutomationId="CUI_DownButton" Direction="Down" x:Name="PART_DownButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Controls:NumberBox AutomationProperties.AutomationId="CUI_HoursTextBox"

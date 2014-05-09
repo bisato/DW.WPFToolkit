@@ -7,11 +7,11 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Represents a up or down button shown in the <see cref="DW.WPFToolkit.Controls.NumericUpDown" /> control.
     /// </summary>
-    public class NumericUpDownButton : RepeatButton
+    public class UpDownButton : RepeatButton
     {
-        static NumericUpDownButton()
+        static UpDownButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(NumericUpDownButton), new FrameworkPropertyMetadata(typeof(NumericUpDownButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(UpDownButton), new FrameworkPropertyMetadata(typeof(UpDownButton)));
 #if TRIAL
             License1.License.Display();
 #endif
@@ -28,9 +28,9 @@ namespace DW.WPFToolkit.Controls
         }
 
         /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumericUpDownButton.Direction" /> dependency property.
+        /// Identifies the <see cref="UpDownButton.Direction" /> dependency property.
         /// </summary>
         public static readonly DependencyProperty DirectionProperty =
-            DependencyProperty.Register("Direction", typeof(UpDownDirections), typeof(NumericUpDownButton), new UIPropertyMetadata(UpDownDirections.Up));
+            DependencyProperty.Register("Direction", typeof(UpDownDirections), typeof(UpDownButton), new UIPropertyMetadata(UpDownDirections.Up));
     }
 }

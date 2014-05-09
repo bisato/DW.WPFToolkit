@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace DW.WPFToolkit.Controls
@@ -10,14 +11,17 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Enhances the <see cref="System.Windows.Controls.TextBox" /> to accept numeric values only, so the text can be bound to a numeric property direclty without converting.
     /// </summary>
+    [TemplatePart(Name = "PART_UpButton", Type = typeof(RepeatButton))]
+    [TemplatePart(Name = "PART_DownButton", Type = typeof(RepeatButton))]
     public class NumberBox : TextBox
     {
-#if TRIAL
         static NumberBox()
         {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberBox), new FrameworkPropertyMetadata(typeof(NumberBox)));
+#if TRIAL
             License1.License.Display();
-        }
 #endif
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.NumberBox" /> class.
@@ -25,6 +29,53 @@ namespace DW.WPFToolkit.Controls
         public NumberBox()
         {
             CommandBindings.Add(new CommandBinding(ApplicationCommands.Paste, null, CanPasteCommand));
+
+            MouseWheel += OnMouseWheel;
+        }
+
+        private void OnMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (!HasUpDownButtons)
+                return;
+
+            if (e.Delta > 0)
+                HandleUpButtonClick(sender, e);
+            else
+                HandleDownButtonClick(sender, e);
+        }
+
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            var upButton = GetTemplateChild("PART_UpButton") as RepeatButton;
+            var downButton = GetTemplateChild("PART_DownButton") as RepeatButton;
+
+            if (upButton != null)
+                upButton.Click += HandleUpButtonClick;
+            if (downButton != null)
+                downButton.Click += HandleDownButtonClick;
+        }
+
+        private void HandleUpButtonClick(object sender, RoutedEventArgs e)
+        {
+            double value = 0;
+            double.TryParse(Text, out value);
+            value += Step;
+            if (value <= GetMaximum())
+                Text = value.ToString(CultureInfo.CurrentUICulture);
+        }
+
+        private void HandleDownButtonClick(object sender, RoutedEventArgs e)
+        {
+            double value = 0;
+            double.TryParse(Text, out value);
+            value -= Step;
+            if (value >= GetMinimum())
+                Text = value.ToString(CultureInfo.CurrentUICulture);
         }
 
         /// <summary>
@@ -73,6 +124,38 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty NumberTypeProperty =
             DependencyProperty.Register("NumberType", typeof(NumberTypes), typeof(NumberBox), new UIPropertyMetadata(NumberTypes.Integer));
 
+        /// <summary>
+        /// Gets or sets the step width to be used by the up or down buttons.
+        /// </summary>
+        [DefaultValue(1.0)]
+        public double Step
+        {
+            get { return (double)GetValue(StepProperty); }
+            set { SetValue(StepProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.Step" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty StepProperty =
+            DependencyProperty.Register("Step", typeof(double), typeof(NumberBox), new PropertyMetadata(1.0));
+
+        /// <summary>
+        /// Gets or sets a value that indicates if the numberbox has up and down buttons.
+        /// </summary>
+        [DefaultValue(false)]
+        public bool HasUpDownButtons
+        {
+            get { return (bool)GetValue(HasUpDownButtonsProperty); }
+            set { SetValue(HasUpDownButtonsProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.HasUpDownButtons" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty HasUpDownButtonsProperty =
+            DependencyProperty.Register("HasUpDownButtons", typeof(bool), typeof(NumberBox), new PropertyMetadata(false));
+
         private double GetMinimum()
         {
             if (Minimum == null)
@@ -98,28 +181,22 @@ namespace DW.WPFToolkit.Controls
             string input = box.Text;
             input = input.Remove(box.SelectionStart, box.SelectionLength);
             input = input.Insert(box.SelectionStart, insertText);
-            if ((input.Equals("-", StringComparison.Ordinal)) &&
-                GetMinimum() < 0)
+            if ((input.Equals("-", StringComparison.Ordinal)) && GetMinimum() < 0)
                 return true;
+            
+            if (NumberType == NumberTypes.Integer)
+            {
+                var value = 0;
+                if (int.TryParse(input, System.Globalization.NumberStyles.Integer, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
+                    return true;
+                return false;
+            }
             else
             {
-                if (NumberType == NumberTypes.Integer)
-                {
-                    int value = 0;
-                    if (int.TryParse(input, System.Globalization.NumberStyles.Integer, CultureInfo.CurrentUICulture, out value) &&
-                        IsValidRange(value))
-                        return true;
-                    else
-                        return false;
-                }
-                else
-                {
-                    double value = 0;
-                    if (double.TryParse(input, System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value) &&
-                        IsValidRange(value))
-                        return true;
-                    return false;
-                }
+                double value = 0;
+                if (double.TryParse(input, System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
+                    return true;
+                return false;
             }
         }
 
@@ -136,8 +213,7 @@ namespace DW.WPFToolkit.Controls
 
         private bool IsValidRange(double value)
         {
-            if ((value >= GetMinimum()) &&
-                (value <= GetMaximum()))
+            if ((value >= GetMinimum()) && (value <= GetMaximum()))
                 return true;
             return false;
         }
@@ -150,6 +226,14 @@ namespace DW.WPFToolkit.Controls
         {
             if (e.Key == Key.Space)
                 e.Handled = true;
+
+            if (!HasUpDownButtons)
+                return;
+
+            if (e.Key == Key.Up)
+                HandleUpButtonClick(null, null);
+            else if (e.Key == Key.Down)
+                HandleDownButtonClick(null, null);
         }
 
         /// <summary>

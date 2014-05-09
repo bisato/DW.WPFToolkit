@@ -1,0 +1,13 @@
+﻿<Window x:Class="DW.WPFToolkit.Tryout.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="http://wpftoolkit.my-libraries.com/v5"
+        Title="DW.WPFToolkit.Tryout"
+        Height="350"
+        Width="525">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <Controls:NumberBox Width="150" Text="{Binding Number}" HasUpDownButtons="true" />
+        
+    </Grid>
+</Window>

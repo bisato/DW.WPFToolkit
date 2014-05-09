@@ -96,9 +96,8 @@
     <Compile Include="Controls\ImageButton\ImageButton.cs" />
     <Compile Include="Controls\NumberBox\NumberBox.cs" />
     <Compile Include="Controls\NumberBox\NumberTypes.cs" />
-    <Compile Include="Controls\NumericUpDown\NumericUpDown.cs" />
-    <Compile Include="Controls\NumericUpDown\NumericUpDownButton.cs" />
-    <Compile Include="Controls\NumericUpDown\UpDownDirections.cs" />
+    <Compile Include="Controls\NumberBox\UpDownButton.cs" />
+    <Compile Include="Controls\NumberBox\UpDownDirections.cs" />
     <Compile Include="Controls\PagingControl\PagingControl.cs" />
     <Compile Include="Controls\PagingControl\PagingItem.cs" />
     <Compile Include="Controls\PagingControl\PagingJumpBar.cs" />
@@ -178,7 +177,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\NumericUpDown\Styles.xaml">
+    <Page Include="Controls\NumberBox\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

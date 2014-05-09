@@ -12,8 +12,8 @@ namespace DW.WPFToolkit.Controls
     [TemplatePart(Name = "PART_HourBox", Type = typeof(NumberBox))]
     [TemplatePart(Name = "PART_MinuteBox", Type = typeof(NumberBox))]
     [TemplatePart(Name = "PART_SecondBox", Type = typeof(NumberBox))]
-    [TemplatePart(Name = "PART_UpButton", Type = typeof(NumericUpDownButton))]
-    [TemplatePart(Name = "PART_DownButton", Type = typeof(NumericUpDownButton))]
+    [TemplatePart(Name = "PART_UpButton", Type = typeof(UpDownButton))]
+    [TemplatePart(Name = "PART_DownButton", Type = typeof(UpDownButton))]
     public class TimeBox : Control
     {
         static TimeBox()
@@ -127,7 +127,7 @@ namespace DW.WPFToolkit.Controls
 
         private void CatchButton(string name, RoutedEventHandler handler)
         {
-            var numberBox = GetTemplateChild(name) as NumericUpDownButton;
+            var numberBox = GetTemplateChild(name) as UpDownButton;
             if (numberBox != null)
                 numberBox.Click += handler;
         }
