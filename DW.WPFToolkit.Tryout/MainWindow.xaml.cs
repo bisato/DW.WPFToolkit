@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Diagnostics;
 
 namespace DW.WPFToolkit.Tryout
 {
@@ -8,6 +10,8 @@ namespace DW.WPFToolkit.Tryout
         {
             InitializeComponent();
             DataContext = this;
+
+            //IsChecked = true;
         }
 
         public int Number
@@ -16,10 +20,23 @@ namespace DW.WPFToolkit.Tryout
             set
             {
                 _number = value;
+                Debug.WriteLine(value);
                 OnPropertyChanged("Number");
             }
         }
         private int _number;
+
+        public bool IsChecked
+        {
+            get { return _isChecked; }
+            set
+            {
+                _isChecked = value;
+                Debug.WriteLine(value);
+                OnPropertyChanged("IsChecked");
+            }
+        }
+        private bool _isChecked;
 
         public event PropertyChangedEventHandler PropertyChanged;
 

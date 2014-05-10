@@ -13,6 +13,7 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     [TemplatePart(Name = "PART_UpButton", Type = typeof(RepeatButton))]
     [TemplatePart(Name = "PART_DownButton", Type = typeof(RepeatButton))]
+    [TemplatePart(Name = "PART_ResetButton", Type = typeof(Button))]
     public class NumberBox : TextBox
     {
         static NumberBox()
@@ -53,11 +54,14 @@ namespace DW.WPFToolkit.Controls
 
             var upButton = GetTemplateChild("PART_UpButton") as RepeatButton;
             var downButton = GetTemplateChild("PART_DownButton") as RepeatButton;
+            var resetButton = GetTemplateChild("PART_ResetButton") as Button;
 
             if (upButton != null)
                 upButton.Click += HandleUpButtonClick;
             if (downButton != null)
                 downButton.Click += HandleDownButtonClick;
+            if (resetButton != null)
+                resetButton.Click += HandleResetButtonClick;
         }
 
         private void HandleUpButtonClick(object sender, RoutedEventArgs e)
@@ -76,6 +80,11 @@ namespace DW.WPFToolkit.Controls
             value -= Step;
             if (value >= GetMinimum())
                 Text = value.ToString(CultureInfo.CurrentUICulture);
+        }
+
+        private void HandleResetButtonClick(object sender, RoutedEventArgs routedEventArgs)
+        {
+            Text = DefaultValue == null ? string.Empty : DefaultValue.ToString();
         }
 
         /// <summary>
@@ -141,7 +150,7 @@ namespace DW.WPFToolkit.Controls
             DependencyProperty.Register("Step", typeof(double), typeof(NumberBox), new PropertyMetadata(1.0));
 
         /// <summary>
-        /// Gets or sets a value that indicates if the numberbox has up and down buttons.
+        /// Gets or sets a value that indicates if the NumberBox has up and down buttons.
         /// </summary>
         [DefaultValue(false)]
         public bool HasUpDownButtons
@@ -155,6 +164,86 @@ namespace DW.WPFToolkit.Controls
         /// </summary>
         public static readonly DependencyProperty HasUpDownButtonsProperty =
             DependencyProperty.Register("HasUpDownButtons", typeof(bool), typeof(NumberBox), new PropertyMetadata(false));
+
+
+        /// <summary>
+        /// Gets or sets a value that indicates if the NumberBox has a button to reset the value
+        /// </summary>
+        [DefaultValue(false)]
+        public bool HasResetButton
+        {
+            get { return (bool)GetValue(HasResetButtonProperty); }
+            set { SetValue(HasResetButtonProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.HasResetButton" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty HasResetButtonProperty =
+            DependencyProperty.Register("HasResetButton", typeof(bool), typeof(NumberBox), new PropertyMetadata(false));
+
+        /// <summary>
+        /// Gets or sets the default value to be used when the reset button is pressed.
+        /// </summary>
+        [DefaultValue(0.0)]
+        public object DefaultValue
+        {
+            get { return (object)GetValue(DefaultValueProperty); }
+            set { SetValue(DefaultValueProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.DefaultValue" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty DefaultValueProperty =
+            DependencyProperty.Register("DefaultValue", typeof(object), typeof(NumberBox), new PropertyMetadata(0.0));
+
+        /// <summary>
+        /// Gets or sets a value that indicates if the NumberBox contains a checkbox.
+        /// </summary>
+        public bool IsCheckable
+        {
+            get { return (bool)GetValue(IsCheckableProperty); }
+            set { SetValue(IsCheckableProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.IsCheckable" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsCheckableProperty =
+            DependencyProperty.Register("IsCheckable", typeof(bool), typeof(NumberBox), new PropertyMetadata(false));
+
+        /// <summary>
+        /// Gets or sets a value that indicates of the NumberBox is checked or not.
+        /// </summary>
+        [DefaultValue(false)]
+        public bool IsChecked
+        {
+            get { return (bool)GetValue(IsCheckedProperty); }
+            set { SetValue(IsCheckedProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.IsChecked" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsCheckedProperty =
+            DependencyProperty.Register("IsChecked", typeof(bool), typeof(NumberBox), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+
+        /// <summary>
+        /// Gets or sets a value that indicates if the NumberBox gets enabled or disabled depending on the IsChecked state.
+        /// </summary>
+        [DefaultValue(true)]
+        public bool DisabledOnUncheck
+        {
+            get { return (bool)GetValue(DisabledOnUncheckProperty); }
+            set { SetValue(DisabledOnUncheckProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NumberBox.DisabledOnUncheck" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty DisabledOnUncheckProperty =
+            DependencyProperty.Register("DisabledOnUncheck", typeof(bool), typeof(NumberBox), new PropertyMetadata(true));
 
         private double GetMinimum()
         {

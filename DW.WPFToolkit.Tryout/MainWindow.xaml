@@ -7,7 +7,11 @@
         Width="525">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
 
-        <Controls:NumberBox Width="150" Text="{Binding Number}" HasUpDownButtons="true" />
+        <Controls:NumberBox Width="150" Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}"
+                            HasUpDownButtons="true"
+                            HasResetButton="True" DefaultValue="15"
+                            IsCheckable="True" IsChecked="{Binding IsChecked}"
+                            />
         
     </Grid>
 </Window>

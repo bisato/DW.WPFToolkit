@@ -23,14 +23,34 @@
                 <ControlTemplate TargetType="{x:Type Controls:NumberBox}">
                     <Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" SnapsToDevicePixels="true">
                         <DockPanel>
+                            <Controls:NumberResetButton AutomationProperties.AutomationId="CUI_ResetButton" x:Name="PART_ResetButton" Content="x" DockPanel.Dock="Right" Visibility="{Binding HasResetButton, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            
                             <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center" Visibility="{Binding HasUpDownButtons, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <Controls:UpDownButton AutomationProperties.AutomationId="CUI_UpButton" Direction="Up" x:Name="PART_UpButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
                                 <Controls:UpDownButton AutomationProperties.AutomationId="CUI_DownButton" Direction="Down" x:Name="PART_DownButton" IsEnabled="{TemplateBinding IsEnabled}" Focusable="False" />
                             </StackPanel>
+
+                            <Controls:NumberCheckBox AutomationProperties.AutomationId="CUI_IsCheckedCheckBox" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="5,0,0,0" IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding IsCheckable, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            
                             <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </DockPanel>
                     </Microsoft_Windows_Themes:ListBoxChrome>
                     <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsCheckable" Value="True" />
+                                <Condition Property="DisabledOnUncheck" Value="True" />
+                                <Condition Property="IsChecked" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_ContentHost" Property="IsEnabled" Value="False" />
+                            <Setter TargetName="PART_ResetButton" Property="IsEnabled" Value="False" />
+                            <Setter TargetName="PART_UpButton" Property="IsEnabled" Value="False" />
+                            <Setter TargetName="PART_DownButton" Property="IsEnabled" Value="False" />
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            <Setter Property="Focusable" Value="False" />
+                        </MultiTrigger>
+                        
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
@@ -60,6 +80,46 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="arrow" Property="Fill" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Controls:NumberCheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+    </Style>
+
+    <Style TargetType="{x:Type Controls:NumberResetButton}">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:NumberResetButton}">
+                    <Border BorderThickness="1,1,0,0" BorderBrush="Transparent" x:Name="PART_LightBorder" CornerRadius="1">
+                        <Border BorderThickness="0,0,1,1" BorderBrush="Transparent" x:Name="PART_DarkBorder" CornerRadius="1" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Grid Height="9" Width="9" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0" SnapsToDevicePixels="True">
+                                    <Path Stroke="{TemplateBinding Foreground}" StrokeThickness="1" Data="M 0,0 L 1,1" Stretch="Fill" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+                                    <Path Stroke="{TemplateBinding Foreground}" StrokeThickness="1" Data="M 1,0 L 0,1" Stretch="Fill" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightBlue" />
+                            <Setter TargetName="PART_LightBorder" Property="BorderBrush" Value="White" />
+                            <Setter TargetName="PART_DarkBorder" Property="BorderBrush" Value="Brown" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="LightBlue" />
+                            <Setter TargetName="PART_LightBorder" Property="BorderBrush" Value="Brown" />
+                            <Setter TargetName="PART_DarkBorder" Property="BorderBrush" Value="LightGray" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            <Setter Property="Background" Value="Transparent" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

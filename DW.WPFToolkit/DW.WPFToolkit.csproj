@@ -95,6 +95,8 @@
     <Compile Include="Controls\EnhancedTreeView\EnhancedTreeViewItem.cs" />
     <Compile Include="Controls\ImageButton\ImageButton.cs" />
     <Compile Include="Controls\NumberBox\NumberBox.cs" />
+    <Compile Include="Controls\NumberBox\NumberCheckBox.cs" />
+    <Compile Include="Controls\NumberBox\NumberResetButton.cs" />
     <Compile Include="Controls\NumberBox\NumberTypes.cs" />
     <Compile Include="Controls\NumberBox\UpDownButton.cs" />
     <Compile Include="Controls\NumberBox\UpDownDirections.cs" />
