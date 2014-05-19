@@ -1,7 +1,7 @@
 ﻿namespace DW.WPFToolkit.Controls
 {
     /// <summary>
-    /// Represents the direction to be used for the up and down button in the <see cref="DW.WPFToolkit.Controls.NumericUpDown" />.
+    /// Represents the direction to be used for the up and down button in the <see cref="DW.WPFToolkit.Controls.NumberBox" />.
     /// </summary>
     public enum UpDownDirections
     {
