@@ -65,7 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\ArcPanel\ArcPanel.cs" />
+    <Compile Include="Controls\DockingPane\ButtonPanePosition.cs" />
     <Compile Include="Controls\ContextMenuItem\ContextMenuItem.cs" />
+    <Compile Include="Controls\DockingPane\DockingPane.cs" />
+    <Compile Include="Controls\DockingPane\DockingPaneItem.cs" />
     <Compile Include="Controls\DynamicTabControl\DynamicTabControl.cs" />
     <Compile Include="Controls\DynamicTabControl\DynamicTabItem.cs" />
     <Compile Include="Controls\DynamicTabControl\TabItemAddButton.cs" />
@@ -93,6 +96,7 @@
     <Compile Include="Controls\EnhancedTextBox\SearchTextBox.cs" />
     <Compile Include="Controls\EnhancedTreeView\EnhancedTreeView.cs" />
     <Compile Include="Controls\EnhancedTreeView\EnhancedTreeViewItem.cs" />
+    <Compile Include="Controls\DockingPane\ExpandDirection.cs" />
     <Compile Include="Controls\ImageButton\ImageButton.cs" />
     <Compile Include="Controls\NumberBox\NumberBox.cs" />
     <Compile Include="Controls\NumberBox\NumberCheckBox.cs" />
@@ -105,6 +109,7 @@
     <Compile Include="Controls\PagingControl\PagingJumpBar.cs" />
     <Compile Include="Controls\PagingControl\PagingJumpBarItem.cs" />
     <Compile Include="Controls\PagingControl\PagingNavigateButton.cs" />
+    <Compile Include="Controls\DockingPane\PaneToggleButton.cs" />
     <Compile Include="Controls\Resizer\CornerResizer.cs" />
     <Compile Include="Controls\Resizer\CornerResizerDirections.cs" />
     <Compile Include="Controls\Resizer\CornerResizerPositions.cs" />
@@ -159,6 +164,10 @@
     <None Include="my-libraries.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\DockingPane\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\DynamicTabControl\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

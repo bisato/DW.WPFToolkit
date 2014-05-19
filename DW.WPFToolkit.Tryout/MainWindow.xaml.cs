@@ -1,6 +1,5 @@
-﻿using System;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 
 namespace DW.WPFToolkit.Tryout
 {
@@ -10,33 +9,14 @@ namespace DW.WPFToolkit.Tryout
         {
             InitializeComponent();
             DataContext = this;
-
-            //IsChecked = true;
+            
+            Items = new ObservableCollection<Item>();
+            Items.Add(new Item("First", "First"));
+            Items.Add(new Item("Second", "Second"));
+            Items.Add(new Item("Third", "Third"));
         }
 
-        public int Number
-        {
-            get { return _number; }
-            set
-            {
-                _number = value;
-                Debug.WriteLine(value);
-                OnPropertyChanged("Number");
-            }
-        }
-        private int _number;
-
-        public bool IsChecked
-        {
-            get { return _isChecked; }
-            set
-            {
-                _isChecked = value;
-                Debug.WriteLine(value);
-                OnPropertyChanged("IsChecked");
-            }
-        }
-        private bool _isChecked;
+        public ObservableCollection<Item> Items { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -46,5 +26,17 @@ namespace DW.WPFToolkit.Tryout
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
+    }
+
+    public class Item
+    {
+        public Item(string header, string content)
+        {
+            Header = header;
+            Content = content;
+        }
+
+        public string Header { get; set; }
+        public string Content { get; set; }
     }
 }

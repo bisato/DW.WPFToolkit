@@ -5,13 +5,34 @@
         Title="DW.WPFToolkit.Tryout"
         Height="350"
         Width="525">
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <DockPanel>
 
-        <Controls:NumberBox Width="150" Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}"
-                            HasUpDownButtons="true"
-                            HasResetButton="True" DefaultValue="15"
-                            IsCheckable="True" IsChecked="{Binding IsChecked}"
-                            />
+        <Controls:DockingPane AreaMinWidth="100" AreaMaxWidth="200" ButtonsPosition="Inner" ItemsSource="{Binding Items}">
+            <Controls:DockingPane.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Header}" />
+                </DataTemplate>
+            </Controls:DockingPane.ItemTemplate>
+            <Controls:DockingPane.ContentTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Content}" />
+                </DataTemplate>
+            </Controls:DockingPane.ContentTemplate>
+        </Controls:DockingPane>
+
+        <Controls:DockingPane AreaMinWidth="100" AreaMaxWidth="200" ButtonsPosition="Inner">
+            <Controls:DockingPaneItem Header="First">
+                <TextBlock Text="First" />
+            </Controls:DockingPaneItem>
+            <Controls:DockingPaneItem Header="Second">
+                <TextBlock Text="Second" />
+            </Controls:DockingPaneItem>
+            <Controls:DockingPaneItem Header="Third">
+                <TextBlock Text="Third" />
+            </Controls:DockingPaneItem>
+        </Controls:DockingPane>
+
+        <Grid />
         
-    </Grid>
+    </DockPanel>
 </Window>

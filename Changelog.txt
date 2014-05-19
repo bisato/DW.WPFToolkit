@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-05-19    Add DockingPane
 2014-05-09    Add possibility to check and uncheck a NumberBox
 2014-05-09    Add possibility to have a reset button in the NumberBox
 2014-05-09    Merge NumericUpDown into the NumberBox
