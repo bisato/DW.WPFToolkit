@@ -6,6 +6,7 @@
         Height="350"
         Width="525">
     <DockPanel>
+        <Button Content="Add" DockPanel.Dock="Bottom" HorizontalAlignment="Left" Click="AddClick" />
 
         <Controls:DockingPane AreaMinWidth="100" AreaMaxWidth="200" ButtonsPosition="Inner" ItemsSource="{Binding Items}">
             <Controls:DockingPane.ItemTemplate>

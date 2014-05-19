@@ -1,5 +1,4 @@
-﻿using System.Collections.Specialized;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
@@ -11,11 +10,6 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DockingPane), new FrameworkPropertyMetadata(typeof(DockingPane)));
         }
 
-        public DockingPane()
-        {
-            Loaded += HandleLoaded;
-        }
-
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
             return item is DockingPaneItem;
@@ -25,41 +19,6 @@ namespace DW.WPFToolkit.Controls
         {
             return new DockingPaneItem();
         }
-
-        protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)
-        {
-            base.OnItemsChanged(e);
-            if (SelectedIndex == -1)
-                CollapseAll();
-        }
-
-        private void HandleLoaded(object sender, RoutedEventArgs e)
-        {
-            CollapseAll();
-        }
-
-        private void CollapseAll()
-        {
-            if (!DisableDefaultSelection)
-                return;
-
-            foreach (var item in Items)
-            {
-                var container = ItemContainerGenerator.ContainerFromItem(item) as DockingPaneItem;
-                if (container != null)
-                    container.IsSelected = false;
-            }
-        }
-
-
-        public bool DisableDefaultSelection
-        {
-            get { return (bool)GetValue(DisableDefaultSelectionProperty); }
-            set { SetValue(DisableDefaultSelectionProperty, value); }
-        }
-
-        public static readonly DependencyProperty DisableDefaultSelectionProperty =
-            DependencyProperty.Register("DisableDefaultSelection", typeof(bool), typeof(DockingPane), new PropertyMetadata(true));
 
         public ButtonPanePosition ButtonsPosition
         {
