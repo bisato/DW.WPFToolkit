@@ -3,6 +3,8 @@
 ==============================
 Release 5.*
 ==============================
+2014-05-24    Add changeable copy formatter to the WPFMessageBox
+2014-05-24    Add possibility to add and change the system menu and icon in the WPFMessageBox
 2014-05-24    Add custom text block control to the WPFMessageBox to show the message
 2014-05-24    Disable system menu in WPFMessageBox
 2014-05-24    Add possibility to disable the close button or system menu in the WindowTitleBarBehavior

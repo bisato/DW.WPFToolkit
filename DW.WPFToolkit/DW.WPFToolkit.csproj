@@ -131,6 +131,8 @@
     <Compile Include="Controls\TreeListView\TreeListViewExpander.cs" />
     <Compile Include="Controls\TreeListView\TreeListViewItem.cs" />
     <Compile Include="Controls\UniformWrapPanel\UniformWrapPanel.cs" />
+    <Compile Include="Controls\WPFMessageBox\DefaultMessageCopyFormatter.cs" />
+    <Compile Include="Controls\WPFMessageBox\IMessageCopyFormatter.cs" />
     <Compile Include="Controls\WPFMessageBox\WPFMessageBox.xaml.cs">
       <DependentUpon>WPFMessageBox.xaml</DependentUpon>
     </Compile>

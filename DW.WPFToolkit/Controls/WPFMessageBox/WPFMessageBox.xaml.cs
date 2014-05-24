@@ -27,56 +27,23 @@ namespace DW.WPFToolkit.Controls
             DialogResult = true;
         }
 
-        public string Message
-        {
-            get { return (string)GetValue(MessageProperty); }
-            set { SetValue(MessageProperty, value); }
-        }
-
-        public static readonly DependencyProperty MessageProperty =
-            DependencyProperty.Register("Message", typeof(string), typeof(WPFMessageBoxImageControl), new PropertyMetadata(string.Empty));
-
-        public WPFMessageBoxImage Image
-        {
-            get { return (WPFMessageBoxImage)GetValue(ImageProperty); }
-            set { SetValue(ImageProperty, value); }
-        }
-
-        public static readonly DependencyProperty ImageProperty =
-            DependencyProperty.Register("Image", typeof(WPFMessageBoxImage), typeof(WPFMessageBox), new PropertyMetadata(WPFMessageBoxImage.None));
-
-        public WPFMessageBoxButtons Buttons
-        {
-            get { return (WPFMessageBoxButtons)GetValue(ButtonsProperty); }
-            set { SetValue(ButtonsProperty, value); }
-        }
-
-        public static readonly DependencyProperty ButtonsProperty =
-            DependencyProperty.Register("Buttons", typeof(WPFMessageBoxButtons), typeof(WPFMessageBox), new PropertyMetadata(WPFMessageBoxButtons.OK));
-
-        public WPFMessageBoxResult DefaultButton
-        {
-            get { return (WPFMessageBoxResult)GetValue(DefaultButtonProperty); }
-            set { SetValue(DefaultButtonProperty, value); }
-        }
-
-        public static readonly DependencyProperty DefaultButtonProperty =
-            DependencyProperty.Register("DefaultButton", typeof(WPFMessageBoxResult), typeof(WPFMessageBox), new PropertyMetadata(WPFMessageBoxResult.None));
-
-        public WPFMessageBoxResult Result
-        {
-            get { return (WPFMessageBoxResult)GetValue(ResultProperty); }
-            set { SetValue(ResultProperty, value); }
-        }
-
-        public static readonly DependencyProperty ResultProperty =
-            DependencyProperty.Register("Result", typeof(WPFMessageBoxResult), typeof(WPFMessageBox), new PropertyMetadata(WPFMessageBoxResult.None));
-
+        public string Message { get; set; }
+        public WPFMessageBoxImage Image { get; set; }
+        public WPFMessageBoxButtons Buttons { get; set; }
+        public WPFMessageBoxResult DefaultButton { get; set; }
+        public WPFMessageBoxResult Result { get; set; }
+        public WPFMessageBoxOptions Options { get; set; }
+        
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
 
-            WindowTitleBar.DisableSystemMenu(this);
+            if (!Options.ShowSystemMenu)
+                WindowTitleBar.DisableSystemMenu(this);
+            else
+                if (Options.Icon != null)
+                    Icon = Options.Icon;
+
             WindowTitleBar.DisableMinimizeButton(this);
             WindowTitleBar.DisableMaximizeButton(this);
             if (Buttons == WPFMessageBoxButtons.YesNo || Buttons == WPFMessageBoxButtons.AbortRetryIgnore)
@@ -94,6 +61,9 @@ namespace DW.WPFToolkit.Controls
         protected override void OnPreviewKeyDown(KeyEventArgs e)
         {
             base.OnPreviewKeyUp(e);
+
+            if (e.Key == Key.C && Keyboard.Modifiers == ModifierKeys.Control && Options.MessageCopyFormatter != null)
+                Options.MessageCopyFormatter.Copy(Title, Message, Buttons, Image);
 
             if (e.Key != Key.Escape)
                 return;
@@ -119,6 +89,7 @@ namespace DW.WPFToolkit.Controls
             box.Buttons = buttons;
             box.Image = icon;
             box.DefaultButton = defaultButton;
+            box.Options = options ?? new WPFMessageBoxOptions();
             var dialogResult = box.ShowDialog();
             if (dialogResult != true)
             {
