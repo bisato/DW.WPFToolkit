@@ -131,14 +131,15 @@
     <Compile Include="Controls\TreeListView\TreeListViewExpander.cs" />
     <Compile Include="Controls\TreeListView\TreeListViewItem.cs" />
     <Compile Include="Controls\UniformWrapPanel\UniformWrapPanel.cs" />
-    <Compile Include="Controls\WPFMessageBox.xaml.cs">
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBox.xaml.cs">
       <DependentUpon>WPFMessageBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\WPFMessageBoxButtonControl.cs" />
-    <Compile Include="Controls\WPFMessageBoxButtonsPanel.cs" />
-    <Compile Include="Controls\WPFMessageBoxEnums.cs" />
-    <Compile Include="Controls\WPFMessageBoxImageControl.cs" />
-    <Compile Include="Controls\WPFMessageBoxOptions.cs" />
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxButtonControl.cs" />
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxButtonsPanel.cs" />
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxEnums.cs" />
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxImageControl.cs" />
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxOptions.cs" />
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxTextControl.cs" />
     <Compile Include="Converters\BooleanToVisibilityInvertedConverter\BooleanToVisibilityInvertedConverter.cs" />
     <Compile Include="Converters\InverseBooleanConverter\InverseBooleanConverter.cs" />
     <Compile Include="Converters\NullToBooleanConverter\NullToBooleanConverter.cs" />
@@ -227,7 +228,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\WPFMessageBox.xaml">
+    <Page Include="Controls\WPFMessageBox\WPFMessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

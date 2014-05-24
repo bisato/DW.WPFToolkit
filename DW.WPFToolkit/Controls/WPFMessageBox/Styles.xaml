@@ -4,8 +4,8 @@
 
     <Style TargetType="{x:Type Controls:WPFMessageBoxImageControl}">
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Margin" Value="25,0,0,0" />
-        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="25,27,0,0" />
+        <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Height" Value="32" />
         <Setter Property="Width" Value="32" />
         <Setter Property="AutomationProperties.AutomationId" Value="20" />
@@ -103,11 +103,16 @@
         </Setter>
     </Style>
 
-
     <Style TargetType="{x:Type Controls:WPFMessageBoxButtonControl}" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Height" Value="26" />
         <Setter Property="Width" Value="88" />
         <Setter Property="Margin" Value="0,0,10,0" />
+    </Style>
+
+    <Style TargetType="{x:Type Controls:WPFMessageBoxTextControl}" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Margin" Value="10,25,40,25" />
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
 </ResourceDictionary>

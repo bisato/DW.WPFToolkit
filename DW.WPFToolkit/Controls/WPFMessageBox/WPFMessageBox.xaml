@@ -4,9 +4,11 @@
         xmlns:Controls="clr-namespace:DW.WPFToolkit.Controls"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterScreen"
+        SnapsToDevicePixels="True"
         MinHeight="172" Height="172"
-        MinWidth="249" Width="349">
+        MinWidth="249" Width="349" MaxWidth="494">
 
     <DockPanel>
 
@@ -15,8 +17,8 @@
                                                     DockPanel.Dock="Bottom" />
         
         <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
-        
-        <Grid />
+
+        <Controls:WPFMessageBoxTextControl Text="{Binding Message}" />
         
     </DockPanel>
     
