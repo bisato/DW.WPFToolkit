@@ -167,6 +167,7 @@
       <DependentUpon>License.xaml</DependentUpon>
     </Compile>
     <Compile Include="Internal\PathCalculator.cs" />
+    <Compile Include="Internal\WindowTitleBar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

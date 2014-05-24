@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Runtime.InteropServices;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Interop;
+using DW.WPFToolkit.Internal;
 
 namespace DW.WPFToolkit.Controls
 {
@@ -72,45 +72,23 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ResultProperty =
             DependencyProperty.Register("Result", typeof(WPFMessageBoxResult), typeof(WPFMessageBox), new PropertyMetadata(WPFMessageBoxResult.None));
 
-        [DllImport("user32.dll")]
-        static extern IntPtr GetSystemMenu(IntPtr windowHandle, bool revert);
-        [DllImport("user32.dll")]
-        static extern bool EnableMenuItem(IntPtr menuHandle, uint itemId, uint enable);
-
-        private const uint MF_BYCOMMAND = 0x00000000;
-        private const uint MF_GRAYED = 0x00000001;
-        private const uint MF_ENABLED = 0x00000000;
-
-        private const uint SC_CLOSE = 0xF060;
-
-        private const int WM_SHOWWINDOW = 0x00000018;
-        private const int WM_CLOSE = 0x10;
-
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
 
-            var hwndSource = PresentationSource.FromVisual(this) as HwndSource;
-            if (hwndSource != null)
-                hwndSource.AddHook(HwndSourceHook);
+            WindowTitleBar.DisableSystemMenu(this);
+            WindowTitleBar.DisableMinimizeButton(this);
+            WindowTitleBar.DisableMaximizeButton(this);
+            if (Buttons == WPFMessageBoxButtons.YesNo || Buttons == WPFMessageBoxButtons.AbortRetryIgnore)
+                WindowTitleBar.DisableCloseButton(this);
         }
 
-        private IntPtr HwndSourceHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        protected override void OnClosing(CancelEventArgs e)
         {
-            if (msg == WM_SHOWWINDOW)
-            {
-                if (!(Buttons == WPFMessageBoxButtons.YesNo || Buttons == WPFMessageBoxButtons.AbortRetryIgnore))
-                    return IntPtr.Zero;
+            if (!_closeByButtons && (Buttons == WPFMessageBoxButtons.YesNo || Buttons == WPFMessageBoxButtons.AbortRetryIgnore))
+                e.Cancel = true;
 
-                var hMenu = GetSystemMenu(hwnd, false);
-                if (hMenu != IntPtr.Zero)
-                    EnableMenuItem(hMenu, SC_CLOSE, MF_BYCOMMAND | MF_GRAYED);
-            }
-            else if (msg == WM_CLOSE && !_closeByButtons)
-            {
-                handled = Buttons == WPFMessageBoxButtons.YesNo || Buttons == WPFMessageBoxButtons.AbortRetryIgnore;
-            }
-            return IntPtr.Zero;
+            base.OnClosing(e);
         }
 
         protected override void OnPreviewKeyDown(KeyEventArgs e)

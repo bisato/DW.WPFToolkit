@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-05-24    Disable system menu in WPFMessageBox
 2014-05-24    Add possibility to disable the close button or system menu in the WindowTitleBarBehavior
 2014-05-24    Add WPFMessageBox with first functionalities
 2014-05-19    Add DockingPane

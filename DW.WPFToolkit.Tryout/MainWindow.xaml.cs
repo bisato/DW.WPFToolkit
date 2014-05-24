@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using System.Windows.Forms;
 using DW.WPFToolkit.Controls;
 
 namespace DW.WPFToolkit.Tryout
@@ -23,7 +24,8 @@ namespace DW.WPFToolkit.Tryout
 
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            WPFMessageBox.Show(null, "text", "title", WPFMessageBoxButtons.OKCancel, WPFMessageBoxImage.Information, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+            WPFMessageBox.Show(null, "text", "title", WPFMessageBoxButtons.YesNo, WPFMessageBoxImage.Information, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+            System.Windows.Forms.MessageBox.Show("text", "title", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
+using DW.WPFToolkit.Internal;
 
 namespace DW.WPFToolkit.Interactivity
 {
@@ -185,93 +186,31 @@ namespace DW.WPFToolkit.Interactivity
         private static void RemoveTitleItems_SourceInitialized(object sender, System.EventArgs e)
         {
             var window = (Window)sender;
-            var hwnd = new WindowInteropHelper(window).Handle;
-            var windowLong = GetWindowLong(hwnd, GWL_STYLE);
-            windowLong &= ~WS_SYSMENU;
-            SetWindowLong(hwnd, GWL_STYLE, windowLong);
+            WindowTitleBar.RemoveTitleItems(window);
         }
 
         private static void DisableMinimizeButton_SourceInitialized(object sender, System.EventArgs e)
         {
             var window = (Window)sender;
-            var hwnd = new WindowInteropHelper(window).Handle;
-            var windowLong = GetWindowLong(hwnd, GWL_STYLE);
-            windowLong &= ~WS_MINIMIZEBOX;
-            SetWindowLong(hwnd, GWL_STYLE, windowLong);
+            WindowTitleBar.DisableMinimizeButton(window);
         }
 
         private static void DisableMaximizeButton_SourceInitialized(object sender, System.EventArgs e)
         {
             var window = (Window)sender;
-            var hwnd = new WindowInteropHelper(window).Handle;
-            var windowLong = GetWindowLong(hwnd, GWL_STYLE);
-            windowLong &= ~WS_MAXIMIZEBOX;
-            SetWindowLong(hwnd, GWL_STYLE, windowLong);
+            WindowTitleBar.DisableMaximizeButton(window);
         }
 
         private static void DisableCloseButton_SourceInitialized(object sender, EventArgs e)
         {
             var window = (Window)sender;
-            var hwndSource = PresentationSource.FromVisual(window) as HwndSource;
-            if (hwndSource != null)
-                hwndSource.AddHook(DisableCloseButtonHook);
+            WindowTitleBar.DisableCloseButton(window);
         }
 
         private static void DisableSystemMenu_SourceInitialized(object sender, EventArgs e)
         {
             var window = (Window)sender;
-            var hwnd = new WindowInteropHelper(window).Handle;
-            var windowLong = GetWindowLong(hwnd, GWL_EXSTYLE);
-            windowLong |= WS_EX_DLGMODALFRAME;
-            uint windowFlags =  SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED;
-            SetWindowLong(hwnd, GWL_EXSTYLE, windowLong);
-            SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0, windowFlags);
+            WindowTitleBar.DisableSystemMenu(window);
         }
-
-        private static IntPtr DisableCloseButtonHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
-        {
-            if (msg == WM_SHOWWINDOW)
-            {
-                var hMenu = GetSystemMenu(hwnd, false);
-                if (hMenu != IntPtr.Zero)
-                    EnableMenuItem(hMenu, SC_CLOSE, MF_BYCOMMAND | MF_GRAYED);
-            }
-            return IntPtr.Zero;
-        }
-
-        [DllImport("user32.dll")]
-        private static extern int GetWindowLong(IntPtr hwnd, int index);
-
-        [DllImport("user32.dll")]
-        private static extern int SetWindowLong(IntPtr hwnd, int index, int newStyle);
-
-        [DllImport("user32.dll")]
-        private static extern bool SetWindowPos(IntPtr hwnd, IntPtr hwndInsertAfter, int x, int y, int width, int height, uint flags);
-
-        [DllImport("user32.dll")]
-        static extern IntPtr GetSystemMenu(IntPtr windowHandle, bool revert);
-
-        [DllImport("user32.dll")]
-        static extern bool EnableMenuItem(IntPtr menuHandle, uint itemId, uint enable);
-
-        private const int GWL_EXSTYLE = -20;
-        private const int GWL_STYLE = -16;
-
-        private const int SC_CLOSE = 0xF060;
-
-        private const int MF_BYCOMMAND = 0x00000000;
-        private const int MF_GRAYED = 0x00000001;
-        
-        private const int WS_EX_DLGMODALFRAME = 0x0001;
-        private const int WS_MAXIMIZEBOX = 0x10000;
-        private const int WS_MINIMIZEBOX = 0x20000;
-        private const int WS_SYSMENU = 0x80000;
-        
-        private const int SWP_NOMOVE = 0x0002;
-        private const int SWP_NOSIZE = 0x0001;
-        private const int SWP_NOZORDER = 0x0004;
-        private const int SWP_FRAMECHANGED = 0x0020;
-        
-        private const int WM_SHOWWINDOW = 0x00000018;
     }
 }
