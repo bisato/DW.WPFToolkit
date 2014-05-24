@@ -1,0 +1,23 @@
+﻿<Window x:Class="DW.WPFToolkit.Controls.WPFMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:DW.WPFToolkit.Controls"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="172" Height="172"
+        MinWidth="249" Width="349">
+
+    <DockPanel>
+
+        <Controls:WPFMessageBoxButtonsPanel Buttons="{Binding Buttons, Mode=TwoWay}"
+                                                    DefaultButton="{Binding DefaultButton}"
+                                                    DockPanel.Dock="Bottom" />
+        
+        <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
+        
+        <Grid />
+        
+    </DockPanel>
+    
+</Window>

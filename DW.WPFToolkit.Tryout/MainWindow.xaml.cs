@@ -1,6 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
+using DW.WPFToolkit.Controls;
 
 namespace DW.WPFToolkit.Tryout
 {
@@ -10,16 +10,7 @@ namespace DW.WPFToolkit.Tryout
         {
             InitializeComponent();
             DataContext = this;
-
-            SelectedIndex = -1;
-
-            Items = new ObservableCollection<Item>();
-            Items.Add(new Item("First", "First"));
-            Items.Add(new Item("Second", "Second"));
-            Items.Add(new Item("Third", "Third"));
         }
-
-        public ObservableCollection<Item> Items { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -32,31 +23,7 @@ namespace DW.WPFToolkit.Tryout
 
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            Items.Add(new Item("Fourth", "Fourth"));
-            SelectedIndex = -1;
+            WPFMessageBox.Show(null, "text", "title", WPFMessageBoxButtons.OKCancel, WPFMessageBoxImage.Information, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
         }
-
-        public int SelectedIndex
-        {
-            get { return _selectedIndex; }
-            set
-            {
-                _selectedIndex = value;
-                OnPropertyChanged("SelectedIndex");
-            }
-        }
-        private int _selectedIndex;
-    }
-
-    public class Item
-    {
-        public Item(string header, string content)
-        {
-            Header = header;
-            Content = content;
-        }
-
-        public string Header { get; set; }
-        public string Content { get; set; }
     }
 }

@@ -47,6 +47,7 @@
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -130,6 +131,14 @@
     <Compile Include="Controls\TreeListView\TreeListViewExpander.cs" />
     <Compile Include="Controls\TreeListView\TreeListViewItem.cs" />
     <Compile Include="Controls\UniformWrapPanel\UniformWrapPanel.cs" />
+    <Compile Include="Controls\WPFMessageBox.xaml.cs">
+      <DependentUpon>WPFMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WPFMessageBoxButtonControl.cs" />
+    <Compile Include="Controls\WPFMessageBoxButtonsPanel.cs" />
+    <Compile Include="Controls\WPFMessageBoxEnums.cs" />
+    <Compile Include="Controls\WPFMessageBoxImageControl.cs" />
+    <Compile Include="Controls\WPFMessageBoxOptions.cs" />
     <Compile Include="Converters\BooleanToVisibilityInvertedConverter\BooleanToVisibilityInvertedConverter.cs" />
     <Compile Include="Converters\InverseBooleanConverter\InverseBooleanConverter.cs" />
     <Compile Include="Converters\NullToBooleanConverter\NullToBooleanConverter.cs" />
@@ -159,9 +168,6 @@
     </Compile>
     <Compile Include="Internal\PathCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="my-libraries.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\DockingPane\Styles.xaml">
@@ -220,6 +226,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\WPFMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\WPFMessageBox\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Internal\License.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -231,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Internal\Logo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="my-libraries.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

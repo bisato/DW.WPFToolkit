@@ -16,6 +16,7 @@
         <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/TitledItemsControl/Styles.xaml" />
         <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/TreeComboBox/Styles.xaml" />
         <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/TreeListView/Styles.xaml" />
+        <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/WPFMessageBox/Styles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
