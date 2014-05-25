@@ -19,7 +19,7 @@
         
         <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
 
-        <Controls:WPFMessageBoxTextControl Text="{Binding Message}" />
+        <Controls:WPFMessageBoxTextControl Content="{Binding Message}" />
         
     </DockPanel>
     

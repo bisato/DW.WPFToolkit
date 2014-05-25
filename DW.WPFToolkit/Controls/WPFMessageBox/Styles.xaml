@@ -12,7 +12,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:WPFMessageBoxImageControl}">
-                    <Image Source="{TemplateBinding BitmapSource}" />
+                    <Image Source="{TemplateBinding BitmapSource}" AutomationProperties.AutomationId="{TemplateBinding AutomationProperties.AutomationId}" />
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="BitmapSource" Value="{x:Null }">
@@ -109,10 +109,17 @@
         <Setter Property="Margin" Value="0,0,10,0" />
     </Style>
 
-    <Style TargetType="{x:Type Controls:WPFMessageBoxTextControl}" BasedOn="{StaticResource {x:Type TextBlock}}">
-        <Setter Property="TextWrapping" Value="Wrap" />
+    <Style TargetType="{x:Type Controls:WPFMessageBoxTextControl}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="AutomationProperties.AutomationId" Value="65535" />
         <Setter Property="Margin" Value="10,25,40,25" />
         <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:WPFMessageBoxTextControl}">
+                    <TextBlock Text="{TemplateBinding Content}" TextWrapping="Wrap" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
 </ResourceDictionary>

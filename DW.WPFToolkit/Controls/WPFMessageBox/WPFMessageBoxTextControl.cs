@@ -3,7 +3,7 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
-    public class WPFMessageBoxTextControl : TextBlock
+    public class WPFMessageBoxTextControl : Label
     {
         static WPFMessageBoxTextControl()
         {
