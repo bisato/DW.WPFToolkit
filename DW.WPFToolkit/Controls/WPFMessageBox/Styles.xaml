@@ -43,6 +43,9 @@
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Cancel, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_CancelButton" Visibility="Collapsed" />
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Ignore, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_IgnoreButton" Visibility="Collapsed" />
                             
+                            <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.TryAgain, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_TryAgainButton" Visibility="Collapsed" />
+                            <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Continue, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_ContinueButton" Visibility="Collapsed" />
+                            
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Help, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_HelpButton" Visibility="Collapsed" />
                         </StackPanel>
 
@@ -98,6 +101,17 @@
                             
                             <Setter TargetName="PART_RetryButton" Property="AutomationProperties.AutomationId" Value="4" />
                             <Setter TargetName="PART_CancelButton" Property="AutomationProperties.AutomationId" Value="2" />
+                        </Trigger>
+                        
+                        <Trigger Property="Buttons" Value="CancelTryAgainContinue">
+                            <Setter TargetName="PART_CancelButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_TryAgainButton" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_ContinueButton" Property="Visibility" Value="Visible" />
+                            
+                            <Setter TargetName="PART_CancelButton" Property="AutomationProperties.AutomationId" Value="2" />
+                            <Setter TargetName="PART_TryAgainButton" Property="AutomationProperties.AutomationId" Value="4" />
+                            <Setter TargetName="PART_ContinueButton" Property="AutomationProperties.AutomationId" Value="8" />
+
                         </Trigger>
                         
                         <Trigger Property="ShowHelpButton" Value="True">

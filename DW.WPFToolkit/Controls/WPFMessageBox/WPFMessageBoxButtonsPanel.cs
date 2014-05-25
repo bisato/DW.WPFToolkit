@@ -13,6 +13,9 @@ namespace DW.WPFToolkit.Controls
     [TemplatePart(Name = "PART_IgnoreButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_CancelButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_AbortButton", Type = typeof(Button))]
+    [TemplatePart(Name = "PART_HelpButton", Type = typeof(Button))]
+    [TemplatePart(Name = "PART_TryAgainButton", Type = typeof(Button))]
+    [TemplatePart(Name = "PART_ContinueButton", Type = typeof(Button))]
     public class WPFMessageBoxButtonsPanel : Control
     {
         static WPFMessageBoxButtonsPanel()
@@ -57,6 +60,12 @@ namespace DW.WPFToolkit.Controls
                 case "PART_AbortButton":
                     Result = WPFMessageBoxResult.Abort;
                     break;
+                case "PART_TryAgainButton":
+                    Result = WPFMessageBoxResult.Retry;
+                    break;
+                case "PART_ContinueButton":
+                    Result = WPFMessageBoxResult.Continue;
+                    break;
                 case "PART_HelpButton":
                     OnHelpRequest();
                     return;
@@ -90,7 +99,8 @@ namespace DW.WPFToolkit.Controls
                         SetDefaultButton("PART_OKButton");
                     break;
                 case WPFMessageBoxResult.Retry:
-                    SetDefaultButton("PART_RetryButton");
+                    if (!SetDefaultButton("PART_TryAgainButton"))
+                        SetDefaultButton("PART_RetryButton");
                     break;
                 case WPFMessageBoxResult.Yes:
                     SetDefaultButton("PART_YesButton");
@@ -116,19 +126,24 @@ namespace DW.WPFToolkit.Controls
                 case WPFMessageBoxButtons.YesNoCancel:
                     SetDefaultButton("PART_YesButton");
                     break;
+                case WPFMessageBoxButtons.CancelTryAgainContinue:
+                    SetDefaultButton("PART_TryAgainButton");
+                    break;
             }
         }
 
-        private void SetDefaultButton(string elementName)
+        private bool SetDefaultButton(string elementName)
         {
             var button = GetTemplateChild(elementName) as UIElement;
             if (button != null && button.Visibility == Visibility.Visible)
             {
                 button.Focus();
                 Keyboard.Focus(button);
+                return true;
             }
-            else
-                CalculateDefaultButton();
+            
+            CalculateDefaultButton();
+            return false;
         }
 
         public WPFMessageBoxResult Result

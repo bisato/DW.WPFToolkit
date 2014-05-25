@@ -8,6 +8,7 @@
         YesNoCancel = 3,
         YesNo = 4,
         RetryCancel = 5,
+        CancelTryAgainContinue = 6,
     }
 
     public enum WPFMessageBoxResult
@@ -20,6 +21,7 @@
         Ignore = 5,
         Yes = 6,
         No = 7,
+        Continue = 8
     }
 
     public enum WPFMessageBoxImage

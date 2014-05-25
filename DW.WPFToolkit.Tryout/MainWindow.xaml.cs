@@ -27,15 +27,13 @@ namespace DW.WPFToolkit.Tryout
         private void AddClick(object sender, RoutedEventArgs e)
         {
             var message = "Dies ist der Text der in der MessageBox angezeigt wird." + Environment.NewLine + Environment.NewLine + "Inklusive Newlines.";
-            WPFMessageBox.Show(null, message, "title", WPFMessageBoxButtons.AbortRetryIgnore, WPFMessageBoxImage.Information, WPFMessageBoxResult.OK, new WPFMessageBoxOptions
-            {
-                ShowHelpButton = true,
-                HelpRequestCallback = () =>
-            {
-                WPFMessageBox.Show(null, "Help Requested", "Title", WPFMessageBoxButtons.OK, WPFMessageBoxImage.None, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
-            }});
+            var result = WPFMessageBox.Show(null, message, "title", WPFMessageBoxButtons.CancelTryAgainContinue, WPFMessageBoxImage.Information, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
 
-            System.Windows.Forms.MessageBox.Show(message, "title", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, new MessageBoxOptions(), true);
+            if (result == WPFMessageBoxResult.Continue)
+            {
+                int i = 0;
+            }
+            //System.Windows.Forms.MessageBox.Show(message, "title", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, new MessageBoxOptions(), true);
         }
     }
 }

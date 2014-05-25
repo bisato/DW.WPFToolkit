@@ -12,6 +12,8 @@ namespace DW.WPFToolkit.Controls
         private string _yes;
         private string _no;
         private string _help;
+        private string _tryAgain;
+        private string _continue;
 
         public string OK
         {
@@ -59,6 +61,18 @@ namespace DW.WPFToolkit.Controls
         {
             get { return Load(SystemTexts.HELP_CAPTION, _help); }
             set { _help = value; }
+        }
+
+        public string TryAgain
+        {
+            get { return Load(SystemTexts.TRYAGAIN_CAPTION, _tryAgain); }
+            set { _tryAgain = value; }
+        }
+
+        public string Continue
+        {
+            get { return Load(SystemTexts.CONTINUE_CAPTION, _continue); }
+            set { _continue = value; }
         }
 
         private string Load(uint id, string alternate)
