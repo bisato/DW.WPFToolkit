@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Text;
 using System.Windows;
 using System.Windows.Forms;
 using DW.WPFToolkit.Controls;
+using MessageBoxOptions = System.Windows.Forms.MessageBoxOptions;
 
 namespace DW.WPFToolkit.Tryout
 {
@@ -27,8 +27,15 @@ namespace DW.WPFToolkit.Tryout
         private void AddClick(object sender, RoutedEventArgs e)
         {
             var message = "Dies ist der Text der in der MessageBox angezeigt wird." + Environment.NewLine + Environment.NewLine + "Inklusive Newlines.";
-            WPFMessageBox.Show(null, message, "title", WPFMessageBoxButtons.YesNo, WPFMessageBoxImage.Information, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
-            System.Windows.Forms.MessageBox.Show(message, "title", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            WPFMessageBox.Show(null, message, "title", WPFMessageBoxButtons.AbortRetryIgnore, WPFMessageBoxImage.Information, WPFMessageBoxResult.OK, new WPFMessageBoxOptions
+            {
+                ShowHelpButton = true,
+                HelpRequestCallback = () =>
+            {
+                WPFMessageBox.Show(null, "Help Requested", "Title", WPFMessageBoxButtons.OK, WPFMessageBoxImage.None, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+            }});
+
+            System.Windows.Forms.MessageBox.Show(message, "title", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, new MessageBoxOptions(), true);
         }
     }
 }

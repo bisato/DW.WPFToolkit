@@ -57,6 +57,9 @@ namespace DW.WPFToolkit.Controls
                 case "PART_AbortButton":
                     Result = WPFMessageBoxResult.Abort;
                     break;
+                case "PART_HelpButton":
+                    OnHelpRequest();
+                    return;
             }
             OnClick();
         }
@@ -164,6 +167,15 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty StringsProperty =
             DependencyProperty.Register("Strings", typeof(MessageBoxStrings), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(null));
 
+        public bool ShowHelpButton
+        {
+            get { return (bool)GetValue(ShowHelpButtonProperty); }
+            set { SetValue(ShowHelpButtonProperty, value); }
+        }
+
+        public static readonly DependencyProperty ShowHelpButtonProperty =
+            DependencyProperty.Register("ShowHelpButton", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(false));
+
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
 
         public event RoutedEventHandler Click
@@ -175,6 +187,20 @@ namespace DW.WPFToolkit.Controls
         private void OnClick()
         {
             var newEventArgs = new RoutedEventArgs(WPFMessageBoxButtonsPanel.ClickEvent);
+            RaiseEvent(newEventArgs);
+        }
+
+        public static readonly RoutedEvent HelpRequestEvent = EventManager.RegisterRoutedEvent("HelpRequest", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
+
+        public event RoutedEventHandler HelpRequest
+        {
+            add { AddHandler(HelpRequestEvent, value); }
+            remove { RemoveHandler(HelpRequestEvent, value); }
+        }
+
+        private void OnHelpRequest()
+        {
+            var newEventArgs = new RoutedEventArgs(WPFMessageBoxButtonsPanel.HelpRequestEvent);
             RaiseEvent(newEventArgs);
         }
     }

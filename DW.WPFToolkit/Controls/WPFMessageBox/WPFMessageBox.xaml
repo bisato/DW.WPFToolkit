@@ -15,6 +15,7 @@
         <Controls:WPFMessageBoxButtonsPanel Buttons="{Binding Buttons, Mode=TwoWay}"
                                             DefaultButton="{Binding DefaultButton}"
                                             Strings="{Binding Options.Strings}"
+                                            ShowHelpButton="{Binding Options.ShowHelpButton}"
                                             DockPanel.Dock="Bottom" />
         
         <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />

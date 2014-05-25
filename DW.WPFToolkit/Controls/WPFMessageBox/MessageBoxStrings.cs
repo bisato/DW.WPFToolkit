@@ -11,6 +11,7 @@ namespace DW.WPFToolkit.Controls
         private string _ignore;
         private string _yes;
         private string _no;
+        private string _help;
 
         public string OK
         {
@@ -52,6 +53,12 @@ namespace DW.WPFToolkit.Controls
         {
             get { return Load(SystemTexts.NO_CAPTION, _no); }
             set { _no = value; }
+        }
+
+        public string Help
+        {
+            get { return Load(SystemTexts.HELP_CAPTION, _help); }
+            set { _help = value; }
         }
 
         private string Load(uint id, string alternate)

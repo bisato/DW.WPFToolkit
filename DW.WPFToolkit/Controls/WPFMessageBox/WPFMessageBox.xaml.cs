@@ -14,6 +14,7 @@ namespace DW.WPFToolkit.Controls
             DataContext = this;
 
             AddHandler(WPFMessageBoxButtonsPanel.ClickEvent, (RoutedEventHandler)OnButtonClick);
+            AddHandler(WPFMessageBoxButtonsPanel.HelpRequestEvent, (RoutedEventHandler)OnHelpRequestClick);
         }
 
         private bool _closeByButtons;
@@ -25,6 +26,12 @@ namespace DW.WPFToolkit.Controls
 
             _closeByButtons = true;
             DialogResult = true;
+        }
+
+        private void OnHelpRequestClick(object sender, RoutedEventArgs e)
+        {
+            if (Options.HelpRequestCallback != null)
+                Options.HelpRequestCallback();
         }
 
         public string Message { get; set; }
