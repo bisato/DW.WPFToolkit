@@ -155,6 +155,15 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty DefaultButtonProperty =
             DependencyProperty.Register("DefaultButton", typeof(WPFMessageBoxResult), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(WPFMessageBoxResult.None));
 
+        public MessageBoxStrings Strings
+        {
+            get { return (MessageBoxStrings)GetValue(StringsProperty); }
+            set { SetValue(StringsProperty, value); }
+        }
+
+        public static readonly DependencyProperty StringsProperty =
+            DependencyProperty.Register("Strings", typeof(MessageBoxStrings), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(null));
+
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
 
         public event RoutedEventHandler Click

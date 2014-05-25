@@ -63,7 +63,7 @@ namespace DW.WPFToolkit.Controls
             base.OnPreviewKeyUp(e);
 
             if (e.Key == Key.C && Keyboard.Modifiers == ModifierKeys.Control && Options.MessageCopyFormatter != null)
-                Options.MessageCopyFormatter.Copy(Title, Message, Buttons, Image);
+                Options.MessageCopyFormatter.Copy(Title, Message, Buttons, Image, Options.Strings);
 
             if (e.Key != Key.Escape)
                 return;

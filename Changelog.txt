@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-05-25    Load message box strings from the system and add possibility to define new from outside
 2014-05-24    Add changeable copy formatter to the WPFMessageBox
 2014-05-24    Add possibility to add and change the system menu and icon in the WPFMessageBox
 2014-05-24    Add custom text block control to the WPFMessageBox to show the message

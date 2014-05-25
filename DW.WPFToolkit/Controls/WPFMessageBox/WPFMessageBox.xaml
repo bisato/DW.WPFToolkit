@@ -13,8 +13,9 @@
     <DockPanel>
 
         <Controls:WPFMessageBoxButtonsPanel Buttons="{Binding Buttons, Mode=TwoWay}"
-                                                    DefaultButton="{Binding DefaultButton}"
-                                                    DockPanel.Dock="Bottom" />
+                                            DefaultButton="{Binding DefaultButton}"
+                                            Strings="{Binding Options.Strings}"
+                                            DockPanel.Dock="Bottom" />
         
         <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
 
