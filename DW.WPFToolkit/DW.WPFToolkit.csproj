@@ -150,6 +150,13 @@
     <Compile Include="Converters\NullToVisibilityConverter\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter\NullToVisibilityDirection.cs" />
     <Compile Include="Helpers\ControlFocus\ControlFocus.cs" />
+    <Compile Include="Helpers\KeyboardWatcher\HookType.cs" />
+    <Compile Include="Helpers\KeyboardWatcher\KeyboardMessages.cs" />
+    <Compile Include="Helpers\KeyboardWatcher\KeyboardWatcher.cs" />
+    <Compile Include="Helpers\KeyboardWatcher\KeyboardWatcherCallback.cs" />
+    <Compile Include="Helpers\KeyboardWatcher\KeyboardWatchToken.cs" />
+    <Compile Include="Helpers\KeyboardWatcher\KeyState.cs" />
+    <Compile Include="Helpers\KeyboardWatcher\KeyStateChangedArgs.cs" />
     <Compile Include="Helpers\WindowObserver\NotifyEventArgs.cs" />
     <Compile Include="Helpers\PopupHandler\PopupHandler.cs" />
     <Compile Include="Helpers\VisualTreeAssist\VisualTreeAssist.cs" />
@@ -166,13 +173,13 @@
     <Compile Include="Interactivity\WindowBehavior\WindowBehavior.cs" />
     <Compile Include="Interactivity\WindowBehavior\WindowClosingArgs.cs" />
     <Compile Include="Interactivity\WindowTitleBarBehavior\WindowTitleBarBehavior.cs" />
-    <Compile Include="Internal\Callback.cs" />
+    <Compile Include="Helpers\WindowObserver\Callback.cs" />
     <Compile Include="Internal\License.xaml.cs">
       <DependentUpon>License.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Internal\PathCalculator.cs" />
-    <Compile Include="Internal\SystemTexts.cs" />
-    <Compile Include="Internal\WindowTitleBar.cs" />
+    <Compile Include="Controls\ArcPanel\PathCalculator.cs" />
+    <Compile Include="Controls\WPFMessageBox\SystemTexts.cs" />
+    <Compile Include="Interactivity\WindowTitleBarBehavior\WindowTitleBar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +262,7 @@
   <ItemGroup>
     <None Include="my-libraries.pfx" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

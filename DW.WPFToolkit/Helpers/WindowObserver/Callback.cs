@@ -1,7 +1,6 @@
 ﻿using System;
-using DW.WPFToolkit.Helpers;
 
-namespace DW.WPFToolkit.Internal
+namespace DW.WPFToolkit.Helpers
 {
     internal class Callback
     {

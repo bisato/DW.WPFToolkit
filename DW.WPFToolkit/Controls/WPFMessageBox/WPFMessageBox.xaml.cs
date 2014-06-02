@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using DW.WPFToolkit.Internal;
+using DW.WPFToolkit.Interactivity;
 
 namespace DW.WPFToolkit.Controls
 {

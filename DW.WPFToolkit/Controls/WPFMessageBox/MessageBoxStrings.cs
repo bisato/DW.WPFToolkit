@@ -1,6 +1,4 @@
-﻿using DW.WPFToolkit.Internal;
-
-namespace DW.WPFToolkit.Controls
+﻿namespace DW.WPFToolkit.Controls
 {
     public class MessageBoxStrings
     {

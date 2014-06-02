@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using DW.WPFToolkit.Internal;
 
 namespace DW.WPFToolkit.Controls
 {

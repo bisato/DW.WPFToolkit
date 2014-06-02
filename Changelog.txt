@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-06-02    Add KeyboardWatcher to observe keyboard events (keyboard hooks) even the app has not the focus
 2014-05-25    Add CancelTryAgainContinue to WPFMessageBox
 2014-05-25    Add optional help button to the WPFMessageBox
 2014-05-25    Change messagebox text from TextBlock to Label to have it catchable by coded UI

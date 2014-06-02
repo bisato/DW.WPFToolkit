@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Windows.Media;
 
-namespace DW.WPFToolkit.Internal
+namespace DW.WPFToolkit.Controls
 {
     internal static class PathCalculator
     {

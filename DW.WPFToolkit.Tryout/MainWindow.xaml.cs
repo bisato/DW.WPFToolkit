@@ -1,9 +1,6 @@
-﻿using System;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows;
-using System.Windows.Forms;
-using DW.WPFToolkit.Controls;
-using MessageBoxOptions = System.Windows.Forms.MessageBoxOptions;
+using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Tryout
 {
@@ -13,6 +10,12 @@ namespace DW.WPFToolkit.Tryout
         {
             InitializeComponent();
             DataContext = this;
+
+            Items = new ObservableCollection<string>();
+            _watcher = new KeyboardWatcher();
+            _watcher.AddCallback(Callback);
+
+            _watcher.BeginWatch();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -24,16 +27,12 @@ namespace DW.WPFToolkit.Tryout
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void AddClick(object sender, RoutedEventArgs e)
-        {
-            var message = "Dies ist der Text der in der MessageBox angezeigt wird." + Environment.NewLine + Environment.NewLine + "Inklusive Newlines.";
-            var result = WPFMessageBox.Show(null, message, "title", WPFMessageBoxButtons.CancelTryAgainContinue, WPFMessageBoxImage.Information, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+        private KeyboardWatcher _watcher;
+        public ObservableCollection<string> Items { get; private set; }
 
-            if (result == WPFMessageBoxResult.Continue)
-            {
-                int i = 0;
-            }
-            //System.Windows.Forms.MessageBox.Show(message, "title", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, new MessageBoxOptions(), true);
+        private void Callback(KeyStateChangedArgs keyStateChangedArgs)
+        {
+            Items.Add(keyStateChangedArgs.Key + " " + keyStateChangedArgs.State);
         }
     }
 }

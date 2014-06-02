@@ -2,14 +2,15 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace DW.WPFToolkit.Internal
+namespace DW.WPFToolkit.Controls
 {
     internal static class SystemTexts
     {
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        static extern int LoadString(IntPtr hInstance, uint stringId, StringBuilder lpBuffer, int nBufferMax);
+        private static extern int LoadString(IntPtr hInstance, uint stringId, StringBuilder lpBuffer, int nBufferMax);
+        
         [DllImport("kernel32")]
-        static extern IntPtr LoadLibrary(string lpFileName);
+        private static extern IntPtr LoadLibrary(string lpFileName);
 
         internal const uint OK_CAPTION = 800;
         internal const uint CANCEL_CAPTION = 801;

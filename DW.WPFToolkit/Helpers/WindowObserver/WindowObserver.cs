@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Interop;
-using DW.WPFToolkit.Internal;
 
 namespace DW.WPFToolkit.Helpers
 {
@@ -62,7 +61,7 @@ namespace DW.WPFToolkit.Helpers
         }
 
         /// <summary>
-        /// Occurs when the observed window has send the a WinAPI message
+        /// Occurs when the observed window has send the a WinAPI message.
         /// </summary>
         public event EventHandler<NotifyEventArgs> Message;
 
