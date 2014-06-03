@@ -5,7 +5,7 @@
         Height="350"
         Width="525">
     <DockPanel>
-        <ListBox ItemsSource="{Binding Items}" />
+        <Button Content="Show" Click="Show" />
         
     </DockPanel>
 </Window>

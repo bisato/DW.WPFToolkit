@@ -8,7 +8,9 @@ namespace DW.WPFToolkit.Controls
     [TemplatePart(Name = "PART_SingleOKButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_OKButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_YesButton", Type = typeof(Button))]
+    [TemplatePart(Name = "PART_YesToAllButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_NoButton", Type = typeof(Button))]
+    [TemplatePart(Name = "PART_NoToAllButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_RetryButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_IgnoreButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_CancelButton", Type = typeof(Button))]
@@ -45,8 +47,14 @@ namespace DW.WPFToolkit.Controls
                 case "PART_YesButton":
                     Result = WPFMessageBoxResult.Yes;
                     break;
+                case "PART_YesToAllButton":
+                    Result = WPFMessageBoxResult.YesToAll;
+                    break;
                 case "PART_NoButton":
                     Result = WPFMessageBoxResult.No;
+                    break;
+                case "PART_NoToAllButton":
+                    Result = WPFMessageBoxResult.NoToAll;
                     break;
                 case "PART_RetryButton":
                     Result = WPFMessageBoxResult.Retry;
@@ -104,6 +112,12 @@ namespace DW.WPFToolkit.Controls
                     break;
                 case WPFMessageBoxResult.Yes:
                     SetDefaultButton("PART_YesButton");
+                    break;
+                case WPFMessageBoxResult.YesToAll:
+                    SetDefaultButton("PART_YesToAllButton");
+                    break;
+                case WPFMessageBoxResult.NoToAll:
+                    SetDefaultButton("PART_NoToAllButton");
                     break;
             }
         }
@@ -190,6 +204,24 @@ namespace DW.WPFToolkit.Controls
 
         public static readonly DependencyProperty ShowHelpButtonProperty =
             DependencyProperty.Register("ShowHelpButton", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(false));
+
+        public bool ShowYesToAllButton
+        {
+            get { return (bool)GetValue(ShowYesToAllButtonProperty); }
+            set { SetValue(ShowYesToAllButtonProperty, value); }
+        }
+
+        public static readonly DependencyProperty ShowYesToAllButtonProperty =
+            DependencyProperty.Register("ShowYesToAllButton", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(false));
+
+        public bool ShowNoToAllButton
+        {
+            get { return (bool)GetValue(ShowNoToAllButtonProperty); }
+            set { SetValue(ShowNoToAllButtonProperty, value); }
+        }
+
+        public static readonly DependencyProperty ShowNoToAllButtonProperty =
+            DependencyProperty.Register("ShowNoToAllButton", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(false));
 
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
 

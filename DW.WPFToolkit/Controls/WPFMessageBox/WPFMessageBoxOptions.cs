@@ -13,6 +13,8 @@ namespace DW.WPFToolkit.Controls
             Strings = new MessageBoxStrings();
             ShowHelpButton = false;
             HelpRequestCallback = null;
+            ShowYesToAllButton = false;
+            ShowNoToAllButton = false;
         }
 
         public IMessageCopyFormatter MessageCopyFormatter { get; set; }
@@ -21,5 +23,7 @@ namespace DW.WPFToolkit.Controls
         public MessageBoxStrings Strings { get; set; }
         public bool ShowHelpButton { get; set; }
         public Action HelpRequestCallback { get; set; }
+        public bool ShowYesToAllButton { get; set; }
+        public bool ShowNoToAllButton { get; set; }
     }
 }

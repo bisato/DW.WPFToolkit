@@ -1,6 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using DW.WPFToolkit.Helpers;
+﻿using System.ComponentModel;
+using System.Windows;
+using DW.WPFToolkit.Controls;
 
 namespace DW.WPFToolkit.Tryout
 {
@@ -10,12 +10,6 @@ namespace DW.WPFToolkit.Tryout
         {
             InitializeComponent();
             DataContext = this;
-
-            Items = new ObservableCollection<string>();
-            _watcher = new KeyboardWatcher();
-            _watcher.AddCallback(Callback);
-
-            _watcher.BeginWatch();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -27,12 +21,27 @@ namespace DW.WPFToolkit.Tryout
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private KeyboardWatcher _watcher;
-        public ObservableCollection<string> Items { get; private set; }
-
-        private void Callback(KeyStateChangedArgs keyStateChangedArgs)
+        private void Show(object sender, RoutedEventArgs e)
         {
-            Items.Add(keyStateChangedArgs.Key + " " + keyStateChangedArgs.State);
+            var options = new WPFMessageBoxOptions();
+            options.ShowHelpButton = true;
+            options.ShowYesToAllButton = true;
+            options.ShowNoToAllButton = true;
+            var result = WPFMessageBox.Show(this,
+                "This is the messagebox text",
+                "Title",
+                WPFMessageBoxButtons.YesNo,
+                WPFMessageBoxImage.Information,
+                WPFMessageBoxResult.Retry,
+                options);
+
+            if (result == WPFMessageBoxResult.NoToAll)
+            {
+            }
+
+            if (result == WPFMessageBoxResult.YesToAll)
+            {
+            }
         }
     }
 }

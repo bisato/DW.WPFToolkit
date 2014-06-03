@@ -16,6 +16,8 @@
                                             DefaultButton="{Binding DefaultButton}"
                                             Strings="{Binding Options.Strings}"
                                             ShowHelpButton="{Binding Options.ShowHelpButton}"
+                                            ShowYesToAllButton="{Binding Options.ShowYesToAllButton}"
+                                            ShowNoToAllButton="{Binding Options.ShowNoToAllButton}"
                                             DockPanel.Dock="Bottom" />
         
         <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />

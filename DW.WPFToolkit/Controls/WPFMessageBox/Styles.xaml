@@ -37,7 +37,9 @@
 
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.OK, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_OKButton" Visibility="Collapsed" />
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Yes, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_YesButton" Visibility="Collapsed" />
+                            <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.YesToAll, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_YesToAllButton" Visibility="Collapsed" />
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.No, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_NoButton" Visibility="Collapsed" />
+                            <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.NoToAll, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_NoToAllButton" Visibility="Collapsed" />
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Abort, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_AbortButton" Visibility="Collapsed" />
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Retry, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_RetryButton" Visibility="Collapsed" />
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Cancel, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_CancelButton" Visibility="Collapsed" />
@@ -111,7 +113,6 @@
                             <Setter TargetName="PART_CancelButton" Property="AutomationProperties.AutomationId" Value="2" />
                             <Setter TargetName="PART_TryAgainButton" Property="AutomationProperties.AutomationId" Value="4" />
                             <Setter TargetName="PART_ContinueButton" Property="AutomationProperties.AutomationId" Value="8" />
-
                         </Trigger>
                         
                         <Trigger Property="ShowHelpButton" Value="True">
@@ -119,6 +120,46 @@
 
                             <Setter TargetName="PART_HelpButton" Property="AutomationProperties.AutomationId" Value="9" />
                         </Trigger>
+                        
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Buttons" Value="YesNoCancel" />
+                                <Condition Property="ShowYesToAllButton" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_YesToAllButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_YesToAllButton" Property="AutomationProperties.AutomationId" Value="10" />
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Buttons" Value="YesNo" />
+                                <Condition Property="ShowYesToAllButton" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_YesToAllButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_YesToAllButton" Property="AutomationProperties.AutomationId" Value="10" />
+                        </MultiTrigger>
+                        
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Buttons" Value="YesNoCancel" />
+                                <Condition Property="ShowNoToAllButton" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_NoToAllButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_NoToAllButton" Property="AutomationProperties.AutomationId" Value="11" />
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Buttons" Value="YesNo" />
+                                <Condition Property="ShowNoToAllButton" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_NoToAllButton" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_NoToAllButton" Property="AutomationProperties.AutomationId" Value="11" />
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

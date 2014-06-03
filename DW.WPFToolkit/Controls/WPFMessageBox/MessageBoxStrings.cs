@@ -12,6 +12,8 @@
         private string _help;
         private string _tryAgain;
         private string _continue;
+        private string _yesToAll;
+        private string _noToAll;
 
         public string OK
         {
@@ -73,6 +75,18 @@
             set { _continue = value; }
         }
 
+        public string YesToAll
+        {
+            get { return LoadCustom(YesToAllId, _yesToAll); }
+            set { _yesToAll = value; }
+        }
+
+        public string NoToAll
+        {
+            get { return LoadCustom(NoToAllId, _noToAll); }
+            set { _noToAll = value; }
+        }
+
         private string Load(uint id, string alternate)
         {
             if (!string.IsNullOrWhiteSpace(alternate))
@@ -80,5 +94,23 @@
             var systemString = SystemTexts.GetString(id);
             return systemString.Replace('&', '_');
         }
+
+        private string LoadCustom(int id, string alternate)
+        {
+            if (!string.IsNullOrWhiteSpace(alternate))
+                return alternate;
+
+            switch (id)
+            {
+                case YesToAllId:
+                    return "Y_es to All";
+                case NoToAllId:
+                    return "N_o to All";
+            }
+            return string.Empty;
+        }
+
+        private const int YesToAllId = -800;
+        private const int NoToAllId = -801;
     }
 }

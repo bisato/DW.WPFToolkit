@@ -21,7 +21,9 @@
         Ignore = 5,
         Yes = 6,
         No = 7,
-        Continue = 8
+        Continue = 8,
+        YesToAll = 9,
+        NoToAll = 10
     }
 
     public enum WPFMessageBoxImage
