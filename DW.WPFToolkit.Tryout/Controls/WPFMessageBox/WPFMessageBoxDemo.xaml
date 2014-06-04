@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="DW.WPFToolkit.Tryout.Controls.WPFMessageBoxDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Controls="http://wpftoolkit.my-libraries.com/v5">
+    <DockPanel>
+        
+        <Button Content="Show"
+                DockPanel.Dock="Bottom"
+                HorizontalAlignment="Center"
+                AutomationProperties.AutomationId="CUI_ShowMessageBoxButton"
+                Click="ShowMessageBox_Click" />
+        
+        <Controls:TitledItemsControl DockPanel.Dock="Top">
+            <Controls:TitledItem Title="MessageBoxText">
+                <Controls:Resizer Height="80" FrameSizes="0,0,0,2">
+                    <TextBox Text="{Binding MessageBoxText}" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" AcceptsTab="True" />
+                </Controls:Resizer>
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="Caption">
+                <TextBox Text="{Binding Caption}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="Buttons">
+                <Controls:EnumerationComboBox Enum="{Binding Buttons, Mode=TwoWay}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="Icon">
+                <Controls:EnumerationComboBox Enum="{Binding Icon, Mode=TwoWay}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="DefaultButton">
+                <Controls:EnumerationComboBox Enum="{Binding DefaultButton, Mode=TwoWay}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="ShowHelpButton">
+                <CheckBox IsChecked="{Binding ShowHelpButton}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="ShowNoToAllButton">
+                <CheckBox IsChecked="{Binding ShowNoToAllButton}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="ShowSystemMenu">
+                <CheckBox IsChecked="{Binding ShowSystemMenu}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="ShowYesToAllButton">
+                <CheckBox IsChecked="{Binding ShowYesToAllButton}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="StartupLocation">
+                <Controls:EnumerationComboBox Enum="{Binding StartupLocation, Mode=TwoWay}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="ShowInTaskbar">
+                <CheckBox IsChecked="{Binding ShowInTaskbar}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="ResizeMode">
+                <Controls:EnumerationComboBox Enum="{Binding ResizeMode, Mode=TwoWay}" />
+            </Controls:TitledItem>
+        </Controls:TitledItemsControl>
+
+        <Border BorderThickness="0,2,0,0" BorderBrush="Brown"  DockPanel.Dock="Top" />
+
+        <Controls:TitledItemsControl>
+            <Controls:TitledItem Title="Result">
+                <TextBlock Text="{Binding Result}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="Clipboard">
+                <Controls:Resizer Height="80" FrameSizes="0,0,0,2">
+                    <TextBox Text="{Binding Clipboard, Mode=OneWay}" IsReadOnly="True" VerticalScrollBarVisibility="Visible" />
+                </Controls:Resizer>
+            </Controls:TitledItem>
+        </Controls:TitledItemsControl>
+
+    </DockPanel>
+</UserControl>

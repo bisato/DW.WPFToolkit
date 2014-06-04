@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Media;
 
 namespace DW.WPFToolkit.Controls
@@ -15,6 +16,9 @@ namespace DW.WPFToolkit.Controls
             HelpRequestCallback = null;
             ShowYesToAllButton = false;
             ShowNoToAllButton = false;
+            StartupLocation = null;
+            ShowInTaskbar = false;
+            ResizeMode = ResizeMode.NoResize;
         }
 
         public IMessageCopyFormatter MessageCopyFormatter { get; set; }
@@ -25,5 +29,8 @@ namespace DW.WPFToolkit.Controls
         public Action HelpRequestCallback { get; set; }
         public bool ShowYesToAllButton { get; set; }
         public bool ShowNoToAllButton { get; set; }
+        public WindowStartupLocation? StartupLocation { get; set; }
+        public bool ShowInTaskbar { get; set; }
+        public ResizeMode ResizeMode { get; set; }
     }
 }

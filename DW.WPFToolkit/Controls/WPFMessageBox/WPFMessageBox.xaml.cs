@@ -57,6 +57,15 @@ namespace DW.WPFToolkit.Controls
                 WindowTitleBar.DisableCloseButton(this);
         }
 
+        protected override void OnContentRendered(EventArgs e)
+        {
+            PART_ButtonPanel.Measure(new Size(double.MaxValue, double.MaxValue));
+            var panelWidth = PART_ButtonPanel.DesiredSize.Width;
+            if (!double.IsNaN(panelWidth) && panelWidth > MaxWidth)
+                MaxWidth = panelWidth + 40;
+            base.OnContentRendered(e);
+        }
+
         protected override void OnClosing(CancelEventArgs e)
         {
             if (!_closeByButtons && (Buttons == WPFMessageBoxButtons.YesNo || Buttons == WPFMessageBoxButtons.AbortRetryIgnore))
@@ -89,14 +98,37 @@ namespace DW.WPFToolkit.Controls
                                                WPFMessageBoxResult defaultButton,
                                                WPFMessageBoxOptions options)
         {
+            if (options == null)
+                options = new WPFMessageBoxOptions();
+
             var box = new WPFMessageBox();
             box.Owner = owner;
+            box.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (box.Owner != null)
+                box.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            if (options.StartupLocation != null)
+                box.WindowStartupLocation = options.StartupLocation.Value;
+            box.SizeToContent = SizeToContent.WidthAndHeight;
+            box.SnapsToDevicePixels = true;
+            box.ShowInTaskbar = options.ShowInTaskbar;
+            box.ResizeMode = options.ResizeMode;
+
+            //box.Left
+            //box.Top
+            box.MinWidth = 249;
+            box.MaxWidth = 494;
+            box.Width = 349;
+            box.MinHeight = 172;
+            //box.MaxHeight
+            box.Height = 172;
+            //box.Style
+
             box.Message = messageBoxText;
-            box.Title = caption;
+            box.Title = caption ?? string.Empty;
             box.Buttons = buttons;
             box.Image = icon;
             box.DefaultButton = defaultButton;
-            box.Options = options ?? new WPFMessageBoxOptions();
+            box.Options = options;
             var dialogResult = box.ShowDialog();
             if (dialogResult != true)
             {

@@ -1,14 +1,7 @@
 ﻿<Window x:Class="DW.WPFToolkit.Controls.WPFMessageBox"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Controls="clr-namespace:DW.WPFToolkit.Controls"
-        ResizeMode="NoResize"
-        ShowInTaskbar="False"
-        SizeToContent="WidthAndHeight"
-        WindowStartupLocation="CenterScreen"
-        SnapsToDevicePixels="True"
-        MinHeight="172" Height="172"
-        MinWidth="249" Width="349" MaxWidth="494">
+        xmlns:Controls="clr-namespace:DW.WPFToolkit.Controls">
 
     <DockPanel>
 
@@ -18,7 +11,8 @@
                                             ShowHelpButton="{Binding Options.ShowHelpButton}"
                                             ShowYesToAllButton="{Binding Options.ShowYesToAllButton}"
                                             ShowNoToAllButton="{Binding Options.ShowNoToAllButton}"
-                                            DockPanel.Dock="Bottom" />
+                                            DockPanel.Dock="Bottom"
+                                            x:Name="PART_ButtonPanel" />
         
         <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
 

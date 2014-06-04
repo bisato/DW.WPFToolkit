@@ -3,6 +3,10 @@
 ==============================
 Release 5.*
 ==============================
+2014-06-04    If there are many buttons in the WPFMessageBoxOptions which became cut, the MaxWidth will be adjusted
+2014-06-04    Add some window options to the WPFMessageBoxOptions
+2014-06-04    Change horizontal title alignments default in the TitledItemsControl to left (like written in the documentation)
+2014-06-04    Add EnumerationComboBox
 2014-06-03    Add YesToAll and NoToAll button possibilities to the WPFMessageBox
 2014-06-02    Add KeyboardWatcher to observe keyboard events (keyboard hooks) even the app has not the focus
 2014-05-25    Add CancelTryAgainContinue to WPFMessageBox

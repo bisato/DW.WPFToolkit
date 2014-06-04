@@ -7,6 +7,7 @@
         <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/EllipsedProgressBar/Styles.xaml" />
         <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/EnhancedComboBox/Styles.xaml" />
         <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/EnhancedTextBox/Styles.xaml" />
+        <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/EnumerationComboBox/Styles.xaml" />
         <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/ImageButton/Styles.xaml" />
         <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/NumberBox/Styles.xaml" />
         <ResourceDictionary Source="/DW.WPFToolkit;component/Controls/PagingControl/Styles.xaml" />

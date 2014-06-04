@@ -6,7 +6,7 @@
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Grid.IsSharedSizeScope" Value="True" />
         <Setter Property="VerticalTitleAlignments" Value="Center" />
-        <Setter Property="HorizontalTitleAlignments" Value="Right" />
+        <Setter Property="HorizontalTitleAlignments" Value="Left" />
         <Setter Property="TitleMargins" Value="5,0" />
         <Setter Property="HorizontalContentAlignments" Value="Stretch" />
         <Setter Property="VerticalContentAlignments" Value="Center" />

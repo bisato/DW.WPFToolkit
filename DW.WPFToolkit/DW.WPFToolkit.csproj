@@ -98,6 +98,8 @@
     <Compile Include="Controls\EnhancedTreeView\EnhancedTreeView.cs" />
     <Compile Include="Controls\EnhancedTreeView\EnhancedTreeViewItem.cs" />
     <Compile Include="Controls\DockingPane\ExpandDirection.cs" />
+    <Compile Include="Controls\EnumerationComboBox\EnumerationComboBox.cs" />
+    <Compile Include="Controls\EnumerationComboBox\EnumerationComboBoxItem.cs" />
     <Compile Include="Controls\ImageButton\ImageButton.cs" />
     <Compile Include="Controls\NumberBox\NumberBox.cs" />
     <Compile Include="Controls\NumberBox\NumberCheckBox.cs" />
@@ -200,6 +202,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\EnhancedTextBox\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EnumerationComboBox\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
