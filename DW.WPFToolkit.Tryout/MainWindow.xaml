@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:DW.WPFToolkit.Tryout.Controls"
         Title="DW.WPFToolkit.Tryout"
-        Height="600"
+        Height="800"
         Width="800">
     
     <TabControl TabStripPlacement="Left">

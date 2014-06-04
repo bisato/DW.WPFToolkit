@@ -49,6 +49,30 @@
             <Controls:TitledItem Title="ResizeMode">
                 <Controls:EnumerationComboBox Enum="{Binding ResizeMode, Mode=TwoWay}" />
             </Controls:TitledItem>
+            <Controls:TitledItem Title="PositionLeft">
+                <Controls:NumberBox Text="{Binding PositionLeft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="PositionTop">
+                <Controls:NumberBox Text="{Binding PositionTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="MinWidth">
+                <Controls:NumberBox Text="{Binding MinWidth1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="MaxWidth">
+                <Controls:NumberBox Text="{Binding MaxWidth1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="Width">
+                <Controls:NumberBox Text="{Binding Width1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="MinHeight">
+                <Controls:NumberBox Text="{Binding MinHeight1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="MaxHeight">
+                <Controls:NumberBox Text="{Binding MaxHeight1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="Height">
+                <Controls:NumberBox Text="{Binding Height1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+            </Controls:TitledItem>
         </Controls:TitledItemsControl>
 
         <Border BorderThickness="0,2,0,0" BorderBrush="Brown"  DockPanel.Dock="Top" />

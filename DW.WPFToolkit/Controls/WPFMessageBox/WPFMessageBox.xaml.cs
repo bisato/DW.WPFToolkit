@@ -101,27 +101,30 @@ namespace DW.WPFToolkit.Controls
             if (options == null)
                 options = new WPFMessageBoxOptions();
 
+            // ValidateOptions(options); // e.g. Sizes
+
             var box = new WPFMessageBox();
             box.Owner = owner;
-            box.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            if (box.Owner != null)
-                box.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            if (options.StartupLocation != null)
-                box.WindowStartupLocation = options.StartupLocation.Value;
-            box.SizeToContent = SizeToContent.WidthAndHeight;
-            box.SnapsToDevicePixels = true;
+            box.WindowStartupLocation = options.StartupLocation;
+            if (box.Owner == null && options.StartupLocation == WindowStartupLocation.CenterOwner)
+                box.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             box.ShowInTaskbar = options.ShowInTaskbar;
             box.ResizeMode = options.ResizeMode;
-
-            //box.Left
-            //box.Top
-            box.MinWidth = 249;
-            box.MaxWidth = 494;
-            box.Width = 349;
-            box.MinHeight = 172;
-            //box.MaxHeight
-            box.Height = 172;
-            //box.Style
+            if (box.WindowStartupLocation == WindowStartupLocation.Manual)
+            {
+                box.Left = options.Position.X;
+                box.Top = options.Position.Y;
+            }
+            box.MinWidth = options.MinWidth;
+            box.MaxWidth = options.MaxWidth;
+            box.Width = options.Width;
+            box.MinHeight = options.MinHeight;
+            box.MaxHeight = options.MaxHeight;
+            box.Height = options.Height;
+            box.Style = options.WindowStyle;
+            
+            box.SizeToContent = SizeToContent.WidthAndHeight;
+            box.SnapsToDevicePixels = true;
 
             box.Message = messageBoxText;
             box.Title = caption ?? string.Empty;

@@ -13,18 +13,28 @@ namespace DW.WPFToolkit.Tryout.Controls
             InitializeComponent();
             DataContext = this;
 
+            var options = new WPFMessageBoxOptions();
+
             MessageBoxText = "This is a normal messagebox text to test the awesome WPFMessageBox.";
             Caption = "WPFMessageBox Test";
             Buttons = WPFMessageBoxButtons.OKCancel;
             Icon = WPFMessageBoxImage.Information;
             DefaultButton = WPFMessageBoxResult.OK;
-            ShowHelpButton = false;
-            ShowNoToAllButton = false;
-            ShowSystemMenu = false;
-            ShowYesToAllButton = false;
-            StartupLocation = WindowStartupLocation.CenterOwner;
-            ShowInTaskbar = false;
-            ResizeMode = ResizeMode.NoResize;
+            ShowHelpButton = options.ShowHelpButton;
+            ShowNoToAllButton = options.ShowNoToAllButton;
+            ShowSystemMenu = options.ShowSystemMenu;
+            ShowYesToAllButton = options.ShowYesToAllButton;
+            StartupLocation = options.StartupLocation;
+            ShowInTaskbar = options.ShowInTaskbar;
+            ResizeMode = options.ResizeMode;
+            PositionLeft = options.Position.X;
+            PositionTop = options.Position.Y;
+            MinWidth1 = options.MinWidth;
+            MaxWidth1 = options.MaxWidth;
+            Width1 = options.Width;
+            MinHeight1 = options.MinHeight;
+            MaxHeight1 = options.MaxHeight;
+            Height1 = options.Height;
         }
 
         private void ShowMessageBox_Click(object sender, RoutedEventArgs e)
@@ -41,6 +51,15 @@ namespace DW.WPFToolkit.Tryout.Controls
             options.StartupLocation = StartupLocation;
             options.ShowInTaskbar = ShowInTaskbar;
             options.ResizeMode = ResizeMode;
+            if (PositionLeft > 0)
+                options.Position = new Point(PositionLeft, PositionTop);
+            options.MinWidth = MinWidth1;
+            options.MaxWidth = MaxWidth1;
+            options.Width = Width1;
+            options.MinHeight = MinHeight1;
+            options.MaxHeight = MaxHeight1;
+            options.Height = Height1;
+            //options.WindowStyle = null;
 
             Result = WPFMessageBox.Show(Application.Current.MainWindow, MessageBoxText, Caption, Buttons, Icon, DefaultButton, options);
             Clipboard = System.Windows.Clipboard.GetText();
@@ -177,7 +196,95 @@ namespace DW.WPFToolkit.Tryout.Controls
             }
         }
         private ResizeMode _resizeMode;
+
+        public double PositionLeft
+        {
+            get { return _positionLeft; }
+            set
+            {
+                _positionLeft = value;
+                NotifyPropertyChanged(() => PositionLeft);
+            }
+        }
+        private double _positionLeft;
+
+        public double PositionTop
+        {
+            get { return _positionTop; }
+            set
+            {
+                _positionTop = value;
+                NotifyPropertyChanged(() => PositionTop);
+            }
+        }
+        private double _positionTop;
+
+
+        public double MinWidth1
+        {
+            get { return _minWidth; }
+            set
+            {
+                _minWidth = value;
+                NotifyPropertyChanged(() => MinWidth1);
+            }
+        }
+        private double _minWidth;
         
+        public double MaxWidth1
+        {
+            get { return _maxWidth; }
+            set
+            {
+                _maxWidth = value;
+                NotifyPropertyChanged(() => MaxWidth1);
+            }
+        }
+        private double _maxWidth;
+
+        public double Width1
+        {
+            get { return _width; }
+            set
+            {
+                _width = value;
+                NotifyPropertyChanged(() => Width1);
+            }
+        }
+        private double _width;
+
+        public double MinHeight1
+        {
+            get { return _minHeight; }
+            set
+            {
+                _minHeight = value;
+                NotifyPropertyChanged(() => MinHeight1);
+            }
+        }
+        private double _minHeight;
+
+        public double MaxHeight1
+        {
+            get { return _maxHeight; }
+            set
+            {
+                _maxHeight = value;
+                NotifyPropertyChanged(() => MaxHeight1);
+            }
+        }
+        private double _maxHeight;
+
+        public double Height1
+        {
+            get { return _height; }
+            set
+            {
+                _height = value;
+                NotifyPropertyChanged(() => Height1);
+            }
+        }
+        private double _height;
 
         public WPFMessageBoxResult Result
         {

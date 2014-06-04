@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-06-04    Adjust ButtonsPanel in WPFMessageBox to have dynamic longer buttons if the text is adjusted
 2014-06-04    If there are many buttons in the WPFMessageBoxOptions which became cut, the MaxWidth will be adjusted
 2014-06-04    Add some window options to the WPFMessageBoxOptions
 2014-06-04    Change horizontal title alignments default in the TitledItemsControl to left (like written in the documentation)

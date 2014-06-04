@@ -16,9 +16,16 @@ namespace DW.WPFToolkit.Controls
             HelpRequestCallback = null;
             ShowYesToAllButton = false;
             ShowNoToAllButton = false;
-            StartupLocation = null;
+            StartupLocation = WindowStartupLocation.CenterOwner;
             ShowInTaskbar = false;
             ResizeMode = ResizeMode.NoResize;
+            Position = new Point();
+            MinWidth = 249;
+            MaxWidth = 494;
+            Width = 349;
+            MinHeight = 172;
+            MaxHeight = double.PositiveInfinity;
+            WindowStyle = null;
         }
 
         public IMessageCopyFormatter MessageCopyFormatter { get; set; }
@@ -29,8 +36,16 @@ namespace DW.WPFToolkit.Controls
         public Action HelpRequestCallback { get; set; }
         public bool ShowYesToAllButton { get; set; }
         public bool ShowNoToAllButton { get; set; }
-        public WindowStartupLocation? StartupLocation { get; set; }
+        public WindowStartupLocation StartupLocation { get; set; }
         public bool ShowInTaskbar { get; set; }
         public ResizeMode ResizeMode { get; set; }
+        public Point Position { get; set; }
+        public double MinWidth { get; set; }
+        public double MaxWidth { get; set; }
+        public double Width { get; set; }
+        public double MinHeight { get; set; }
+        public double MaxHeight { get; set; }
+        public double Height { get; set; }
+        public Style WindowStyle { get; set; }
     }
 }

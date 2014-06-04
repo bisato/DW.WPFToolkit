@@ -32,7 +32,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:WPFMessageBoxButtonsPanel}">
                     <DockPanel Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="40,0,0,0">
+                        <UniformGrid Rows="1" DockPanel.Dock="Right" Margin="40,0,0,0">
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.OK, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_SingleOKButton" Visibility="Collapsed" />
 
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.OK, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_OKButton" Visibility="Collapsed" />
@@ -49,7 +49,7 @@
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Continue, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_ContinueButton" Visibility="Collapsed" />
                             
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Help, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_HelpButton" Visibility="Collapsed" />
-                        </StackPanel>
+                        </UniformGrid>
 
                         <Grid />
                     </DockPanel>
@@ -168,8 +168,9 @@
 
     <Style TargetType="{x:Type Controls:WPFMessageBoxButtonControl}" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Height" Value="26" />
-        <Setter Property="Width" Value="88" />
+        <Setter Property="MinWidth" Value="88" />
         <Setter Property="Margin" Value="0,0,10,0" />
+        <Setter Property="Padding" Value="5,2" />
     </Style>
 
     <Style TargetType="{x:Type Controls:WPFMessageBoxTextControl}" BasedOn="{StaticResource {x:Type Label}}">
