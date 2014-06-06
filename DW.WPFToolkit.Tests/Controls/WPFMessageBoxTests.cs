@@ -1,6 +1,4 @@
-﻿using DW.CodedUI;
-using DW.CodedUI.BasicElements;
-using Microsoft.VisualStudio.TestTools.UITesting;
+﻿using Microsoft.VisualStudio.TestTools.UITesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DW.WPFToolkit.Tests.Controls
@@ -11,8 +9,8 @@ namespace DW.WPFToolkit.Tests.Controls
         [TestMethod]
         public void Method_TestCondition_ExpectedResult()
         {
-            var window = WindowFinder.Search<BasicMessageBox>(Use.Title("title"));
-            MouseEx.Click(window.OKButton);
+            //var window = WindowFinder.Search<BasicMessageBox>(Use.Title("title"));
+            //MouseEx.Click(window.OKButton);
         }
     }
 }
