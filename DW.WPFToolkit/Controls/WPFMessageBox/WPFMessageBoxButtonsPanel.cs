@@ -102,6 +102,9 @@ namespace DW.WPFToolkit.Controls
                 case WPFMessageBoxResult.None:
                     CalculateDefaultButton();
                     break;
+                case WPFMessageBoxResult.Continue:
+                    SetDefaultButton("PART_ContinueButton");
+                    break;
                 case WPFMessageBoxResult.OK:
                     if (Buttons == WPFMessageBoxButtons.OK)
                         SetDefaultButton("PART_SingleOKButton");

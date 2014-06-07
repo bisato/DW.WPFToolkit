@@ -205,4 +205,9 @@
         <Setter Property="Margin" Value="10,0" />
     </Style>
 
+    <Style TargetType="{x:Type Controls:WPFMessageBoxScrollViewerControl}" BasedOn="{StaticResource {x:Type ScrollViewer}}">
+        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+    </Style>
+
 </ResourceDictionary>

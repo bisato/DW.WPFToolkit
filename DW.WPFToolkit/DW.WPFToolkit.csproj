@@ -145,6 +145,7 @@
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxEnums.cs" />
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxImageControl.cs" />
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxOptions.cs" />
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxScrollViewerControl.cs" />
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxTextControl.cs" />
     <Compile Include="Converters\BooleanToVisibilityInvertedConverter\BooleanToVisibilityInvertedConverter.cs" />
     <Compile Include="Converters\InverseBooleanConverter\InverseBooleanConverter.cs" />

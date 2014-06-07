@@ -17,8 +17,10 @@
                                             x:Name="PART_ButtonPanel" />
         
         <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
-        
-        <Controls:WPFMessageBoxTextControl Content="{Binding Message}" />
+
+        <Controls:WPFMessageBoxScrollViewerControl>
+            <Controls:WPFMessageBoxTextControl Content="{Binding Message}" />
+        </Controls:WPFMessageBoxScrollViewerControl>
         
     </DockPanel>
     
