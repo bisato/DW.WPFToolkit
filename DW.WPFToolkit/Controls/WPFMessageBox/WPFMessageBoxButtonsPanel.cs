@@ -31,7 +31,6 @@ namespace DW.WPFToolkit.Controls
             base.OnApplyTemplate();
 
             AddHandler(ButtonBase.ClickEvent, (RoutedEventHandler)OnMessageBoxButtonClick);
-            SetDefaultButton();
         }
 
         private void OnMessageBoxButtonClick(object sender, RoutedEventArgs e)
@@ -84,7 +83,7 @@ namespace DW.WPFToolkit.Controls
             OnClick();
         }
 
-        private void SetDefaultButton()
+        internal void SetDefaultButton()
         {
             switch (DefaultButton)
             {

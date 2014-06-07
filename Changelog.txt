@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-06-07    Setting the default button on the WPFMessageBox was not working
 2014-06-07    Add "_Don't show this message again" checkbox possibility to the WPFMessageBox
 2014-06-04    Adjust ButtonsPanel in WPFMessageBox to have dynamic longer buttons if the text is adjusted
 2014-06-04    If there are many buttons in the WPFMessageBoxOptions which became cut, the MaxWidth will be adjusted

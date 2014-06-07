@@ -64,6 +64,8 @@ namespace DW.WPFToolkit.Controls
             if (!double.IsNaN(panelWidth) && panelWidth > MaxWidth)
                 MaxWidth = panelWidth + 40;
             base.OnContentRendered(e);
+
+            PART_ButtonPanel.SetDefaultButton();
         }
 
         protected override void OnClosing(CancelEventArgs e)
