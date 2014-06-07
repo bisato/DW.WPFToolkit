@@ -11,11 +11,13 @@
                                             ShowHelpButton="{Binding Options.ShowHelpButton}"
                                             ShowYesToAllButton="{Binding Options.ShowYesToAllButton}"
                                             ShowNoToAllButton="{Binding Options.ShowNoToAllButton}"
+                                            ShowDoNotShowAgainCheckBox="{Binding Options.ShowDoNotShowAgainCheckBox}"
+                                            IsDoNotShowAgainChecked="{Binding Options.IsDoNotShowAgainChecked, Mode=TwoWay}"
                                             DockPanel.Dock="Bottom"
                                             x:Name="PART_ButtonPanel" />
         
         <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
-
+        
         <Controls:WPFMessageBoxTextControl Content="{Binding Message}" />
         
     </DockPanel>

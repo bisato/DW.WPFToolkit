@@ -14,6 +14,7 @@
         private string _continue;
         private string _yesToAll;
         private string _noToAll;
+        private string _doNotShowAgain;
 
         public string OK
         {
@@ -87,6 +88,12 @@
             set { _noToAll = value; }
         }
 
+        public string DoNotShowAgain
+        {
+            get { return LoadCustom(DoNotShowAgainId, _doNotShowAgain); }
+            set { _doNotShowAgain = value; }
+        }
+
         private string Load(uint id, string alternate)
         {
             if (!string.IsNullOrWhiteSpace(alternate))
@@ -106,11 +113,14 @@
                     return "Y_es to All";
                 case NoToAllId:
                     return "N_o to All";
+                case DoNotShowAgainId:
+                    return "_Don't show this message again";
             }
             return string.Empty;
         }
 
         private const int YesToAllId = -800;
         private const int NoToAllId = -801;
+        private const int DoNotShowAgainId = -802;
     }
 }

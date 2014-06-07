@@ -35,6 +35,8 @@ namespace DW.WPFToolkit.Tryout.Controls
             MinHeight1 = options.MinHeight;
             MaxHeight1 = options.MaxHeight;
             Height1 = options.Height;
+            ShowDoNotShowAgainCheckBox = options.ShowDoNotShowAgainCheckBox;
+            IsDoNotShowAgainChecked = options.IsDoNotShowAgainChecked;
         }
 
         private void ShowMessageBox_Click(object sender, RoutedEventArgs e)
@@ -60,9 +62,12 @@ namespace DW.WPFToolkit.Tryout.Controls
             options.MaxHeight = MaxHeight1;
             options.Height = Height1;
             //options.WindowStyle = null;
+            options.ShowDoNotShowAgainCheckBox = ShowDoNotShowAgainCheckBox;
+            options.IsDoNotShowAgainChecked = IsDoNotShowAgainChecked;
 
             Result = WPFMessageBox.Show(Application.Current.MainWindow, MessageBoxText, Caption, Buttons, Icon, DefaultButton, options);
             Clipboard = System.Windows.Clipboard.GetText();
+            IsDoNotShowAgainCheckedResult = options.IsDoNotShowAgainChecked;
         }
 
         public string MessageBoxText
@@ -286,6 +291,28 @@ namespace DW.WPFToolkit.Tryout.Controls
         }
         private double _height;
 
+        public bool ShowDoNotShowAgainCheckBox
+        {
+            get { return _showDoNotShowAgainCheckBox; }
+            set
+            {
+                _showDoNotShowAgainCheckBox = value;
+                NotifyPropertyChanged(() => ShowDoNotShowAgainCheckBox);
+            }
+        }
+        private bool _showDoNotShowAgainCheckBox;
+
+        public bool IsDoNotShowAgainChecked
+        {
+            get { return _isDoNotShowAgainChecked; }
+            set
+            {
+                _isDoNotShowAgainChecked = value;
+                NotifyPropertyChanged(() => IsDoNotShowAgainChecked);
+            }
+        }
+        private bool _isDoNotShowAgainChecked;
+
         public WPFMessageBoxResult Result
         {
             get { return _result; }
@@ -307,6 +334,17 @@ namespace DW.WPFToolkit.Tryout.Controls
             }
         }
         private string _clipboard;
+
+        public bool IsDoNotShowAgainCheckedResult
+        {
+            get { return _isDoNotShowAgainCheckedResult; }
+            set
+            {
+                _isDoNotShowAgainCheckedResult = value;
+                NotifyPropertyChanged(() => IsDoNotShowAgainCheckedResult);
+            }
+        }
+        private bool _isDoNotShowAgainCheckedResult;
 
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -32,7 +32,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:WPFMessageBoxButtonsPanel}">
                     <DockPanel Background="{TemplateBinding Background}">
-                        <UniformGrid Rows="1" DockPanel.Dock="Right" Margin="40,0,0,0">
+                        <UniformGrid Rows="1" DockPanel.Dock="Right">
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.OK, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_SingleOKButton" Visibility="Collapsed" />
 
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.OK, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_OKButton" Visibility="Collapsed" />
@@ -50,6 +50,11 @@
                             
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Help, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_HelpButton" Visibility="Collapsed" />
                         </UniformGrid>
+
+                        <Controls:WPFMessageBoxCheckBoxControl x:Name="PART_DoNotShowAgainCheckBox"
+                                                               Content="{Binding Strings.DoNotShowAgain, RelativeSource={RelativeSource TemplatedParent}}"
+                                                               IsChecked="{Binding IsDoNotShowAgainChecked, RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Visibility="Collapsed" />
 
                         <Grid />
                     </DockPanel>
@@ -121,6 +126,12 @@
                             <Setter TargetName="PART_HelpButton" Property="AutomationProperties.AutomationId" Value="9" />
                         </Trigger>
                         
+                        <Trigger Property="ShowDoNotShowAgainCheckBox" Value="True">
+                            <Setter TargetName="PART_DoNotShowAgainCheckBox" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_DoNotShowAgainCheckBox" Property="AutomationProperties.AutomationId" Value="12" />
+                        </Trigger>
+                        
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="Buttons" Value="YesNoCancel" />
@@ -184,6 +195,12 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Controls:WPFMessageBoxCheckBoxControl}" BasedOn="{StaticResource {x:Type CheckBox}}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="10,0" />
+        <Setter Property="Focusable" Value="False" />
     </Style>
 
 </ResourceDictionary>

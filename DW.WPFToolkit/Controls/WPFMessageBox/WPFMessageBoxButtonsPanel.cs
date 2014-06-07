@@ -18,6 +18,7 @@ namespace DW.WPFToolkit.Controls
     [TemplatePart(Name = "PART_HelpButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_TryAgainButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_ContinueButton", Type = typeof(Button))]
+    [TemplatePart(Name = "PART_DoNotShowAgainCheckBox", Type = typeof(CheckBox))]
     public class WPFMessageBoxButtonsPanel : Control
     {
         static WPFMessageBoxButtonsPanel()
@@ -35,7 +36,7 @@ namespace DW.WPFToolkit.Controls
 
         private void OnMessageBoxButtonClick(object sender, RoutedEventArgs e)
         {
-            var button = (Button) e.OriginalSource;
+            var button = (ButtonBase)e.OriginalSource;
             switch (button.Name)
             {
                 case "PART_SingleOKButton":
@@ -76,6 +77,8 @@ namespace DW.WPFToolkit.Controls
                     break;
                 case "PART_HelpButton":
                     OnHelpRequest();
+                    return;
+                case "PART_DoNotShowAgainCheckBox":
                     return;
             }
             OnClick();
@@ -222,6 +225,24 @@ namespace DW.WPFToolkit.Controls
 
         public static readonly DependencyProperty ShowNoToAllButtonProperty =
             DependencyProperty.Register("ShowNoToAllButton", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(false));
+        
+        public bool ShowDoNotShowAgainCheckBox
+        {
+            get { return (bool)GetValue(ShowDoNotShowAgainCheckBoxProperty); }
+            set { SetValue(ShowDoNotShowAgainCheckBoxProperty, value); }
+        }
+
+        public static readonly DependencyProperty ShowDoNotShowAgainCheckBoxProperty =
+            DependencyProperty.Register("ShowDoNotShowAgainCheckBox", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(false));
+
+        public bool IsDoNotShowAgainChecked
+        {
+            get { return (bool)GetValue(IsDoNotShowAgainCheckedProperty); }
+            set { SetValue(IsDoNotShowAgainCheckedProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsDoNotShowAgainCheckedProperty =
+            DependencyProperty.Register("IsDoNotShowAgainChecked", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(false));
 
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
 

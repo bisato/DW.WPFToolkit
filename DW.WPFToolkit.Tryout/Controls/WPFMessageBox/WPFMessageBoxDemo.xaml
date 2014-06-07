@@ -73,6 +73,12 @@
             <Controls:TitledItem Title="Height">
                 <Controls:NumberBox Text="{Binding Height1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
             </Controls:TitledItem>
+            <Controls:TitledItem Title="ShowDoNotShowAgainCheckBox">
+                <CheckBox IsChecked="{Binding ShowDoNotShowAgainCheckBox}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="IsDoNotShowAgainChecked">
+                <CheckBox IsChecked="{Binding IsDoNotShowAgainChecked}" />
+            </Controls:TitledItem>
         </Controls:TitledItemsControl>
 
         <Border BorderThickness="0,2,0,0" BorderBrush="Brown"  DockPanel.Dock="Top" />
@@ -85,6 +91,9 @@
                 <Controls:Resizer Height="80" FrameSizes="0,0,0,2">
                     <TextBox Text="{Binding Clipboard, Mode=OneWay}" IsReadOnly="True" VerticalScrollBarVisibility="Visible" />
                 </Controls:Resizer>
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="IsDoNotShowAgainCheckedResult">
+                <CheckBox IsChecked="{Binding IsDoNotShowAgainCheckedResult}" IsEnabled="False" />
             </Controls:TitledItem>
         </Controls:TitledItemsControl>
 

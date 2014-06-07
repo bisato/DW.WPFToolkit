@@ -26,6 +26,8 @@ namespace DW.WPFToolkit.Controls
             MinHeight = 172;
             MaxHeight = double.PositiveInfinity;
             WindowStyle = null;
+            ShowDoNotShowAgainCheckBox = false;
+            IsDoNotShowAgainChecked = false;
         }
 
         public IMessageCopyFormatter MessageCopyFormatter { get; set; }
@@ -47,5 +49,7 @@ namespace DW.WPFToolkit.Controls
         public double MaxHeight { get; set; }
         public double Height { get; set; }
         public Style WindowStyle { get; set; }
+        public bool ShowDoNotShowAgainCheckBox { get; set; }
+        public bool IsDoNotShowAgainChecked { get; set; }
     }
 }
