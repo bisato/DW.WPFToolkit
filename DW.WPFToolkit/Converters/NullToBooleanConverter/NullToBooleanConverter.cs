@@ -7,7 +7,7 @@ namespace DW.WPFToolkit.Converters
     /// <summary>
     /// Represents the converter that converts the state if the parameter is null to a boolean value depending on the parameter.
     /// </summary>
-    public class NullToBooleanConverter : IValueConverter
+    public sealed class NullToBooleanConverter : IValueConverter
     {
 #if TRIAL
         static NullToBooleanConverter()

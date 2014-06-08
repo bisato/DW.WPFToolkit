@@ -8,7 +8,7 @@ namespace DW.WPFToolkit.Converters
     /// <summary>
     /// Represents the converter that converts the state if the parameter is null to a Visibility value depending on the parameter.
     /// </summary>
-    public class NullToVisibilityConverter : IValueConverter
+    public sealed class NullToVisibilityConverter : IValueConverter
     {
 #if TRIAL
         static NullToBooleanConverter()

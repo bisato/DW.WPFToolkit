@@ -3,59 +3,60 @@
 ==============================
 Release 5.*
 ==============================
-2014-06-08    The background control should be behind the buttons panel on the WPFMessageBox as well
-2014-06-08    Take care about the focus in the WPFMessageBox
-2014-06-08    In the WPFMessageBox the background can hold an additional object
-2014-06-08    Add style options to modify element styles in the WPFMessageBox
-2014-06-08    In the WPFMessageBox additional controls can be placed
-2014-06-08    If the details are open use another property if resizing the WPFMessageBox is possible or not
-2014-06-08    Add possibility to set the details content in the WPFMessageBox
-2014-06-08    Add properties to define different sizes with the details open in the WPFMessageBox
-2014-06-08    Remove Height and Width option properties out of the WPFMessageBox; since it does SizeToContent is has no effect anyway
-2014-06-08    Add possibility to show and hide a details button (there is no details section so far)
-2014-06-08    Organize options for the WPFMessageBox window to a separate object in the WPFMessageBoxOptions
-2014-06-08    Since not everything can be changed by assigning the WPFWindow style, the whole functionality has to be removed
-2014-06-08    The WPFMessageBox shows the minimize and maximize buttons if it can be resized
-2014-06-07    Add ScrollViewer control to WPFMessageBox to show a vertical scrollbar if the text became to long
-2014-06-07    The continue button was not able to get the default focus
-2014-06-07    Setting the default button on the WPFMessageBox was not working
-2014-06-07    Add "_Don't show this message again" checkbox possibility to the WPFMessageBox
-2014-06-04    Adjust ButtonsPanel in WPFMessageBox to have dynamic longer buttons if the text is adjusted
-2014-06-04    If there are many buttons in the WPFMessageBoxOptions which became cut, the MaxWidth will be adjusted
-2014-06-04    Add some window options to the WPFMessageBoxOptions
-2014-06-04    Change horizontal title alignments default in the TitledItemsControl to left (like written in the documentation)
-2014-06-04    Add EnumerationComboBox
-2014-06-03    Add YesToAll and NoToAll button possibilities to the WPFMessageBox
-2014-06-02    Add KeyboardWatcher to observe keyboard events (keyboard hooks) even the app has not the focus
-2014-05-25    Add CancelTryAgainContinue to WPFMessageBox
-2014-05-25    Add optional help button to the WPFMessageBox
-2014-05-25    Change messagebox text from TextBlock to Label to have it catchable by coded UI
-2014-05-25    Add missing automation ID for the messagebox text and icon
-2014-05-25    Load message box strings from the system and add possibility to define new from outside
-2014-05-24    Add changeable copy formatter to the WPFMessageBox
-2014-05-24    Add possibility to add and change the system menu and icon in the WPFMessageBox
-2014-05-24    Add custom text block control to the WPFMessageBox to show the message
-2014-05-24    Disable system menu in WPFMessageBox
-2014-05-24    Add possibility to disable the close button or system menu in the WindowTitleBarBehavior
-2014-05-24    Add WPFMessageBox with first functionalities
-2014-05-19    Add DockingPane
-2014-05-09    Add possibility to check and uncheck a NumberBox
-2014-05-09    Add possibility to have a reset button in the NumberBox
-2014-05-09    Merge NumericUpDown into the NumberBox
-2014-05-08    Add NullToVisibilityConverter
-2014-05-08    Add NullToBooleanConverter
-2014-05-08    Make the InverseBooleanConverter sealed
-2014-05-05    Take care about the Horizontal|VerticalContentAlignment in the EnhancedTextBox
+2014-06-08    NullToBooleanConverter, NullToVisibilityConverter: Make converters sealed
+              WPFMessageBox: The background control should be behind the buttons panel as well
+              WPFMessageBox: Take care about the focus
+              WPFMessageBox: The background can hold an additional object
+              WPFMessageBox: Add style options to modify element
+              WPFMessageBox: Additional controls can be placed
+              WPFMessageBox: If the details are open use another property if resizing is possible or not
+              WPFMessageBox: Add possibility to set the details content
+              WPFMessageBox: Add properties to define different sizes with the details open
+              WPFMessageBox: Remove Height and Width option properties out of the WPFMessageBoxOptions; since it does SizeToContent is has no effect anyway
+              WPFMessageBox: Add possibility to show and hide a details button (there is no details section so far)
+              WPFMessageBox: Organize options for the window to a separate object in the WPFMessageBoxOptions
+              WPFMessageBox: Since not everything can be changed by assigning the window style, the whole functionality got removed
+              WPFMessageBox: The window shows the minimize and maximize buttons if it can be resized
+2014-06-07    WPFMessageBox: Add ScrollViewer control to show a vertical scrollbar if the text gets to long
+              WPFMessageBox: The continue button was not able to get the default focus
+              WPFMessageBox: Setting the default button was not working
+              WPFMessageBox: Add "_Don't show this message again" checkbox possibility
+2014-06-04    WPFMessageBox: Adjust ButtonsPanel to have dynamic longer buttons if the text is adjusted
+              WPFMessageBox: If there are many buttons which get cut, the MaxWidth will be adjusted
+              WPFMessageBox: Add some window options to the WPFMessageBoxOptions
+              TitledItemsControl: Change horizontal title alignments default to left (like written in the documentation)
+              EnumerationComboBox: Add EnumerationComboBox
+2014-06-03    WPFMessageBox: Add YesToAll and NoToAll button possibilities to the WPFMessageBox
+2014-06-02    KeyboardWatcher: Add KeyboardWatcher to observe keyboard events (keyboard hooks) even the app has not the focus
+2014-05-25    WPFMessageBox: Add CancelTryAgainContinue
+              WPFMessageBox: Add optional help button
+              WPFMessageBox: Change text from TextBlock to Label to have it catchable by coded UI
+              WPFMessageBox: Add missing automation ID for the text and icon
+              WPFMessageBox: Load message box strings from the system and add possibility to define new from outside
+2014-05-24    WPFMessageBox: Add changeable copy formatter
+              WPFMessageBox: Add possibility to add and change the system menu and icon
+              WPFMessageBox: Add custom text block control to show the message
+              WPFMessageBox: Disable system menu
+              WPFMessageBox: Add possibility to disable the close button or system menu
+              WPFMessageBox: Add WPFMessageBox with first functionalities
+2014-05-19    DockingPane: Add DockingPane
+2014-05-09    NumberBox: Add possibility to check and uncheck a NumberBox
+              NumberBox: Add possibility to have a reset button in the NumberBox
+              NumericUpDown, NumberBox: Merge NumericUpDown into the NumberBox
+2014-05-08    NullToVisibilityConverter: Add NullToVisibilityConverter
+              NullToBooleanConverter: Add NullToBooleanConverter
+              InverseBooleanConverter: Make the InverseBooleanConverter sealed
+2014-05-05    EnhancedTextBox: Take care about the Horizontal|VerticalContentAlignment in the EnhancedTextBox
 
 
 ==============================
 Release 5.0.0.0
 ==============================
-2014-04-06    Add automation IDs
-2014-04-04    Adjust XmlnsDefinitions
-2014-03-23    Add documentations
-2014-03-23    Add PagingControl
-2014-03-22    Adjust documentation to not to show warnings for missing documentations
-2014-03-20    Add some missing objects
-2014-03-17    Take over all objects from 4.0.0.0
+2014-04-06    *: Add automation IDs
+2014-04-04    *: Adjust XmlnsDefinitions
+2014-03-23    *: Add documentations
+              PagingControl: Add PagingControl
+2014-03-22    *: Adjust documentation to not to show warnings for missing documentations
+2014-03-20    *: Add some missing objects
+2014-03-17    *: Take over all objects from 4.0.0.0
 ==============================
