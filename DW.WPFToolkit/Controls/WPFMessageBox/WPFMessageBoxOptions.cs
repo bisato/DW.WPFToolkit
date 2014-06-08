@@ -22,6 +22,7 @@ namespace DW.WPFToolkit.Controls
             ShowDetails = false;
             DetailsContent = null;
             CustomItem = null;
+            BackgroundControl = null;
         }
 
         public IMessageCopyFormatter MessageCopyFormatter { get; set; }
@@ -35,6 +36,7 @@ namespace DW.WPFToolkit.Controls
         public bool IsDoNotShowAgainChecked { get; set; }
         public object DetailsContent { get; set; }
         public object CustomItem { get; set; }
+        public object BackgroundControl { get; set; }
 
         public WindowOptionsContainer WindowOptions { get; private set; }
         public StylesContainer Styles { get; private set; }

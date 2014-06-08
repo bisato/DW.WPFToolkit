@@ -179,7 +179,7 @@ namespace DW.WPFToolkit.Controls
             TryApplyStyle<WPFMessageBoxDetailsButtonControl>(styles.DetailsButtonControlStyle);
         }
 
-        private void TryApplyStyle<T>(Style style) where T : DependencyObject
+        private void TryApplyStyle<T>(Style style) where T : FrameworkElement
         {
             if (style == null)
                 return;

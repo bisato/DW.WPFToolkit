@@ -75,8 +75,9 @@ namespace DW.WPFToolkit.Tryout.Controls
             options.ShowDetails = ShowDetails;
             options.WindowOptions.DetailedResizeMode = DetailedResizeMode;
             options.DetailsContent = new TextBox();
-            options.CustomItem = new ProgressBar { Width = 60, Height = 12, VerticalAlignment = VerticalAlignment.Center, IsIndeterminate = true, Margin = new Thickness(10, 0, 0, 0) };
 
+            //options.BackgroundControl = new Button();
+            //options.CustomItem = new ProgressBar { Width = 60, Height = 12, VerticalAlignment = VerticalAlignment.Center, IsIndeterminate = true, Margin = new Thickness(10, 0, 0, 0) };
             //options.Styles.ImageControlStyle = new Style(typeof(WPFMessageBoxImageControl));
             //options.Styles.ImageControlStyle.Setters.Add(new Setter(MarginProperty, new Thickness(0)));
             //options.Styles.ButtonControlStyle = new Style(typeof(WPFMessageBoxButtonControl));
