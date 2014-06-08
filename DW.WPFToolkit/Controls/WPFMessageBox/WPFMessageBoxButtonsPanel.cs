@@ -259,6 +259,15 @@ namespace DW.WPFToolkit.Controls
         public static readonly DependencyProperty ShowDetailsProperty =
             DependencyProperty.Register("ShowDetails", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(false));
 
+        public object CustomItem
+        {
+            get { return (object)GetValue(CustomItemProperty); }
+            set { SetValue(CustomItemProperty, value); }
+        }
+
+        public static readonly DependencyProperty CustomItemProperty =
+            DependencyProperty.Register("CustomItem", typeof(object), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(null));
+
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
 
         public event RoutedEventHandler Click

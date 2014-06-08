@@ -20,6 +20,7 @@ namespace DW.WPFToolkit.Controls
             IsDoNotShowAgainChecked = false;
             ShowDetails = false;
             DetailsContent = null;
+            CustomItem = null;
         }
 
         public IMessageCopyFormatter MessageCopyFormatter { get; set; }
@@ -32,6 +33,7 @@ namespace DW.WPFToolkit.Controls
         public bool ShowDoNotShowAgainCheckBox { get; set; }
         public bool IsDoNotShowAgainChecked { get; set; }
         public object DetailsContent { get; set; }
+        public object CustomItem { get; set; }
 
         public WindowOptionsContainer WindowOptions { get; private set; }
 

@@ -61,6 +61,8 @@
                                                                IsChecked="{Binding IsDoNotShowAgainChecked, RelativeSource={RelativeSource TemplatedParent}}"
                                                                Visibility="Collapsed" />
                         
+                        <ContentControl Content="{Binding CustomItem, RelativeSource={RelativeSource TemplatedParent}}" />
+                        
                         <Grid />
                     </DockPanel>
 

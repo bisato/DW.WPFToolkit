@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-06-08    In the WPFMessageBox additional controls can be placed
 2014-06-08    If the details are open use another property if resizing the WPFMessageBox is possible or not
 2014-06-08    Add possibility to set the details content in the WPFMessageBox
 2014-06-08    Add properties to define different sizes with the details open in the WPFMessageBox

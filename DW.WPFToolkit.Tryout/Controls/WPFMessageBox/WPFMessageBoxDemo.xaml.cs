@@ -73,8 +73,9 @@ namespace DW.WPFToolkit.Tryout.Controls
             options.ShowDoNotShowAgainCheckBox = ShowDoNotShowAgainCheckBox;
             options.IsDoNotShowAgainChecked = IsDoNotShowAgainChecked;
             options.ShowDetails = ShowDetails;
-            options.DetailsContent = new TextBox();
             options.WindowOptions.DetailedResizeMode = DetailedResizeMode;
+            options.DetailsContent = new TextBox();
+            options.CustomItem = new ProgressBar { Width = 60, Height = 12, VerticalAlignment = VerticalAlignment.Center, IsIndeterminate = true, Margin = new Thickness(10, 0, 0, 0) };
 
             Result = WPFMessageBox.Show(Application.Current.MainWindow, MessageBoxText, Caption, Buttons, Icon, DefaultButton, options);
             Clipboard = System.Windows.Clipboard.GetText();
@@ -256,7 +257,7 @@ namespace DW.WPFToolkit.Tryout.Controls
             }
         }
         private double _minWidth;
-        
+
         public double MaxWidth1
         {
             get { return _maxWidth; }
