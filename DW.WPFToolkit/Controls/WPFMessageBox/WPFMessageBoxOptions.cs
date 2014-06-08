@@ -19,6 +19,7 @@ namespace DW.WPFToolkit.Controls
             ShowDoNotShowAgainCheckBox = false;
             IsDoNotShowAgainChecked = false;
             ShowDetails = false;
+            DetailsContent = null;
         }
 
         public IMessageCopyFormatter MessageCopyFormatter { get; set; }
@@ -28,9 +29,9 @@ namespace DW.WPFToolkit.Controls
         public bool ShowYesToAllButton { get; set; }
         public bool ShowNoToAllButton { get; set; }
         public bool ShowDetails { get; set; }
-        
         public bool ShowDoNotShowAgainCheckBox { get; set; }
         public bool IsDoNotShowAgainChecked { get; set; }
+        public object DetailsContent { get; set; }
 
         public WindowOptionsContainer WindowOptions { get; private set; }
 
@@ -44,10 +45,16 @@ namespace DW.WPFToolkit.Controls
                 ShowInTaskbar = false;
                 ResizeMode = ResizeMode.NoResize;
                 Position = new Point();
+                
                 MinWidth = 249;
                 MaxWidth = 494;
                 MinHeight = 172;
                 MaxHeight = double.PositiveInfinity;
+
+                DetailedMinWidth = 249;
+                DetailedMaxWidth = 494;
+                DetailedMinHeight = 350;
+                DetailedMaxHeight = double.PositiveInfinity;
             }
 
             public bool ShowSystemMenu { get; set; }
@@ -60,6 +67,10 @@ namespace DW.WPFToolkit.Controls
             public double MaxWidth { get; set; }
             public double MinHeight { get; set; }
             public double MaxHeight { get; set; }
+            public double DetailedMinWidth { get; set; }
+            public double DetailedMaxWidth { get; set; }
+            public double DetailedMinHeight { get; set; }
+            public double DetailedMaxHeight { get; set; }
         }
     }
 }

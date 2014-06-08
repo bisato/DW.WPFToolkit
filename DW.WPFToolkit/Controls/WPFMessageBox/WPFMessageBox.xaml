@@ -3,26 +3,38 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:DW.WPFToolkit.Controls">
 
-    <DockPanel>
-
-        <Controls:WPFMessageBoxButtonsPanel Buttons="{Binding Buttons, Mode=TwoWay}"
-                                            DefaultButton="{Binding DefaultButton}"
-                                            Strings="{Binding Options.Strings}"
-                                            ShowHelpButton="{Binding Options.ShowHelpButton}"
-                                            ShowYesToAllButton="{Binding Options.ShowYesToAllButton}"
-                                            ShowNoToAllButton="{Binding Options.ShowNoToAllButton}"
-                                            ShowDoNotShowAgainCheckBox="{Binding Options.ShowDoNotShowAgainCheckBox}"
-                                            IsDoNotShowAgainChecked="{Binding Options.IsDoNotShowAgainChecked, Mode=TwoWay}"
-                                            ShowDetails="{Binding Options.ShowDetails}"
-                                            DockPanel.Dock="Bottom"
-                                            x:Name="PART_ButtonPanel" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="UpperArea" />
+            <RowDefinition x:Name="LowerArea" Height="Auto" />
+        </Grid.RowDefinitions>
         
-        <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
-
-        <Controls:WPFMessageBoxScrollViewerControl>
-            <Controls:WPFMessageBoxTextControl Content="{Binding Message}" />
-        </Controls:WPFMessageBoxScrollViewerControl>
+        <DockPanel>
         
-    </DockPanel>
+            <Controls:WPFMessageBoxButtonsPanel Buttons="{Binding Buttons, Mode=TwoWay}"
+                                                DefaultButton="{Binding DefaultButton}"
+                                                Strings="{Binding Options.Strings}"
+                                                ShowHelpButton="{Binding Options.ShowHelpButton}"
+                                                ShowYesToAllButton="{Binding Options.ShowYesToAllButton}"
+                                                ShowNoToAllButton="{Binding Options.ShowNoToAllButton}"
+                                                ShowDoNotShowAgainCheckBox="{Binding Options.ShowDoNotShowAgainCheckBox}"
+                                                IsDoNotShowAgainChecked="{Binding Options.IsDoNotShowAgainChecked, Mode=TwoWay}"
+                                                ShowDetails="{Binding Options.ShowDetails}"
+                                                DockPanel.Dock="Bottom"
+                                                x:Name="PART_ButtonPanel" />
+        
+            <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
+
+            <Controls:WPFMessageBoxScrollViewerControl>
+                <Controls:WPFMessageBoxTextControl Content="{Binding Message}" />
+            </Controls:WPFMessageBoxScrollViewerControl>
+        
+            <Grid />
+        </DockPanel>
+        
+        <Controls:WPFMessageBoxDetailsPresenter Grid.Row="1"
+                                                IsDetailsExpanded="{Binding IsDetailsExpanded}"
+                                                Content="{Binding Options.DetailsContent}" />
+    </Grid>
     
 </Window>

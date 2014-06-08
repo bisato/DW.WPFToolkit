@@ -78,6 +78,9 @@ namespace DW.WPFToolkit.Controls
                 case "PART_HelpButton":
                     OnHelpRequest();
                     return;
+                case "HeaderSite": // Details expander
+                    OnExpandDetails();
+                    return;
                 default:
                     return;
             }
@@ -281,6 +284,20 @@ namespace DW.WPFToolkit.Controls
         private void OnHelpRequest()
         {
             var newEventArgs = new RoutedEventArgs(WPFMessageBoxButtonsPanel.HelpRequestEvent);
+            RaiseEvent(newEventArgs);
+        }
+
+        public static readonly RoutedEvent ExpandDetailsEvent = EventManager.RegisterRoutedEvent("ExpandDetails", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
+
+        public event RoutedEventHandler ExpandDetails
+        {
+            add { AddHandler(ExpandDetailsEvent, value); }
+            remove { RemoveHandler(ExpandDetailsEvent, value); }
+        }
+
+        private void OnExpandDetails()
+        {
+            var newEventArgs = new RoutedEventArgs(WPFMessageBoxButtonsPanel.ExpandDetailsEvent);
             RaiseEvent(newEventArgs);
         }
     }

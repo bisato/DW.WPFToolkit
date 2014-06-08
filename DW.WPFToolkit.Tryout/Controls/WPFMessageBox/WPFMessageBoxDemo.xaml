@@ -9,7 +9,7 @@
                 HorizontalAlignment="Center"
                 AutomationProperties.AutomationId="CUI_ShowMessageBoxButton"
                 Click="ShowMessageBox_Click" />
-        
+
         <Controls:TitledItemsControl DockPanel.Dock="Top">
             <Controls:TitledItem Title="MessageBoxText">
                 <Controls:Resizer Height="80" FrameSizes="0,0,0,2">
@@ -19,64 +19,90 @@
             <Controls:TitledItem Title="Caption">
                 <TextBox Text="{Binding Caption}" />
             </Controls:TitledItem>
-            <Controls:TitledItem Title="Buttons">
-                <Controls:EnumerationComboBox Enum="{Binding Buttons, Mode=TwoWay}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="Icon">
-                <Controls:EnumerationComboBox Enum="{Binding Icon, Mode=TwoWay}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="DefaultButton">
-                <Controls:EnumerationComboBox Enum="{Binding DefaultButton, Mode=TwoWay}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="ShowHelpButton">
-                <CheckBox IsChecked="{Binding ShowHelpButton}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="ShowNoToAllButton">
-                <CheckBox IsChecked="{Binding ShowNoToAllButton}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="ShowSystemMenu">
-                <CheckBox IsChecked="{Binding ShowSystemMenu}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="ShowYesToAllButton">
-                <CheckBox IsChecked="{Binding ShowYesToAllButton}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="StartupLocation">
-                <Controls:EnumerationComboBox Enum="{Binding StartupLocation, Mode=TwoWay}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="ShowInTaskbar">
-                <CheckBox IsChecked="{Binding ShowInTaskbar}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="ResizeMode">
-                <Controls:EnumerationComboBox Enum="{Binding ResizeMode, Mode=TwoWay}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="PositionLeft">
-                <Controls:NumberBox Text="{Binding PositionLeft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="PositionTop">
-                <Controls:NumberBox Text="{Binding PositionTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="MinWidth">
-                <Controls:NumberBox Text="{Binding MinWidth1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="MaxWidth">
-                <Controls:NumberBox Text="{Binding MaxWidth1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="MinHeight">
-                <Controls:NumberBox Text="{Binding MinHeight1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="MaxHeight">
-                <Controls:NumberBox Text="{Binding MaxHeight1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="ShowDoNotShowAgainCheckBox">
-                <CheckBox IsChecked="{Binding ShowDoNotShowAgainCheckBox}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="IsDoNotShowAgainChecked">
-                <CheckBox IsChecked="{Binding IsDoNotShowAgainChecked}" />
-            </Controls:TitledItem>
-            <Controls:TitledItem Title="ShowDetails">
-                <CheckBox IsChecked="{Binding ShowDetails}" />
-            </Controls:TitledItem>
         </Controls:TitledItemsControl>
+        
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            
+            <Controls:TitledItemsControl>
+                <Controls:TitledItem Title="Buttons">
+                    <Controls:EnumerationComboBox Enum="{Binding Buttons, Mode=TwoWay}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="Icon">
+                    <Controls:EnumerationComboBox Enum="{Binding Icon, Mode=TwoWay}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="DefaultButton">
+                    <Controls:EnumerationComboBox Enum="{Binding DefaultButton, Mode=TwoWay}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="StartupLocation">
+                    <Controls:EnumerationComboBox Enum="{Binding StartupLocation, Mode=TwoWay}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="ResizeMode">
+                    <Controls:EnumerationComboBox Enum="{Binding ResizeMode, Mode=TwoWay}" />
+                </Controls:TitledItem>
+            
+                <Controls:TitledItem Title="ShowHelpButton">
+                    <CheckBox IsChecked="{Binding ShowHelpButton}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="ShowNoToAllButton">
+                    <CheckBox IsChecked="{Binding ShowNoToAllButton}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="ShowSystemMenu">
+                    <CheckBox IsChecked="{Binding ShowSystemMenu}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="ShowYesToAllButton">
+                    <CheckBox IsChecked="{Binding ShowYesToAllButton}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="ShowInTaskbar">
+                    <CheckBox IsChecked="{Binding ShowInTaskbar}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="ShowDoNotShowAgainCheckBox">
+                    <CheckBox IsChecked="{Binding ShowDoNotShowAgainCheckBox}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="IsDoNotShowAgainChecked">
+                    <CheckBox IsChecked="{Binding IsDoNotShowAgainChecked}" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="ShowDetails">
+                    <CheckBox IsChecked="{Binding ShowDetails}" />
+                </Controls:TitledItem>
+            </Controls:TitledItemsControl>
+            
+            <Controls:TitledItemsControl Grid.Column="1">
+                <Controls:TitledItem Title="PositionLeft">
+                    <Controls:NumberBox Text="{Binding PositionLeft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="PositionTop">
+                    <Controls:NumberBox Text="{Binding PositionTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="MinWidth">
+                    <Controls:NumberBox Text="{Binding MinWidth1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="MaxWidth">
+                    <Controls:NumberBox Text="{Binding MaxWidth1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="MinHeight">
+                    <Controls:NumberBox Text="{Binding MinHeight1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="MaxHeight">
+                    <Controls:NumberBox Text="{Binding MaxHeight1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="DetailedMinWidth">
+                    <Controls:NumberBox Text="{Binding DetailedMinWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="DetailedMaxWidth">
+                    <Controls:NumberBox Text="{Binding DetailedMaxWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="DetailedMinHeight">
+                    <Controls:NumberBox Text="{Binding DetailedMinHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+                <Controls:TitledItem Title="DetailedMaxHeight">
+                    <Controls:NumberBox Text="{Binding DetailedMaxHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
+                </Controls:TitledItem>
+            </Controls:TitledItemsControl>
+        </Grid>
 
         <Border BorderThickness="0,2,0,0" BorderBrush="Brown"  DockPanel.Dock="Top" />
 

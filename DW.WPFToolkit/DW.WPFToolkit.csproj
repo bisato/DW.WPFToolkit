@@ -143,6 +143,7 @@
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxButtonsPanel.cs" />
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxCheckBoxControl.cs" />
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxDetailsButtonControl.cs" />
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxDetailsPresenter.cs" />
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxEnums.cs" />
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxImageControl.cs" />
     <Compile Include="Controls\WPFMessageBox\WPFMessageBoxOptions.cs" />

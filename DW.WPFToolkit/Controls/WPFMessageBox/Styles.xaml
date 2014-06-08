@@ -32,7 +32,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:WPFMessageBoxButtonsPanel}">
                     <DockPanel Background="{TemplateBinding Background}">
-                        <UniformGrid Rows="1" DockPanel.Dock="Right">
+                        <UniformGrid Rows="1" DockPanel.Dock="Right" Margin="10,0,0,0">
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.OK, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_SingleOKButton" Visibility="Collapsed" />
 
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.OK, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_OKButton" Visibility="Collapsed" />
@@ -51,15 +51,15 @@
                             <Controls:WPFMessageBoxButtonControl Content="{Binding Strings.Help, RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_HelpButton" Visibility="Collapsed" />
                         </UniformGrid>
 
-                        <Controls:WPFMessageBoxCheckBoxControl x:Name="PART_DoNotShowAgainCheckBox"
-                                                               Content="{Binding Strings.DoNotShowAgain, RelativeSource={RelativeSource TemplatedParent}}"
-                                                               IsChecked="{Binding IsDoNotShowAgainChecked, RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Visibility="Collapsed" />
-
                         <Controls:WPFMessageBoxDetailsButtonControl x:Name="PART_DetailsExpander"
                                                                     CollapsedHeaderText="{Binding Strings.OpenDetails, RelativeSource={RelativeSource TemplatedParent}}"
                                                                     ExpandedHeaderText="{Binding Strings.CloseDetails, RelativeSource={RelativeSource TemplatedParent}}"
                                                                     Visibility="Collapsed" />
+                        
+                        <Controls:WPFMessageBoxCheckBoxControl x:Name="PART_DoNotShowAgainCheckBox"
+                                                               Content="{Binding Strings.DoNotShowAgain, RelativeSource={RelativeSource TemplatedParent}}"
+                                                               IsChecked="{Binding IsDoNotShowAgainChecked, RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Visibility="Collapsed" />
                         
                         <Grid />
                     </DockPanel>
@@ -213,7 +213,7 @@
     <Style TargetType="{x:Type Controls:WPFMessageBoxCheckBoxControl}" BasedOn="{StaticResource {x:Type CheckBox}}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Margin" Value="10,0" />
+        <Setter Property="Margin" Value="10,0,0,0" />
     </Style>
 
     <Style TargetType="{x:Type Controls:WPFMessageBoxScrollViewerControl}" BasedOn="{StaticResource {x:Type ScrollViewer}}">
@@ -224,7 +224,7 @@
     <Style TargetType="{x:Type Controls:WPFMessageBoxDetailsButtonControl}" BasedOn="{StaticResource {x:Type Expander}}">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Header" Value="{Binding CollapsedHeaderText, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="Margin" Value="10,0" />
+        <Setter Property="Margin" Value="10,0,0,0" />
         <Style.Triggers>
             <Trigger Property="IsExpanded" Value="True">
                 <Setter Property="Header" Value="{Binding ExpandedHeaderText, RelativeSource={RelativeSource Self}}" />
@@ -232,4 +232,23 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="{x:Type Controls:WPFMessageBoxDetailsPresenter}">
+        <Setter Property="Background" Value="#FFF0F0F0" />
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Controls:WPFMessageBoxDetailsPresenter}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsDetailsExpanded" Value="True">
+                <Setter Property="Visibility" Value="Visible" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
 </ResourceDictionary>

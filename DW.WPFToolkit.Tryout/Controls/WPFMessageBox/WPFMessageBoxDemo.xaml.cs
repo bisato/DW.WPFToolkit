@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Windows;
+using System.Windows.Controls;
 using DW.WPFToolkit.Controls;
 
 namespace DW.WPFToolkit.Tryout.Controls
@@ -33,6 +34,10 @@ namespace DW.WPFToolkit.Tryout.Controls
             MaxWidth1 = options.WindowOptions.MaxWidth;
             MinHeight1 = options.WindowOptions.MinHeight;
             MaxHeight1 = options.WindowOptions.MaxHeight;
+            DetailedMinWidth = options.WindowOptions.DetailedMinWidth;
+            DetailedMaxWidth = options.WindowOptions.DetailedMaxWidth;
+            DetailedMinHeight = options.WindowOptions.DetailedMinHeight;
+            DetailedMaxHeight = options.WindowOptions.DetailedMaxHeight;
             ShowDoNotShowAgainCheckBox = options.ShowDoNotShowAgainCheckBox;
             IsDoNotShowAgainChecked = options.IsDoNotShowAgainChecked;
             ShowDetails = options.ShowDetails;
@@ -42,11 +47,11 @@ namespace DW.WPFToolkit.Tryout.Controls
         {
             var options = new WPFMessageBoxOptions();
 
-            //options.HelpRequestCallback
             //options.WindowOptions.Icon
             //options.MessageCopyFormatter
             //options.Strings
 
+            options.HelpRequestCallback = () => MessageBox.Show("Help requested");
             options.ShowHelpButton = ShowHelpButton;
             options.ShowNoToAllButton = ShowNoToAllButton;
             options.WindowOptions.ShowSystemMenu = ShowSystemMenu;
@@ -60,9 +65,14 @@ namespace DW.WPFToolkit.Tryout.Controls
             options.WindowOptions.MaxWidth = MaxWidth1;
             options.WindowOptions.MinHeight = MinHeight1;
             options.WindowOptions.MaxHeight = MaxHeight1;
+            options.WindowOptions.DetailedMinWidth = DetailedMinWidth;
+            options.WindowOptions.DetailedMaxWidth = DetailedMaxWidth;
+            options.WindowOptions.DetailedMinHeight = DetailedMinHeight;
+            options.WindowOptions.DetailedMaxHeight = DetailedMaxHeight;
             options.ShowDoNotShowAgainCheckBox = ShowDoNotShowAgainCheckBox;
             options.IsDoNotShowAgainChecked = IsDoNotShowAgainChecked;
             options.ShowDetails = ShowDetails;
+            options.DetailsContent = new TextBox();
 
             Result = WPFMessageBox.Show(Application.Current.MainWindow, MessageBoxText, Caption, Buttons, Icon, DefaultButton, options);
             Clipboard = System.Windows.Clipboard.GetText();
@@ -223,7 +233,6 @@ namespace DW.WPFToolkit.Tryout.Controls
         }
         private double _positionTop;
 
-
         public double MinWidth1
         {
             get { return _minWidth; }
@@ -267,6 +276,51 @@ namespace DW.WPFToolkit.Tryout.Controls
             }
         }
         private double _maxHeight;
+
+
+        public double DetailedMinWidth
+        {
+            get { return _detailedMinWidth; }
+            set
+            {
+                _detailedMinWidth = value;
+                NotifyPropertyChanged(() => DetailedMinWidth);
+            }
+        }
+        private double _detailedMinWidth;
+
+        public double DetailedMaxWidth
+        {
+            get { return _detailedMaxWidth; }
+            set
+            {
+                _detailedMaxWidth = value;
+                NotifyPropertyChanged(() => DetailedMaxWidth);
+            }
+        }
+        private double _detailedMaxWidth;
+
+        public double DetailedMinHeight
+        {
+            get { return _detailedMinHeight; }
+            set
+            {
+                _detailedMinHeight = value;
+                NotifyPropertyChanged(() => DetailedMinHeight);
+            }
+        }
+        private double _detailedMinHeight;
+
+        public double DetailedMaxHeight
+        {
+            get { return _detailedMaxHeight; }
+            set
+            {
+                _detailedMaxHeight = value;
+                NotifyPropertyChanged(() => DetailedMaxHeight);
+            }
+        }
+        private double _detailedMaxHeight;
 
         public bool ShowDoNotShowAgainCheckBox
         {

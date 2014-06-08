@@ -6,7 +6,7 @@ using DW.WPFToolkit.Interactivity;
 
 namespace DW.WPFToolkit.Controls
 {
-    public partial class WPFMessageBox
+    public partial class WPFMessageBox : INotifyPropertyChanged
     {
         internal WPFMessageBox()
         {
@@ -15,10 +15,46 @@ namespace DW.WPFToolkit.Controls
 
             AddHandler(WPFMessageBoxButtonsPanel.ClickEvent, (RoutedEventHandler)OnButtonClick);
             AddHandler(WPFMessageBoxButtonsPanel.HelpRequestEvent, (RoutedEventHandler)OnHelpRequestClick);
+            AddHandler(WPFMessageBoxButtonsPanel.ExpandDetailsEvent, (RoutedEventHandler)OnExpandDetailsClick);
+        }
+
+        private Size _oldMinSize;
+        private Size _oldMaxSize;
+        private Size _oldSize;
+        private void OnExpandDetailsClick(object sender, RoutedEventArgs e)
+        {
+            IsDetailsExpanded = !IsDetailsExpanded;
+            OnPropertyChanged("IsDetailsExpanded");
+
+            if (IsDetailsExpanded)
+            {
+                UpperArea.Height = new GridLength(UpperArea.ActualHeight);
+                LowerArea.Height = new GridLength(1, GridUnitType.Star);
+
+                _oldMinSize = new Size(MinWidth, MinHeight);
+                _oldMaxSize = new Size(MaxWidth, MaxHeight);
+                _oldSize = new Size(Width, Height);
+
+                MinWidth = Options.WindowOptions.DetailedMinWidth;
+                MaxWidth = Options.WindowOptions.DetailedMaxWidth;
+                MinHeight = Options.WindowOptions.DetailedMinHeight;
+                MaxHeight = Options.WindowOptions.DetailedMaxHeight;
+            }
+            else
+            {
+                UpperArea.Height = new GridLength(1, GridUnitType.Star);
+                LowerArea.Height = new GridLength(0, GridUnitType.Auto);
+
+                MinWidth = _oldMinSize.Width;
+                MaxWidth = _oldMaxSize.Width;
+                Width = _oldSize.Width;
+                MinHeight = _oldMinSize.Height;
+                MaxHeight = _oldMaxSize.Height;
+                Height = _oldSize.Height;
+            }
         }
 
         private bool _closeByButtons;
-
         private void OnButtonClick(object sender, RoutedEventArgs e)
         {
             var panel = (WPFMessageBoxButtonsPanel)e.OriginalSource;
@@ -34,13 +70,14 @@ namespace DW.WPFToolkit.Controls
                 Options.HelpRequestCallback();
         }
 
+        public bool IsDetailsExpanded { get; set; }
         public string Message { get; set; }
         public WPFMessageBoxImage Image { get; set; }
         public WPFMessageBoxButtons Buttons { get; set; }
         public WPFMessageBoxResult DefaultButton { get; set; }
         public WPFMessageBoxResult Result { get; set; }
         public WPFMessageBoxOptions Options { get; set; }
-        
+
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
@@ -64,8 +101,21 @@ namespace DW.WPFToolkit.Controls
         {
             PART_ButtonPanel.Measure(new Size(double.MaxValue, double.MaxValue));
             var panelWidth = PART_ButtonPanel.DesiredSize.Width;
-            if (!double.IsNaN(panelWidth) && panelWidth > MaxWidth)
-                MaxWidth = panelWidth + 40;
+
+            if (!double.IsNaN(panelWidth))
+            {
+                if (panelWidth > MaxWidth)
+                    MaxWidth = panelWidth + 40;
+                if (panelWidth > Options.WindowOptions.DetailedMaxWidth)
+                    Options.WindowOptions.DetailedMaxWidth = panelWidth + 40;
+                if (panelWidth > MinWidth)
+                    MinWidth = panelWidth + 40;
+                if (panelWidth > Options.WindowOptions.DetailedMinWidth)
+                    Options.WindowOptions.DetailedMinWidth = panelWidth + 40;
+            }
+
+
+
             base.OnContentRendered(e);
 
             PART_ButtonPanel.SetDefaultButton();
@@ -142,7 +192,7 @@ namespace DW.WPFToolkit.Controls
 
             window.ResizeMode = options.ResizeMode;
             window.ShowInTaskbar = options.ShowInTaskbar;
-            
+
             window.MinWidth = options.MinWidth;
             window.MaxWidth = options.MaxWidth;
             window.MinHeight = options.MinHeight;
@@ -150,6 +200,15 @@ namespace DW.WPFToolkit.Controls
 
             window.SizeToContent = SizeToContent.WidthAndHeight;
             window.SnapsToDevicePixels = true;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
