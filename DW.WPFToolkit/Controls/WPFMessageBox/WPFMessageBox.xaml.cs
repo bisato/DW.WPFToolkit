@@ -51,8 +51,11 @@ namespace DW.WPFToolkit.Controls
                 if (Options.Icon != null)
                     Icon = Options.Icon;
 
-            WindowTitleBar.DisableMinimizeButton(this);
-            WindowTitleBar.DisableMaximizeButton(this);
+            if (Options.ResizeMode == ResizeMode.NoResize)
+            {
+                WindowTitleBar.DisableMinimizeButton(this);
+                WindowTitleBar.DisableMaximizeButton(this);
+            }
             if (Buttons == WPFMessageBoxButtons.YesNo || Buttons == WPFMessageBoxButtons.AbortRetryIgnore)
                 WindowTitleBar.DisableCloseButton(this);
         }

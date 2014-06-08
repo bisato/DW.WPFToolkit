@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-06-08    The WPFMessageBox shows the minimize and maximize buttons if it can be resized
 2014-06-07    Add ScrollViewer control to WPFMessageBox to show a vertical scrollbar if the text became to long
 2014-06-07    The continue button was not able to get the default focus
 2014-06-07    Setting the default button on the WPFMessageBox was not working
