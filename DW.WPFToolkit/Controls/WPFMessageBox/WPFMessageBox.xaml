@@ -24,16 +24,16 @@
                                                 DockPanel.Dock="Bottom"
                                                 x:Name="PART_ButtonPanel" />
         
-            <Controls:WPFMessageBoxImageControl Image="{Binding Image}" />
+            <Controls:WPFMessageBoxImageControl Image="{Binding Image}"
+                                                x:Name="PART_ImageControl" />
 
-            <Controls:WPFMessageBoxScrollViewerControl>
-                <Controls:WPFMessageBoxTextControl Content="{Binding Message}" />
+            <Controls:WPFMessageBoxScrollViewerControl x:Name="PART_ScrollViewerControl">
+                <Controls:WPFMessageBoxTextControl Content="{Binding Message}" x:Name="PART_TextControl" />
             </Controls:WPFMessageBoxScrollViewerControl>
-        
-            <Grid />
         </DockPanel>
         
         <Controls:WPFMessageBoxDetailsPresenter Grid.Row="1"
+                                                x:Name="PART_DetailsPresenter"
                                                 IsDetailsExpanded="{Binding IsDetailsExpanded}"
                                                 Content="{Binding Options.DetailsContent}" />
     </Grid>

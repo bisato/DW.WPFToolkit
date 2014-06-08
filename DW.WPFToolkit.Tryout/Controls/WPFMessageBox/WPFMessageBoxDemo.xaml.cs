@@ -77,6 +77,11 @@ namespace DW.WPFToolkit.Tryout.Controls
             options.DetailsContent = new TextBox();
             options.CustomItem = new ProgressBar { Width = 60, Height = 12, VerticalAlignment = VerticalAlignment.Center, IsIndeterminate = true, Margin = new Thickness(10, 0, 0, 0) };
 
+            //options.Styles.ImageControlStyle = new Style(typeof(WPFMessageBoxImageControl));
+            //options.Styles.ImageControlStyle.Setters.Add(new Setter(MarginProperty, new Thickness(0)));
+            //options.Styles.ButtonControlStyle = new Style(typeof(WPFMessageBoxButtonControl));
+            //options.Styles.ButtonControlStyle.Setters.Add(new Setter(MarginProperty, new Thickness(0)));
+
             Result = WPFMessageBox.Show(Application.Current.MainWindow, MessageBoxText, Caption, Buttons, Icon, DefaultButton, options);
             Clipboard = System.Windows.Clipboard.GetText();
             IsDoNotShowAgainCheckedResult = options.IsDoNotShowAgainChecked;

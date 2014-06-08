@@ -13,9 +13,28 @@ namespace DW.WPFToolkit.Controls
             InitializeComponent();
             DataContext = this;
 
+            Loaded += HandleLoaded;
+
             AddHandler(WPFMessageBoxButtonsPanel.ClickEvent, (RoutedEventHandler)OnButtonClick);
             AddHandler(WPFMessageBoxButtonsPanel.HelpRequestEvent, (RoutedEventHandler)OnHelpRequestClick);
             AddHandler(WPFMessageBoxButtonsPanel.ExpandDetailsEvent, (RoutedEventHandler)OnExpandDetailsClick);
+        }
+
+        private void HandleLoaded(object sender, RoutedEventArgs e)
+        {
+            TryApplyStyle(PART_ImageControl, Options.Styles.ImageControlStyle);
+            TryApplyStyle(PART_ScrollViewerControl, Options.Styles.ScrollViewerControlStyle);
+            TryApplyStyle(PART_TextControl, Options.Styles.TextControlStyle);
+            TryApplyStyle(PART_ButtonPanel, Options.Styles.ButtonsPanelStyle);
+            TryApplyStyle(PART_DetailsPresenter, Options.Styles.DetailsPresenterStyle);
+
+            PART_ButtonPanel.TakeStyles(Options.Styles);
+        }
+
+        private void TryApplyStyle(FrameworkElement targetElement, Style style)
+        {
+            if (style != null)
+                targetElement.Style = style;
         }
 
         private Size _oldMinSize;
@@ -117,8 +136,6 @@ namespace DW.WPFToolkit.Controls
                 if (panelWidth > Options.WindowOptions.DetailedMinWidth)
                     Options.WindowOptions.DetailedMinWidth = panelWidth + 40;
             }
-
-
 
             base.OnContentRendered(e);
 

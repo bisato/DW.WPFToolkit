@@ -1,7 +1,10 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Controls
 {
@@ -167,6 +170,23 @@ namespace DW.WPFToolkit.Controls
             
             CalculateDefaultButton();
             return false;
+        }
+
+        internal void TakeStyles(WPFMessageBoxOptions.StylesContainer styles)
+        {
+            TryApplyStyle<WPFMessageBoxButtonControl>(styles.ButtonControlStyle);
+            TryApplyStyle<WPFMessageBoxCheckBoxControl>(styles.CheckBoxControlStyle);
+            TryApplyStyle<WPFMessageBoxDetailsButtonControl>(styles.DetailsButtonControlStyle);
+        }
+
+        private void TryApplyStyle<T>(Style style) where T : DependencyObject
+        {
+            if (style == null)
+                return;
+
+            var controls = VisualTreeAssist.GetChilds<T>(this);
+            foreach (var control in controls)
+                control.Style = style;
         }
 
         public WPFMessageBoxResult Result

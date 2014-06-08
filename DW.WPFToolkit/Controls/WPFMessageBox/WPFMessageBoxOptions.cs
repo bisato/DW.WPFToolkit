@@ -9,6 +9,7 @@ namespace DW.WPFToolkit.Controls
         public WPFMessageBoxOptions()
         {
             WindowOptions = new WindowOptionsContainer();
+            Styles = new StylesContainer();
 
             MessageCopyFormatter = new DefaultMessageCopyFormatter();
             Strings = new MessageBoxStrings();
@@ -36,6 +37,7 @@ namespace DW.WPFToolkit.Controls
         public object CustomItem { get; set; }
 
         public WindowOptionsContainer WindowOptions { get; private set; }
+        public StylesContainer Styles { get; private set; }
 
         public class WindowOptionsContainer
         {
@@ -73,6 +75,30 @@ namespace DW.WPFToolkit.Controls
             public double DetailedMinHeight { get; set; }
             public double DetailedMaxHeight { get; set; }
             public ResizeMode DetailedResizeMode { get; set; }
+        }
+
+        public class StylesContainer
+        {
+            internal StylesContainer()
+            {
+                ImageControlStyle = null;
+                ScrollViewerControlStyle = null;
+                TextControlStyle = null;
+                ButtonsPanelStyle = null;
+                ButtonControlStyle = null;
+                CheckBoxControlStyle = null;
+                DetailsButtonControlStyle = null;
+                DetailsPresenterStyle = null;
+            }
+
+            public Style ImageControlStyle { get; set; }
+            public Style ScrollViewerControlStyle { get; set; }
+            public Style TextControlStyle { get; set; }
+            public Style ButtonsPanelStyle { get; set; }
+            public Style ButtonControlStyle { get; set; }
+            public Style CheckBoxControlStyle { get; set; }
+            public Style DetailsButtonControlStyle { get; set; }
+            public Style DetailsPresenterStyle { get; set; }
         }
     }
 }
