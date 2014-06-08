@@ -126,7 +126,6 @@ namespace DW.WPFToolkit.Controls
             box.MinHeight = options.MinHeight;
             box.MaxHeight = options.MaxHeight;
             box.Height = options.Height;
-            box.Style = options.WindowStyle;
             
             box.SizeToContent = SizeToContent.WidthAndHeight;
             box.SnapsToDevicePixels = true;

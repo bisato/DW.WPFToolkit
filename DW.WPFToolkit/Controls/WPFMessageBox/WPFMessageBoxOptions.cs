@@ -25,7 +25,6 @@ namespace DW.WPFToolkit.Controls
             Width = 349;
             MinHeight = 172;
             MaxHeight = double.PositiveInfinity;
-            WindowStyle = null;
             ShowDoNotShowAgainCheckBox = false;
             IsDoNotShowAgainChecked = false;
         }
@@ -48,7 +47,6 @@ namespace DW.WPFToolkit.Controls
         public double MinHeight { get; set; }
         public double MaxHeight { get; set; }
         public double Height { get; set; }
-        public Style WindowStyle { get; set; }
         public bool ShowDoNotShowAgainCheckBox { get; set; }
         public bool IsDoNotShowAgainChecked { get; set; }
     }

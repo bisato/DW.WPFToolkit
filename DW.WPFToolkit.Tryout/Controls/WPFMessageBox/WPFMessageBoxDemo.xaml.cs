@@ -61,7 +61,6 @@ namespace DW.WPFToolkit.Tryout.Controls
             options.MinHeight = MinHeight1;
             options.MaxHeight = MaxHeight1;
             options.Height = Height1;
-            //options.WindowStyle = null;
             options.ShowDoNotShowAgainCheckBox = ShowDoNotShowAgainCheckBox;
             options.IsDoNotShowAgainChecked = IsDoNotShowAgainChecked;
 
