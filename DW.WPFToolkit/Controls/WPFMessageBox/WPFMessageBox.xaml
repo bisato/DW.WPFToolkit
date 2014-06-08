@@ -8,9 +8,10 @@
             <RowDefinition x:Name="UpperArea" />
             <RowDefinition x:Name="LowerArea" Height="Auto" />
         </Grid.RowDefinitions>
-        
+
+        <ContentControl Content="{Binding Options.BackgroundControl}" Focusable="False" />
+
         <DockPanel>
-        
             <Controls:WPFMessageBoxButtonsPanel Buttons="{Binding Buttons, Mode=TwoWay}"
                                                 DefaultButton="{Binding DefaultButton}"
                                                 Strings="{Binding Options.Strings}"
@@ -24,24 +25,18 @@
                                                 DockPanel.Dock="Bottom"
                                                 x:Name="PART_ButtonPanel" />
 
-            <Grid>
-                <ContentControl Content="{Binding Options.BackgroundControl}" Focusable="False" />
-                
-                <DockPanel>
-                    <Controls:WPFMessageBoxImageControl Image="{Binding Image}"
-                                                        x:Name="PART_ImageControl" />
+            <Controls:WPFMessageBoxImageControl Image="{Binding Image}"
+                                                x:Name="PART_ImageControl" />
 
-                    <Controls:WPFMessageBoxScrollViewerControl x:Name="PART_ScrollViewerControl">
-                        <Controls:WPFMessageBoxTextControl Content="{Binding Message}" x:Name="PART_TextControl" />
-                    </Controls:WPFMessageBoxScrollViewerControl>
-                </DockPanel>
-            </Grid>
+            <Controls:WPFMessageBoxScrollViewerControl x:Name="PART_ScrollViewerControl">
+                <Controls:WPFMessageBoxTextControl Content="{Binding Message}" x:Name="PART_TextControl" />
+            </Controls:WPFMessageBoxScrollViewerControl>
         </DockPanel>
-        
+
         <Controls:WPFMessageBoxDetailsPresenter Grid.Row="1"
                                                 x:Name="PART_DetailsPresenter"
                                                 IsDetailsExpanded="{Binding IsDetailsExpanded}"
                                                 Content="{Binding Options.DetailsContent}" />
     </Grid>
-    
+
 </Window>

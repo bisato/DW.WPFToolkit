@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using DW.WPFToolkit.Controls;
 
 namespace DW.WPFToolkit.Tryout.Controls
@@ -82,6 +83,8 @@ namespace DW.WPFToolkit.Tryout.Controls
             //options.Styles.ImageControlStyle.Setters.Add(new Setter(MarginProperty, new Thickness(0)));
             //options.Styles.ButtonControlStyle = new Style(typeof(WPFMessageBoxButtonControl));
             //options.Styles.ButtonControlStyle.Setters.Add(new Setter(MarginProperty, new Thickness(0)));
+            //options.Styles.ButtonsPanelStyle = new Style(typeof(WPFMessageBoxButtonsPanel));
+            //options.Styles.ButtonsPanelStyle.Setters.Add(new Setter(BackgroundProperty, new SolidColorBrush(Colors.Transparent)));
 
             Result = WPFMessageBox.Show(Application.Current.MainWindow, MessageBoxText, Caption, Buttons, Icon, DefaultButton, options);
             Clipboard = System.Windows.Clipboard.GetText();

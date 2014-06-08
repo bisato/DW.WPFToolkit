@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-06-08    The background control should be behind the buttons panel on the WPFMessageBox as well
 2014-06-08    Take care about the focus in the WPFMessageBox
 2014-06-08    In the WPFMessageBox the background can hold an additional object
 2014-06-08    Add style options to modify element styles in the WPFMessageBox
