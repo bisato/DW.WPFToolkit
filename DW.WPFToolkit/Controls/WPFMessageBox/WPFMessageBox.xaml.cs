@@ -39,6 +39,8 @@ namespace DW.WPFToolkit.Controls
                 MaxWidth = Options.WindowOptions.DetailedMaxWidth;
                 MinHeight = Options.WindowOptions.DetailedMinHeight;
                 MaxHeight = Options.WindowOptions.DetailedMaxHeight;
+
+                ResizeMode = Options.WindowOptions.DetailedResizeMode;
             }
             else
             {
@@ -51,6 +53,8 @@ namespace DW.WPFToolkit.Controls
                 MinHeight = _oldMinSize.Height;
                 MaxHeight = _oldMaxSize.Height;
                 Height = _oldSize.Height;
+
+                ResizeMode = Options.WindowOptions.ResizeMode;
             }
         }
 

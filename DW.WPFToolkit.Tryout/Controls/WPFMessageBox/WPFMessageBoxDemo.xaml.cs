@@ -41,6 +41,7 @@ namespace DW.WPFToolkit.Tryout.Controls
             ShowDoNotShowAgainCheckBox = options.ShowDoNotShowAgainCheckBox;
             IsDoNotShowAgainChecked = options.IsDoNotShowAgainChecked;
             ShowDetails = options.ShowDetails;
+            DetailedResizeMode = options.WindowOptions.DetailedResizeMode;
         }
 
         private void ShowMessageBox_Click(object sender, RoutedEventArgs e)
@@ -73,6 +74,7 @@ namespace DW.WPFToolkit.Tryout.Controls
             options.IsDoNotShowAgainChecked = IsDoNotShowAgainChecked;
             options.ShowDetails = ShowDetails;
             options.DetailsContent = new TextBox();
+            options.WindowOptions.DetailedResizeMode = DetailedResizeMode;
 
             Result = WPFMessageBox.Show(Application.Current.MainWindow, MessageBoxText, Caption, Buttons, Icon, DefaultButton, options);
             Clipboard = System.Windows.Clipboard.GetText();
@@ -210,6 +212,17 @@ namespace DW.WPFToolkit.Tryout.Controls
             }
         }
         private ResizeMode _resizeMode;
+
+        public ResizeMode DetailedResizeMode
+        {
+            get { return _detailedResizeMode; }
+            set
+            {
+                _detailedResizeMode = value;
+                NotifyPropertyChanged(() => DetailedResizeMode);
+            }
+        }
+        private ResizeMode _detailedResizeMode;
 
         public double PositionLeft
         {

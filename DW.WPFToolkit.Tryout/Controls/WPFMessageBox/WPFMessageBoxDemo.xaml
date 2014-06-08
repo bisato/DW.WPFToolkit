@@ -43,6 +43,9 @@
                 <Controls:TitledItem Title="ResizeMode">
                     <Controls:EnumerationComboBox Enum="{Binding ResizeMode, Mode=TwoWay}" />
                 </Controls:TitledItem>
+                <Controls:TitledItem Title="DetailedResizeMode">
+                    <Controls:EnumerationComboBox Enum="{Binding DetailedResizeMode, Mode=TwoWay}" />
+                </Controls:TitledItem>
             
                 <Controls:TitledItem Title="ShowHelpButton">
                     <CheckBox IsChecked="{Binding ShowHelpButton}" />

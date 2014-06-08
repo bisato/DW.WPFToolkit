@@ -3,8 +3,9 @@
 ==============================
 Release 5.*
 ==============================
-2014-06-08    Add possibility to set the details content
-2014-06-08    Add properties to define different sizes with the details open
+2014-06-08    If the details are open use another property if resizing the WPFMessageBox is possible or not
+2014-06-08    Add possibility to set the details content in the WPFMessageBox
+2014-06-08    Add properties to define different sizes with the details open in the WPFMessageBox
 2014-06-08    Remove Height and Width option properties out of the WPFMessageBox; since it does SizeToContent is has no effect anyway
 2014-06-08    Add possibility to show and hide a details button (there is no details section so far)
 2014-06-08    Organize options for the WPFMessageBox window to a separate object in the WPFMessageBoxOptions

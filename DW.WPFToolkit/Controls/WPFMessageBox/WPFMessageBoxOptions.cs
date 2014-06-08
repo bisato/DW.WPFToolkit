@@ -45,16 +45,15 @@ namespace DW.WPFToolkit.Controls
                 ShowInTaskbar = false;
                 ResizeMode = ResizeMode.NoResize;
                 Position = new Point();
-                
                 MinWidth = 249;
                 MaxWidth = 494;
                 MinHeight = 172;
                 MaxHeight = double.PositiveInfinity;
-
                 DetailedMinWidth = 249;
                 DetailedMaxWidth = 494;
                 DetailedMinHeight = 350;
                 DetailedMaxHeight = double.PositiveInfinity;
+                DetailedResizeMode = ResizeMode.NoResize;
             }
 
             public bool ShowSystemMenu { get; set; }
@@ -71,6 +70,7 @@ namespace DW.WPFToolkit.Controls
             public double DetailedMaxWidth { get; set; }
             public double DetailedMinHeight { get; set; }
             public double DetailedMaxHeight { get; set; }
+            public ResizeMode DetailedResizeMode { get; set; }
         }
     }
 }
