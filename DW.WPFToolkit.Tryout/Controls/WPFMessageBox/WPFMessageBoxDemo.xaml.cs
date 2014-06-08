@@ -22,19 +22,19 @@ namespace DW.WPFToolkit.Tryout.Controls
             DefaultButton = WPFMessageBoxResult.OK;
             ShowHelpButton = options.ShowHelpButton;
             ShowNoToAllButton = options.ShowNoToAllButton;
-            ShowSystemMenu = options.ShowSystemMenu;
+            ShowSystemMenu = options.WindowOptions.ShowSystemMenu;
             ShowYesToAllButton = options.ShowYesToAllButton;
-            StartupLocation = options.StartupLocation;
-            ShowInTaskbar = options.ShowInTaskbar;
-            ResizeMode = options.ResizeMode;
-            PositionLeft = options.Position.X;
-            PositionTop = options.Position.Y;
-            MinWidth1 = options.MinWidth;
-            MaxWidth1 = options.MaxWidth;
-            Width1 = options.Width;
-            MinHeight1 = options.MinHeight;
-            MaxHeight1 = options.MaxHeight;
-            Height1 = options.Height;
+            StartupLocation = options.WindowOptions.StartupLocation;
+            ShowInTaskbar = options.WindowOptions.ShowInTaskbar;
+            ResizeMode = options.WindowOptions.ResizeMode;
+            PositionLeft = options.WindowOptions.Position.X;
+            PositionTop = options.WindowOptions.Position.Y;
+            MinWidth1 = options.WindowOptions.MinWidth;
+            MaxWidth1 = options.WindowOptions.MaxWidth;
+            Width1 = options.WindowOptions.Width;
+            MinHeight1 = options.WindowOptions.MinHeight;
+            MaxHeight1 = options.WindowOptions.MaxHeight;
+            Height1 = options.WindowOptions.Height;
             ShowDoNotShowAgainCheckBox = options.ShowDoNotShowAgainCheckBox;
             IsDoNotShowAgainChecked = options.IsDoNotShowAgainChecked;
         }
@@ -42,25 +42,27 @@ namespace DW.WPFToolkit.Tryout.Controls
         private void ShowMessageBox_Click(object sender, RoutedEventArgs e)
         {
             var options = new WPFMessageBoxOptions();
+
             //options.HelpRequestCallback
-            //options.Icon
+            //options.WindowOptions.Icon
             //options.MessageCopyFormatter
+            //options.Strings
+
             options.ShowHelpButton = ShowHelpButton;
             options.ShowNoToAllButton = ShowNoToAllButton;
-            options.ShowSystemMenu = ShowSystemMenu;
+            options.WindowOptions.ShowSystemMenu = ShowSystemMenu;
             options.ShowYesToAllButton = ShowYesToAllButton;
-            //options.Strings
-            options.StartupLocation = StartupLocation;
-            options.ShowInTaskbar = ShowInTaskbar;
-            options.ResizeMode = ResizeMode;
+            options.WindowOptions.StartupLocation = StartupLocation;
+            options.WindowOptions.ShowInTaskbar = ShowInTaskbar;
+            options.WindowOptions.ResizeMode = ResizeMode;
             if (PositionLeft > 0)
-                options.Position = new Point(PositionLeft, PositionTop);
-            options.MinWidth = MinWidth1;
-            options.MaxWidth = MaxWidth1;
-            options.Width = Width1;
-            options.MinHeight = MinHeight1;
-            options.MaxHeight = MaxHeight1;
-            options.Height = Height1;
+                options.WindowOptions.Position = new Point(PositionLeft, PositionTop);
+            options.WindowOptions.MinWidth = MinWidth1;
+            options.WindowOptions.MaxWidth = MaxWidth1;
+            options.WindowOptions.Width = Width1;
+            options.WindowOptions.MinHeight = MinHeight1;
+            options.WindowOptions.MaxHeight = MaxHeight1;
+            options.WindowOptions.Height = Height1;
             options.ShowDoNotShowAgainCheckBox = ShowDoNotShowAgainCheckBox;
             options.IsDoNotShowAgainChecked = IsDoNotShowAgainChecked;
 

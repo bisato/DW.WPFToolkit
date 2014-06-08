@@ -45,13 +45,13 @@ namespace DW.WPFToolkit.Controls
         {
             base.OnSourceInitialized(e);
 
-            if (!Options.ShowSystemMenu)
+            if (!Options.WindowOptions.ShowSystemMenu)
                 WindowTitleBar.DisableSystemMenu(this);
             else
-                if (Options.Icon != null)
-                    Icon = Options.Icon;
+                if (Options.WindowOptions.Icon != null)
+                    Icon = Options.WindowOptions.Icon;
 
-            if (Options.ResizeMode == ResizeMode.NoResize)
+            if (Options.WindowOptions.ResizeMode == ResizeMode.NoResize)
             {
                 WindowTitleBar.DisableMinimizeButton(this);
                 WindowTitleBar.DisableMaximizeButton(this);
@@ -106,26 +106,24 @@ namespace DW.WPFToolkit.Controls
             if (options == null)
                 options = new WPFMessageBoxOptions();
 
-            // ValidateOptions(options); // e.g. Sizes
-
             var box = new WPFMessageBox();
             box.Owner = owner;
-            box.WindowStartupLocation = options.StartupLocation;
-            if (box.Owner == null && options.StartupLocation == WindowStartupLocation.CenterOwner)
+            box.WindowStartupLocation = options.WindowOptions.StartupLocation;
+            if (box.Owner == null && options.WindowOptions.StartupLocation == WindowStartupLocation.CenterOwner)
                 box.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            box.ShowInTaskbar = options.ShowInTaskbar;
-            box.ResizeMode = options.ResizeMode;
+            box.ShowInTaskbar = options.WindowOptions.ShowInTaskbar;
+            box.ResizeMode = options.WindowOptions.ResizeMode;
             if (box.WindowStartupLocation == WindowStartupLocation.Manual)
             {
-                box.Left = options.Position.X;
-                box.Top = options.Position.Y;
+                box.Left = options.WindowOptions.Position.X;
+                box.Top = options.WindowOptions.Position.Y;
             }
-            box.MinWidth = options.MinWidth;
-            box.MaxWidth = options.MaxWidth;
-            box.Width = options.Width;
-            box.MinHeight = options.MinHeight;
-            box.MaxHeight = options.MaxHeight;
-            box.Height = options.Height;
+            box.MinWidth = options.WindowOptions.MinWidth;
+            box.MaxWidth = options.WindowOptions.MaxWidth;
+            box.Width = options.WindowOptions.Width;
+            box.MinHeight = options.WindowOptions.MinHeight;
+            box.MaxHeight = options.WindowOptions.MaxHeight;
+            box.Height = options.WindowOptions.Height;
             
             box.SizeToContent = SizeToContent.WidthAndHeight;
             box.SnapsToDevicePixels = true;
