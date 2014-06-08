@@ -19,6 +19,7 @@ namespace DW.WPFToolkit.Controls
     [TemplatePart(Name = "PART_TryAgainButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_ContinueButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_DoNotShowAgainCheckBox", Type = typeof(CheckBox))]
+    [TemplatePart(Name = "PART_DetailsExpander", Type = typeof(Expander))]
     public class WPFMessageBoxButtonsPanel : Control
     {
         static WPFMessageBoxButtonsPanel()
@@ -77,7 +78,7 @@ namespace DW.WPFToolkit.Controls
                 case "PART_HelpButton":
                     OnHelpRequest();
                     return;
-                case "PART_DoNotShowAgainCheckBox":
+                default:
                     return;
             }
             OnClick();
@@ -245,6 +246,15 @@ namespace DW.WPFToolkit.Controls
 
         public static readonly DependencyProperty IsDoNotShowAgainCheckedProperty =
             DependencyProperty.Register("IsDoNotShowAgainChecked", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(false));
+
+        public bool ShowDetails
+        {
+            get { return (bool)GetValue(ShowDetailsProperty); }
+            set { SetValue(ShowDetailsProperty, value); }
+        }
+
+        public static readonly DependencyProperty ShowDetailsProperty =
+            DependencyProperty.Register("ShowDetails", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(false));
 
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
 

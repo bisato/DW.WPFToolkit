@@ -61,23 +61,20 @@
             <Controls:TitledItem Title="MaxWidth">
                 <Controls:NumberBox Text="{Binding MaxWidth1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
             </Controls:TitledItem>
-            <Controls:TitledItem Title="Width">
-                <Controls:NumberBox Text="{Binding Width1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
-            </Controls:TitledItem>
             <Controls:TitledItem Title="MinHeight">
                 <Controls:NumberBox Text="{Binding MinHeight1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
             </Controls:TitledItem>
             <Controls:TitledItem Title="MaxHeight">
                 <Controls:NumberBox Text="{Binding MaxHeight1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
             </Controls:TitledItem>
-            <Controls:TitledItem Title="Height">
-                <Controls:NumberBox Text="{Binding Height1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HasUpDownButtons="True" Step="10" NumberType="Double" />
-            </Controls:TitledItem>
             <Controls:TitledItem Title="ShowDoNotShowAgainCheckBox">
                 <CheckBox IsChecked="{Binding ShowDoNotShowAgainCheckBox}" />
             </Controls:TitledItem>
             <Controls:TitledItem Title="IsDoNotShowAgainChecked">
                 <CheckBox IsChecked="{Binding IsDoNotShowAgainChecked}" />
+            </Controls:TitledItem>
+            <Controls:TitledItem Title="ShowDetails">
+                <CheckBox IsChecked="{Binding ShowDetails}" />
             </Controls:TitledItem>
         </Controls:TitledItemsControl>
 

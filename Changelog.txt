@@ -3,6 +3,8 @@
 ==============================
 Release 5.*
 ==============================
+2014-06-08    Remove Height and Width option properties out of the WPFMessageBox; since it does SizeToContent is has no effect anyway
+2014-06-08    Add possibility to show and hide a details button (there is no details section so far)
 2014-06-08    Organize options for the WPFMessageBox window to a separate object in the WPFMessageBoxOptions
 2014-06-08    Since not everything can be changed by assigning the WPFWindow style, the whole functionality has to be removed
 2014-06-08    The WPFMessageBox shows the minimize and maximize buttons if it can be resized

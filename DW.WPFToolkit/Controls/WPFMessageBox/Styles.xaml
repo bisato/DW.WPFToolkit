@@ -56,6 +56,11 @@
                                                                IsChecked="{Binding IsDoNotShowAgainChecked, RelativeSource={RelativeSource TemplatedParent}}"
                                                                Visibility="Collapsed" />
 
+                        <Controls:WPFMessageBoxDetailsButtonControl x:Name="PART_DetailsExpander"
+                                                                    CollapsedHeaderText="{Binding Strings.OpenDetails, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    ExpandedHeaderText="{Binding Strings.CloseDetails, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    Visibility="Collapsed" />
+                        
                         <Grid />
                     </DockPanel>
 
@@ -130,6 +135,12 @@
                             <Setter TargetName="PART_DoNotShowAgainCheckBox" Property="Visibility" Value="Visible" />
 
                             <Setter TargetName="PART_DoNotShowAgainCheckBox" Property="AutomationProperties.AutomationId" Value="12" />
+                        </Trigger>
+                        
+                        <Trigger Property="ShowDetails" Value="True">
+                            <Setter TargetName="PART_DetailsExpander" Property="Visibility" Value="Visible" />
+
+                            <Setter TargetName="PART_DetailsExpander" Property="AutomationProperties.AutomationId" Value="13" />
                         </Trigger>
                         
                         <MultiTrigger>
@@ -208,6 +219,17 @@
     <Style TargetType="{x:Type Controls:WPFMessageBoxScrollViewerControl}" BasedOn="{StaticResource {x:Type ScrollViewer}}">
         <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+    </Style>
+
+    <Style TargetType="{x:Type Controls:WPFMessageBoxDetailsButtonControl}" BasedOn="{StaticResource {x:Type Expander}}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Header" Value="{Binding CollapsedHeaderText, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Margin" Value="10,0" />
+        <Style.Triggers>
+            <Trigger Property="IsExpanded" Value="True">
+                <Setter Property="Header" Value="{Binding ExpandedHeaderText, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

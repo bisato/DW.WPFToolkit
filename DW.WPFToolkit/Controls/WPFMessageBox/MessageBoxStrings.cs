@@ -15,6 +15,8 @@
         private string _yesToAll;
         private string _noToAll;
         private string _doNotShowAgain;
+        private string _openDetails;
+        private string _closeDetails;
 
         public string OK
         {
@@ -94,6 +96,18 @@
             set { _doNotShowAgain = value; }
         }
 
+        public string OpenDetails
+        {
+            get { return LoadCustom(OpenDetailsId, _openDetails); }
+            set { _openDetails = value; }
+        }
+
+        public string CloseDetails
+        {
+            get { return LoadCustom(CloseDetailsId, _closeDetails); }
+            set { _closeDetails = value; }
+        }
+
         private string Load(uint id, string alternate)
         {
             if (!string.IsNullOrWhiteSpace(alternate))
@@ -115,6 +129,10 @@
                     return "N_o to All";
                 case DoNotShowAgainId:
                     return "_Don't show this message again";
+                case OpenDetailsId:
+                    return "_Show Details";
+                case CloseDetailsId:
+                    return "_Hide Details";
             }
             return string.Empty;
         }
@@ -122,5 +140,7 @@
         private const int YesToAllId = -800;
         private const int NoToAllId = -801;
         private const int DoNotShowAgainId = -802;
+        private const int OpenDetailsId = -803;
+        private const int CloseDetailsId = -804;
     }
 }

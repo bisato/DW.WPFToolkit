@@ -31,12 +31,11 @@ namespace DW.WPFToolkit.Tryout.Controls
             PositionTop = options.WindowOptions.Position.Y;
             MinWidth1 = options.WindowOptions.MinWidth;
             MaxWidth1 = options.WindowOptions.MaxWidth;
-            Width1 = options.WindowOptions.Width;
             MinHeight1 = options.WindowOptions.MinHeight;
             MaxHeight1 = options.WindowOptions.MaxHeight;
-            Height1 = options.WindowOptions.Height;
             ShowDoNotShowAgainCheckBox = options.ShowDoNotShowAgainCheckBox;
             IsDoNotShowAgainChecked = options.IsDoNotShowAgainChecked;
+            ShowDetails = options.ShowDetails;
         }
 
         private void ShowMessageBox_Click(object sender, RoutedEventArgs e)
@@ -59,12 +58,11 @@ namespace DW.WPFToolkit.Tryout.Controls
                 options.WindowOptions.Position = new Point(PositionLeft, PositionTop);
             options.WindowOptions.MinWidth = MinWidth1;
             options.WindowOptions.MaxWidth = MaxWidth1;
-            options.WindowOptions.Width = Width1;
             options.WindowOptions.MinHeight = MinHeight1;
             options.WindowOptions.MaxHeight = MaxHeight1;
-            options.WindowOptions.Height = Height1;
             options.ShowDoNotShowAgainCheckBox = ShowDoNotShowAgainCheckBox;
             options.IsDoNotShowAgainChecked = IsDoNotShowAgainChecked;
+            options.ShowDetails = ShowDetails;
 
             Result = WPFMessageBox.Show(Application.Current.MainWindow, MessageBoxText, Caption, Buttons, Icon, DefaultButton, options);
             Clipboard = System.Windows.Clipboard.GetText();
@@ -248,17 +246,6 @@ namespace DW.WPFToolkit.Tryout.Controls
         }
         private double _maxWidth;
 
-        public double Width1
-        {
-            get { return _width; }
-            set
-            {
-                _width = value;
-                NotifyPropertyChanged(() => Width1);
-            }
-        }
-        private double _width;
-
         public double MinHeight1
         {
             get { return _minHeight; }
@@ -281,17 +268,6 @@ namespace DW.WPFToolkit.Tryout.Controls
         }
         private double _maxHeight;
 
-        public double Height1
-        {
-            get { return _height; }
-            set
-            {
-                _height = value;
-                NotifyPropertyChanged(() => Height1);
-            }
-        }
-        private double _height;
-
         public bool ShowDoNotShowAgainCheckBox
         {
             get { return _showDoNotShowAgainCheckBox; }
@@ -313,6 +289,17 @@ namespace DW.WPFToolkit.Tryout.Controls
             }
         }
         private bool _isDoNotShowAgainChecked;
+
+        public bool ShowDetails
+        {
+            get { return _showDetails; }
+            set
+            {
+                _showDetails = value;
+                NotifyPropertyChanged(() => ShowDetails);
+            }
+        }
+        private bool _showDetails;
 
         public WPFMessageBoxResult Result
         {

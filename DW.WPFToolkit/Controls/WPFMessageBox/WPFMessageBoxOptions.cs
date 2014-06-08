@@ -18,6 +18,7 @@ namespace DW.WPFToolkit.Controls
             ShowNoToAllButton = false;
             ShowDoNotShowAgainCheckBox = false;
             IsDoNotShowAgainChecked = false;
+            ShowDetails = false;
         }
 
         public IMessageCopyFormatter MessageCopyFormatter { get; set; }
@@ -26,6 +27,7 @@ namespace DW.WPFToolkit.Controls
         public Action HelpRequestCallback { get; set; }
         public bool ShowYesToAllButton { get; set; }
         public bool ShowNoToAllButton { get; set; }
+        public bool ShowDetails { get; set; }
         
         public bool ShowDoNotShowAgainCheckBox { get; set; }
         public bool IsDoNotShowAgainChecked { get; set; }
@@ -44,7 +46,6 @@ namespace DW.WPFToolkit.Controls
                 Position = new Point();
                 MinWidth = 249;
                 MaxWidth = 494;
-                Width = 349;
                 MinHeight = 172;
                 MaxHeight = double.PositiveInfinity;
             }
@@ -57,10 +58,8 @@ namespace DW.WPFToolkit.Controls
             public Point Position { get; set; }
             public double MinWidth { get; set; }
             public double MaxWidth { get; set; }
-            public double Width { get; set; }
             public double MinHeight { get; set; }
             public double MaxHeight { get; set; }
-            public double Height { get; set; }
         }
     }
 }

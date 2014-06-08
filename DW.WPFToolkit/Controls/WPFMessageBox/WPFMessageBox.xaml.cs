@@ -8,7 +8,7 @@ namespace DW.WPFToolkit.Controls
 {
     public partial class WPFMessageBox
     {
-        public WPFMessageBox()
+        internal WPFMessageBox()
         {
             InitializeComponent();
             DataContext = this;
@@ -104,36 +104,21 @@ namespace DW.WPFToolkit.Controls
                                                WPFMessageBoxOptions options)
         {
             if (options == null)
-                options = new WPFMessageBoxOptions();
+                throw new ArgumentNullException("options");
 
-            var box = new WPFMessageBox();
-            box.Owner = owner;
-            box.WindowStartupLocation = options.WindowOptions.StartupLocation;
-            if (box.Owner == null && options.WindowOptions.StartupLocation == WindowStartupLocation.CenterOwner)
-                box.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            box.ShowInTaskbar = options.WindowOptions.ShowInTaskbar;
-            box.ResizeMode = options.WindowOptions.ResizeMode;
-            if (box.WindowStartupLocation == WindowStartupLocation.Manual)
+            var box = new WPFMessageBox
             {
-                box.Left = options.WindowOptions.Position.X;
-                box.Top = options.WindowOptions.Position.Y;
-            }
-            box.MinWidth = options.WindowOptions.MinWidth;
-            box.MaxWidth = options.WindowOptions.MaxWidth;
-            box.Width = options.WindowOptions.Width;
-            box.MinHeight = options.WindowOptions.MinHeight;
-            box.MaxHeight = options.WindowOptions.MaxHeight;
-            box.Height = options.WindowOptions.Height;
-            
-            box.SizeToContent = SizeToContent.WidthAndHeight;
-            box.SnapsToDevicePixels = true;
+                Owner = owner,
+                Message = messageBoxText,
+                Title = caption ?? string.Empty,
+                Buttons = buttons,
+                Image = icon,
+                DefaultButton = defaultButton,
+                Options = options
+            };
 
-            box.Message = messageBoxText;
-            box.Title = caption ?? string.Empty;
-            box.Buttons = buttons;
-            box.Image = icon;
-            box.DefaultButton = defaultButton;
-            box.Options = options;
+            SetWindowOptions(box, options.WindowOptions);
+
             var dialogResult = box.ShowDialog();
             if (dialogResult != true)
             {
@@ -142,6 +127,29 @@ namespace DW.WPFToolkit.Controls
                 return WPFMessageBoxResult.Cancel;
             }
             return box.Result;
+        }
+
+        private static void SetWindowOptions(Window window, WPFMessageBoxOptions.WindowOptionsContainer options)
+        {
+            window.WindowStartupLocation = options.StartupLocation;
+            if (window.Owner == null && options.StartupLocation == WindowStartupLocation.CenterOwner)
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (window.WindowStartupLocation == WindowStartupLocation.Manual)
+            {
+                window.Left = options.Position.X;
+                window.Top = options.Position.Y;
+            }
+
+            window.ResizeMode = options.ResizeMode;
+            window.ShowInTaskbar = options.ShowInTaskbar;
+            
+            window.MinWidth = options.MinWidth;
+            window.MaxWidth = options.MaxWidth;
+            window.MinHeight = options.MinHeight;
+            window.MaxHeight = options.MaxHeight;
+
+            window.SizeToContent = SizeToContent.WidthAndHeight;
+            window.SnapsToDevicePixels = true;
         }
     }
 }

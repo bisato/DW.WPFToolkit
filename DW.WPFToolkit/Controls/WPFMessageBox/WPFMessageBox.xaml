@@ -13,6 +13,7 @@
                                             ShowNoToAllButton="{Binding Options.ShowNoToAllButton}"
                                             ShowDoNotShowAgainCheckBox="{Binding Options.ShowDoNotShowAgainCheckBox}"
                                             IsDoNotShowAgainChecked="{Binding Options.IsDoNotShowAgainChecked, Mode=TwoWay}"
+                                            ShowDetails="{Binding Options.ShowDetails}"
                                             DockPanel.Dock="Bottom"
                                             x:Name="PART_ButtonPanel" />
         
