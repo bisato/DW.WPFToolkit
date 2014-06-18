@@ -5,11 +5,11 @@
         Title="DW.WPFToolkit.Tryout"
         Height="800"
         Width="800">
-    
+
     <TabControl TabStripPlacement="Left">
         <TabItem Header="WPFMessageBox" AutomationProperties.AutomationId="CUI_WPFMessageBox">
             <Controls:WPFMessageBoxDemo />
         </TabItem>
     </TabControl>
-    
+
 </Window>
