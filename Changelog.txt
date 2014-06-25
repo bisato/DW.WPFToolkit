@@ -3,6 +3,7 @@
 ==============================
 Release 5.*
 ==============================
+2014-06-25    NavigationBar: Add NavigationBar
 2014-06-08    NullToBooleanConverter, NullToVisibilityConverter: Make converters sealed
               WPFMessageBox: The background control should be behind the buttons panel as well
               WPFMessageBox: Take care about the focus

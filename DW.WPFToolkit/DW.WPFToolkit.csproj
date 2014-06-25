@@ -96,7 +96,13 @@
     <Compile Include="Controls\EnhancedTreeView\EnhancedTreeViewItem.cs" />
     <Compile Include="Controls\EnumerationComboBox\EnumerationComboBox.cs" />
     <Compile Include="Controls\EnumerationComboBox\EnumerationComboBoxItem.cs" />
+    <Compile Include="Controls\NavigationBar\ExpansionMode.cs" />
     <Compile Include="Controls\ImageButton\ImageButton.cs" />
+    <Compile Include="Controls\NavigationBar\NavigationBar.cs" />
+    <Compile Include="Controls\NavigationBar\NavigationBarHeaderBar.cs" />
+    <Compile Include="Controls\NavigationBar\NavigationBarItem.cs" />
+    <Compile Include="Controls\NavigationBar\NavigationBarPanel.cs" />
+    <Compile Include="Controls\NavigationBar\NavigationBarToggleButton.cs" />
     <Compile Include="Controls\NumberBox\NumberBox.cs" />
     <Compile Include="Controls\NumberBox\NumberCheckBox.cs" />
     <Compile Include="Controls\NumberBox\NumberResetButton.cs" />
@@ -204,6 +210,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\EnumerationComboBox\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\NavigationBar\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
