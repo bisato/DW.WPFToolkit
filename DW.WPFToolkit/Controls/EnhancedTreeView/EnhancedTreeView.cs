@@ -47,7 +47,7 @@ namespace DW.WPFToolkit.Controls
         /// <returns>The generated child item container</returns>
         protected override DependencyObject GetContainerForItemOverride()
         {
-            return new EnhancedTreeViewItem() { ContentStretching = ItemsContentStretching };
+            return new EnhancedTreeViewItem();
         }
 
         /// <summary>

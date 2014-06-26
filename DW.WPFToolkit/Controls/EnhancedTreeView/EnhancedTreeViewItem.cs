@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace DW.WPFToolkit.Controls
 {
@@ -16,12 +17,24 @@ namespace DW.WPFToolkit.Controls
 #endif
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.EnhancedTreeViewItem" /> class.
+        /// </summary>
+        public EnhancedTreeViewItem()
+        {
+            var binding = new Binding("ItemsContentStretching");
+            binding.RelativeSource = new RelativeSource();
+            binding.RelativeSource.Mode = RelativeSourceMode.FindAncestor;
+            binding.RelativeSource.AncestorType = typeof(EnhancedTreeView);
+            SetBinding(ContentStretchingProperty, binding);
+        }
+
+        /// <summary>
         /// Generates a new child item container to hold in the <see cref="DW.WPFToolkit.Controls.EnhancedTreeViewItem" />.
         /// </summary>
         /// <returns>The generated child item container</returns>
         protected override System.Windows.DependencyObject GetContainerForItemOverride()
         {
-            return new EnhancedTreeViewItem() { ContentStretching = ContentStretching };
+            return new EnhancedTreeViewItem();
         }
 
         /// <summary>
