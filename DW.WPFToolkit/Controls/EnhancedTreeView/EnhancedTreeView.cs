@@ -82,6 +82,8 @@ namespace DW.WPFToolkit.Controls
         {
             base.OnSelectedItemChanged(e);
 
+            OnSelectedItemChangedCommand(e.NewValue);
+
             if (SelectionMode == SelectionMode.Single)
                 return;
 
@@ -271,5 +273,27 @@ namespace DW.WPFToolkit.Controls
         /// </summary>
         public static readonly DependencyProperty ItemsContentStretchingProperty =
             DependencyProperty.Register("ItemsContentStretching", typeof(bool), typeof(EnhancedTreeView), new UIPropertyMetadata(false));
+
+        /// <summary>
+        /// Gets or sets the command to be executed if a item got selected.
+        /// </summary>
+        [DefaultValue(null)]
+        public ICommand SelectedItemChangedCommand
+        {
+            get { return (ICommand)GetValue(SelectedItemChangedCommandProperty); }
+            set { SetValue(SelectedItemChangedCommandProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnhancedTreeView.SelectedItemChangedCommand" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty SelectedItemChangedCommandProperty =
+            DependencyProperty.Register("SelectedItemChangedCommand", typeof(ICommand), typeof(EnhancedTreeView), new PropertyMetadata(null));
+
+        private void OnSelectedItemChangedCommand(object newValue)
+        {
+            if (SelectedItemChangedCommand != null && SelectedItemChangedCommand.CanExecute(newValue))
+                SelectedItemChangedCommand.Execute(newValue);
+        }
     }
 }

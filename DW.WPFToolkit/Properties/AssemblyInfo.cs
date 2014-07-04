@@ -16,5 +16,5 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("http://wpftoolkit.my-libraries.com/v5", "DW.WPFToolkit.Controls")]
 [assembly: XmlnsDefinition("http://wpftoolkitconverters.my-libraries.com/v5", "DW.WPFToolkit.Converters")]
 [assembly: XmlnsDefinition("http://wpftoolkitinteractivity.my-libraries.com/v5", "DW.WPFToolkit.Interactivity")]
-[assembly: AssemblyVersion("5.0.0.0")]
-[assembly: AssemblyFileVersion("5.0.0.0")]
+[assembly: AssemblyVersion("5.1.0.0")]
+[assembly: AssemblyFileVersion("5.1.0.0")]
