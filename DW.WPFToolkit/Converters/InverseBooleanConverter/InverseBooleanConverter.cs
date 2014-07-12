@@ -9,13 +9,6 @@ namespace DW.WPFToolkit.Converters
     /// </summary>
     public sealed class InverseBooleanConverter : IValueConverter
     {
-#if TRIAL
-        static InverseBooleanConverter()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Converts Boolean values to its opposite.
         /// </summary>

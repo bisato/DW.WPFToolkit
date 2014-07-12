@@ -11,13 +11,6 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EnhancedListView : ListView
     {
-#if TRIAL
-        static EnhancedListView()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Gets or sets a value which indicates how the columns should be resized. Columns which width is set will not modified.
         /// </summary>

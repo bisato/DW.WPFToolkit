@@ -15,9 +15,6 @@ namespace DW.WPFToolkit.Controls
         static EnhancedTextBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EnhancedTextBox), new FrameworkPropertyMetadata(typeof(EnhancedTextBox)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

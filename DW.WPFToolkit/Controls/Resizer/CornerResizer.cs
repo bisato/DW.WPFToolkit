@@ -12,9 +12,6 @@ namespace DW.WPFToolkit.Controls
         static CornerResizer()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CornerResizer), new FrameworkPropertyMetadata(typeof(CornerResizer)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

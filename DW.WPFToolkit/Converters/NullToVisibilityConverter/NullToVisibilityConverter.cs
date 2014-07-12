@@ -10,13 +10,6 @@ namespace DW.WPFToolkit.Converters
     /// </summary>
     public sealed class NullToVisibilityConverter : IValueConverter
     {
-#if TRIAL
-        static NullToBooleanConverter()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Converts the null state of an object to a Visibility representation depending on the parameter.
         /// </summary>

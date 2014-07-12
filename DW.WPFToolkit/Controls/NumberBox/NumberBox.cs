@@ -19,9 +19,6 @@ namespace DW.WPFToolkit.Controls
         static NumberBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberBox), new FrameworkPropertyMetadata(typeof(NumberBox)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

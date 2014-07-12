@@ -12,9 +12,6 @@ namespace DW.WPFToolkit.Controls
         static DockingPane()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DockingPane), new FrameworkPropertyMetadata(typeof(DockingPane)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

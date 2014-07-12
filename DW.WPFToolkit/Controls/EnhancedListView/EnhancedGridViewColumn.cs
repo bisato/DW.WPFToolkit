@@ -9,13 +9,6 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EnhancedGridViewColumn : GridViewColumn
     {
-#if TRIAL
-        static EnhancedGridViewColumn()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Gets or sets the name of the current column. This will be used by the <see cref="DW.WPFToolkit.Controls.EnhancedListView.VisibleColumns" /> collection.
         /// </summary>

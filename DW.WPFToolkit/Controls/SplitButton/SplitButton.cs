@@ -14,9 +14,6 @@ namespace DW.WPFToolkit.Controls
         static SplitButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitButton), new FrameworkPropertyMetadata(typeof(SplitButton)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

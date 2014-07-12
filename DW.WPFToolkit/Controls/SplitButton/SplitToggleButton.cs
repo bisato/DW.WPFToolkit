@@ -12,9 +12,6 @@ namespace DW.WPFToolkit.Controls
         static SplitToggleButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitToggleButton), new FrameworkPropertyMetadata(typeof(SplitToggleButton)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

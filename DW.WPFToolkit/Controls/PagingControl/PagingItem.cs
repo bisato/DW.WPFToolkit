@@ -12,9 +12,6 @@ namespace DW.WPFToolkit.Controls
         static PagingItem()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PagingItem), new FrameworkPropertyMetadata(typeof(PagingItem)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

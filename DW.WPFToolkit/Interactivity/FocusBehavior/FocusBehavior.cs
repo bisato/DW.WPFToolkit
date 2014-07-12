@@ -9,13 +9,6 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class FocusBehavior : DependencyObject
     {
-#if TRIAL
-        static FocusBehavior()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Gets the control which has to get the focus when its loaded.
         /// </summary>

@@ -12,13 +12,6 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class ContextMenuItem : MenuItem
     {
-#if TRIAL
-        static ContextMenuItem()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Called when the <see cref="System.Windows.FrameworkElement.IsInitialized" /> property is set to true.
         /// </summary>

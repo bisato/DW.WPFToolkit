@@ -11,9 +11,6 @@ namespace DW.WPFToolkit.Controls
         static PaneToggleButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PaneToggleButton), new FrameworkPropertyMetadata(typeof(PaneToggleButton)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
     }
 }

@@ -12,9 +12,6 @@ namespace DW.WPFToolkit.Controls
         static UpDownButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(UpDownButton), new FrameworkPropertyMetadata(typeof(UpDownButton)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

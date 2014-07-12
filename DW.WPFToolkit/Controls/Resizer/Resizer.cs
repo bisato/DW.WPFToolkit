@@ -21,9 +21,6 @@ namespace DW.WPFToolkit.Controls
         static Resizer()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Resizer), new FrameworkPropertyMetadata(typeof(Resizer)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

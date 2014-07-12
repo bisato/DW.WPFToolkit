@@ -13,9 +13,6 @@ namespace DW.WPFToolkit.Controls
         static BrowseTextBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BrowseTextBox), new FrameworkPropertyMetadata(typeof(BrowseTextBox)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

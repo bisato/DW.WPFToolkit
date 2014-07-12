@@ -10,13 +10,6 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class UniformWrapPanel : WrapPanel
     {
-#if TRIAL
-        static UniformWrapPanel()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Gets or sets a value that defines if the common height or width will be taken by the biggest child element.
         /// </summary>

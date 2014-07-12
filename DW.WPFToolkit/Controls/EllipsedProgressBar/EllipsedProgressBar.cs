@@ -21,9 +21,6 @@ namespace DW.WPFToolkit.Controls
         static EllipsedProgressBar()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EllipsedProgressBar), new FrameworkPropertyMetadata(typeof(EllipsedProgressBar)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

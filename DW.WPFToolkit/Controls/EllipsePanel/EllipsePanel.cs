@@ -13,13 +13,6 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EllipsePanel : Panel
     {
-#if TRIAL
-        static EllipsePanel()
-        {
-            License1.License.Display();
-        }
-#endif
-
         private readonly EllipseGeometry _ellipse = new EllipseGeometry();
 
         /// <summary>

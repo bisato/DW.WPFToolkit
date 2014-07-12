@@ -11,9 +11,6 @@ namespace DW.WPFToolkit.Controls
         static NumberCheckBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof (NumberCheckBox), new FrameworkPropertyMetadata(typeof (NumberCheckBox)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
     }
 }

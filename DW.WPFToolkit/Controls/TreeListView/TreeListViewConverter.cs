@@ -11,13 +11,6 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class TreeListViewConverter : IValueConverter
     {
-#if TRIAL
-        static TreeListViewConverter()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Checks if the tree view item is a child item and can be collapsed and calculates the intending by the level.
         /// </summary>

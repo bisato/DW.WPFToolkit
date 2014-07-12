@@ -9,13 +9,6 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class EnhancedTreeViewItem : TreeViewItem
     {
-#if TRIAL
-        static EnhancedTreeViewItem()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.EnhancedTreeViewItem" /> class.
         /// </summary>

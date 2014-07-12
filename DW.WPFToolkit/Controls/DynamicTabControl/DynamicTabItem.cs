@@ -12,9 +12,6 @@ namespace DW.WPFToolkit.Controls
         static DynamicTabItem()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DynamicTabItem), new FrameworkPropertyMetadata(typeof(DynamicTabItem)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

@@ -10,13 +10,6 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class ScrollBehavior : DependencyObject
     {
-#if TRIAL
-        static ScrollBehavior()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Gets the item to which it has to scroll in a list.
         /// </summary>

@@ -7,13 +7,6 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class WindowClosingArgs : EventArgs
     {
-#if TRIAL
-        static WindowClosingArgs()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Initializes a new instance of the <see cref="DW.WPFToolkit.Interactivity.WindowClosingArgs" /> class.
         /// </summary>

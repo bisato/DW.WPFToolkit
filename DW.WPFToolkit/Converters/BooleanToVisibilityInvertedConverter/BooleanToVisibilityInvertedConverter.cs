@@ -10,13 +10,6 @@ namespace DW.WPFToolkit.Converters
     /// </summary>
     public sealed class BooleanToVisibilityInvertedConverter : IValueConverter
     {
-#if TRIAL
-        static BooleanToVisibilityInvertedConverter()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Converts a Boolean value to a <see cref="System.Windows.Visibility" /> enumeration value.
         /// </summary>

@@ -15,9 +15,6 @@ namespace DW.WPFToolkit.Controls
         static EnhancedPasswordBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EnhancedPasswordBox), new FrameworkPropertyMetadata(typeof(EnhancedPasswordBox)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

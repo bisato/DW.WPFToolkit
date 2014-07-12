@@ -9,13 +9,6 @@ namespace DW.WPFToolkit.Controls
     /// </summary>
     public class MultiplyConverter : IValueConverter
     {
-#if TRIAL
-        static MultiplyConverter()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Takes the value as double and multiplies it with the parameter parsed to double.
         /// </summary>

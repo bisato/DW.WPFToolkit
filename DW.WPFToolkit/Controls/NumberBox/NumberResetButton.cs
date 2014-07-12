@@ -11,9 +11,6 @@ namespace DW.WPFToolkit.Controls
         static NumberResetButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberResetButton), new FrameworkPropertyMetadata(typeof(NumberResetButton)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
     }
 }

@@ -11,9 +11,6 @@ namespace DW.WPFToolkit.Controls
         static PagingNavigateButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PagingNavigateButton), new FrameworkPropertyMetadata(typeof(PagingNavigateButton)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
     }
 }

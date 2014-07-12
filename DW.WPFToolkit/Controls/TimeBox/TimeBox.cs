@@ -19,9 +19,6 @@ namespace DW.WPFToolkit.Controls
         static TimeBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TimeBox), new FrameworkPropertyMetadata(typeof(TimeBox)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

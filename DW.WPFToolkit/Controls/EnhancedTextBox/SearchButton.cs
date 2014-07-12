@@ -11,9 +11,6 @@ namespace DW.WPFToolkit.Controls
         static SearchButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SearchButton), new FrameworkPropertyMetadata(typeof(SearchButton)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
     }
 }

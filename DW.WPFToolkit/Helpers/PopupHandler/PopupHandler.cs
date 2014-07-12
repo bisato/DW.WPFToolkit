@@ -8,13 +8,6 @@ namespace DW.WPFToolkit.Helpers
     /// </summary>
     public class PopupHandler
     {
-#if TRIAL
-        static PopupHandler()
-        {
-            License1.License.Display();
-        }
-#endif
-
         private WindowObserver _observer;
         private UIElement _observedControl;
         private Action _closeMethod;

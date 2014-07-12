@@ -12,13 +12,6 @@ namespace DW.WPFToolkit.Helpers
     /// </summary>
     public class KeyboardWatcher : IDisposable
     {
-#if TRIAL
-        static KeyboardWatcher()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Initializes a new instance of the <see cref="DW.WPFToolkit.Helpers.KeyboardWatcher" /> class.
         /// </summary>

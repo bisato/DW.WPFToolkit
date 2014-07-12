@@ -12,13 +12,6 @@ namespace DW.WPFToolkit.Interactivity
     /// </summary>
     public class ColumnSortBehavior : DependencyObject
     {
-#if TRIAL
-        static ColumnSortBehavior()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Gets the header template to be used for sorting if the column is not used for sort actually.
         /// </summary>

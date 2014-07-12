@@ -9,13 +9,6 @@ namespace DW.WPFToolkit.Converters
     /// </summary>
     public sealed class NullToBooleanConverter : IValueConverter
     {
-#if TRIAL
-        static NullToBooleanConverter()
-        {
-            License1.License.Display();
-        }
-#endif
-
         /// <summary>
         /// Converts the null state of an object to a boolean representation depending on the parameter.
         /// </summary>

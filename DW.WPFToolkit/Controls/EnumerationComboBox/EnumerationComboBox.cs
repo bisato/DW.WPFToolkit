@@ -15,9 +15,6 @@ namespace DW.WPFToolkit.Controls
         static EnumerationComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EnumerationComboBox), new FrameworkPropertyMetadata(typeof(EnumerationComboBox)));
-#if TRIAL
-            License1.License.Display();
-#endif
         }
 
         /// <summary>

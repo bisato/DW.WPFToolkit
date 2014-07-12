@@ -10,13 +10,6 @@ namespace DW.WPFToolkit.Helpers
     /// </summary>
     public class WindowObserver
     {
-#if TRIAL
-        static WindowObserver()
-        {
-            License1.License.Display();
-        }
-#endif
-
         private readonly Window _observedWindow;
         private readonly List<Callback> _callbacks;
 
