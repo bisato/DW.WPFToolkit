@@ -26,36 +26,65 @@ THE SOFTWARE
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// The panel which is used in the <see cref="DW.WPFToolkit.Controls.NavigationBar" /> which arranges the <see cref="DW.WPFToolkit.Controls.NavigationBarItem" />s.
+    /// </summary>
     public class NavigationBarPanel : Panel
     {
+        /// <summary>
+        /// Gets the value which indicates if a item hosted in the NavigationBarPanel is expanded or not.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Controls.NavigationBarPanel.IsExpanded property value for the element.</returns>
         public static bool GetIsExpanded(DependencyObject obj)
         {
             return (bool)obj.GetValue(IsExpandedProperty);
         }
 
+        /// <summary>
+        /// Attaches the value which indicates if a item hosted in the NavigationBarPanel is expanded or not.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Controls.NavigationBarPanel.IsExpanded value.</param>
         public static void SetIsExpanded(DependencyObject obj, bool value)
         {
             obj.SetValue(IsExpandedProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBarPanel.GetIsExpanded(DependencyObject)" /> <see cref="DW.WPFToolkit.Controls.NavigationBarPanel.SetIsExpanded(DependencyObject, bool)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty IsExpandedProperty =
             DependencyProperty.RegisterAttached("IsExpanded", typeof(bool), typeof(NavigationBarPanel), new PropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets the orientation of the NavigationBarPanel.
+        /// </summary>
+        [DefaultValue(Orientation.Vertical)]
         public Orientation Orientation
         {
             get { return (Orientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBarPanel.Orientation" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OrientationProperty =
             DependencyProperty.Register("Orientation", typeof(Orientation), typeof(NavigationBarPanel), new PropertyMetadata(Orientation.Vertical));
 
+        /// <summary>
+        /// Lets each child calculating is needed size.
+        /// </summary>
+        /// <param name="constraint">The available space by the parent control.</param>
+        /// <returns>The calculated size needed for the control.</returns>
         protected override Size MeasureOverride(Size constraint)
         {
             var maximumWidth = 0.0;
@@ -119,6 +148,11 @@ namespace DW.WPFToolkit.Controls
             return new Size(childWidths, childHeights);
         }
 
+        /// <summary>
+        /// Positionates each child in the available space of the NavigationBar depending on the expanding states.
+        /// </summary>
+        /// <param name="arrangeSize">The maximum possible space given by the parent control.</param>
+        /// <returns>The calculated needed space in sum of all available child controls.</returns>
         protected override Size ArrangeOverride(Size arrangeSize)
         {
             var sizes = new Size[InternalChildren.Count];

@@ -29,6 +29,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the header of the <see cref="DW.WPFToolkit.Controls.NavigationBarItem" />.
+    /// </summary>
     public class NavigationBarHeaderBar : ContentControl
     {
         static NavigationBarHeaderBar()
@@ -36,12 +39,18 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NavigationBarHeaderBar), new FrameworkPropertyMetadata(typeof(NavigationBarHeaderBar)));
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the item is expanded or not.
+        /// </summary>
         public bool IsChecked
         {
             get { return (bool)GetValue(IsCheckedProperty); }
             set { SetValue(IsCheckedProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBarHeaderBar.IsChecked" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsCheckedProperty =
             DependencyProperty.Register("IsChecked", typeof(bool), typeof(NavigationBarHeaderBar), new PropertyMetadata(false));
     }

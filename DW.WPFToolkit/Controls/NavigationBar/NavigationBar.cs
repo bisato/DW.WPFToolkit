@@ -26,11 +26,15 @@ THE SOFTWARE
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// A control which shows a bunch of items which can be expanded and collapsed. All expanded items shares the available space left.
+    /// </summary>
     public class NavigationBar : ItemsControl
     {
         static NavigationBar()
@@ -38,18 +42,30 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NavigationBar), new FrameworkPropertyMetadata(typeof(NavigationBar)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.NavigationBar" /> class.
+        /// </summary>
         public NavigationBar()
         {
             AddHandler(NavigationBarItem.ExpandedEvent, (RoutedEventHandler)OnExpanded);
 
             Loaded += (sender, args) => OnExpandedItemIndexesChanged();
         }
-        
+
+        /// <summary>
+        /// Checks if the item is already the correct item container. If not the <see cref="DW.WPFToolkit.Controls.NavigationBar.GetContainerForItemOverride" /> will be used to generate the right container.
+        /// </summary>
+        /// <param name="item">The item to shown in the <see cref="DW.WPFToolkit.Controls.NavigationBarItem" />.</param>
+        /// <returns>True if the item is the correct item container already.</returns>
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
             return item is NavigationBarItem;
         }
 
+        /// <summary>
+        /// Generates a new child item container to hold in the <see cref="DW.WPFToolkit.Controls.NavigationBar" />.
+        /// </summary>
+        /// <returns>The generated child item container</returns>
         protected override DependencyObject GetContainerForItemOverride()
         {
             return new NavigationBarItem();
@@ -76,57 +92,98 @@ namespace DW.WPFToolkit.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the content string format.
+        /// </summary>
+        [DefaultValue(null)]
         public string ContentStringFormat
         {
             get { return (string)GetValue(ContentStringFormatProperty); }
             set { SetValue(ContentStringFormatProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBar.ContentStringFormat" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ContentStringFormatProperty =
             DependencyProperty.Register("ContentStringFormat", typeof(string), typeof(NavigationBar), new PropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the content template
+        /// </summary>
+        [DefaultValue(null)]
         public DataTemplate ContentTemplate
         {
             get { return (DataTemplate)GetValue(ContentTemplateProperty); }
             set { SetValue(ContentTemplateProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBar.ContentTemplate" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ContentTemplateProperty =
             DependencyProperty.Register("ContentTemplate", typeof(DataTemplate), typeof(NavigationBar), new PropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the content template selector.
+        /// </summary>
+        [DefaultValue(null)]
         public DataTemplateSelector ContentTemplateSelector
         {
             get { return (DataTemplateSelector)GetValue(ContentTemplateSelectorProperty); }
             set { SetValue(ContentTemplateSelectorProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBar.ContentTemplateSelector" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ContentTemplateSelectorProperty =
             DependencyProperty.Register("ContentTemplateSelector", typeof(DataTemplateSelector), typeof(NavigationBar), new PropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets a value which indicates how items can be expanded.
+        /// </summary>
+        [DefaultValue(ExpansionMode.Multiple)]
         public ExpansionMode ExpansionMode
         {
             get { return (ExpansionMode)GetValue(ExpansionModeProperty); }
             set { SetValue(ExpansionModeProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBar.ExpansionMode" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ExpansionModeProperty =
             DependencyProperty.Register("ExpansionMode", typeof(ExpansionMode), typeof(NavigationBar), new PropertyMetadata(ExpansionMode.Multiple));
 
+        /// <summary>
+        /// Gets or sets a comma separated value of item indexes which are expanded on default.
+        /// </summary>
         public string ExpandedItemIndexes
         {
             get { return (string)GetValue(ExpandedItemIndexesProperty); }
             set { SetValue(ExpandedItemIndexesProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBar.ExpandedItemIndexes" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ExpandedItemIndexesProperty =
             DependencyProperty.Register("ExpandedItemIndexes", typeof(string), typeof(NavigationBar), new PropertyMetadata(OnExpandedItemIndexesChanged));
 
+        /// <summary>
+        /// Gets or sets a value which indicates the orientation of the NavigationBar.
+        /// </summary>
+        [DefaultValue(Orientation.Vertical)]
         public Orientation Orientation
         {
             get { return (Orientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBar.Orientation" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OrientationProperty =
             DependencyProperty.Register("Orientation", typeof(Orientation), typeof(NavigationBar), new PropertyMetadata(Orientation.Vertical));
 

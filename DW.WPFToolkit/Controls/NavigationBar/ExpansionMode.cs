@@ -26,9 +26,19 @@ THE SOFTWARE
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Defines how items can be expanded in the <see cref="DW.WPFToolkit.Controls.NavigationBar" />.
+    /// </summary>
     public enum ExpansionMode
     {
+        /// <summary>
+        /// Just one item can be expanded at once; all other got closed.
+        /// </summary>
         Single,
+
+        /// <summary>
+        /// Its allowed to open multiple items which shared the available space.
+        /// </summary>
         Multiple
     }
 }

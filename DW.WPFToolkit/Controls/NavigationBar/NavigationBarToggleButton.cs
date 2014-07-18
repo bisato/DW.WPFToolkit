@@ -29,6 +29,9 @@ using System.Windows.Controls.Primitives;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the button to be clicked in the <see cref="DW.WPFToolkit.Controls.NavigationBarHeaderBar" />.
+    /// </summary>
     public class NavigationBarToggleButton : ToggleButton
     {
         static NavigationBarToggleButton()

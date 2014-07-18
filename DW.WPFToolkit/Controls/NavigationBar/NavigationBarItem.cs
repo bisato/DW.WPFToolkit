@@ -24,11 +24,15 @@ THE SOFTWARE
 */
 #endregion License
 
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a single item hostet in the <see cref="DW.WPFToolkit.Controls.NavigationBar" />.
+    /// </summary>
     public class NavigationBarItem : HeaderedContentControl
     {
         static NavigationBarItem()
@@ -36,21 +40,34 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NavigationBarItem), new FrameworkPropertyMetadata(typeof(NavigationBarItem)));
         }
 
+        /// <summary>
+        /// Gets or sets a value that indicates of the item is expanded or not.
+        /// </summary>
         public bool IsExpanded
         {
             get { return (bool)GetValue(IsExpandedProperty); }
             set { SetValue(IsExpandedProperty, value); }
         }
 
+        /// <summary>IsExpanded
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBarItem.IsExpanded" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsExpandedProperty =
             DependencyProperty.Register("IsExpanded", typeof(bool), typeof(NavigationBarItem), new PropertyMetadata(OnIsExpandedChanged));
 
+        /// <summary>
+        /// Gets or set the orientation of the item hosted in the <see cref="DW.WPFToolkit.Controls.NavigationBar" />.
+        /// </summary>
+        [DefaultValue(Orientation.Vertical)]
         public Orientation Orientation
         {
             get { return (Orientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBarItem.Orientation" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty OrientationProperty =
             DependencyProperty.Register("Orientation", typeof(Orientation), typeof(NavigationBarItem), new PropertyMetadata(Orientation.Vertical));
 
@@ -66,8 +83,14 @@ namespace DW.WPFToolkit.Controls
                 control.OnCollapsed();
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBarItem.Expanded" /> routed event.
+        /// </summary>
         public static readonly RoutedEvent ExpandedEvent = EventManager.RegisterRoutedEvent("Expanded", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(NavigationBarItem));
 
+        /// <summary>
+        /// Occurs when the item got expanded.
+        /// </summary>
         public event RoutedEventHandler Expanded
         {
             add { AddHandler(ExpandedEvent, value); }
@@ -80,8 +103,14 @@ namespace DW.WPFToolkit.Controls
             RaiseEvent(newEventArgs);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.NavigationBarItem.Collapsed" /> routed event.
+        /// </summary>
         public static readonly RoutedEvent CollapsedEvent = EventManager.RegisterRoutedEvent("Collapsed", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(NavigationBarItem));
 
+        /// <summary>
+        /// Occurs when the item got collapsed.
+        /// </summary>
         public event RoutedEventHandler Collapsed
         {
             add { AddHandler(CollapsedEvent, value); }
