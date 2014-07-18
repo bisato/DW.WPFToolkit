@@ -6,6 +6,9 @@ using DW.WPFToolkit.Interactivity;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Show a WPF window as a messagebox which is full configurable.
+    /// </summary>
     public partial class WPFMessageBox : INotifyPropertyChanged
     {
         internal WPFMessageBox()
@@ -93,14 +96,45 @@ namespace DW.WPFToolkit.Controls
                 Options.HelpRequestCallback();
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates of the details are shown or not
+        /// </summary>
         public bool IsDetailsExpanded { get; set; }
+
+        /// <summary>
+        /// Gets or sets the message to be show.
+        /// </summary>
         public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or sets the icon to show.
+        /// </summary>
         public WPFMessageBoxImage Image { get; set; }
+
+        /// <summary>
+        /// Gets or sets which buttons has to be shown.
+        /// </summary>
         public WPFMessageBoxButtons Buttons { get; set; }
+
+        /// <summary>
+        /// Gets or sets which button is the default button after showing the WPFMessageBox.
+        /// </summary>
         public WPFMessageBoxResult DefaultButton { get; set; }
+
+        /// <summary>
+        /// Gets or sets the result how the user closed the WPFMessageBox.
+        /// </summary>
         public WPFMessageBoxResult Result { get; set; }
+
+        /// <summary>
+        /// Gets or sets the additional WPFMessageBox options.
+        /// </summary>
         public WPFMessageBoxOptions Options { get; set; }
 
+        /// <summary>
+        /// Raises the System.Windows.Window.SourceInitialized event.
+        /// </summary>
+        /// <param name="e">An System.EventArgs that contains the event data.</param>
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
@@ -120,6 +154,10 @@ namespace DW.WPFToolkit.Controls
                 WindowTitleBar.DisableCloseButton(this);
         }
 
+        /// <summary>
+        /// Raises the System.Windows.Window.ContentRendered event.
+        /// </summary>
+        /// <param name="e">An System.EventArgs that contains the event data.</param>
         protected override void OnContentRendered(EventArgs e)
         {
             PART_ButtonPanel.Measure(new Size(double.MaxValue, double.MaxValue));
@@ -142,6 +180,10 @@ namespace DW.WPFToolkit.Controls
             PART_ButtonPanel.SetDefaultButton();
         }
 
+        /// <summary>
+        /// Raises the System.Windows.Window.Closing event.
+        /// </summary>
+        /// <param name="e">A System.ComponentModel.CancelEventArgs that contains the event data.</param>
         protected override void OnClosing(CancelEventArgs e)
         {
             if (!_closeByButtons && (Buttons == WPFMessageBoxButtons.YesNo || Buttons == WPFMessageBoxButtons.AbortRetryIgnore))
@@ -150,9 +192,13 @@ namespace DW.WPFToolkit.Controls
             base.OnClosing(e);
         }
 
+        /// <summary>
+        /// Invoked when an unhandled System.Windows.Input.Keyboard.PreviewKeyDown attached event reaches an element in its route that is derived from this class. Implement this method to add class handling for this event.
+        /// </summary>
+        /// <param name="e">The System.Windows.Input.KeyEventArgs that contains the event data.</param>
         protected override void OnPreviewKeyDown(KeyEventArgs e)
         {
-            base.OnPreviewKeyUp(e);
+            base.OnPreviewKeyDown(e);
 
             if (e.Key == Key.C && Keyboard.Modifiers == ModifierKeys.Control && Options.MessageCopyFormatter != null)
                 Options.MessageCopyFormatter.Copy(Title, Message, Buttons, Image, Options.Strings);
@@ -166,17 +212,162 @@ namespace DW.WPFToolkit.Controls
             Close();
         }
 
-        public static WPFMessageBoxResult Show(Window owner,
-                                               string messageBoxText,
-                                               string caption,
-                                               WPFMessageBoxButtons buttons,
-                                               WPFMessageBoxImage icon,
-                                               WPFMessageBoxResult defaultButton,
-                                               WPFMessageBoxOptions options)
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(string messageBoxText)
+        {
+            return Show(null, messageBoxText, string.Empty, WPFMessageBoxButtons.OK, WPFMessageBoxImage.None, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(string messageBoxText, string caption)
+        {
+            return Show(null, messageBoxText, caption, WPFMessageBoxButtons.OK, WPFMessageBoxImage.None, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <param name="buttons">A DW.WPFToolkit.Controls.WPFMessageBoxButtons value that specifies which button or buttons to display.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(string messageBoxText, string caption, WPFMessageBoxButtons buttons)
+        {
+            return Show(null, messageBoxText, caption, buttons, WPFMessageBoxImage.None, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <param name="buttons">A DW.WPFToolkit.Controls.WPFMessageBoxButtons value that specifies which button or buttons to display.</param>
+        /// <param name="icon">A DW.WPFToolkit.Controls.WPFMessageBoxImage value that specifies the icon to display.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(string messageBoxText, string caption, WPFMessageBoxButtons buttons, WPFMessageBoxImage icon)
+        {
+            return Show(null, messageBoxText, caption, buttons, icon, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <param name="buttons">A DW.WPFToolkit.Controls.WPFMessageBoxButtons value that specifies which button or buttons to display.</param>
+        /// <param name="icon">A DW.WPFToolkit.Controls.WPFMessageBoxImage value that specifies the icon to display.</param>
+        /// <param name="defaultButton">A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies the default result of the message box.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(string messageBoxText, string caption, WPFMessageBoxButtons buttons, WPFMessageBoxImage icon, WPFMessageBoxResult defaultButton)
+        {
+            return Show(null, messageBoxText, caption, buttons, icon, defaultButton, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <param name="buttons">A DW.WPFToolkit.Controls.WPFMessageBoxButtons value that specifies which button or buttons to display.</param>
+        /// <param name="icon">A DW.WPFToolkit.Controls.WPFMessageBoxImage value that specifies the icon to display.</param>
+        /// <param name="defaultButton">A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies the default result of the message box.</param>
+        /// <param name="options">A DW.WPFToolkit.Controls.WPFMessageBoxOptions value object that specifies the options.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(string messageBoxText, string caption, WPFMessageBoxButtons buttons, WPFMessageBoxImage icon, WPFMessageBoxResult defaultButton, WPFMessageBoxOptions options)
+        {
+            return Show(null, messageBoxText, caption, buttons, icon, defaultButton, options);
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="owner">A System.Windows.Window that represents the owner window of the message box.</param>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(Window owner, string messageBoxText)
+        {
+            return Show(owner, messageBoxText, string.Empty, WPFMessageBoxButtons.OK, WPFMessageBoxImage.None, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="owner">A System.Windows.Window that represents the owner window of the message box.</param>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(Window owner, string messageBoxText, string caption)
+        {
+            return Show(owner, messageBoxText, caption, WPFMessageBoxButtons.OK, WPFMessageBoxImage.None, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="owner">A System.Windows.Window that represents the owner window of the message box.</param>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <param name="buttons">A DW.WPFToolkit.Controls.WPFMessageBoxButtons value that specifies which button or buttons to display.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(Window owner, string messageBoxText, string caption, WPFMessageBoxButtons buttons)
+        {
+            return Show(owner, messageBoxText, caption, buttons, WPFMessageBoxImage.None, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="owner">A System.Windows.Window that represents the owner window of the message box.</param>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <param name="buttons">A DW.WPFToolkit.Controls.WPFMessageBoxButtons value that specifies which button or buttons to display.</param>
+        /// <param name="icon">A DW.WPFToolkit.Controls.WPFMessageBoxImage value that specifies the icon to display.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(Window owner, string messageBoxText, string caption, WPFMessageBoxButtons buttons, WPFMessageBoxImage icon)
+        {
+            return Show(owner, messageBoxText, caption, buttons, icon, WPFMessageBoxResult.OK, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="owner">A System.Windows.Window that represents the owner window of the message box.</param>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <param name="buttons">A DW.WPFToolkit.Controls.WPFMessageBoxButtons value that specifies which button or buttons to display.</param>
+        /// <param name="icon">A DW.WPFToolkit.Controls.WPFMessageBoxImage value that specifies the icon to display.</param>
+        /// <param name="defaultButton">A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies the default result of the message box.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(Window owner, string messageBoxText, string caption, WPFMessageBoxButtons buttons, WPFMessageBoxImage icon, WPFMessageBoxResult defaultButton)
+        {
+            return Show(owner, messageBoxText, caption, buttons, icon, defaultButton, new WPFMessageBoxOptions());
+        }
+
+        /// <summary>
+        /// Displays a message box that has a message and that returns a result.
+        /// </summary>
+        /// <param name="owner">A System.Windows.Window that represents the owner window of the message box.</param>
+        /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
+        /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
+        /// <param name="buttons">A DW.WPFToolkit.Controls.WPFMessageBoxButtons value that specifies which button or buttons to display.</param>
+        /// <param name="icon">A DW.WPFToolkit.Controls.WPFMessageBoxImage value that specifies the icon to display.</param>
+        /// <param name="defaultButton">A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies the default result of the message box.</param>
+        /// <param name="options">A DW.WPFToolkit.Controls.WPFMessageBoxOptions value object that specifies the options.</param>
+        /// <returns>A DW.WPFToolkit.Controls.WPFMessageBoxResult value that specifies which message box button is clicked by the user.</returns>
+        public static WPFMessageBoxResult Show(Window owner, string messageBoxText, string caption, WPFMessageBoxButtons buttons, WPFMessageBoxImage icon, WPFMessageBoxResult defaultButton, WPFMessageBoxOptions options)
         {
             if (options == null)
                 throw new ArgumentNullException("options");
-
+            
             var box = new WPFMessageBox
             {
                 Owner = owner,
@@ -223,6 +414,9 @@ namespace DW.WPFToolkit.Controls
             window.SnapsToDevicePixels = true;
         }
 
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)

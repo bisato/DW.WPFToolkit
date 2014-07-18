@@ -29,6 +29,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents a button used in the <see cref="DW.WPFToolkit.Controls.WPFMessageBox" />.
+    /// </summary>
     public class WPFMessageBoxButtonControl : Button
     {
         static WPFMessageBoxButtonControl()

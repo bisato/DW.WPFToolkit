@@ -24,11 +24,15 @@ THE SOFTWARE
 */
 #endregion License
 
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the details button shown in the <see cref="DW.WPFToolkit.Controls.WPFMessageBox" />.
+    /// </summary>
     public class WPFMessageBoxDetailsButtonControl : Expander
     {
         static WPFMessageBoxDetailsButtonControl()
@@ -36,21 +40,35 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(WPFMessageBoxDetailsButtonControl), new FrameworkPropertyMetadata(typeof(WPFMessageBoxDetailsButtonControl)));
         }
 
+        /// <summary>
+        /// Gets or sets the text to show on the button if the details are not shown.
+        /// </summary>
+        [DefaultValue(null)]
         public string CollapsedHeaderText
         {
             get { return (string)GetValue(CollapsedHeaderTextProperty); }
             set { SetValue(CollapsedHeaderTextProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxDetailsButtonControl.CollapsedHeaderText" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty CollapsedHeaderTextProperty =
             DependencyProperty.Register("CollapsedHeaderText", typeof(string), typeof(WPFMessageBoxDetailsButtonControl), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets the text to show on the button if the details are shown.
+        /// </summary>
+        [DefaultValue(null)]
         public string ExpandedHeaderText
         {
             get { return (string)GetValue(ExpandedHeaderTextProperty); }
             set { SetValue(ExpandedHeaderTextProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxDetailsButtonControl.ExpandedHeaderText" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ExpandedHeaderTextProperty =
             DependencyProperty.Register("ExpandedHeaderText", typeof(string), typeof(WPFMessageBoxDetailsButtonControl), new UIPropertyMetadata(null));
     }

@@ -24,6 +24,7 @@ THE SOFTWARE
 */
 #endregion License
 
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -32,6 +33,9 @@ using DW.WPFToolkit.Helpers;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the buttons panel hosted in the <see cref="DW.WPFToolkit.Controls.WPFMessageBox" />.
+    /// </summary>
     [TemplatePart(Name = "PART_SingleOKButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_OKButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_YesButton", Type = typeof(Button))]
@@ -54,6 +58,9 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(WPFMessageBoxButtonsPanel), new FrameworkPropertyMetadata(typeof(WPFMessageBoxButtonsPanel)));
         }
 
+        /// <summary>
+        /// The template gets added to the control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -213,107 +220,190 @@ namespace DW.WPFToolkit.Controls
                 control.Style = style;
         }
 
+        /// <summary>
+        /// Gets or sets the result how the user closed the WPFMessageBox.
+        /// </summary>
+        [DefaultValue(WPFMessageBoxResult.None)]
         public WPFMessageBoxResult Result
         {
             get { return (WPFMessageBoxResult)GetValue(ResultProperty); }
             set { SetValue(ResultProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.Result" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ResultProperty =
             DependencyProperty.Register("Result", typeof(WPFMessageBoxResult), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(WPFMessageBoxResult.None));
 
+        /// <summary>
+        /// Gets or sets which buttons has to be shown.
+        /// </summary>
+        [DefaultValue(WPFMessageBoxButtons.OK)]
         public WPFMessageBoxButtons Buttons
         {
             get { return (WPFMessageBoxButtons)GetValue(ButtonsProperty); }
             set { SetValue(ButtonsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.Buttons" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ButtonsProperty =
             DependencyProperty.Register("Buttons", typeof(WPFMessageBoxButtons), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(WPFMessageBoxButtons.OK));
 
+        /// <summary>
+        /// Gets or sets which button is the default button after showing the WPFMessageBox.
+        /// </summary>
+        [DefaultValue(WPFMessageBoxResult.None)]
         public WPFMessageBoxResult DefaultButton
         {
             get { return (WPFMessageBoxResult)GetValue(DefaultButtonProperty); }
             set { SetValue(DefaultButtonProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.DefaultButton" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty DefaultButtonProperty =
             DependencyProperty.Register("DefaultButton", typeof(WPFMessageBoxResult), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(WPFMessageBoxResult.None));
 
+        /// <summary>
+        /// Gets or sets all strings to be used in the WPFMessageBox buttons.
+        /// </summary>
+        [DefaultValue(null)]
         public MessageBoxStrings Strings
         {
             get { return (MessageBoxStrings)GetValue(StringsProperty); }
             set { SetValue(StringsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.Strings" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty StringsProperty =
             DependencyProperty.Register("Strings", typeof(MessageBoxStrings), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the WPFMessageBox has a help button or not.
+        /// </summary>
+        [DefaultValue(false)]
         public bool ShowHelpButton
         {
             get { return (bool)GetValue(ShowHelpButtonProperty); }
             set { SetValue(ShowHelpButtonProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.ShowHelpButton" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowHelpButtonProperty =
             DependencyProperty.Register("ShowHelpButton", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the WPFMessageBox has a 'Yes To All' button.
+        /// </summary>
+        [DefaultValue(false)]
         public bool ShowYesToAllButton
         {
             get { return (bool)GetValue(ShowYesToAllButtonProperty); }
             set { SetValue(ShowYesToAllButtonProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.ShowYesToAllButton" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowYesToAllButtonProperty =
             DependencyProperty.Register("ShowYesToAllButton", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the WPFMessageBox has a 'No To All' button.
+        /// </summary>
+        [DefaultValue(false)]
         public bool ShowNoToAllButton
         {
             get { return (bool)GetValue(ShowNoToAllButtonProperty); }
             set { SetValue(ShowNoToAllButtonProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.ShowNoToAllButton" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowNoToAllButtonProperty =
             DependencyProperty.Register("ShowNoToAllButton", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new PropertyMetadata(false));
-        
+
+        /// <summary>
+        /// Gets or sets a value which indicates if the WPFMessageBox has a 'Do Not Show Again' checkbox.
+        /// </summary>
+        [DefaultValue(false)]
         public bool ShowDoNotShowAgainCheckBox
         {
             get { return (bool)GetValue(ShowDoNotShowAgainCheckBoxProperty); }
             set { SetValue(ShowDoNotShowAgainCheckBoxProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.ShowDoNotShowAgainCheckBox" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowDoNotShowAgainCheckBoxProperty =
             DependencyProperty.Register("ShowDoNotShowAgainCheckBox", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the 'Do Not Show Again' is checked on start and the check state after close the WPFMessageBox.
+        /// </summary>
+        [DefaultValue(false)]
         public bool IsDoNotShowAgainChecked
         {
             get { return (bool)GetValue(IsDoNotShowAgainCheckedProperty); }
             set { SetValue(IsDoNotShowAgainCheckedProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.IsDoNotShowAgainChecked" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsDoNotShowAgainCheckedProperty =
             DependencyProperty.Register("IsDoNotShowAgainChecked", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the WPFMessageBox has a details button.
+        /// </summary>
+        [DefaultValue(false)]
         public bool ShowDetails
         {
             get { return (bool)GetValue(ShowDetailsProperty); }
             set { SetValue(ShowDetailsProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.ShowDetails" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ShowDetailsProperty =
             DependencyProperty.Register("ShowDetails", typeof(bool), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(false));
 
+        /// <summary>
+        /// Gets or sets a additional control which gets shown beween the details and normal buttons.
+        /// </summary>
+        [DefaultValue(null)]
         public object CustomItem
         {
             get { return (object)GetValue(CustomItemProperty); }
             set { SetValue(CustomItemProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.CustomItem" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty CustomItemProperty =
             DependencyProperty.Register("CustomItem", typeof(object), typeof(WPFMessageBoxButtonsPanel), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.Click" /> routed event.
+        /// </summary>
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
 
+        /// <summary>
+        /// Occurs when a button got clicked.
+        /// </summary>
         public event RoutedEventHandler Click
         {
             add { AddHandler(ClickEvent, value); }
@@ -326,8 +416,14 @@ namespace DW.WPFToolkit.Controls
             RaiseEvent(newEventArgs);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.HelpRequest" /> routed event.
+        /// </summary>
         public static readonly RoutedEvent HelpRequestEvent = EventManager.RegisterRoutedEvent("HelpRequest", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
 
+        /// <summary>
+        /// Occurs when the help button got clicked.
+        /// </summary>
         public event RoutedEventHandler HelpRequest
         {
             add { AddHandler(HelpRequestEvent, value); }
@@ -340,8 +436,14 @@ namespace DW.WPFToolkit.Controls
             RaiseEvent(newEventArgs);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxButtonsPanel.ExpandDetails" /> routed event.
+        /// </summary>
         public static readonly RoutedEvent ExpandDetailsEvent = EventManager.RegisterRoutedEvent("ExpandDetails", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(WPFMessageBoxButtonsPanel));
 
+        /// <summary>
+        /// Occurs when the details button got clicked.
+        /// </summary>
         public event RoutedEventHandler ExpandDetails
         {
             add { AddHandler(ExpandDetailsEvent, value); }

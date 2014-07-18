@@ -26,6 +26,9 @@ THE SOFTWARE
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Provides messagebox element strings in the current system language.
+    /// </summary>
     public class MessageBoxStrings
     {
         private string _ok;
@@ -44,90 +47,135 @@ namespace DW.WPFToolkit.Controls
         private string _openDetails;
         private string _closeDetails;
 
+        /// <summary>
+        /// Gets or sets the translation for 'OK'.
+        /// </summary>
         public string OK
         {
             get { return Load(SystemTexts.OK_CAPTION, _ok); }
             set { _ok = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Cancel'.
+        /// </summary>
         public string Cancel
         {
             get { return Load(SystemTexts.CANCEL_CAPTION, _cancel); }
             set { _cancel = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Abort'.
+        /// </summary>
         public string Abort
         {
             get { return Load(SystemTexts.ABORT_CAPTION, _abort); }
             set { _abort = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Retry'.
+        /// </summary>
         public string Retry
         {
             get { return Load(SystemTexts.RETRY_CAPTION, _retry); }
             set { _retry = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Ignore'.
+        /// </summary>
         public string Ignore
         {
             get { return Load(SystemTexts.IGNORE_CAPTION, _ignore); }
             set { _ignore = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Yes'.
+        /// </summary>
         public string Yes
         {
             get { return Load(SystemTexts.YES_CAPTION, _yes); }
             set { _yes = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'No'.
+        /// </summary>
         public string No
         {
             get { return Load(SystemTexts.NO_CAPTION, _no); }
             set { _no = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Help'.
+        /// </summary>
         public string Help
         {
             get { return Load(SystemTexts.HELP_CAPTION, _help); }
             set { _help = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Try Again'.
+        /// </summary>
         public string TryAgain
         {
             get { return Load(SystemTexts.TRYAGAIN_CAPTION, _tryAgain); }
             set { _tryAgain = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Continue'.
+        /// </summary>
         public string Continue
         {
             get { return Load(SystemTexts.CONTINUE_CAPTION, _continue); }
             set { _continue = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Yes To All'.
+        /// </summary>
         public string YesToAll
         {
             get { return LoadCustom(YesToAllId, _yesToAll); }
             set { _yesToAll = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'No To All'.
+        /// </summary>
         public string NoToAll
         {
             get { return LoadCustom(NoToAllId, _noToAll); }
             set { _noToAll = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Do Not Show Again'.
+        /// </summary>
         public string DoNotShowAgain
         {
             get { return LoadCustom(DoNotShowAgainId, _doNotShowAgain); }
             set { _doNotShowAgain = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Open Details'.
+        /// </summary>
         public string OpenDetails
         {
             get { return LoadCustom(OpenDetailsId, _openDetails); }
             set { _openDetails = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the translation for 'Close Details'.
+        /// </summary>
         public string CloseDetails
         {
             get { return LoadCustom(CloseDetailsId, _closeDetails); }

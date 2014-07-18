@@ -29,6 +29,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the CheckBox used in the <see cref="DW.WPFToolkit.Controls.WPFMessageBox" />.
+    /// </summary>
     public class WPFMessageBoxCheckBoxControl : CheckBox
     {
         static WPFMessageBoxCheckBoxControl()

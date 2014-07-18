@@ -24,6 +24,7 @@ THE SOFTWARE
 */
 #endregion License
 
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
@@ -31,6 +32,9 @@ using System.Windows.Media.Imaging;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the icon shown in the <see cref="DW.WPFToolkit.Controls.WPFMessageBox" />.
+    /// </summary>
     public class WPFMessageBoxImageControl : Control
     {
         static WPFMessageBoxImageControl()
@@ -38,21 +42,35 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(WPFMessageBoxImageControl), new FrameworkPropertyMetadata(typeof(WPFMessageBoxImageControl)));
         }
 
+        /// <summary>
+        /// Gets or sets the image to be shown.
+        /// </summary>
+        [DefaultValue(WPFMessageBoxImage.None)]
         public WPFMessageBoxImage Image
         {
             get { return (WPFMessageBoxImage)GetValue(ImageProperty); }
             set { SetValue(ImageProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxImageControl.Image" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty ImageProperty =
             DependencyProperty.Register("Image", typeof(WPFMessageBoxImage), typeof(WPFMessageBoxImageControl), new PropertyMetadata(WPFMessageBoxImage.None, OnImageChanged));
 
+        /// <summary>
+        /// Gets or sets the BitmapSource which represents the image to show.
+        /// </summary>
+        [DefaultValue(null)]
         public BitmapSource BitmapSource
         {
             get { return (BitmapSource)GetValue(BitmapSourceProperty); }
             set { SetValue(BitmapSourceProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxImageControl.BitmapSource" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty BitmapSourceProperty =
             DependencyProperty.Register("BitmapSource", typeof(BitmapSource), typeof(WPFMessageBoxImageControl), new PropertyMetadata(null));
 

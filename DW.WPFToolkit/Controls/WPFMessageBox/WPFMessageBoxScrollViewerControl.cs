@@ -29,6 +29,9 @@ using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Represents the ScrollViewer used in the <see cref="DW.WPFToolkit.Controls.WPFMessageBox" />.
+    /// </summary>
     public class WPFMessageBoxScrollViewerControl : ScrollViewer
     {
         static WPFMessageBoxScrollViewerControl()

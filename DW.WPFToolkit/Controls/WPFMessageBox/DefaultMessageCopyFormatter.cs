@@ -29,8 +29,19 @@ using System.Windows;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Takes all data from the <see cref="DW.WPFToolkit.Controls.WPFMessageBox" /> after user pressed Ctrl+C and copy its information to the clipboard.
+    /// </summary>
     public class DefaultMessageCopyFormatter : IMessageCopyFormatter
     {
+        /// <summary>
+        /// Called to copy the WPFMessageBox content somewhere to.
+        /// </summary>
+        /// <param name="title">The WPFMessageBox title.</param>
+        /// <param name="message">The message shown in the WPFMessageBox.</param>
+        /// <param name="buttons">The buttons available in the WPFMessageBox.</param>
+        /// <param name="icon">The icon shown in the WPFMessageBox.</param>
+        /// <param name="strings">The strings used in the WPFMessageBox.</param>
         public void Copy(string title, string message, WPFMessageBoxButtons buttons, WPFMessageBoxImage icon, MessageBoxStrings strings)
         {
             var builder = new StringBuilder();

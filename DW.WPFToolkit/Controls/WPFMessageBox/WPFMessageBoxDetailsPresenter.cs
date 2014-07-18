@@ -24,11 +24,15 @@ THE SOFTWARE
 */
 #endregion License
 
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace DW.WPFToolkit.Controls
 {
+    /// <summary>
+    /// Holds the details content shown if details in the <see cref="DW.WPFToolkit.Controls.WPFMessageBox"/> are expanded.
+    /// </summary>
     public class WPFMessageBoxDetailsPresenter : ContentControl
     {
         static WPFMessageBoxDetailsPresenter()
@@ -36,12 +40,19 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(WPFMessageBoxDetailsPresenter), new FrameworkPropertyMetadata(typeof(WPFMessageBoxDetailsPresenter)));
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates if the details are visible or not.
+        /// </summary>
+        [DefaultValue(false)]
         public bool IsDetailsExpanded
         {
             get { return (bool)GetValue(IsDetailsExpandedProperty); }
             set { SetValue(IsDetailsExpandedProperty, value); }
         }
-        
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.WPFMessageBoxDetailsPresenter.IsDetailsExpanded" /> dependency property.
+        /// </summary>
         public static readonly DependencyProperty IsDetailsExpandedProperty =
             DependencyProperty.Register("IsDetailsExpanded", typeof(bool), typeof(WPFMessageBoxDetailsPresenter), new UIPropertyMetadata(false));
     }
