@@ -13,7 +13,7 @@
     <RootNamespace>Documentation</RootNamespace>
     <Name>Documentation</Name>
     <!-- SHFB properties -->
-    <FrameworkVersion>.NET Framework 4.0</FrameworkVersion>
+    <FrameworkVersion>.NET Framework 4.5.1</FrameworkVersion>
     <OutputPath>Documentation\</OutputPath>
     <HtmlHelpName>DW.WPFToolkit.Documentation</HtmlHelpName>
     <Language>en-US</Language>

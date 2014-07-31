@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA84A91C-3D62-4660-9549-2C5B8FED5989}</ProjectGuid>
+    <ProjectGuid>{C126572C-FCDB-419F-AFC7-47A19BEB1E31}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DW.WPFToolkit</RootNamespace>
     <AssemblyName>DW.WPFToolkit</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,7 +59,6 @@
   <ItemGroup>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Compile Include="Controls\ArcPanel\ArcPanel.cs" />
     <Compile Include="Controls\ArcPanel\PathCalculator.cs" />
@@ -97,8 +97,8 @@
     <Compile Include="Controls\EnhancedTreeView\EnhancedTreeViewItem.cs" />
     <Compile Include="Controls\EnumerationComboBox\EnumerationComboBox.cs" />
     <Compile Include="Controls\EnumerationComboBox\EnumerationComboBoxItem.cs" />
-    <Compile Include="Controls\NavigationBar\ExpansionMode.cs" />
     <Compile Include="Controls\ImageButton\ImageButton.cs" />
+    <Compile Include="Controls\NavigationBar\ExpansionMode.cs" />
     <Compile Include="Controls\NavigationBar\NavigationBar.cs" />
     <Compile Include="Controls\NavigationBar\NavigationBarHeaderBar.cs" />
     <Compile Include="Controls\NavigationBar\NavigationBarItem.cs" />
@@ -211,11 +211,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\NavigationBar\Styles.xaml">
+    <Page Include="Controls\ImageButton\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\ImageButton\Styles.xaml">
+    <Page Include="Controls\NavigationBar\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

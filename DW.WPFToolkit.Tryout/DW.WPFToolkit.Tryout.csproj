@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3B62A636-E77A-45B4-AE9F-3C51153761B1}</ProjectGuid>
+    <ProjectGuid>{2AF6EFB4-3BFF-4526-BEF2-A9E9A70F71AE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DW.WPFToolkit.Tryout</RootNamespace>
     <AssemblyName>DW.WPFToolkit.Tryout</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,8 +37,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxDemo.xaml.cs">
+      <DependentUpon>WPFMessageBoxDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Page Include="Controls\WPFMessageBox\WPFMessageBoxDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -68,9 +70,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxDemo.xaml.cs">
-      <DependentUpon>WPFMessageBoxDemo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -79,10 +78,9 @@
   <ItemGroup>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DW.WPFToolkit\DW.WPFToolkit.csproj">
-      <Project>{da84a91c-3d62-4660-9549-2c5b8fed5989}</Project>
+      <Project>{c126572c-fcdb-419f-afc7-47a19beb1e31}</Project>
       <Name>DW.WPFToolkit</Name>
     </ProjectReference>
   </ItemGroup>

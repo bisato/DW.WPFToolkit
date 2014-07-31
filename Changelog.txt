@@ -1,6 +1,12 @@
 
 
 ==============================
+Release 5.4.0.0
+==============================
+2014-07-31    Update project to .net 4.5.1
+
+
+==============================
 Release 5.2.0.0
 ==============================
 2014-06-27    EnhancedTreeView: Add command to be executed if the selected item is changed
