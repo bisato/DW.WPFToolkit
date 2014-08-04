@@ -1,4 +1,4 @@
-#region License
+﻿#region License
 /*
 The MIT License (MIT)
 
@@ -25,13 +25,8 @@ THE SOFTWARE
 #endregion License
 
 using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Windows;
 
-[assembly: AssemblyTitle("DW.WPFToolkit.Tryout")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("DW.WPFToolkit.Tryout")]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
-[assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)]
+[assembly: AssemblyCompany("my-libraries David Wendland")]
+[assembly: AssemblyCopyright("Copyright © my-libraries David Wendland 2009-2014")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyVersion("5.3.0.0")]

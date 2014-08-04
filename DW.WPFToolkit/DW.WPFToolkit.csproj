@@ -184,6 +184,7 @@
     <Compile Include="Interactivity\WindowBehavior\WindowClosingArgs.cs" />
     <Compile Include="Interactivity\WindowTitleBarBehavior\WindowTitleBar.cs" />
     <Compile Include="Interactivity\WindowTitleBarBehavior\WindowTitleBarBehavior.cs" />
+    <Compile Include="Properties\CommonMeta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
