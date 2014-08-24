@@ -4,6 +4,7 @@
 Release 5.4.0.0
 ==============================
 2014-07-31    Update project to .net 4.5.1
+2014-08-24    The change of the ContentAlignment in the EnhancedTextBox has affected the mouse cursor too
 
 
 ==============================

@@ -84,7 +84,7 @@ THE SOFTWARE
                             <ContentControl Content="{TemplateBinding SecondControl}"
                                             Focusable="False"
                                             DockPanel.Dock="{TemplateBinding SecondControlPosition}" />
-                            <Grid VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                            <Grid>
                                 <TextBlock AutomationProperties.AutomationId="CUI_BackgroundTextBlock"
                                            x:Name="PART_InfoText"
                                            Text="{TemplateBinding InfoText}"
