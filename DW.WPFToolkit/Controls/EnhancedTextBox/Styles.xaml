@@ -252,7 +252,7 @@ THE SOFTWARE
                         Padding="{Binding BrowseButtonPadding}"
                         VerticalAlignment="{Binding VerticalBrowseButtonAlignment}"
                         HorizontalAlignment="{Binding HorizontalBrowseButtonAlignment}"
-                        Visibility="{Binding ShowBrowseButton}"
+                        Visibility="{Binding ShowBrowseButton, Converter={StaticResource BooleanToVisibilityConverter}}"
                         Command="{Binding BrowseCommand}"
                         CommandParameter="{Binding BrowseCommandParameter}"
                         DockPanel.Dock="{Binding BrowseButtonPosition}" />
