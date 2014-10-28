@@ -49,6 +49,8 @@ namespace DW.WPFToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EllipsedProgressBar), new FrameworkPropertyMetadata(typeof(EllipsedProgressBar)));
         }
 
+        private bool _initializeCollapsed;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.EllipsedProgressBar" /> class.
         /// </summary>
@@ -61,7 +63,26 @@ namespace DW.WPFToolkit.Controls
             {
                 CalculateValues();
                 OnIsIndeterminateChanged();
+
+                _initializeCollapsed = Visibility == Visibility.Collapsed;
             };
+        }
+
+        /// <summary>
+        /// Called when the element has to be rendered.
+        /// </summary>
+        /// <param name="drawingContext">The drawing instructions for a specific element. This context is provided to the layout system.</param>
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            base.OnRender(drawingContext);
+
+            if (_initializeCollapsed)
+            {
+                _initializeCollapsed = false;
+
+                CalculateValues();
+                OnIsIndeterminateChanged();
+            }
         }
 
         /// <summary>
@@ -490,6 +511,9 @@ namespace DW.WPFToolkit.Controls
 
         private void BeginAnimation()
         {
+            if (_pieEllipse == null || _pointerPath == null || _itemsPanel == null)
+                return;
+
             _currentAnimation = new DoubleAnimation();
             _currentAnimation.From = 0;
             _currentAnimation.To = 360;
