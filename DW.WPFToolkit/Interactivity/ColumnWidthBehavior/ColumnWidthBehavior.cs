@@ -122,7 +122,7 @@ namespace DW.WPFToolkit.Interactivity
         /// Identifies the <see cref="DW.WPFToolkit.Interactivity.ColumnWidthBehavior.GetTemplatePaddingWidthFix(DependencyObject)" /> <see cref="DW.WPFToolkit.Interactivity.ColumnWidthBehavior.SetTemplatePaddingWidthFix(DependencyObject, double)" /> attached property.
         /// </summary>
         public static readonly DependencyProperty TemplatePaddingWidthFixProperty =
-            DependencyProperty.RegisterAttached("TemplatePaddingWidthFix", typeof(double), typeof(ColumnVisibilityBehavior), new UIPropertyMetadata(10.0));
+            DependencyProperty.RegisterAttached("TemplatePaddingWidthFix", typeof(double), typeof(ColumnWidthBehavior), new UIPropertyMetadata(10.0));
 
         private static bool GetOriginalWidthIsRemembered(DependencyObject obj)
         {
