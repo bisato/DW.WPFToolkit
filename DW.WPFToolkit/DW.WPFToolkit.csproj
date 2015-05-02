@@ -176,6 +176,8 @@
     <Compile Include="Interactivity\ColumnVisibilityBehavior\ColumnVisibilityBehavior.cs" />
     <Compile Include="Interactivity\ColumnWidthBehavior\ColumnResizeKind.cs" />
     <Compile Include="Interactivity\ColumnWidthBehavior\ColumnWidthBehavior.cs" />
+    <Compile Include="Interactivity\CutTooltipBehavior\CutTextKind.cs" />
+    <Compile Include="Interactivity\CutTooltipBehavior\CutTooltipBehavior.cs" />
     <Compile Include="Interactivity\DoubleClickBehavior\DoubleClickBehavior.cs" />
     <Compile Include="Interactivity\FocusBehavior\FocusBehavior.cs" />
     <Compile Include="Interactivity\ScrollBehavior\ScrollBehavior.cs" />
