@@ -3,6 +3,7 @@
 ==============================
 Release 5.4.0.0
 ==============================
+2015-05-02    CutTooltipBehavior: Add CutTooltipBehavior
 2015-03-01    ColumnWidthBehavior: A dependency property of was registered for the wrong type
 2014-10-28    EllipsedProgressBar: Handle it when the element is collapsed on load and enabled later
 2014-08-31    ShowBrowseButton was not working in the BrowseTextBox

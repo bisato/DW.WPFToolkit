@@ -2,7 +2,7 @@
 /*
 The MIT License (MIT)
 
-Copyright (c) 2009-2014 David Wendland
+Copyright (c) 2009-2015 David Wendland
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -27,6 +27,6 @@ THE SOFTWARE
 using System.Reflection;
 
 [assembly: AssemblyCompany("my-libraries David Wendland")]
-[assembly: AssemblyCopyright("Copyright © my-libraries David Wendland 2009-2014")]
+[assembly: AssemblyCopyright("Copyright © my-libraries David Wendland 2009-2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyVersion("5.3.0.0")]
