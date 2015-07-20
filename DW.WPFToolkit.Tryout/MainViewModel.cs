@@ -1,4 +1,4 @@
-#region License
+﻿#region License
 /*
 The MIT License (MIT)
 
@@ -24,13 +24,23 @@ THE SOFTWARE
 */
 #endregion License
 
+using System.ComponentModel;
+
 namespace DW.WPFToolkit.Tryout
 {
-    public partial class MainWindow
+    public class MainViewModel : INotifyPropertyChanged
     {
-        public MainWindow()
+        public MainViewModel()
         {
-            InitializeComponent();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string property)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(property));
         }
     }
 }

@@ -158,6 +158,10 @@
     <Compile Include="Converters\NullToBooleanConverter\NullToBooleanDirection.cs" />
     <Compile Include="Converters\NullToVisibilityConverter\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter\NullToVisibilityDirection.cs" />
+    <Compile Include="Helpers\BindingExtension\BindingAdapter.cs" />
+    <Compile Include="Helpers\BindingExtension\BindingExtension.cs" />
+    <Compile Include="Helpers\BindingExtension\BindingExtensionCollection.cs" />
+    <Compile Include="Helpers\BindingExtension\BindingHelper.cs" />
     <Compile Include="Helpers\ControlFocus\ControlFocus.cs" />
     <Compile Include="Helpers\KeyboardWatcher\HookType.cs" />
     <Compile Include="Helpers\KeyboardWatcher\KeyboardMessages.cs" />

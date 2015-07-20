@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 The MIT License (MIT)
 
 Copyright (c) 2009-2015 David Wendland
@@ -21,7 +21,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE
 -->
-
-<Application x:Class="DW.WPFToolkit.Tryout.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" />
+    
+<Window x:Class="DW.WPFToolkit.Tryout.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainView"
+        Height="300"
+        Width="300">
+    
+    <StackPanel>
+    </StackPanel>
+    
+</Window>

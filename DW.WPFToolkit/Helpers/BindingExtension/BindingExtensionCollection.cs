@@ -1,4 +1,5 @@
-<!--
+﻿#region License
+/*
 The MIT License (MIT)
 
 Copyright (c) 2009-2015 David Wendland
@@ -20,8 +21,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE
--->
+*/
+#endregion License
 
-<Application x:Class="DW.WPFToolkit.Tryout.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" />
+using System.Collections.ObjectModel;
+
+namespace DW.WPFToolkit.Helpers
+{
+    public class BindingExtensionCollection : Collection<BindingExtension>
+    {
+    }
+}

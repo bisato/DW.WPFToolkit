@@ -24,9 +24,18 @@ THE SOFTWARE
 */
 #endregion License
 
+using System.Windows;
+
 namespace DW.WPFToolkit.Tryout
 {
     public partial class App
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var viewModel = new MainViewModel();
+            var view = new MainView();
+            view.DataContext = viewModel;
+            view.ShowDialog();
+        }
     }
 }
