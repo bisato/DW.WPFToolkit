@@ -89,8 +89,9 @@ namespace DW.WPFToolkit.Controls
 
         private void HandleUpButtonClick(object sender, RoutedEventArgs e)
         {
-            double value = 0;
-            double.TryParse(Text, out value);
+            double value;
+            if (!double.TryParse(Text, out value))
+                value = GetMinimum();
             value += Step;
             if (value <= GetMaximum())
                 Text = value.ToString(CultureInfo.CurrentUICulture);
@@ -98,8 +99,9 @@ namespace DW.WPFToolkit.Controls
 
         private void HandleDownButtonClick(object sender, RoutedEventArgs e)
         {
-            double value = 0;
-            double.TryParse(Text, out value);
+            double value;
+            if (!double.TryParse(Text, out value))
+                value = GetMaximum();
             value -= Step;
             if (value >= GetMinimum())
                 Text = value.ToString(CultureInfo.CurrentUICulture);
@@ -107,7 +109,7 @@ namespace DW.WPFToolkit.Controls
 
         private void HandleResetButtonClick(object sender, RoutedEventArgs routedEventArgs)
         {
-            Text = DefaultValue == null ? string.Empty : DefaultValue.ToString();
+            Text = DefaultValue != null ? DefaultValue.ToString() : null;
         }
 
         /// <summary>
@@ -115,7 +117,7 @@ namespace DW.WPFToolkit.Controls
         /// </summary>
         public object Minimum
         {
-            get { return (object)GetValue(MinimumProperty); }
+            get { return GetValue(MinimumProperty); }
             set { SetValue(MinimumProperty, value); }
         }
 
@@ -130,7 +132,7 @@ namespace DW.WPFToolkit.Controls
         /// </summary>
         public object Maximum
         {
-            get { return (object)GetValue(MaximumProperty); }
+            get { return GetValue(MaximumProperty); }
             set { SetValue(MaximumProperty, value); }
         }
 
@@ -211,7 +213,7 @@ namespace DW.WPFToolkit.Controls
         [DefaultValue(0.0)]
         public object DefaultValue
         {
-            get { return (object)GetValue(DefaultValueProperty); }
+            get { return GetValue(DefaultValueProperty); }
             set { SetValue(DefaultValueProperty, value); }
         }
 
@@ -273,7 +275,7 @@ namespace DW.WPFToolkit.Controls
             if (Minimum == null)
                 return double.MinValue;
             double value = 0;
-            if (double.TryParse(Minimum.ToString(), System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value))
+            if (double.TryParse(Minimum.ToString(), NumberStyles.Float, CultureInfo.CurrentUICulture, out value))
                 return value;
             return double.MinValue;
         }
@@ -283,7 +285,7 @@ namespace DW.WPFToolkit.Controls
             if (Maximum == null)
                 return double.MaxValue;
             double value = 0;
-            if (double.TryParse(Maximum.ToString(), System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value))
+            if (double.TryParse(Maximum.ToString(), NumberStyles.Float, CultureInfo.CurrentUICulture, out value))
                 return value;
             return double.MaxValue;
         }
@@ -295,18 +297,18 @@ namespace DW.WPFToolkit.Controls
             input = input.Insert(box.SelectionStart, insertText);
             if ((input.Equals("-", StringComparison.Ordinal)) && GetMinimum() < 0)
                 return true;
-            
+
             if (NumberType == NumberTypes.Integer)
             {
                 var value = 0;
-                if (int.TryParse(input, System.Globalization.NumberStyles.Integer, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
+                if (int.TryParse(input, NumberStyles.Integer, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
                     return true;
                 return false;
             }
             else
             {
                 double value = 0;
-                if (double.TryParse(input, System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
+                if (double.TryParse(input, NumberStyles.Float, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
                     return true;
                 return false;
             }
@@ -367,7 +369,7 @@ namespace DW.WPFToolkit.Controls
         public int GetInteger()
         {
             int value;
-            if (int.TryParse(Text, System.Globalization.NumberStyles.Integer, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
+            if (int.TryParse(Text, NumberStyles.Integer, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
                 return value;
             return 0;
         }
@@ -379,7 +381,7 @@ namespace DW.WPFToolkit.Controls
         public double GetDouble()
         {
             double value;
-            if (double.TryParse(Text, System.Globalization.NumberStyles.Float, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
+            if (double.TryParse(Text, NumberStyles.Float, CultureInfo.CurrentUICulture, out value) && IsValidRange(value))
                 return value;
             return 0;
         }

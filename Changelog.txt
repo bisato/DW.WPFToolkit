@@ -4,6 +4,8 @@
 ==============================
 Release 5.4.0.0
 ==============================
+2015-08-04	  NumberBox: Handle up and down steps differently in the case of an invalid value
+              NumberBox: Add support for a null default value (Thanks to Thomas!)
 2015-07-20	  BindingExtension: Added BindingExtension to be able to change all binding parameters by another bindings
 2015-05-02    CutTooltipBehavior: Add CutTooltipBehavior
 2015-03-01    ColumnWidthBehavior: A dependency property of was registered for the wrong type
