@@ -4,6 +4,7 @@
 ==============================
 Release 5.4.0.0
 ==============================
+2015-08-05    NumberBox: When value is null step up and step down starts from the minimum or maximum value (Thanks to Thomas!)
 2015-08-04	  NumberBox: Handle up and down steps differently in the case of an invalid value
               NumberBox: Add support for a null default value (Thanks to Thomas!)
 2015-07-20	  BindingExtension: Added BindingExtension to be able to change all binding parameters by another bindings

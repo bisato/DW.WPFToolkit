@@ -90,9 +90,11 @@ namespace DW.WPFToolkit.Controls
         private void HandleUpButtonClick(object sender, RoutedEventArgs e)
         {
             double value;
-            if (!double.TryParse(Text, out value))
+            if (double.TryParse(Text, out value))
+                value += Step;
+            else
                 value = GetMinimum();
-            value += Step;
+
             if (value <= GetMaximum())
                 Text = value.ToString(CultureInfo.CurrentUICulture);
         }
@@ -100,9 +102,11 @@ namespace DW.WPFToolkit.Controls
         private void HandleDownButtonClick(object sender, RoutedEventArgs e)
         {
             double value;
-            if (!double.TryParse(Text, out value))
+            if (double.TryParse(Text, out value))
+                value -= Step;
+            else
                 value = GetMaximum();
-            value -= Step;
+
             if (value >= GetMinimum())
                 Text = value.ToString(CultureInfo.CurrentUICulture);
         }
