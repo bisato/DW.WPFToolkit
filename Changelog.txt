@@ -1,19 +1,18 @@
 
 
-
 ==============================
 Release 5.4.0.0
 ==============================
-2015-08-05    NumberBox: When value is null step up and step down starts from the minimum or maximum value (Thanks to Thomas!)
+2015-08-27    EnumerationComboBox: Renew the control with more possibility how to display the values (Thanks to Christoph Dreßler!)
+2015-08-05    NumberBox: When value is null step up and step down starts from the minimum or maximum value (Thanks to Thomas Kortschack!)
 2015-08-04	  NumberBox: Handle up and down steps differently in the case of an invalid value
-              NumberBox: Add support for a null default value (Thanks to Thomas!)
+              NumberBox: Add support for a null default value (Thanks to Thomas Kortschack!)
 2015-07-20	  BindingExtension: Added BindingExtension to be able to change all binding parameters by another bindings
 2015-05-02    CutTooltipBehavior: Add CutTooltipBehavior
 2015-03-01    ColumnWidthBehavior: A dependency property of was registered for the wrong type
 2014-10-28    EllipsedProgressBar: Handle it when the element is collapsed on load and enabled later
 2014-08-31    ShowBrowseButton was not working in the BrowseTextBox
 2014-08-24    The change of the ContentAlignment in the EnhancedTextBox has affected the mouse cursor too
-2014-07-31    Update project to .net 4.5.1
 
 
 ==============================

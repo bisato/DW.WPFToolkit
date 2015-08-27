@@ -25,18 +25,82 @@ THE SOFTWARE
 #endregion License
 
 using System;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace DW.WPFToolkit.Controls
 {
     /// <summary>
-    /// Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value
+    /// Represents a ComboBox which takes an enumeration value and shows all possible states inside the dropdown menu for let choosing a value.
     /// </summary>
-    public class EnumerationComboBox : Control
+    /// <example>
+    /// In the example the data shown in C# is the base the UI is binding to. See the XAML tab for the control usages.
+    /// <code lang="csharp">
+    /// <![CDATA[
+    /// public enum Number
+    /// {
+    ///     [Description("The Number One")]
+    ///     One,
+    /// 
+    ///     [Description("The Number Two")]
+    ///     Two,
+    /// 
+    ///     [Description("The Number Three")]
+    ///     Three
+    /// }
+    /// 
+    /// public class MainViewModel : ObservableObject
+    /// {
+    ///     public MainViewModel()
+    ///     {
+    ///         Number = Number.One;
+    ///     }
+    /// 
+    ///     public Number Number
+    ///     {
+    ///         get { return _number; }
+    ///         set
+    ///         {
+    ///             _number = value;
+    ///             NotifyPropertyChanged("Number");
+    ///         }
+    ///     }
+    ///     private Number _number;
+    /// }
+    /// ]]>
+    /// </code>
+    /// <code lang="xaml">
+    /// <![CDATA[
+    /// <!-- The items will be shown like "Name: One; Description: The Number One". -->
+    /// <!-- (The DW.WPFToolkit.Controls.EnumDescriptionConverter will return the description value unchanged) -->
+    /// <!-- DisplayKind is not set so the default will be taken which is EnumDisplayKind.Custom -->
+    /// <Controls:EnumerationComboBox EnumType="{x:Type Tryout:Number}" SelectedItem="{Binding Number}">
+    ///     <Controls:EnumerationComboBox.ItemTemplate>
+    ///         <DataTemplate>
+    ///             <StackPanel Orientation="Horizontal">
+    ///                 <TextBlock Text="Name: " />
+    ///                 <TextBlock Text="{Binding }" />
+    ///                 <TextBlock Text="; Description: " />
+    ///                 <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" />
+    ///             </StackPanel>
+    ///         </DataTemplate>
+    ///     </Controls:EnumerationComboBox.ItemTemplate>
+    /// </Controls:EnumerationComboBox>
+    ///     
+    /// <!-- The items will be shown like "The Number One". -->
+    /// <Controls:EnumerationComboBox EnumType="{x:Type Tryout:Number}" SelectedItem="{Binding Number}" DisplayKind="Description" />
+    /// 
+    /// <!-- The items will be shown like "One". -->    
+    /// <Controls:EnumerationComboBox EnumType="{x:Type Tryout:Number}" SelectedItem="{Binding Number}" DisplayKind="ToString" />
+    ///     
+    /// <!-- The items will be shown how you defined in the EnumToStringConverter. -->
+    /// <Controls:EnumerationComboBox EnumType="{x:Type Tryout:Number}" SelectedItem="{Binding Number}" DisplayKind="Converter" ItemConverter="{StaticResource EnumToStringConverter}" />
+    /// ]]>
+    /// </code>
+    /// </example>
+    public class EnumerationComboBox : ComboBox
     {
         static EnumerationComboBox()
         {
@@ -44,99 +108,103 @@ namespace DW.WPFToolkit.Controls
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox"/> class.
+        /// Checks if the item is already the correct item container. If not the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.GetContainerForItemOverride" /> will be used to generate the right container.
         /// </summary>
-        public EnumerationComboBox()
+        /// <param name="item">The item to shown in the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox" />.</param>
+        /// <returns>True if the item is the correct item container already.</returns>
+        protected override bool IsItemItsOwnContainerOverride(object item)
         {
-            Items = new ObservableCollection<EnumerationComboBoxItem>();
-        }
-
-        private bool _selfChange;
-        private bool _initialized;
-
-        /// <summary>
-        /// Gets or sets the enumeration value which the combobox uses.
-        /// </summary>
-        [DefaultValue(null)]
-        public Enum Enum
-        {
-            get { return (Enum)GetValue(EnumProperty); }
-            set { SetValue(EnumProperty, value); }
+            return item is EnumerationComboBoxItem;
         }
 
         /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.Enum" /> dependency property.
+        /// Generates a new child item container to hold in the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox" />.
         /// </summary>
-        public static readonly DependencyProperty EnumProperty =
-            DependencyProperty.Register("Enum", typeof(Enum), typeof(EnumerationComboBox), new FrameworkPropertyMetadata(FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnEnumChanged));
+        /// <returns>The generated child item container.</returns>
+        protected override DependencyObject GetContainerForItemOverride()
+        {
+            return new EnumerationComboBoxItem();
+        }
 
-        private static void OnEnumChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        /// <summary>
+        /// Gets or sets the type of the enum which named can be selected from.
+        /// </summary>
+        public Type EnumType
+        {
+            get { return (Type)GetValue(EnumTypeProperty); }
+            set { SetValue(EnumTypeProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.EnumType" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty EnumTypeProperty =
+            DependencyProperty.Register("EnumType", typeof(Type), typeof(EnumerationComboBox), new PropertyMetadata(OnEnumTypeChanged));
+
+        /// <summary>
+        /// Gets or sets the way hot to display the items in the drop down or in the selection box itself.
+        /// </summary>
+        /// <remarks>The default is <see cref="DW.WPFToolkit.Controls.EnumDisplayKind.Custom" /> which means you have to define the EnumerationComboBox.ItemTemplate by yourself.</remarks>
+        /// <remarks>Note: When <see cref="DW.WPFToolkit.Controls.EnumDisplayKind.Custom" /> is set you need to set the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.ItemConverter" /> as well; otehrwise <see cref="DW.WPFToolkit.Controls.EnumDisplayKind.ToString" /> will be used as a default.</remarks>
+        [DefaultValue(EnumDisplayKind.Custom)]
+        public EnumDisplayKind DisplayKind
+        {
+            get { return (EnumDisplayKind)GetValue(DisplayKindProperty); }
+            set { SetValue(DisplayKindProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.DisplayKind" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty DisplayKindProperty =
+            DependencyProperty.Register("DisplayKind", typeof(EnumDisplayKind), typeof(EnumerationComboBox), new PropertyMetadata(EnumDisplayKind.Custom, OnItemConverterChanged));
+
+        /// <summary>
+        /// Gets or sets the converter to use when <see cref="DW.WPFToolkit.Controls.EnumDisplayKind.Custom" /> is set as the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.DisplayKind" />.
+        /// </summary>
+        public IValueConverter ItemConverter
+        {
+            get { return (IValueConverter)GetValue(ItemConverterProperty); }
+            set { SetValue(ItemConverterProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.ItemConverter" /> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ItemConverterProperty =
+            DependencyProperty.Register("ItemConverter", typeof(IValueConverter), typeof(EnumerationComboBox), new PropertyMetadata(OnItemConverterChanged));
+
+        private static void OnItemConverterChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             var control = (EnumerationComboBox)sender;
-            if (!control._initialized)
-            {
-                control._initialized = true;
-                TakeValues(control);
-            }
-            
-            if (!control._selfChange)
-                SetSelectedItem(control, e.NewValue);
+            if (control.DisplayKind != EnumDisplayKind.Converter || control.ItemConverter == null)
+                return;
+
+            var textBinding = new Binding { Converter = control.ItemConverter };
+            var template = new DataTemplate();
+
+            var textBlockControl = new FrameworkElementFactory(typeof(TextBlock));
+            textBlockControl.SetBinding(TextBlock.TextProperty, textBinding);
+            template.VisualTree = textBlockControl;
+
+            control.ItemTemplate = template;
+        }
+
+        private static void OnEnumTypeChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (EnumerationComboBox)sender;
+
+            if (control.ItemsSource != null)
+                return;
+
+            TakeValues(control);
         }
 
         private static void TakeValues(EnumerationComboBox control)
         {
-            foreach (var value in Enum.GetValues(control.Enum.GetType()))
-                control.Items.Add(new EnumerationComboBoxItem { Enum = (Enum)value });
+            control.Items.Clear();
+            foreach (var value in System.Enum.GetValues(control.EnumType))
+                control.Items.Add(value);
         }
-
-        private static void SetSelectedItem(EnumerationComboBox control, object item)
-        {
-            control._selfChange = true;
-            control.SelectedItem = control.Items.FirstOrDefault(i => i.Enum.ToString() == item.ToString());
-            control._selfChange = false;
-        }
-
-        /// <summary>
-        /// Gets or sets the items shown in the ComboBox.
-        /// </summary>
-        public ObservableCollection<EnumerationComboBoxItem> Items { get; set; }
-
-        /// <summary>
-        /// Gets or sets the item selected in the combobox.
-        /// </summary>
-        public EnumerationComboBoxItem SelectedItem
-        {
-            get { return (EnumerationComboBoxItem)GetValue(SelectedItemProperty); }
-            set { SetValue(SelectedItemProperty, value); }
-        }
-
-        /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.SelectedItem" /> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty SelectedItemProperty =
-            DependencyProperty.Register("SelectedItem", typeof(EnumerationComboBoxItem), typeof(EnumerationComboBox), new UIPropertyMetadata(OnSelectedItemChanged));
-
-        private static void OnSelectedItemChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
-        {
-            var control = (EnumerationComboBox)sender;
-            control._selfChange = true;
-            control.Enum = control.SelectedItem.Enum;
-            control._selfChange = false;
-        }
-        
-        /// <summary>
-        /// Gets or sets the item template for the EnumerationComboBoxItems.
-        /// </summary>
-        public DataTemplate ItemTemplate
-        {
-            get { return (DataTemplate)GetValue(ItemTemplateProperty); }
-            set { SetValue(ItemTemplateProperty, value); }
-        }
-
-        /// <summary>
-        /// Identifies the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.ItemTemplate" /> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty ItemTemplateProperty =
-            DependencyProperty.Register("ItemTemplate", typeof(DataTemplate), typeof(EnumerationComboBox), new UIPropertyMetadata(null));
     }
 }

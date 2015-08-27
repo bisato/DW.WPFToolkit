@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\DW.WPFToolkit.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -95,6 +96,8 @@
     <Compile Include="Controls\EnhancedTextBox\SearchTextBox.cs" />
     <Compile Include="Controls\EnhancedTreeView\EnhancedTreeView.cs" />
     <Compile Include="Controls\EnhancedTreeView\EnhancedTreeViewItem.cs" />
+    <Compile Include="Controls\EnumerationComboBox\EnumDescriptionConverter.cs" />
+    <Compile Include="Controls\EnumerationComboBox\EnumDisplayKind.cs" />
     <Compile Include="Controls\EnumerationComboBox\EnumerationComboBox.cs" />
     <Compile Include="Controls\EnumerationComboBox\EnumerationComboBoxItem.cs" />
     <Compile Include="Controls\ImageButton\ImageButton.cs" />

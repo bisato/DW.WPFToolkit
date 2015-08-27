@@ -24,19 +24,31 @@ THE SOFTWARE
 */
 #endregion License
 
-using System.Windows;
-using System.Windows.Controls;
-
 namespace DW.WPFToolkit.Controls
 {
     /// <summary>
-    /// Represents an item inside the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox" /> which holds the appropriate enumeration object.
+    /// Defines how the enum values in the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox" /> will be displayed.
     /// </summary>
-    public class EnumerationComboBoxItem : ComboBoxItem
+    public enum EnumDisplayKind
     {
-        static EnumerationComboBoxItem()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(EnumerationComboBoxItem), new FrameworkPropertyMetadata(typeof(EnumerationComboBoxItem)));
-        }
+        /// <summary>
+        /// The enum value will be display with just .ToString().
+        /// </summary>
+        ToString,
+
+        /// <summary>
+        /// The description of the enum value will be read using the <see cref="DW.WPFToolkit.Controls.EnumDescriptionConverter" />.
+        /// </summary>
+        Description,
+
+        /// <summary>
+        /// The bound <see cref="DW.WPFToolkit.Controls.EnumerationComboBox.ItemConverter" /> will be used to convert the value into the variable to show.
+        /// </summary>
+        Converter,
+
+        /// <summary>
+        /// The EnumerationComboBox.ItemTemplate will be set from outside of the control manually.
+        /// </summary>
+        Custom
     }
 }

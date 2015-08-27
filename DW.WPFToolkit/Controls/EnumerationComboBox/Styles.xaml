@@ -26,17 +26,25 @@ THE SOFTWARE
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Controls="clr-namespace:DW.WPFToolkit.Controls">
 
-    <Style TargetType="{x:Type Controls:EnumerationComboBox}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Controls:EnumerationComboBox}">
-                    <ComboBox ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}"
-                              SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}}"
-                              IsSynchronizedWithCurrentItem="True"
-                              ItemTemplate="{Binding ItemTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+    <Controls:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+    
+    <Style TargetType="{x:Type Controls:EnumerationComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
+        
+        <Style.Triggers>
+            <Trigger Property="DisplayKind" Value="Description">
+                <Setter Property="ItemTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" />
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+        
     </Style>
 
+    <Style TargetType="{x:Type Controls:EnumerationComboBoxItem}" BasedOn="{StaticResource {x:Type ComboBoxItem}}">
+    </Style>
+    
 </ResourceDictionary>
