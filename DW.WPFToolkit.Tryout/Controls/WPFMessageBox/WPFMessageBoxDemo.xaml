@@ -53,22 +53,22 @@ THE SOFTWARE
             
             <Controls:TitledItemsControl>
                 <Controls:TitledItem Title="Buttons">
-                    <Controls:EnumerationComboBox Enum="{Binding Buttons, Mode=TwoWay}" />
+                    <Controls:EnumerationComboBox EnumType="{x:Type Controls:WPFMessageBoxButtons}" SelectedItem="{Binding Buttons, Mode=TwoWay}" />
                 </Controls:TitledItem>
                 <Controls:TitledItem Title="Icon">
-                    <Controls:EnumerationComboBox Enum="{Binding Icon, Mode=TwoWay}" />
+                    <Controls:EnumerationComboBox EnumType="{x:Type Controls:WPFMessageBoxImage}" SelectedItem="{Binding Icon, Mode=TwoWay}" />
                 </Controls:TitledItem>
                 <Controls:TitledItem Title="DefaultButton">
-                    <Controls:EnumerationComboBox Enum="{Binding DefaultButton, Mode=TwoWay}" />
+                    <Controls:EnumerationComboBox EnumType="{x:Type Controls:WPFMessageBoxResult}" SelectedItem="{Binding DefaultButton, Mode=TwoWay}" />
                 </Controls:TitledItem>
                 <Controls:TitledItem Title="StartupLocation">
-                    <Controls:EnumerationComboBox Enum="{Binding StartupLocation, Mode=TwoWay}" />
+                    <Controls:EnumerationComboBox EnumType="{x:Type WindowStartupLocation}" SelectedItem="{Binding StartupLocation, Mode=TwoWay}" />
                 </Controls:TitledItem>
                 <Controls:TitledItem Title="ResizeMode">
-                    <Controls:EnumerationComboBox Enum="{Binding ResizeMode, Mode=TwoWay}" />
+                    <Controls:EnumerationComboBox EnumType="{x:Type ResizeMode}" SelectedItem="{Binding ResizeMode, Mode=TwoWay}" />
                 </Controls:TitledItem>
                 <Controls:TitledItem Title="DetailedResizeMode">
-                    <Controls:EnumerationComboBox Enum="{Binding DetailedResizeMode, Mode=TwoWay}" />
+                    <Controls:EnumerationComboBox EnumType="{x:Type ResizeMode}" SelectedItem="{Binding DetailedResizeMode, Mode=TwoWay}" />
                 </Controls:TitledItem>
             
                 <Controls:TitledItem Title="ShowHelpButton">
