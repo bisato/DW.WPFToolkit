@@ -36,6 +36,23 @@ namespace DW.WPFToolkit.Interactivity
     /// <summary>
     /// Brings the feature to controls with a <see cref="System.Windows.Controls.GridViewColumnHeader" /> to have columns with a dynamic width.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <ListView Interactivity:ColumnWidthBehavior.AutoSize="ByContent" />
+    /// 
+    /// <ListView Interactivity:ColumnWidthBehavior.AutoSize="Proportional">
+    ///     <ListView.View>
+    ///         <GridView>
+    ///             <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Interactivity:ColumnWidthBehavior.ProportionalWidth="60" />
+    ///             <GridViewColumn Header="Size" DisplayMemberBinding="{Binding Size}" Interactivity:ColumnWidthBehavior.ProportionalWidth="30" />
+    ///             <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Interactivity:ColumnWidthBehavior.ProportionalWidth="10" />
+    ///         </GridView>
+    ///     </ListView.View>
+    /// </ListView>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class ColumnWidthBehavior : DependencyObject
     {
         /// <summary>

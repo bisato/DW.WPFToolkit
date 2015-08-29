@@ -34,6 +34,18 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Shows a button which can be clicked but also expanded to call commands from child elements.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:SplitButton Content="Main" Command="{Binding MainCommand}">
+    ///     <WPFToolkit:SplitButtonItem Content="Sub 1" Command="{Binding Sub1Command}" />
+    ///     <WPFToolkit:SplitButtonItem Content="Sub 2" Command="{Binding Sub2Command}" />
+    ///     <WPFToolkit:SplitButtonItem Content="Sub 3" Command="{Binding Sub3Command}" />
+    ///     <WPFToolkit:SplitButtonItem Content="Sub 4" Command="{Binding Sub4Command}" />
+    /// </WPFToolkit:SplitButton>
+    /// ]]>
+    /// </code>
+    /// </example>
     [TemplatePart(Name = "PART_ContentButton", Type = typeof(SplitToggleButton))]
     public class SplitButton : ComboBox
     {

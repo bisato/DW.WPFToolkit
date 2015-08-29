@@ -34,6 +34,15 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Enhances the <see cref="System.Windows.Controls.TabControl" /> with buttons for add new tab item and close buttons of existing tab items.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <Toolkit:DynamicTabControl ShowAddButton="True"
+    ///                            TabItemAddingCommand="{Binding AddItemCommand}"
+    ///                            TabItemClosingCommand="{Binding RemoveItemCommand}" />
+    /// ]]>
+    /// </code>
+    /// </example>
     public class DynamicTabControl : TabControl
     {
         static DynamicTabControl()

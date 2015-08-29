@@ -76,7 +76,7 @@ namespace DW.WPFToolkit.Controls
     /// <!-- The items will be shown like "Name: One; Description: The Number One". -->
     /// <!-- (The DW.WPFToolkit.Controls.EnumDescriptionConverter will return the description value unchanged) -->
     /// <!-- DisplayKind is not set so the default will be taken which is EnumDisplayKind.Custom -->
-    /// <Controls:EnumerationComboBox EnumType="{x:Type Tryout:Number}" SelectedItem="{Binding Number}">
+    /// <Controls:EnumerationComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}">
     ///     <Controls:EnumerationComboBox.ItemTemplate>
     ///         <DataTemplate>
     ///             <StackPanel Orientation="Horizontal">
@@ -90,13 +90,13 @@ namespace DW.WPFToolkit.Controls
     /// </Controls:EnumerationComboBox>
     ///     
     /// <!-- The items will be shown like "The Number One". -->
-    /// <Controls:EnumerationComboBox EnumType="{x:Type Tryout:Number}" SelectedItem="{Binding Number}" DisplayKind="Description" />
+    /// <Controls:EnumerationComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}" DisplayKind="Description" />
     /// 
     /// <!-- The items will be shown like "One". -->    
-    /// <Controls:EnumerationComboBox EnumType="{x:Type Tryout:Number}" SelectedItem="{Binding Number}" DisplayKind="ToString" />
+    /// <Controls:EnumerationComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}" DisplayKind="ToString" />
     ///     
     /// <!-- The items will be shown how you defined in the EnumToStringConverter. -->
-    /// <Controls:EnumerationComboBox EnumType="{x:Type Tryout:Number}" SelectedItem="{Binding Number}" DisplayKind="Converter" ItemConverter="{StaticResource EnumToStringConverter}" />
+    /// <Controls:EnumerationComboBox EnumType="{x:Type Demo:Number}" SelectedItem="{Binding Number}" DisplayKind="Converter" ItemConverter="{StaticResource EnumToStringConverter}" />
     /// ]]>
     /// </code>
     /// </example>

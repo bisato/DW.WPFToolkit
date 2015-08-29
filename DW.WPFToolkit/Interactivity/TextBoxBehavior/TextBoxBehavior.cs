@@ -35,6 +35,15 @@ namespace DW.WPFToolkit.Interactivity
     /// <summary>
     /// Brings the features to text boxes to define its selection or bound the selection part.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <TextBox Text="{Binding TheText}"
+    ///          Interactivity:TextBoxBehavior.SelectAllOnFocus="True"
+    ///          Interactivity:TextBoxBehavior.SelectedText="{Binding SelectedText}" />
+    /// ]]>
+    /// </code>
+    /// </example>
     public class TextBoxBehavior : DependencyObject
     {
         /// <summary>

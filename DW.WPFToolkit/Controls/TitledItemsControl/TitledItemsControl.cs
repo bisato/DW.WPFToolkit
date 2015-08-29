@@ -33,6 +33,23 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Shows items with its title allined to each other. This can be used for every kind of input masks.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:TitledItemsControl>
+    ///     <WPFToolkit:TitledItem Title="Name:">
+    ///         <TextBox Text="{Binding Name}" />
+    ///     </WPFToolkit:TitledItem>
+    ///     <WPFToolkit:TitledItem Title="Age:">
+    ///         <TextBox Text="{Binding Age}" />
+    ///     </WPFToolkit:TitledItem>
+    ///     <WPFToolkit:TitledItem Title="Sex:">
+    ///         <TextBox Text="{Binding Sex}" />
+    ///     </WPFToolkit:TitledItem>
+    /// </WPFToolkit:TitledItemsControl>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class TitledItemsControl : ItemsControl
     {
         static TitledItemsControl()

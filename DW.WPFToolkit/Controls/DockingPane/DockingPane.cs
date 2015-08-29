@@ -33,6 +33,25 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Represents a pane where items can be collapsed into and expanded back. A single item is visible only at one time.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <DockPanel>
+    /// 
+    ///     <WPFToolkit:DockingPane DockPanel.Dock="Right" ExpandDirection="RightToLeft" AreaWidth="250" AreaMinWidth="150">
+    ///         <WPFToolkit:DockingPaneItem Header="Title 1">
+    ///             <ListBox />
+    ///         </WPFToolkit:DockingPaneItem>
+    ///         <WPFToolkit:DockingPaneItem Header="Title 2">
+    ///             <ListBox />
+    ///         </WPFToolkit:DockingPaneItem>
+    ///     </WPFToolkit:DockingPane>
+    /// 
+    ///     <Grid />
+    /// </DockPanel>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class DockingPane : TabControl
     {
         static DockingPane()

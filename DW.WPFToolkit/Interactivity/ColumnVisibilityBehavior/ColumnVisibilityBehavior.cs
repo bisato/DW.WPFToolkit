@@ -36,6 +36,35 @@ namespace DW.WPFToolkit.Interactivity
     /// <summary>
     /// Brings the feature to controls with a <see cref="System.Windows.Controls.GridViewColumnHeader" /> to show or hide columns dynamically.
     /// </summary>
+    /// <example>
+    /// <code lang="csharp">
+    /// <![CDATA[
+    /// public class MainViewModel : ObservableObject
+    /// {
+    ///     public MainViewModel()
+    ///     {
+    ///         VisibleColumnNames = new EnhancedObservableCollection<string> { "Name", "Size" };
+    ///     }
+    /// 
+    ///     public EnhancedObservableCollection<string> VisibleColumnNames { get; private set; }
+    /// }
+    /// ]]>
+    /// </code>
+    /// 
+    /// <code lang="XAML"> 
+    /// <![CDATA[
+    /// <ListView Interactivity:ColumnVisibilityBehavior.VisibleColumns="{Binding VisibleColumnNames}">
+    ///     <ListView.View>
+    ///         <GridView>
+    ///             <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Interactivity:ColumnVisibilityBehavior.Name="Name" />
+    ///             <GridViewColumn Header="Size" DisplayMemberBinding="{Binding Size}" Interactivity:ColumnVisibilityBehavior.Name="Size" />
+    ///             <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Interactivity:ColumnVisibilityBehavior.Name="Date" />
+    ///         </GridView>
+    ///     </ListView.View>
+    /// </ListView>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class ColumnVisibilityBehavior : DependencyObject
     {
         private ColumnVisibilityBehavior()

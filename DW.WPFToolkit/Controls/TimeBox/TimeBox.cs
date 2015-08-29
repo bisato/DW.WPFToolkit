@@ -35,6 +35,13 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Shows textboxes to let the user input a time.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:TimeBox HasUpDownButtons="True" TimeFormat="Long" Time="{Binding CurrentTime}" />
+    /// ]]>
+    /// </code>
+    /// </example>
     [TemplatePart(Name = "PART_HourBox", Type = typeof(NumberBox))]
     [TemplatePart(Name = "PART_MinuteBox", Type = typeof(NumberBox))]
     [TemplatePart(Name = "PART_SecondBox", Type = typeof(NumberBox))]

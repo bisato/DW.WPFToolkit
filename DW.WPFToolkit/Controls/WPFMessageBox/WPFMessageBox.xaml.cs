@@ -35,6 +35,42 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Show a WPF window as a messagebox which is full configurable.
     /// </summary>
+    /// <example>
+    /// <code lang="csharp">
+    /// <![CDATA[
+    /// public void Show1()
+    /// {
+    ///     WPFMessageBox.Show("Messagebox Text");
+    /// }
+    /// 
+    /// public void Show2()
+    /// {
+    ///     WPFMessageBox.Show("Messagebox Text", "Caption");
+    /// }
+    /// 
+    /// public void Show3()
+    /// {
+    ///     WPFMessageBox.Show("Messagebox Text", "Caption", WPFMessageBoxButtons.AbortRetryIgnore);
+    /// }
+    /// 
+    /// public void Show4()
+    /// {
+    ///     var options = new WPFMessageBoxOptions();
+    ///     options.DetailsContent = new Label();
+    ///     options.ShowDetails = true;
+    ///     options.ShowHelpButton = true;
+    ///     options.Strings.Abort = "Go Away";
+    ///     options.WindowOptions.DetailedResizeMode = ResizeMode.CanResizeWithGrip;
+    /// 
+    ///     WPFMessageBox.Show("Messagebox Text",
+    ///                        "Caption",
+    ///                        WPFMessageBoxButtons.AbortRetryIgnore,
+    ///                        WPFMessageBoxImage.Error,
+    ///                        WPFMessageBoxResult.Retry, options);
+    /// }
+    /// ]]>
+    /// </code>
+    /// </example>
     public partial class WPFMessageBox : INotifyPropertyChanged
     {
         internal WPFMessageBox()

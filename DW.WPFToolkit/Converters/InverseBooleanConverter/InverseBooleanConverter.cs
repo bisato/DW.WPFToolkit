@@ -33,6 +33,22 @@ namespace DW.WPFToolkit.Converters
     /// <summary>
     /// Represents the converter that converts Boolean values to its opposite.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <StackPanel>
+    ///     <StackPanel.Resources>
+    ///         <Converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+    ///     </StackPanel.Resources>
+    /// 
+    ///     <CheckBox Content="Disable" x:Name="DisableCheckBox" />
+    ///     
+    ///     <Label Content="Text" IsEnabled="{Binding IsChecked, ElementName=DisableCheckBox, Converter={StaticResource InverseBooleanConverter}}" />
+    ///     
+    /// </StackPanel>
+    /// ]]>
+    /// </code>
+    /// </example>
     public sealed class InverseBooleanConverter : IValueConverter
     {
         /// <summary>

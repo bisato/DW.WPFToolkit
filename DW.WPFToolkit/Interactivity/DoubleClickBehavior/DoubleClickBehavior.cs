@@ -33,6 +33,15 @@ namespace DW.WPFToolkit.Interactivity
     /// <summary>
     /// Brings the feature to be able to double click any UI element.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <TextBlock Text="Doubleclick Me"
+    ///            Interactivity:DoubleClickBehavior.Command="{Binding ItemDoubleClicked}"
+    ///            Interactivity:DoubleClickBehavior.CommandParameter="Parameter" />
+    /// ]]>
+    /// </code>
+    /// </example>
     public class DoubleClickBehavior :  DependencyObject
     {
         /// <summary>

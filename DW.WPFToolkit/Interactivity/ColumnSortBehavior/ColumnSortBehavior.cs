@@ -36,6 +36,58 @@ namespace DW.WPFToolkit.Interactivity
     /// <summary>
     /// Brings the feature to UI elements with a <see cref="System.Windows.Controls.GridViewColumnHeader" /> to have a sorting by clicking the corresponding header.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <DataTemplate x:Key="HeaderArrowUp">
+    ///     <Grid>
+    ///         <TextBlock Text="{Binding}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+    ///         <Path StrokeThickness="0" SnapsToDevicePixels="True" Data="M 0,4 L 4,0 L 8,4 L 0,4"
+    ///               Margin="0,-2,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
+    ///             <Path.Fill>
+    ///                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+    ///                     <GradientStop Color="#FF3C5E72" Offset="0"/>
+    ///                     <GradientStop Color="#FFC3E4F5" Offset="1"/>
+    ///                 </LinearGradientBrush>
+    ///             </Path.Fill>
+    ///         </Path>
+    ///     </Grid>
+    /// </DataTemplate>
+    /// <DataTemplate x:Key="HeaderArrowDown">
+    ///     <Grid>
+    ///         <TextBlock Text="{Binding}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+    ///         <Path StrokeThickness="0" SnapsToDevicePixels="True" Data="M 0,0 L 4,4 L 8,0 L 0,0"
+    ///               Margin="0,-2,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
+    ///             <Path.Fill>
+    ///                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+    ///                     <GradientStop Color="#FF3C5E72" Offset="0"/>
+    ///                     <GradientStop Color="#FFC4E3F4" Offset="1"/>
+    ///                 </LinearGradientBrush>
+    ///             </Path.Fill>
+    ///         </Path>
+    ///     </Grid>
+    /// </DataTemplate>
+    /// <DataTemplate x:Key="HeaderTransparent">
+    ///     <Grid>
+    ///         <TextBlock Text="{Binding}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+    ///     </Grid>
+    /// </DataTemplate>
+    /// 
+    /// <ListView Interactivity:ColumnSortBehavior.AllowColumnSortings="True"
+    ///           Interactivity:ColumnSortBehavior.AscendingSortHeaderTemplate="{StaticResource HeaderArrowUp}"
+    ///           Interactivity:ColumnSortBehavior.DescendingSortHeaderTemplate="{StaticResource HeaderArrowDown}"
+    ///           Interactivity:ColumnSortBehavior.NeutralHeaderTemplate="{StaticResource HeaderTransparent}">
+    ///     <ListView.View>
+    ///         <GridView>
+    ///             <GridViewColumn Header="Name" Interactivity:ColumnSortBehavior.IsDefaultSortColumn="True" Interactivity:ColumnSortBehavior.SortPropertyName="Name" />
+    ///             <GridViewColumn Header="Size" Interactivity:ColumnSortBehavior.SortPropertyName="Size" />
+    ///             <GridViewColumn Header="Date" Interactivity:ColumnSortBehavior.SortPropertyName="Date" />
+    ///         </GridView>
+    ///     </ListView.View>
+    /// </ListView>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class ColumnSortBehavior : DependencyObject
     {
         /// <summary>

@@ -32,6 +32,16 @@ namespace DW.WPFToolkit.Interactivity
     /// <summary>
     /// Brings the feature to the <see cref="System.Windows.Window" /> to disable or hide elements in the title bar.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <Window Interactivity:WindowTitleBarBehavior.DisableMinimizeButton="True"
+    ///         Interactivity:WindowTitleBarBehavior.DisableMaximizeButton="True"
+    ///         Interactivity:WindowTitleBarBehavior.DisableSystemMenu="True">
+    /// </Window>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class WindowTitleBarBehavior : FrameworkElement
     {
         /// <summary>

@@ -30,6 +30,26 @@ using System.Windows.Data;
 
 namespace DW.WPFToolkit.Helpers
 {
+    /// <summary>
+    /// Brings the possibility to modify existing bindings. See <see cref="DW.WPFToolkit.Helpers.BindingAdapter" />.
+    /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <TextBlock Text="{Binding Demo}" ToolTip="{Binding AnyTag}">
+    ///     <Helpers:BindingAdapter.BindingExtensions>
+    ///         <Helpers:BindingExtensionCollection>
+    ///             <Helpers:BindingExtension Property="TextBlock.Text"
+    ///                                       Converter="{Binding DemoConverter}"
+    ///                                       ConverterParameter="{Binding DemoConverterParameter}" />
+    ///             <Helpers:BindingExtension Property="TextBlock.ToolTip"
+    ///                                       FallbackValue="{Binding BindingFallbackValue}" />
+    ///         </Helpers:BindingExtensionCollection>
+    ///     </Helpers:BindingAdapter.BindingExtensions>
+    /// </TextBlock>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class BindingExtension : FrameworkElement
     {
         private readonly bool _isChangedInternally;

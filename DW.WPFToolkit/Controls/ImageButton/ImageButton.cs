@@ -35,6 +35,30 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Enhances the <see cref="System.Windows.Controls.Button" /> to show an disabled image. The bound image will be shown monochrome if the button is disabled.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <UniformGrid Rows="1" DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+    /// 
+    ///     <Toolkit:ImageButton Content="Back"
+    ///                          ImageSource="/MyAssembly;component/Data/Previous.png" />
+    /// 
+    ///     <Toolkit:ImageButton Content="Next"
+    ///                          ImageSource="/MyAssembly.Demo;component/Data/Next.png" 
+    ///                          ImagePosition="Right"
+    ///                          ImageMargin="4,0,0,0" />
+    /// 
+    ///     <Toolkit:ImageButton Content="Finish"
+    ///                          IsEnabled="False"
+    ///                          ImageSource="/MyAssembly;component/Data/OK.png" />
+    /// 
+    ///     <Toolkit:ImageButton Content="Cancel"
+    ///                          ImageSource="/MyAssembly;component/Data/Cancel.png" />
+    /// 
+    /// </UniformGrid>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class ImageButton : Button
     {
         static ImageButton()

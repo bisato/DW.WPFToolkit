@@ -38,6 +38,19 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Enhances the <see cref="System.Windows.Controls.TreeView" /> with a multi select possibility and stretching of its child items over the whole width.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:EnhancedTreeView SelectionMode="Extended" ItemsContentStretching="True">
+    ///     <WPFToolkit:EnhancedTreeView.ItemContainerStyle>
+    ///         <Style TargetType="{x:Type WPFToolkit:EnhancedTreeViewItem}">
+    ///             <Setter Property="ContentStretching" Value="True" />
+    ///         </Style>
+    ///     </WPFToolkit:EnhancedTreeView.ItemContainerStyle>
+    /// </WPFToolkit:EnhancedTreeView>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class EnhancedTreeView : TreeView
     {
         /// <summary>

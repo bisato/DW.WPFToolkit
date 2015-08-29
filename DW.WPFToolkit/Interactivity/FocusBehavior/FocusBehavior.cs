@@ -33,6 +33,13 @@ namespace DW.WPFToolkit.Interactivity
     /// <summary>
     /// Brings the feature to set the focus to a specific element or on window launch.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <Button Content="Close" Interactivity:FocusBehavior.HasFocus="{Binding ButtonFocused}" />
+    /// ]]>
+    /// </code>
+    /// </example>
     public class FocusBehavior : DependencyObject
     {
         /// <summary>

@@ -24,23 +24,12 @@ THE SOFTWARE
 */
 #endregion License
 
-using System.ComponentModel;
-
 namespace DW.WPFToolkit.Tryout
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel
     {
         public MainViewModel()
         {
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string property)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(property));
         }
     }
 }

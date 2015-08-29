@@ -37,6 +37,22 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Enhances the <see cref="System.Windows.Controls.TextBox" /> to accept numeric values only, so the text can be bound to a numeric property direclty without converting.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:NumberBox NumberType="Integer"
+    ///                       HasUpDownButtons="True"
+    ///                       HasResetButton="True"
+    ///                       DefaultValue="0"
+    ///                       DisabledOnUncheck="True"
+    ///                       IsCheckable="True"
+    ///                       IsChecked="{Binding ValueIsChecked}"
+    ///                       Minimum="0"
+    ///                       Maximum="100"
+    ///                       Text="{Binding Value}" />
+    /// ]]>
+    /// </code>
+    /// </example>
     [TemplatePart(Name = "PART_UpButton", Type = typeof(RepeatButton))]
     [TemplatePart(Name = "PART_DownButton", Type = typeof(RepeatButton))]
     [TemplatePart(Name = "PART_ResetButton", Type = typeof(Button))]

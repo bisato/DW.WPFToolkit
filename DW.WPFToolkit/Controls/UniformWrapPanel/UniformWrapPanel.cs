@@ -34,6 +34,25 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Enhances the <see cref="System.Windows.Controls.WrapPanel" /> by the feature that all items will have the same size.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <ItemsControl ItemsSource="{Binding Images}">
+    ///     <ItemsControl.ItemsPanel>
+    ///         <ItemsPanelTemplate>
+    ///             <WPFToolkit:UniformWrapPanel />
+    ///         </ItemsPanelTemplate>
+    ///     </ItemsControl.ItemsPanel>
+    /// </ItemsControl>
+    /// 
+    /// <WPFToolkit:UniformWrapPanel Orientation="Horizontal" MinItemWidth="100">
+    ///     <Button Content="One" />
+    ///     <Button Content="Two" />
+    ///     <Button Content="Three" />
+    /// </WPFToolkit:UniformWrapPanel>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class UniformWrapPanel : WrapPanel
     {
         /// <summary>

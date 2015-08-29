@@ -34,6 +34,22 @@ namespace DW.WPFToolkit.Converters
     /// <summary>
     /// Represents the converter that converts Boolean values to and from System.Windows.Visibility enumeration values like the <see cref="System.Windows.Controls.BooleanToVisibilityConverter" /> but in the opposite way.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <StackPanel>
+    ///     <StackPanel.Resources>
+    ///         <Converters:BooleanToVisibilityInvertedConverter x:Key="BooleanToVisibilityInvertedConverter" />
+    ///     </StackPanel.Resources>
+    /// 
+    ///     <CheckBox Content="Hide" x:Name="HideCheckBox" />
+    ///     
+    ///     <Label Content="Text" Visibility="{Binding IsChecked, ElementName=HideCheckBox, Converter={StaticResource BooleanToVisibilityInvertedConverter}}" />
+    ///     
+    /// </StackPanel>
+    /// ]]>
+    /// </code>
+    /// </example>
     public sealed class BooleanToVisibilityInvertedConverter : IValueConverter
     {
         /// <summary>

@@ -34,6 +34,14 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Adds a browse button to the <see cref="DW.WPFToolkit.Controls.EnhancedTextBox" />.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:BrowseTextBox ShowBrowseButton="True"
+    ///                           BrowseCommand="{Binding BrowseCommand}" />
+    /// ]]>
+    /// </code>
+    /// </example>
     public class BrowseTextBox : EnhancedTextBox
     {
         static BrowseTextBox()

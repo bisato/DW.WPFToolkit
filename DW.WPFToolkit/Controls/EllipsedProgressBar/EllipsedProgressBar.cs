@@ -38,6 +38,89 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Implements the ProgressBar in an ellipsed form.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <Controls:EllipsedProgressBar Value="10"
+    ///                               Minimum="0"
+    ///                               Maximum="100"
+    ///                               OutherRadius="20"
+    ///                               RotateSpeed="0.5"
+    ///                               IsIndeterminate="True" />
+    /// 
+    /// <Controls:EllipsedProgressBar Value="25"
+    ///                               Minimum="0"
+    ///                               Maximum="100"
+    ///                               OutherRadius="20"
+    ///                               RotateSpeed="0.8"
+    ///                               IsIndeterminate="True"
+    ///                               IsInversed="True" />
+    /// 
+    /// <Controls:EllipsedProgressBar Value="34"
+    ///                               Minimum="0"
+    ///                               Maximum="100"
+    ///                               OutherRadius="20"
+    ///                               HasPercentLabel="True" />
+    /// 
+    /// <Controls:EllipsedProgressBar Value="0"
+    ///                               Minimum="0"
+    ///                               Maximum="100"
+    ///                               OutherRadius="20"
+    ///                               RotateSpeed="0.8"
+    ///                               DisplayKind="Pointer"
+    ///                               InnerRadius="10"
+    ///                               ShowInnerCircle="True"
+    ///                               ShowOutherCircle="True"
+    ///                               StrokeThickness="1"
+    ///                               IsIndeterminate="True" />
+    /// 
+    /// <Grid>
+    ///     <Controls:EllipsedProgressBar Value="20"
+    ///                                   Minimum="0"
+    ///                                   Maximum="100"
+    ///                                   OutherRadius="20"
+    ///                                   InnerRadius="5"
+    ///                                   RotateSpeed="0.7"
+    ///                                   IsIndeterminate="True" />
+    ///     
+    ///     <Controls:GappedOverlay OutherRadius="21" InnerRadius="5" InnerGapRadius="8" OutherGapRadius="16" />
+    ///     
+    /// </Grid>
+    /// 
+    /// <Controls:EllipsedProgressBar Value="100"
+    ///                               Minimum="0"
+    ///                               Maximum="100"
+    ///                               InnerRadius="16"
+    ///                               OutherRadius="18.5"
+    ///                               RotateSpeed="0.8"
+    ///                               IsIndeterminate="True"
+    ///                               DisplayKind="Items">
+    ///     <Controls:EllipsedProgressBar.ItemsFactory>
+    ///         <Controls:EllipseItemsFactory Size="5"
+    ///                                       ItemsCount="15"
+    ///                                       OpacityShrinking="0.1" />
+    ///     </Controls:EllipsedProgressBar.ItemsFactory>
+    /// </Controls:EllipsedProgressBar>
+    /// 
+    /// <Controls:EllipsedProgressBar Value="100"
+    ///                               Minimum="0"
+    ///                               Maximum="100"
+    ///                               InnerRadius="15"
+    ///                               OutherRadius="20"
+    ///                               RotateSpeed="0.8"
+    ///                               IsIndeterminate="True"
+    ///                               DisplayKind="Items">
+    ///     <Controls:EllipsedProgressBar.ItemsFactory>
+    ///         <Controls:LineItemsFactory Caps="Flat"
+    ///                                    Length="8"
+    ///                                    OpacityShrinking="0.1"
+    ///                                    ItemsCount="8"
+    ///                                    Thickness="2" />
+    ///     </Controls:EllipsedProgressBar.ItemsFactory>
+    /// </Controls:EllipsedProgressBar>
+    /// ]]>
+    /// </code>
+    /// </example>
     [TemplatePart(Name = "PART_Pointer", Type = typeof(Path))]
     [TemplatePart(Name = "PART_Pie", Type = typeof(Ellipse))]
     [TemplatePart(Name = "PART_PercentLabel", Type = typeof(Label))]

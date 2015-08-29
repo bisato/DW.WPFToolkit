@@ -57,18 +57,11 @@
     <Compile Include="..\DW.WPFToolkit\Properties\CommonMeta.cs">
       <Link>Properties\CommonMeta.cs</Link>
     </Compile>
-    <Compile Include="Controls\WPFMessageBox\WPFMessageBoxDemo.xaml.cs">
-      <DependentUpon>WPFMessageBoxDemo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Page Include="Controls\WPFMessageBox\WPFMessageBoxDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

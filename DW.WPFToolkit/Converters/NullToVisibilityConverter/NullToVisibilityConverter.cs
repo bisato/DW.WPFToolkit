@@ -34,6 +34,20 @@ namespace DW.WPFToolkit.Converters
     /// <summary>
     /// Represents the converter that converts the state if the parameter is null to a Visibility value depending on the parameter.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <StackPanel>
+    ///     <StackPanel.Resources>
+    ///         <Converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+    ///     </StackPanel.Resources>
+    /// 
+    ///     <Label Content="Element Is There" Visibility="{Binding Element, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter={x:Static Converters:NullToVisibilityDirection.NullIsCollapsed}}" />
+    ///     
+    /// </StackPanel>
+    /// ]]>
+    /// </code>
+    /// </example>
     public sealed class NullToVisibilityConverter : IValueConverter
     {
         /// <summary>

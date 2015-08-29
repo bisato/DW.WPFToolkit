@@ -34,6 +34,30 @@ namespace DW.WPFToolkit.Helpers
     /// <summary>
     /// Brings possibilities to easy listen for WinAPI events.
     /// </summary>
+    /// <example>
+    /// <code lang="csharp">
+    /// <![CDATA[
+    /// public partial class MainView
+    /// {
+    ///     public MainView()
+    ///     {
+    ///         InitializeComponent();
+    /// 
+    ///         var observer = new WindowObserver(this);
+    ///         observer.AddCallback(OnEventHappened);
+    ///     }
+    /// 
+    ///     private void OnEventHappened(NotifyEventArgs e)
+    ///     {
+    ///         if (e.MessageId == WindowMessages.WM_NCLBUTTONDBLCLK)
+    ///         {
+    ///             // User double clicked in the non client area (title bar mostly)
+    ///         }
+    ///     }
+    /// }
+    /// ]]>
+    /// </code>
+    /// </example>
     public class WindowObserver
     {
         private readonly Window _observedWindow;

@@ -28,6 +28,26 @@ using System.Windows;
 
 namespace DW.WPFToolkit.Helpers
 {
+    /// <summary>
+    /// Brings the possibility to modify existing bindings wo be able to bind the parameters in the Binding like Converter, ConverterParameter and so on.
+    /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <TextBlock Text="{Binding Demo}" ToolTip="{Binding AnyTag}">
+    ///     <Helpers:BindingAdapter.BindingExtensions>
+    ///         <Helpers:BindingExtensionCollection>
+    ///             <Helpers:BindingExtension Property="TextBlock.Text"
+    ///                                       Converter="{Binding DemoConverter}"
+    ///                                       ConverterParameter="{Binding DemoConverterParameter}" />
+    ///             <Helpers:BindingExtension Property="TextBlock.ToolTip"
+    ///                                       FallbackValue="{Binding BindingFallbackValue}" />
+    ///         </Helpers:BindingExtensionCollection>
+    ///     </Helpers:BindingAdapter.BindingExtensions>
+    /// </TextBlock>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class BindingAdapter : FrameworkElement
     {
         private readonly FrameworkElement _owner;

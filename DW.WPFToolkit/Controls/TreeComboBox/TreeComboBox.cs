@@ -34,6 +34,32 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Represents a ComboBox which shows a tree view in the drop down.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <Toolkit:TreeComboBox ItemsSource="{Binding Customers}" SelectionBoxItem="{Binding SelectedCustomer}">
+    ///     <Toolkit:TreeComboBox.ItemContainerStyle>
+    ///         <Style TargetType="{x:Type TreeViewItem}">
+    ///             <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+    ///         </Style>
+    ///     </Toolkit:TreeComboBox.ItemContainerStyle>
+    ///     <Toolkit:TreeComboBox.SelectionBoxItemTemplate>
+    ///         <DataTemplate>
+    ///             <StackPanel Orientation="Horizontal">
+    ///                 <TextBlock Text="{Binding Name}" />
+    ///                 <TextBlock Text="{Binding FamilyName}" Margin="5,0,0,0" />
+    ///             </StackPanel>
+    ///         </DataTemplate>
+    ///     </Toolkit:TreeComboBox.SelectionBoxItemTemplate>
+    ///     <Toolkit:TreeComboBox.ItemTemplate>
+    ///         <HierarchicalDataTemplate ItemsSource="{Binding Customers}">
+    ///             <TextBlock Text="{Binding Name}" />
+    ///         </HierarchicalDataTemplate>
+    ///     </Toolkit:TreeComboBox.ItemTemplate>
+    /// </Toolkit:TreeComboBox>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class TreeComboBox : TreeView
     {
         static TreeComboBox()

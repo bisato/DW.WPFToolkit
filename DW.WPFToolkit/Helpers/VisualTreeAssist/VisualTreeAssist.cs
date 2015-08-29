@@ -33,6 +33,17 @@ namespace DW.WPFToolkit.Helpers
     /// <summary>
     /// Brings many possibilities to find elements in the visual tree. See <see cref="System.Windows.Media.VisualTreeHelper" />.
     /// </summary>
+    /// <example>
+    /// <code lang="csharp">
+    /// <![CDATA[
+    /// var childButton = VisualTreeAssist.FindChild<Button>(this);
+    /// 
+    /// var namedChildTextBox = VisualTreeAssist.FindNamedChild<TextBox>(this, "PART_TextBox");
+    /// 
+    /// var firstUserControlInWindow = VisualTreeAssist.GetParentsUntil<UserControl, Window>(this);
+    /// ]]>
+    /// </code>
+    /// </example>
     public static class VisualTreeAssist
     {
         /// <summary>

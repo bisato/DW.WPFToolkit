@@ -32,6 +32,30 @@ namespace DW.WPFToolkit.Helpers
     /// <summary>
     /// This objects help to determine when a popup has to be closed. This can be by clicking somewhere else, clicking in the title bar or moving the window.
     /// </summary>
+    /// <example>
+    /// <code lang="csharp">
+    /// <![CDATA[
+    /// public class Control : ContentControl
+    /// {
+    ///     private PopupHandler _popupHandler;
+    /// 
+    ///     public override void OnApplyTemplate()
+    ///     {
+    ///         var popup = GetTemplateChild("PART_Popup") as Popup;
+    ///         if (popup == null)
+    ///             return;
+    /// 
+    ///         _popupHandler = new PopupHandler();
+    ///         _popupHandler.AutoClose(popup, OnPopupClosed);
+    ///     }
+    /// 
+    ///     private void OnPopupClosed()
+    ///     {
+    ///     }
+    /// }
+    /// ]]>
+    /// </code>
+    /// </example>
     public class PopupHandler
     {
         private WindowObserver _observer;

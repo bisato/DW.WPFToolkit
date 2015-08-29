@@ -35,6 +35,63 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Enhances the <see cref="System.Windows.Controls.ListView" /> with additional features like column sorting, dynamic column width and dynamic shown column.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <DataTemplate x:Key="HeaderArrowUp">
+    ///     <Grid>
+    ///         <TextBlock Text="{Binding}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+    ///         <Path StrokeThickness="0" SnapsToDevicePixels="True" Data="M 0,4 L 4,0 L 8,4 L 0,4"
+    ///               Margin="0,-2,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
+    ///             <Path.Fill>
+    ///                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+    ///                     <GradientStop Color="#FF3C5E72" Offset="0"/>
+    ///                     <GradientStop Color="#FFC3E4F5" Offset="1"/>
+    ///                 </LinearGradientBrush>
+    ///             </Path.Fill>
+    ///         </Path>
+    ///     </Grid>
+    /// </DataTemplate>
+    /// <DataTemplate x:Key="HeaderArrowDown">
+    ///     <Grid>
+    ///         <TextBlock Text="{Binding}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+    ///         <Path StrokeThickness="0" SnapsToDevicePixels="True" Data="M 0,0 L 4,4 L 8,0 L 0,0"
+    ///               Margin="0,-2,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
+    ///             <Path.Fill>
+    ///                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+    ///                     <GradientStop Color="#FF3C5E72" Offset="0"/>
+    ///                     <GradientStop Color="#FFC4E3F4" Offset="1"/>
+    ///                 </LinearGradientBrush>
+    ///             </Path.Fill>
+    ///         </Path>
+    ///     </Grid>
+    /// </DataTemplate>
+    /// <DataTemplate x:Key="HeaderTransparent">
+    ///     <Grid>
+    ///         <TextBlock Text="{Binding}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+    ///     </Grid>
+    /// </DataTemplate>
+    /// 
+    /// <WPFToolkit:EnhancedListView AllowColumnSortings="True"
+    ///                              AscendingSortHeaderTemplate="{StaticResource HeaderArrowUp}"
+    ///                              DescendingSortHeaderTemplate="{StaticResource HeaderArrowDown}"
+    ///                              NeutralHeaderTemplate="{StaticResource HeaderTransparent}"
+    ///                              
+    ///                              VisibleColumns="{Binding VisibleColumnNames}"
+    ///                              
+    ///                              AutoSize="Proportional"
+    ///                              >
+    ///     <ListView.View>
+    ///         <GridView>
+    ///             <WPFToolkit:EnhancedGridViewColumn SortPropertyName="Name" IsDefaultSortColumn="True" Name="Name" ProportionalWidth="60" />
+    ///             <WPFToolkit:EnhancedGridViewColumn SortPropertyName="Size" Name="Size" ProportionalWidth="30" />
+    ///             <WPFToolkit:EnhancedGridViewColumn SortPropertyName="Date" Name="Date" ProportionalWidth="10" />
+    ///         </GridView>
+    ///     </ListView.View>
+    /// </WPFToolkit:EnhancedListView>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class EnhancedListView : ListView
     {
         /// <summary>

@@ -36,6 +36,30 @@ namespace DW.WPFToolkit.Helpers
     /// <summary>
     /// Brings possibilities to listen for keyboard events even the current application has not the focus. Its the so called System Keyboard Hooks.
     /// </summary>
+    /// <example>
+    /// <code lang="csharp">
+    /// <![CDATA[
+    /// public class MainViewModel
+    /// {
+    ///     public MainViewModel()
+    ///     {
+    ///         var watcher = new KeyboardWatcher();
+    ///         watcher.AddCallback(KeyPressed);
+    /// 
+    ///         watcher.BeginWatch();
+    ///     }
+    /// 
+    ///     private void KeyPressed(KeyStateChangedArgs e)
+    ///     {
+    ///         if (e.Key == Key.F10 && e.State == KeyState.Pressed)
+    ///         {
+    ///             // User Pressed the F10 key
+    ///         }
+    ///     }
+    /// }
+    /// ]]>
+    /// </code>
+    /// </example>
     public class KeyboardWatcher : IDisposable
     {
         /// <summary>

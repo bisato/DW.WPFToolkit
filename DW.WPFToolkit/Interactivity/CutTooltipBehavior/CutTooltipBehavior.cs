@@ -39,6 +39,13 @@ namespace DW.WPFToolkit.Interactivity
     /// Brings the functionality to the TextBlock and Label to show the text in the tooltip automatically when its cut.
     /// </summary>
     /// <remarks>In the case of the Label the Content.ToString() will be used to get the text. If a tooltip is set already it will be overwritten.</remarks>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <TextBlock Text="{Binding AnyLongtext}" Interactivity:CutTooltipBehavior.ShowTooltip="Width" />
+    /// ]]>
+    /// </code>
+    /// </example>
     public class CutTooltipBehavior : DependencyObject
     {
         private readonly FrameworkElement _owner;

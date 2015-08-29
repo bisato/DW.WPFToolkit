@@ -42,6 +42,27 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Brings the possibility to show several pages one by one. This is possible by slide through the pages using navigation buttons or jump to a page directly.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:PagingControl LoopItems="False"
+    ///                           SelectedIndex="0"
+    ///                           ShowJumpBar="True">
+    ///     <WPFToolkit:PagingItem Header="First Header Text" Footer="First Footer Text">
+    ///         <ListBox />
+    ///     </WPFToolkit:PagingItem>
+    /// 
+    ///     <WPFToolkit:PagingItem Header="Second Header Text" Footer="Second Footer Text">
+    ///         <ListBox />
+    ///     </WPFToolkit:PagingItem>
+    /// 
+    ///     <WPFToolkit:PagingItem Header="Third Header Text" Footer="Third Footer Text">
+    ///         <ListBox />
+    ///     </WPFToolkit:PagingItem>
+    /// </WPFToolkit:PagingControl>
+    /// ]]>
+    /// </code>
+    /// </example>
     [TemplatePart(Name = "PART_Previous", Type = typeof(Button))]
     [TemplatePart(Name = "PART_Next", Type = typeof(Button))]
     [TemplatePart(Name = "PART_ContentPresenter", Type = typeof(ContentControl))]

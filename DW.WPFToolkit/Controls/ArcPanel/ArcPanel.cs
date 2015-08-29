@@ -35,6 +35,25 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Arranges child elements in a configurable arc form.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <ItemsControl ItemsSource="{Binding Cards}">
+    ///     <ItemsControl.ItemsPanel>
+    ///         <ItemsPanelTemplate>
+    ///             <WPFToolkit:ArcPanel Width="210" Height="100" Bend="3" />
+    ///         </ItemsPanelTemplate>
+    ///     </ItemsControl.ItemsPanel>
+    /// </ItemsControl>
+    /// 
+    /// <WPFToolkit:ArcPanel Width="300" Height="150" Bend="2">
+    ///     <Button Content="First" />
+    ///     <Button Content="Second" />
+    ///     <Button Content="Third" />
+    /// </WPFToolkit:ArcPanel>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class ArcPanel : Panel
     {
         private readonly PathFigure _figure = new PathFigure();

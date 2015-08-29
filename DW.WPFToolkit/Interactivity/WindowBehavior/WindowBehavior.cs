@@ -38,6 +38,40 @@ namespace DW.WPFToolkit.Interactivity
     /// <summary>
     /// Brings the feature to a <see cref="System.Windows.Window" /> to bind loading and closing action or easy close with dialog result.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <Window Interactivity:WindowBehavior.ClosingCommand="{Binding ClosingCommand}">
+    /// 
+    ///     <Button Content="Close" Interactivity:WindowBehavior.DialogResult="True" />
+    ///     
+    ///     <Button Content="Try Close" Interactivity:WindowBehavior.DialogResultCommand="{Binding TryCloseCommand}" />
+    /// 
+    /// </Window>
+    /// ]]>
+    /// 
+    /// <code lang="csharp">
+    /// <![CDATA[
+    /// public class MainViewModel : ObservableObject
+    /// {
+    ///     public MainViewModel()
+    ///     {
+    ///         TryCloseCommand = new DelegateCommand<WindowClosingArgs>(TryClose);
+    ///     }
+    /// 
+    ///     public DelegateCommand<WindowClosingArgs> TryCloseCommand { get; private set; }
+    /// 
+    ///     private void TryClose(WindowClosingArgs e)
+    ///     {
+    ///         // Ask user if really close
+    ///         e.Cancel = true;
+    /// 
+    ///         //e.DialogResult = false;
+    ///     }
+    /// }
+    /// ]]>
+    /// </code>
+    /// </example>
     public class WindowBehavior : DependencyObject
     {
         /// <summary>

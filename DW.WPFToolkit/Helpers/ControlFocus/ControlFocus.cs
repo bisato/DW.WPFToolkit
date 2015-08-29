@@ -34,6 +34,13 @@ namespace DW.WPFToolkit.Helpers
     /// <summary>
     /// This object gives you the quick and easy possibility to move the current focus to a specific element.
     /// </summary>
+    /// <example>
+    /// <code lang="csharp">
+    /// <![CDATA[
+    /// ControlFocus.GiveFocus(myButton);
+    /// ]]>
+    /// </code>
+    /// </example>
     public static class ControlFocus
     {
         /// <summary>

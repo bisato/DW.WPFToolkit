@@ -34,6 +34,13 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Enhances the <see cref="System.Windows.Controls.ComboBox" /> with a background info text.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:EnhancedComboBox IsEditable="True" InfoText="Required" InfoAppearance="OnEmpty" />
+    /// ]]>
+    /// </code>
+    /// </example>
     public class EnhancedComboBox : ComboBox
     {
         static EnhancedComboBox()

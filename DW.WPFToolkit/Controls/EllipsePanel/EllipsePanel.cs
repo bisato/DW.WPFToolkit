@@ -37,6 +37,28 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Arranges child elements in a configurable ellipse form.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <ItemsControl ItemsSource="{Binding Player}">
+    ///     <ItemsControl.ItemsPanel>
+    ///         <ItemsPanelTemplate>
+    ///             <WPFToolkit:EllipsePanel ElementStartPosition="Bottom"
+    ///                                      EllipseRotateDirection="Clockwise"
+    ///                                      ElementsRotateDirection="Outroversive"
+    ///                                      RotateElements="True" />
+    ///         </ItemsPanelTemplate>
+    ///     </ItemsControl.ItemsPanel>
+    /// </ItemsControl>
+    /// 
+    /// <WPFToolkit:EllipsePanel>
+    ///     <Button Content="One" />
+    ///     <Button Content="Two" />
+    ///     <Button Content="Three" />
+    ///     <Button Content="Four" />
+    /// </WPFToolkit:EllipsePanel>
+    /// ]]>
+    /// </code></example>
     public class EllipsePanel : Panel
     {
         private readonly EllipseGeometry _ellipse = new EllipseGeometry();

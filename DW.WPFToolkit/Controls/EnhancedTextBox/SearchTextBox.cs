@@ -34,6 +34,16 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Adds search and cancel buttons to the EnhancedTextBox to represent a search box shown like in the Windows explorer.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:SearchTextBox ShowSearchButton="True"
+    ///                           SearchCommand="{Binding SearchCommand}"
+    ///                           IsSearching="{Binding IsSearching}"
+    ///                           CancelCommand="{Binding CancelSearchCommand}" />
+    /// ]]>
+    /// </code>
+    /// </example>
     public class SearchTextBox : EnhancedTextBox
     {
         static SearchTextBox()

@@ -36,6 +36,24 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Brings an easy to use MenuItem to be used in the ContextMenu no matter if its in an own VisualTree or not.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <TextBlock Text="{Binding Name}">
+    ///     <TextBlock.ContextMenu>
+    ///         <ContextMenu>
+    ///             <Toolkit:ContextMenuItem Header="Edit Global"
+    ///                                      Command="{Binding EditCommand}"
+    ///                                      CommandParameter="{Binding ItemDataContext, RelativeSource={RelativeSource Self}}" />
+    ///             <Toolkit:ContextMenuItem Header="Edit Directly"
+    ///                                      IsBindToSelf="True"
+    ///                                      Command="{Binding EditCommand}" />
+    ///         </ContextMenu>
+    ///     </TextBlock.ContextMenu>
+    /// </TextBlock>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class ContextMenuItem : MenuItem
     {
         /// <summary>

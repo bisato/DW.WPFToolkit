@@ -34,6 +34,17 @@ namespace DW.WPFToolkit.Interactivity
     /// <summary>
     /// Brings the feature to modify the scroll position of an items control.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <ListBox ItemsSource="{Binding LogEntries}"
+    ///          Interactivity:ScrollBehavior.AutoScrollToLast="True" />
+    /// 
+    /// <ListBox ItemsSource="{Binding LogEntries}"
+    ///          Interactivity:ScrollBehavior.ScrollToItem="{Binding ImportantEntry}" />
+    /// ]]>
+    /// </code>
+    /// </example>
     public class ScrollBehavior : DependencyObject
     {
         /// <summary>

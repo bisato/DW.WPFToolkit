@@ -35,6 +35,27 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// A control which shows a bunch of items which can be expanded and collapsed. All expanded items shares the available space left.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:NavigationBar AllowMultiExpandings="True">
+    /// 
+    ///     <WPFToolkit:NavigationBarItem IsExpanded="True" Header="First">
+    ///         <ListBox />
+    ///     </WPFToolkit:NavigationBarItem>
+    /// 
+    ///     <WPFToolkit:NavigationBarItem Header="Second">
+    ///         <ListBox />
+    ///     </WPFToolkit:NavigationBarItem>
+    /// 
+    ///     <WPFToolkit:NavigationBarItem Header="Third">
+    ///         <ListBox />
+    ///     </WPFToolkit:NavigationBarItem>
+    /// 
+    /// </WPFToolkit:NavigationBar>
+    /// ]]>
+    /// </code>
+    /// </example>
     public class NavigationBar : ItemsControl
     {
         static NavigationBar()

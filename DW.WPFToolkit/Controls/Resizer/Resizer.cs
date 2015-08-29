@@ -34,6 +34,15 @@ namespace DW.WPFToolkit.Controls
     /// <summary>
     /// Brings the possibility to resize every UI control manually by hold and drag the corners or sides.
     /// </summary>
+    /// <example>
+    /// <code lang="XAML">
+    /// <![CDATA[
+    /// <WPFToolkit:Resizer FrameSizes="0,0,4,4">
+    ///     <Button Content="Resize Me" />
+    /// </WPFToolkit:Resizer>
+    /// ]]>
+    /// </code>
+    /// </example>
     [TemplatePart(Name = "PART_LeftThumb", Type = typeof(Thumb))]
     [TemplatePart(Name = "PART_LeftTopThumb", Type = typeof(Thumb))]
     [TemplatePart(Name = "PART_TopThumb", Type = typeof(Thumb))]
