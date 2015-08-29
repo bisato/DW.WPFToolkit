@@ -79,6 +79,11 @@ namespace DW.WPFToolkit.Helpers
 
         #region BindingExtensions
 
+        /// <summary>
+        /// Gets the extension collection which modifies a binding.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Helpers.BindingAdapter.BindingExtensions property value for the element.</returns>
         public static BindingExtensionCollection GetBindingExtensions(DependencyObject obj)
         {
             var extension = (BindingExtensionCollection)obj.GetValue(BindingExtensionsProperty);
@@ -90,6 +95,19 @@ namespace DW.WPFToolkit.Helpers
             return extension;
         }
 
+        /// <summary>
+        /// Sets the extensions collection which modifies a binding.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Helpers.BindingAdapter.BindingExtensions value.</param>
+        public static void SetBindingExtensions(DependencyObject obj, BindingExtensionCollection value)
+        {
+            obj.SetValue(BindingExtensionsProperty, value);
+        }
+
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Helpers.BindingAdapter.GetBindingExtensions(DependencyObject)" /> <see cref="DW.WPFToolkit.Helpers.BindingAdapter.SetBindingExtensions(DependencyObject, BindingExtensionCollection)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty BindingExtensionsProperty =
             DependencyProperty.RegisterAttached("BindingExtensions", typeof(BindingExtensionCollection), typeof(BindingAdapter), new PropertyMetadata(OnBindingExtensionsChanged));
 
@@ -120,16 +138,29 @@ namespace DW.WPFToolkit.Helpers
 
         #region BindingExtension
 
+        /// <summary>
+        /// Gets the binding extension which modifies a binding.
+        /// </summary>
+        /// <param name="obj">The element from which the property value is read.</param>
+        /// <returns>The DW.WPFToolkit.Helpers.BindingAdapter.BindingExtension property value for the element.</returns>
         public static BindingExtension GetBindingExtension(DependencyObject obj)
         {
             return (BindingExtension)obj.GetValue(BindingExtensionProperty);
         }
 
+        /// <summary>
+        /// Sets the binding extension which modifies a binding.
+        /// </summary>
+        /// <param name="obj">The element to which the attached property is written.</param>
+        /// <param name="value">The needed DW.WPFToolkit.Helpers.BindingAdapter.BindingExtension value.</param>
         public static void SetBindingExtension(DependencyObject obj, BindingExtension value)
         {
             obj.SetValue(BindingExtensionProperty, value);
         }
 
+        /// <summary>
+        /// Identifies the <see cref="DW.WPFToolkit.Helpers.BindingAdapter.GetBindingExtension(DependencyObject)" /> <see cref="DW.WPFToolkit.Helpers.BindingAdapter.SetBindingExtension(DependencyObject, BindingExtension)" /> attached property.
+        /// </summary>
         public static readonly DependencyProperty BindingExtensionProperty =
             DependencyProperty.RegisterAttached("BindingExtension", typeof(BindingExtension), typeof(BindingAdapter), new PropertyMetadata(OnBindingExtensionChanged));
 

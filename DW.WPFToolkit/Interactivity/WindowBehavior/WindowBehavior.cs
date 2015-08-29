@@ -49,6 +49,7 @@ namespace DW.WPFToolkit.Interactivity
     /// 
     /// </Window>
     /// ]]>
+    /// </code>
     /// 
     /// <code lang="csharp">
     /// <![CDATA[

@@ -28,6 +28,9 @@ using System.Collections.ObjectModel;
 
 namespace DW.WPFToolkit.Helpers
 {
+    /// <summary>
+    /// Represents a collection of <see cref="DW.WPFToolkit.Helpers.BindingExtension" />.
+    /// </summary>
     public class BindingExtensionCollection : Collection<BindingExtension>
     {
     }
