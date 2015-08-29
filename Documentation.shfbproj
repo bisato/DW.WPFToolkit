@@ -35,7 +35,7 @@
     <HelpTitle>DW.WPFToolkit Documentation</HelpTitle>
     <FeedbackEMailLinkText>Contact Support</FeedbackEMailLinkText>
     <FeedbackEMailAddress>support%40my-libraries.com</FeedbackEMailAddress>
-    <CopyrightText>Copyright &amp;#169%3b my-libraries David Wendland 2009-2014</CopyrightText>
+    <CopyrightText>Copyright &amp;#169%3b my-libraries David Wendland 2009-2015</CopyrightText>
     <CopyrightHref>http://www.my-libraries.com</CopyrightHref>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <MissingTags>AutoDocumentCtors, AutoDocumentDispose</MissingTags>
