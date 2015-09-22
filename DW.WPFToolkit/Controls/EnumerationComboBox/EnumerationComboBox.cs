@@ -26,6 +26,7 @@ THE SOFTWARE
 
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -105,6 +106,33 @@ namespace DW.WPFToolkit.Controls
         static EnumerationComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EnumerationComboBox), new FrameworkPropertyMetadata(typeof(EnumerationComboBox)));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DW.WPFToolkit.Controls.EnumerationComboBox" /> class.
+        /// </summary>
+        public EnumerationComboBox()
+        {
+            Loaded += HandleLoaded;
+        }
+
+        private void HandleLoaded(object sender, RoutedEventArgs e)
+        {
+            if (EnumType != null)
+                return;
+
+            var enumTypeBinding = GetBindingExpression(EnumTypeProperty);
+            if (enumTypeBinding != null)
+                return;
+
+            var selectedItemBinding = GetBindingExpression(SelectedItemProperty);
+            if (selectedItemBinding != null)
+            {
+                var type = GetBoundType(selectedItemBinding);
+                if (type != null)
+                    EnumType = type;
+            }
+
         }
 
         /// <summary>
@@ -203,8 +231,17 @@ namespace DW.WPFToolkit.Controls
         private static void TakeValues(EnumerationComboBox control)
         {
             control.Items.Clear();
-            foreach (var value in System.Enum.GetValues(control.EnumType))
+            foreach (var value in Enum.GetValues(control.EnumType))
                 control.Items.Add(value);
+        }
+
+        private static Type GetBoundType(BindingExpression bindingExpression)
+        {
+            var split = bindingExpression.ParentBinding.Path.Path.Split('.').LastOrDefault();
+            if (split == null)
+                return null;
+            var type = bindingExpression.DataItem.GetType();
+            return type.GetProperty(split).PropertyType;
         }
     }
 }

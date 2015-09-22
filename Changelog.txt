@@ -1,6 +1,12 @@
 
 
 ==============================
+Release 5.4.1.0
+==============================
+2015-09-22    EnumerationComboBox: Take type from the SelectedItem as fallback if EnumType is not set
+
+
+==============================
 Release 5.4.0.0
 ==============================
 2015-08-27    EnumerationComboBox: Renew the control with more possibility how to display the values (Thanks to Christoph Dreßler!)
