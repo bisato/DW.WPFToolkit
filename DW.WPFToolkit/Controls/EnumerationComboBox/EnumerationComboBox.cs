@@ -27,6 +27,7 @@ THE SOFTWARE
 using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -106,6 +107,7 @@ namespace DW.WPFToolkit.Controls
         static EnumerationComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EnumerationComboBox), new FrameworkPropertyMetadata(typeof(EnumerationComboBox)));
+            SelectedItemProperty.OverrideMetadata(typeof(EnumerationComboBox), new FrameworkPropertyMetadata(OnSelectedItemChanged, OnSelectedItemChanging));
         }
 
         /// <summary>
@@ -132,7 +134,25 @@ namespace DW.WPFToolkit.Controls
                 if (type != null)
                     EnumType = type;
             }
+            else if (SelectedItem != null)
+                EnumType = SelectedItem.GetType();
+        }
 
+        private static void OnSelectedItemChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
+        }
+
+        private static object OnSelectedItemChanging(DependencyObject sender, object basevalue)
+        {
+            if (basevalue == null)
+                return null;
+
+            var control = (EnumerationComboBox)sender;
+            if (control.EnumType != null)
+                return basevalue;
+
+            control.EnumType = basevalue.GetType();
+            return basevalue;
         }
 
         /// <summary>
@@ -240,8 +260,14 @@ namespace DW.WPFToolkit.Controls
             var split = bindingExpression.ParentBinding.Path.Path.Split('.').LastOrDefault();
             if (split == null)
                 return null;
-            var type = bindingExpression.DataItem.GetType();
-            return type.GetProperty(split).PropertyType;
+            var dataItem = bindingExpression.DataItem;
+            if (dataItem == null)
+                return null;
+            var type = dataItem.GetType();
+            var propertyInfo = type.GetProperty(split);
+            if (propertyInfo == null)
+                return null;
+            return propertyInfo.PropertyType;
         }
     }
 }

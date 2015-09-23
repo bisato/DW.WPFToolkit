@@ -3,6 +3,7 @@
 ==============================
 Release 5.4.1.0
 ==============================
+2015-09-23    EnumerationComboBox: Take enum type from the SelectedItem when set without a binding
 2015-09-22    EnumerationComboBox: Take type from the SelectedItem as fallback if EnumType is not set
 
 
