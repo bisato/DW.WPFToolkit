@@ -24,7 +24,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\bin\DW.WPFToolkit.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -187,6 +188,7 @@
     <Compile Include="Interactivity\CutTooltipBehavior\CutTooltipBehavior.cs" />
     <Compile Include="Interactivity\DoubleClickBehavior\DoubleClickBehavior.cs" />
     <Compile Include="Interactivity\FocusBehavior\FocusBehavior.cs" />
+    <Compile Include="Interactivity\ListBehavior\ListBehavior.cs" />
     <Compile Include="Interactivity\ScrollBehavior\ScrollBehavior.cs" />
     <Compile Include="Interactivity\TextBoxBehavior\TextBoxBehavior.cs" />
     <Compile Include="Interactivity\WindowBehavior\WindowBehavior.cs" />

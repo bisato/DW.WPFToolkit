@@ -42,7 +42,7 @@ namespace DW.WPFToolkit.Interactivity
     /// ]]>
     /// </code>
     /// </example>
-    public class WindowTitleBarBehavior : FrameworkElement
+    public class WindowTitleBarBehavior : DependencyObject
     {
         /// <summary>
         /// Gets a value the indicates if the window has to show title bar items or not.
