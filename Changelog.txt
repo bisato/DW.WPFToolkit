@@ -3,6 +3,7 @@
 ==============================
 Release 5.6.0.0
 ==============================
+2015-09-30    EventToCommand: Add EventToCommand to be able to connect control events to ICommands via bindings
 2015-09-25    ListBehavior: Add ListBehavior with click and doubleclick behaviors in UI lists
               WindowTitleBarBehavior: Adjust base objects, all Behaviors should have the same base object
 2015-09-23    EnumerationComboBox: Take enum type from the SelectedItem when set without a binding
