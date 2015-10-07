@@ -111,30 +111,59 @@ THE SOFTWARE
 
     <Style TargetType="{x:Type Controls:SearchTextBox}" BasedOn="{StaticResource {x:Type Controls:EnhancedTextBox}}">
         <Setter Property="VerticalSearchButtonAlignment" Value="Stretch" />
-
-        <Setter Property="SecondControl">
+        <Setter Property="Template">
             <Setter.Value>
-                <Grid DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:SearchTextBox}}}"
-                      Visibility="{Binding ShowSearchButton, Converter={StaticResource BooleanToVisibilityConverter}}"
-                      DockPanel.Dock="{Binding SearchButtonPosition}">
-                    <Controls:SearchButton AutomationProperties.AutomationId="CUI_SearchButton"
-                                           Margin="{Binding SearchButtonMargin}"
-                                           Padding="{Binding SearchButtonPadding}"
-                                           VerticalAlignment="{Binding VerticalSearchButtonAlignment}"
-                                           HorizontalAlignment="{Binding HorizontalSearchButtonAlignment}"
-                                           Command="{Binding SearchCommand}"
-                                           CommandParameter="{Binding SearchCommandParameter}"
-                                           Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityInvertedConverter}}" />
+                <ControlTemplate TargetType="{x:Type Controls:EnhancedTextBox}">
+                    <Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" SnapsToDevicePixels="true">
+                        <DockPanel>
+                            <Grid DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:SearchTextBox}}}"
+                                  Visibility="{Binding ShowSearchButton, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                  DockPanel.Dock="{Binding SearchButtonPosition}">
+                                <Controls:SearchButton AutomationProperties.AutomationId="CUI_SearchButton"
+                                                       Margin="{Binding SearchButtonMargin}"
+                                                       Padding="{Binding SearchButtonPadding}"
+                                                       VerticalAlignment="{Binding VerticalSearchButtonAlignment}"
+                                                       HorizontalAlignment="{Binding HorizontalSearchButtonAlignment}"
+                                                       Command="{Binding SearchCommand}"
+                                                       CommandParameter="{Binding SearchCommandParameter}"
+                                                       Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityInvertedConverter}}" />
 
-                    <Controls:CancelButton AutomationProperties.AutomationId="CUI_CancelButton"
-                                           Margin="{Binding SearchButtonMargin}"
-                                           Padding="{Binding SearchButtonPadding}"
-                                           VerticalAlignment="{Binding VerticalSearchButtonAlignment}"
-                                           HorizontalAlignment="{Binding HorizontalSearchButtonAlignment}"
-                                           Command="{Binding CancelCommand}"
-                                           CommandParameter="{Binding CancelCommandParameter}"
-                                           Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                </Grid>
+                                <Controls:CancelButton AutomationProperties.AutomationId="CUI_CancelButton"
+                                                       Margin="{Binding SearchButtonMargin}"
+                                                       Padding="{Binding SearchButtonPadding}"
+                                                       VerticalAlignment="{Binding VerticalSearchButtonAlignment}"
+                                                       HorizontalAlignment="{Binding HorizontalSearchButtonAlignment}"
+                                                       Command="{Binding CancelCommand}"
+                                                       CommandParameter="{Binding CancelCommandParameter}"
+                                                       Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            </Grid>
+                            <ContentControl Content="{TemplateBinding FirstControl}"
+                                            Focusable="False"
+                                            DockPanel.Dock="{TemplateBinding FirstControlPosition}" />
+                            <ContentControl Content="{TemplateBinding SecondControl}"
+                                            Focusable="False"
+                                            DockPanel.Dock="{TemplateBinding SecondControlPosition}" />
+                            <Grid>
+                                <TextBlock AutomationProperties.AutomationId="CUI_BackgroundTextBlock"
+                                           x:Name="PART_InfoText"
+                                           Text="{TemplateBinding InfoText}"
+                                           FontStyle="{TemplateBinding InfoTextFontStyle}"
+                                           Foreground="{TemplateBinding InfoTextForeground}"
+                                           HorizontalAlignment="{TemplateBinding InfoTextHorizontalAlignment}"
+                                           VerticalAlignment="{TemplateBinding InfoTextVerticalAlignment}"
+                                           Margin="{TemplateBinding InfoTextMargin}"
+                                           Style="{TemplateBinding InfoTextStyle}" />
+                                <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Grid>
+                        </DockPanel>
+                    </Microsoft_Windows_Themes:ListBoxChrome>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
@@ -243,21 +272,52 @@ THE SOFTWARE
     </Style>
 
     <Style TargetType="{x:Type Controls:BrowseTextBox}" BasedOn="{StaticResource {x:Type Controls:EnhancedTextBox}}">
-        <Setter Property="SecondControl">
+        <Setter Property="Template">
             <Setter.Value>
-                <Button AutomationProperties.AutomationId="CUI_BrowseButton"
-                        DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:BrowseTextBox}}}"
-                        Content="{Binding BrowseButtonContent}"
-                        Margin="{Binding BrowseButtonMargin}"
-                        Padding="{Binding BrowseButtonPadding}"
-                        VerticalAlignment="{Binding VerticalBrowseButtonAlignment}"
-                        HorizontalAlignment="{Binding HorizontalBrowseButtonAlignment}"
-                        Visibility="{Binding ShowBrowseButton, Converter={StaticResource BooleanToVisibilityConverter}}"
-                        Command="{Binding BrowseCommand}"
-                        CommandParameter="{Binding BrowseCommandParameter}"
-                        DockPanel.Dock="{Binding BrowseButtonPosition}" />
+                <ControlTemplate TargetType="{x:Type Controls:EnhancedTextBox}">
+                    <Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" SnapsToDevicePixels="true">
+                        <DockPanel>
+                            <ContentControl Content="{TemplateBinding FirstControl}"
+                                            Focusable="False"
+                                            DockPanel.Dock="{TemplateBinding FirstControlPosition}" />
+                            <ContentControl Content="{TemplateBinding SecondControl}"
+                                            Focusable="False"
+                                            DockPanel.Dock="{TemplateBinding SecondControlPosition}" />
+                            <Button AutomationProperties.AutomationId="CUI_BrowseButton"
+                                    DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:BrowseTextBox}}}"
+                                    Content="{Binding BrowseButtonContent}"
+                                    Margin="{Binding BrowseButtonMargin}"
+                                    Padding="{Binding BrowseButtonPadding}"
+                                    VerticalAlignment="{Binding VerticalBrowseButtonAlignment}"
+                                    HorizontalAlignment="{Binding HorizontalBrowseButtonAlignment}"
+                                    Visibility="{Binding ShowBrowseButton, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                    Command="{Binding BrowseCommand}"
+                                    CommandParameter="{Binding BrowseCommandParameter}"
+                                    DockPanel.Dock="{Binding BrowseButtonPosition}" />
+                            <Grid>
+                                <TextBlock AutomationProperties.AutomationId="CUI_BackgroundTextBlock"
+                                           x:Name="PART_InfoText"
+                                           Text="{TemplateBinding InfoText}"
+                                           FontStyle="{TemplateBinding InfoTextFontStyle}"
+                                           Foreground="{TemplateBinding InfoTextForeground}"
+                                           HorizontalAlignment="{TemplateBinding InfoTextHorizontalAlignment}"
+                                           VerticalAlignment="{TemplateBinding InfoTextVerticalAlignment}"
+                                           Margin="{TemplateBinding InfoTextMargin}"
+                                           Style="{TemplateBinding InfoTextStyle}" />
+                                <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Grid>
+                        </DockPanel>
+                    </Microsoft_Windows_Themes:ListBoxChrome>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
+
     </Style>
 
 </ResourceDictionary>
