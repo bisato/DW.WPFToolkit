@@ -235,14 +235,14 @@ namespace DW.WPFToolkit.Helpers
         /// <typeparam name="TChildType">The type of the child control to search for.</typeparam>
         /// <param name="item">The control where the search is start from. If this its null this method returns an empty list.</param>
         /// <returns>A list of found child controls. This is empty if no control has been found.</returns>
-        public static List<TChildType> GetChilds<TChildType>(DependencyObject item) where TChildType : DependencyObject
+        public static List<TChildType> GetChildren<TChildType>(DependencyObject item) where TChildType : DependencyObject
         {
-            var childs = new List<TChildType>();
-            GetChilds(item, childs);
-            return childs;
+            var children = new List<TChildType>();
+            GetChildren(item, children);
+            return children;
         }
 
-        private static void GetChilds<TChildType>(DependencyObject item, ICollection<TChildType> target) where TChildType : DependencyObject
+        private static void GetChildren<TChildType>(DependencyObject item, ICollection<TChildType> target) where TChildType : DependencyObject
         {
             if (item == null)
                 return;
@@ -253,7 +253,7 @@ namespace DW.WPFToolkit.Helpers
                 var child = VisualTreeHelper.GetChild(item, i);
                 if (child is TChildType)
                     target.Add((TChildType)child);
-                GetChilds(child, target);
+                GetChildren(child, target);
             }
         }
 
@@ -263,9 +263,9 @@ namespace DW.WPFToolkit.Helpers
         /// <typeparam name="TChildType">The type of the child control to check for.</typeparam>
         /// <param name="item">The control where the search is start from. If this its null this method returns 0.</param>
         /// <returns>The amount of child controls by the specific type if any; otherwise 0. It is also 0 if the passed item is null.</returns>
-        public static int GetChildsCount<TChildType>(DependencyObject item) where TChildType : DependencyObject
+        public static int GetChildrenCount<TChildType>(DependencyObject item) where TChildType : DependencyObject
         {
-            return GetChilds<TChildType>(item).Count;
+            return GetChildren<TChildType>(item).Count;
         }
 
         private static bool HasName(DependencyObject item, string name)

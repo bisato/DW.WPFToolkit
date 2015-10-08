@@ -215,7 +215,7 @@ namespace DW.WPFToolkit.Controls
             if (style == null)
                 return;
 
-            var controls = VisualTreeAssist.GetChilds<T>(this);
+            var controls = VisualTreeAssist.GetChildren<T>(this);
             foreach (var control in controls)
                 control.Style = style;
         }
