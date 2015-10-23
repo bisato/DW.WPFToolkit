@@ -25,11 +25,40 @@ THE SOFTWARE
 <Window x:Class="DW.WPFToolkit.Tryout.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="http://wpftoolkit.my-libraries.com/v5"
+        xmlns:tryout="clr-namespace:DW.WPFToolkit.Tryout"
         Title="DW.WPFToolkit.Tryout"
         Height="300"
         Width="300">
 
     <StackPanel>
+        <controls:TreeListView ItemsSource="{Binding MyItems}" SelectedElement="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single">
+            <controls:TreeListView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type tryout:TreeEntity}" ItemsSource="{Binding Children}" />
+                <Style TargetType="controls:TreeListViewItem">
+                    <Setter Property="IsExpanded" Value="True"></Setter>
+                </Style>
+            </controls:TreeListView.Resources>
+            <controls:TreeListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <DockPanel>
+                                    <controls:TreeListViewExpander DockPanel.Dock="Left"/>
+                                    <TextBlock Text="{Binding Name}" Margin="5,0,0,0" />
+                                </DockPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </controls:TreeListView.View>
+        </controls:TreeListView>
+    <StackPanel Orientation="Horizontal">
+            <Button Click="Button_Select_Maggie" Content="Maggie" />
+            <Button Click="Button_Select_Bart" Content="Bart" />
+            <Button Click="Button_Select_Homer" Content="Homer" />
+    </StackPanel>   
     </StackPanel>
 
 </Window>

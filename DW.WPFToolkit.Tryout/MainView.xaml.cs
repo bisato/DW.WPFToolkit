@@ -24,13 +24,44 @@ THE SOFTWARE
 */
 #endregion License
 
+using System.Linq;
+using System.Windows;
+
 namespace DW.WPFToolkit.Tryout
 {
     public partial class MainView
     {
         public MainView()
         {
+            MainViewModel mainViewModel = new MainViewModel();
+            DataContext = mainViewModel;
             InitializeComponent();
+            
+        }
+
+        private void Button_Select_Maggie(object sender, RoutedEventArgs e)
+        {
+            SelectSimpson("Maggie");
+        }
+
+        private void Button_Select_Bart(object sender, RoutedEventArgs e)
+        {
+            SelectSimpson("Bart");
+        }
+
+        private void Button_Select_Homer(object sender, RoutedEventArgs e)
+        {
+            SelectSimpson("Homer");
+        }
+
+        private void SelectSimpson(string s)
+        {
+            var dc = DataContext as MainViewModel;
+            if (dc != null)
+            {
+                var newSelected = dc.MyItems.Flatten(b => b.Children).FirstOrDefault(n => n.Name == s);
+                dc.SelectedItem = newSelected;
+            }
         }
     }
 }

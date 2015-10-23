@@ -24,12 +24,57 @@ THE SOFTWARE
 */
 #endregion License
 
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+
 namespace DW.WPFToolkit.Tryout
 {
-    public class MainViewModel
+    public class MainViewModel : INotifyPropertyChanged
     {
+        private TreeEntity _selectedItem;
+
+        private TreeEntity lisa;
+
+        private TreeEntity maggie;
+
         public MainViewModel()
         {
+            MyItems = new ObservableCollection<TreeEntity>();
+            var homer = new TreeEntity() {Name = "Homer"};
+            homer.Children.Add(new TreeEntity(){Name = "Bart"});
+            var marge = new TreeEntity() { Name = "Marge" };
+            lisa = new TreeEntity() { Name = "Lisa" };
+            marge.Children.Add(lisa);
+            maggie = new TreeEntity() { Name = "Maggie" };
+            marge.Children.Add(maggie);
+            MyItems.Add(marge);
+            MyItems.Add(homer);
+        }
+
+        public ObservableCollection<TreeEntity> MyItems { get; set; }
+
+        public TreeEntity SelectedItem
+        {
+            get
+            {
+                return _selectedItem;
+            }
+            set
+            {
+                _selectedItem = value;
+                OnPropertyChanged("SelectedItem");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }
