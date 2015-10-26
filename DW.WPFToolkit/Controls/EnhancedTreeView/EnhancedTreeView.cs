@@ -24,6 +24,8 @@ THE SOFTWARE
 */
 #endregion License
 
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -32,6 +34,9 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+
+using DW.WPFToolkit.Helpers;
+using DW.WPFToolkit.Helpers.Reflection;
 
 namespace DW.WPFToolkit.Controls
 {
@@ -327,5 +332,147 @@ namespace DW.WPFToolkit.Controls
             if (SelectedItemChangedCommand != null && SelectedItemChangedCommand.CanExecute(newValue))
                 SelectedItemChangedCommand.Execute(newValue);
         }
+
+        #region SelectedElement
+        /// <summary>
+        /// Dependency Property for the bound selected Element. Get and Set. Only valid in SingleMode.
+        /// </summary>
+        public static readonly DependencyProperty SelectedElementProperty =
+                DependencyProperty.Register(
+                    "SelectedElement",
+                    typeof(object),
+                    typeof(EnhancedTreeView),
+                    new PropertyMetadata(default(object), SelectedElementChanged));
+
+        /// <summary>
+        /// EventHandler for Status Changed Event of ContainerGenerator
+        /// Defined as "extra" eventhandler, that it can be unsubscribed.
+        /// </summary>
+        private EventHandler<EventArgs> _containerStatusChangedEventHandler;
+
+        /// <summary>
+        /// Gets or sets the selected (bound) Element
+        /// </summary>
+        public object SelectedElement
+        {
+            get
+            {
+                return GetValue(SelectedElementProperty);
+            }
+            set
+            {
+                SetValue(SelectedElementProperty, value);
+            }
+        }
+
+        /// <summary>
+        /// Handler for changed Event of the selected Element
+        /// </summary>
+        /// <param name="d">The EnhancedTreeView</param>
+        /// <param name="e">The args. (not used)</param>
+        private static void SelectedElementChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+
+            var newElement = e.NewValue;
+            var treeListView = d as EnhancedTreeView;
+            if (treeListView != null && newElement != null)
+            {
+                // break, if not SingleMode
+                if (treeListView.SelectionMode != SelectionMode.Single)
+                    return;
+                var gen = treeListView.ItemContainerGenerator;
+
+                var ui = ContainerFromItem(gen, newElement);
+                if (ui != null)
+                {
+                    // set as selected
+                    ui.SetValue(TreeViewItem.IsSelectedProperty, true);
+                }
+                else if (gen != null)
+                {
+                    // the generator can be null, when is is not completely generated, so we listen (weak, for sure!) to the "StatusChanged" Event and do our work there.
+                    treeListView._containerStatusChangedEventHandler = (o, args) => ContainerGeneratorStatusChangedHandler(o, newElement);
+                    gen.StatusChanged += (o, args) => treeListView._containerStatusChangedEventHandler(o, args);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets the generated (UI) EnhancedTreeViewItem.
+        /// </summary>
+        /// <param name="containerGenerator">The ItemContainerGenerator from the "parent".</param>
+        /// <param name="item">The (bound) item to get the generated UI Item.</param>
+        /// <returns>The generated UI EnhancedTreeViewItem. null if nothing to return.</returns>
+        private static EnhancedTreeViewItem ContainerFromItem(ItemContainerGenerator containerGenerator, object item)
+        {
+            if (containerGenerator != null)
+            {
+                var container = containerGenerator.ContainerFromItem(item) as EnhancedTreeViewItem;
+                if (container != null)
+                {
+                    return container;
+                }
+                // Get items from Container through Reflection. This Property is only public in verision > .NET 4.5
+                IEnumerable items = containerGenerator.GetPropertyValue("Items") as IEnumerable;
+                if (items != null)
+                {
+                    foreach (var childItem in items)
+                    {
+                        var parent = containerGenerator.ContainerFromItem(childItem) as EnhancedTreeViewItem;
+                        if (parent == null)
+                        {
+                            continue;
+                        }
+
+                        container = parent.ItemContainerGenerator.ContainerFromItem(item) as EnhancedTreeViewItem;
+                        if (container != null)
+                        {
+                            return container;
+                        }
+
+                        container = ContainerFromItem(parent.ItemContainerGenerator, item);
+                        if (container != null)
+                        {
+                            return container;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+
+        /// <summary>
+        /// The Event Handler of the "StatusChanged" Event of a ContainerGenerator.
+        /// </summary>
+        /// <param name="sender">The ContainerGenerator which has initiated the event.</param>
+        /// <param name="newSelection"></param>
+        private static void ContainerGeneratorStatusChangedHandler(object sender, object newSelection)
+        {
+
+            var itemContainerGenerator = sender as ItemContainerGenerator;
+
+            // if the Generator has done its work.
+            if (newSelection != null && itemContainerGenerator != null
+                && itemContainerGenerator.Status
+                == System.Windows.Controls.Primitives.GeneratorStatus.ContainersGenerated)
+            {
+                // get UIElement from Item through recursion
+                var ui = ContainerFromItem(itemContainerGenerator, newSelection);
+                if (ui != null)
+                {
+                    // Event Handler aushängen
+                    var enhancedTreeView = VisualTreeAssist.FindParent<EnhancedTreeView>(ui);
+                    if (enhancedTreeView != null)
+                    {
+                        itemContainerGenerator.StatusChanged -=
+                            (o, args) => enhancedTreeView._containerStatusChangedEventHandler(o, args);
+                    }
+                    ui.SetValue(TreeViewItem.IsSelectedProperty, true);
+
+                }
+            }
+        }
+        #endregion
     }
 }
